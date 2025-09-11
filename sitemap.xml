@@ -1,12 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-   <url>
-      <loc>https://sbso-foundation.me/</loc>
-      <priority>1.0</priority>
-   </url>
-   <url>
-      <loc>https://sbso-foundation.me/about</loc>
-      <priority>0.8</priority>
-   </url>
-   <!-- Add more pages here -->
+  <url>
+    <loc>https://sbso-foundation.me/</loc>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://sbso-foundation.me/#about</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sbso-foundation.me/#ventures</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sbso-foundation.me/#ambassador</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sbso-foundation.me/#president</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sbso-foundation.me/#contact</loc>
+    <priority>0.7</priority>
+  </url>
 </urlset>
