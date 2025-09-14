@@ -319,3 +319,18 @@ footer {
   .info-grid { grid-template-columns: 1fr; }
   .contact-form { width: 100%; padding: 0 1rem; }
 }
+
+/* Social Media Icons */
+.social-links {
+  margin-top: 10px;
+}
+.social-icon {
+  width: 28px;
+  height: 28px;
+  margin: 0 8px;
+  vertical-align: middle;
+  transition: transform 0.2s;
+}
+.social-icon:hover {
+  transform: scale(1.15);
+}
