@@ -47,7 +47,7 @@
   <h2>Welcome to <span>SBSO Foundation</span></h2>
   <p>Come. Commit. Conquer.</p>
   <a href="#about" class="btn">Learn More</a>
-</section>
+  </section>
 
   <!-- Organisation Logo Section -->
   <div class="org-logo-section">
@@ -67,24 +67,71 @@
 
   <!-- Ventures Section -->
   <section id="ventures" class="ventures">
-    <h2>Our Ventures</h2>
-    <div class="info-grid">
-      <div class="info-card">
-        <p>Siliguri Boys Cricket League</p>
-      </div>
-      <div class="info-card">
-        <p>Bengaluru Super Sports League</p>
-      </div>
-      <div class="info-card">
-        <p>Kolkata Super Sports League</p>
-      </div>
-      <div class="info-card">
-        <p>Womens Bengaluru Super Sports League</p>
-      </div>
-      <div class="info-card">
-        <p>Divyang Pro Super League</p>
-      </div>
+  <h2>Our Ventures</h2>
+  <div class="info-grid">
+    <div class="info-card" onclick="openModal('modal1')">
+      <p>Siliguri Boys Cricket League</p>
     </div>
+    <div class="info-card" onclick="openModal('modal2')">
+      <p>Bengaluru Super Sports League</p>
+    </div>
+    <div class="info-card" onclick="openModal('modal3')">
+      <p>Kolkata Super Sports League</p>
+    </div>
+    <div class="info-card" onclick="openModal('modal4')">
+      <p>Womens Bengaluru Super Sports League</p>
+    </div>
+    <div class="info-card" onclick="openModal('modal5')">
+      <p>Divyang Pro Super League</p>
+    </div>
+  </div>
+
+  <!-- Modals for each venture -->
+  <div id="modal1" class="venture-modal">
+    <div class="venture-modal-content">
+      <span class="venture-modal-close" onclick="closeModal('modal1')">&times;</span>
+      <h3>Siliguri Boys Cricket League</h3>
+      <p>
+        The Siliguri Boys Cricket League is a premier youth cricket tournament fostering talent and sportsmanship in Siliguri. It provides a platform for young cricketers to showcase their skills and compete at a high level.
+      </p>
+    </div>
+  </div>
+  <div id="modal2" class="venture-modal">
+    <div class="venture-modal-content">
+      <span class="venture-modal-close" onclick="closeModal('modal2')">&times;</span>
+      <h3>Bengaluru Super Sports League</h3>
+      <p>
+        The Bengaluru Super Sports League (BSSL) is a dynamic turf cricket tournament in T10 format, offering young players a chance to shine and connect with a vibrant audience.
+      </p>
+    </div>
+  </div>
+  <div id="modal3" class="venture-modal">
+    <div class="venture-modal-content">
+      <span class="venture-modal-close" onclick="closeModal('modal3')">&times;</span>
+      <h3>Kolkata Super Sports League</h3>
+      <p>
+        The Kolkata Super Sports League brings together the best young cricket talent in Kolkata, promoting fitness, teamwork, and competitive spirit.
+      </p>
+    </div>
+  </div>
+  <div id="modal4" class="venture-modal">
+    <div class="venture-modal-content">
+      <span class="venture-modal-close" onclick="closeModal('modal4')">&times;</span>
+      <h3>Womens Bengaluru Super Sports League</h3>
+      <p>
+        The Women's Bengaluru Super Sports League is dedicated to empowering female athletes and providing them with equal opportunities to excel in cricket.
+      </p>
+    </div>
+  </div>
+  <div id="modal5" class="venture-modal">
+    <div class="venture-modal-content">
+      <span class="venture-modal-close" onclick="closeModal('modal5')">&times;</span>
+      <h3>Divyang Pro Super League</h3>
+      <p>
+        The Divyang Pro Super League is an inclusive tournament designed for differently-abled athletes, celebrating their talent and determination.
+      </p>
+    </div>
+  </div>
   </section>
 
   <!-- Ambassadors Section -->
@@ -162,7 +209,7 @@
     </div>
     <!-- Add more members as needed -->
   </div>
-</section>
+  </section>
 
   <!-- Contact Section -->
   <section id="contact" class="contact">
@@ -220,5 +267,19 @@
       </div>
     </div>
   </footer>
+
+  <script>
+  function openModal(id) {
+    document.getElementById(id).style.display = 'flex';
+  }
+  function closeModal(id) {
+    document.getElementById(id).style.display = 'none';
+  }
+  window.onclick = function(event) {
+    document.querySelectorAll('.venture-modal').forEach(function(modal) {
+      if (event.target === modal) modal.style.display = 'none';
+    });
+  };
+  </script>
 </body>
 </html>
