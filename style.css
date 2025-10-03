@@ -1,5 +1,5 @@
 /* =========================
-   RESET & BASE
+   RESET & BASE STYLES
 ========================= */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -18,7 +18,9 @@ body {
   position: relative;
 }
 
-/* Responsive background image */
+/* =========================
+   RESPONSIVE BACKGROUND
+========================= */
 @media (max-width: 768px) {
   body {
     background-attachment: scroll;
@@ -124,15 +126,34 @@ nav {
   margin-right: auto;
 }
 .btn {
-  background: #FFD700;
+  background: linear-gradient(90deg, #FFD700 60%, #2d5ea0 100%);
   color: #002B5B;
-  padding: 10px 20px;
+  padding: 12px 32px;
   border-radius: 25px;
-  text-decoration: none;
   font-weight: bold;
-  transition: 0.3s;
+  font-size: 1.1rem;
+  margin-top: 18px;
+  box-shadow: 0 0 18px #FFD70088;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s, box-shadow 0.3s, color 0.3s, transform 0.2s;
+  outline: none;
+  position: relative;
+  z-index: 1;
+  animation: btnPulse 2s infinite alternate;
+  text-decoration: none;
+  display: inline-block;
 }
-.btn:hover { background: #fff; color: #002B5B; }
+@keyframes btnPulse {
+  from { box-shadow: 0 0 18px #FFD70088; }
+  to { box-shadow: 0 0 32px #FFD700cc, 0 0 8px #2d5ea0cc; }
+}
+.btn:hover {
+  background: linear-gradient(90deg, #2d5ea0 60%, #FFD700 100%);
+  color: #FFD700;
+  box-shadow: 0 0 32px #FFD700cc, 0 0 8px #2d5ea0cc;
+  transform: scale(1.07);
+}
 
 /* =========================
    ORGANISATION LOGO SECTION
@@ -173,7 +194,65 @@ nav {
 }
 
 /* =========================
-   INFO GRID & CARDS
+   VENTURES SECTION (Main Page)
+========================= */
+.ventures .info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 28px;
+  margin-top: 2rem;
+  justify-items: center;
+}
+.ventures .info-card {
+  background: rgba(255,255,255,0.10);
+  border-radius: 18px;
+  box-shadow: 0 8px 32px #FFD70044, 0 2px 12px #2d5ea022;
+  padding: 2.2rem 1.2rem;
+  min-height: 120px;
+  min-width: 180px;
+  max-width: 320px;
+  width: 100%;
+  backdrop-filter: blur(8px);
+  border: 2px solid #FFD700;
+  color: #FFD700;
+  font-weight: bold;
+  font-size: 1.15rem;
+  text-align: center;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 
+    transform 0.25s cubic-bezier(.42,0,.58,1),
+    box-shadow 0.25s,
+    background 0.25s,
+    color 0.25s;
+  animation: cardPop 0.7s cubic-bezier(.42,0,.58,1) both;
+}
+.ventures .info-card:hover {
+  transform: scale(1.07) translateY(-8px) rotate(-2deg);
+  background: rgba(255,215,0,0.18);
+  color: #002B5B;
+  box-shadow: 0 8px 32px #FFD70088, 0 2px 12px #2d5ea044;
+  border: 2px solid #fff;
+}
+@keyframes cardPop {
+  from { opacity: 0; transform: translateY(40px) scale(0.95); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+@media (max-width: 600px) {
+  .ventures .info-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .ventures .info-card {
+    max-width: 98vw;
+    padding: 1.2rem 0.5rem;
+  }
+}
+
+/* =========================
+   INFO GRID & CARDS (General)
 ========================= */
 .info-grid {
   display: grid;
@@ -207,7 +286,7 @@ nav {
 }
 
 /* =========================
-   PRESIDENT & AMBASSADOR
+   PRESIDENT & AMBASSADOR CARDS
 ========================= */
 .president-card, .ambassador-card {
   display: flex;
@@ -308,63 +387,82 @@ nav {
 }
 
 /* =========================
-   VENTURE MODAL (CLOUD)
+   VENTURE DETAIL PAGES ("Clouds")
 ========================= */
-.venture-modal {
-  display: none;
-  position: fixed;
-  z-index: 1000;
-  left: 0; top: 0;
-  width: 100vw; height: 100vh;
-  background: rgba(0,0,0,0.65);
+.venture-detail {
+  min-height: 100vh;
+  display: flex;
   justify-content: center;
   align-items: center;
-  overflow: auto;
+  background: linear-gradient(120deg, #001F3F 80%, #FFD70022 100%);
 }
-.venture-modal-content {
-  background: #001F3F;
-  color: #FFD700;
-  padding: 2rem 1.5rem;
-  border-radius: 18px;
-  max-width: 400px;
-  width: 90%;
-  box-shadow: 0 8px 32px #000a;
-  position: relative;
+.venture-card {
+  background: rgba(255,255,255,0.10);
+  border-radius: 22px;
+  box-shadow: 0 8px 32px #FFD70044, 0 2px 12px #2d5ea022;
+  padding: 2.5rem 2rem;
+  max-width: 480px;
+  width: 98%;
+  backdrop-filter: blur(10px);
+  border: 2px solid #FFD700;
   text-align: center;
-  animation: modalPop 0.2s;
-  max-height: 80vh;
-  overflow-y: auto;
+  position: relative;
+  overflow: hidden;
+  animation: cardPop 0.7s cubic-bezier(.42,0,.58,1) both;
 }
-@keyframes modalPop {
-  from { transform: scale(0.8); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
+.fade-in {
+  animation: cardPop 0.7s cubic-bezier(.42,0,.58,1) both;
 }
-.venture-modal-close {
-  position: absolute;
-  top: 12px;
-  right: 18px;
-  font-size: 2rem;
+.venture-card h2 {
   color: #FFD700;
-  cursor: pointer;
-  font-weight: bold;
-  transition: color 0.2s;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 8px #2d5ea0aa;
 }
-.venture-modal-close:hover {
-  color: #fff;
+.venture-card p {
+  color: #FFD700;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+.venture-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  margin-bottom: 1.5rem;
 }
 .venture-img {
-  width: 100%;
-  border-radius: 12px;
-  margin-top: 1rem;
+  width: 180px;
+  max-width: 90vw;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px #FFD70022;
+  border: 2px solid #FFD700;
+  background: #fff;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
-.venture-video {
-  width: 100%;
-  border-radius: 12px;
-  margin-bottom: 1rem;
+.venture-img:hover {
+  transform: scale(1.07) rotate(-2deg);
+  box-shadow: 0 4px 24px #FFD70088;
+}
+
+/* Responsive for venture card */
+@media (max-width: 600px) {
+  .venture-card {
+    padding: 1.2rem 0.5rem;
+    max-width: 99vw;
+  }
+  .venture-img {
+    width: 98vw;
+    max-width: 98vw;
+  }
+  .venture-gallery {
+    gap: 8px;
+  }
 }
 
 /* =========================
-   ANIMATED CONTACT SECTION
+   CONTACT SECTION (Animated Card)
 ========================= */
 .contact-form {
   display: flex;
@@ -381,7 +479,6 @@ nav {
   position: relative;
   overflow: hidden;
 }
-
 @keyframes contactFadeIn {
   from {
     opacity: 0;
@@ -394,7 +491,6 @@ nav {
     box-shadow: 0 8px 32px #FFD70044;
   }
 }
-
 .contact-form input,
 .contact-form textarea {
   padding: 14px;
@@ -410,24 +506,20 @@ nav {
   box-shadow: 0 2px 8px #FFD70022;
   border: 1.5px solid transparent;
 }
-
 .contact-form input:focus,
 .contact-form textarea:focus {
   border: 1.5px solid #FFD700;
   box-shadow: 0 0 12px #FFD70088;
   animation: inputGlow 0.4s;
 }
-
 @keyframes inputGlow {
   from { box-shadow: 0 0 0 #FFD70000; }
   to { box-shadow: 0 0 12px #FFD70088; }
 }
-
 .contact-form textarea {
   min-height: 100px;
   resize: none;
 }
-
 .contact-form button {
   background: linear-gradient(90deg, #FFD700 60%, #2d5ea0 100%);
   color: #002B5B;
@@ -445,22 +537,13 @@ nav {
   z-index: 1;
   animation: btnPulse 2s infinite alternate;
 }
-
-@keyframes btnPulse {
-  from { box-shadow: 0 0 18px #FFD70088; }
-  to { box-shadow: 0 0 32px #FFD700cc, 0 0 8px #2d5ea0cc; }
-}
-
 .contact-form button:hover {
   background: linear-gradient(90deg, #2d5ea0 60%, #FFD700 100%);
   color: #FFD700;
   box-shadow: 0 0 32px #FFD700cc, 0 0 8px #2d5ea0cc;
   transform: scale(1.07);
 }
-
-/* =========================
-    Responsive for contact card
-========================= */
+/* Responsive for contact card */
 @media (max-width: 480px) {
   .contact-form {
     width: 98%;
