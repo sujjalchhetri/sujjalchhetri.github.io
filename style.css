@@ -599,6 +599,7 @@ nav {
   flex-wrap: wrap;
   justify-content: center;
   gap: 24px;
+  flex-direction: row;
 }
 .social-item {
   display: flex;
@@ -606,6 +607,8 @@ nav {
   align-items: center;
   font-size: 0.95rem;
   color: #FFD700;
+  min-width: 90px;
+  margin-bottom: 10px;
 }
 .social-icon {
   width: 28px;
@@ -663,6 +666,26 @@ footer {
   .about h2, .ventures h2, .ambassador h2, .president h2, .contact h2, .members h2 { font-size: 2rem; }
   .info-grid { grid-template-columns: 1fr; }
   .contact-form { width: 100%; padding: 0 1rem; }
+}
+@media (max-width: 600px) {
+  footer {
+    padding: 1rem 0 0.5rem 0;
+    font-size: 0.95rem;
+  }
+  .social-links {
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+  }
+  .social-item {
+    min-width: unset;
+    width: 100%;
+    font-size: 0.9rem;
+  }
+  .social-icon {
+    width: 32px;
+    height: 32px;
+  }
 }
 
 /* =========================
