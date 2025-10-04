@@ -599,7 +599,6 @@ nav {
   flex-wrap: wrap;
   justify-content: center;
   gap: 24px;
-  flex-direction: row;
 }
 .social-item {
   display: flex;
@@ -611,8 +610,8 @@ nav {
   margin-bottom: 10px;
 }
 .social-icon {
-  width: 28px;
-  height: 28px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   background: #fff;
   padding: 4px;
@@ -638,13 +637,14 @@ nav {
 ========================= */
 footer {
   background: #001F3F;
-  padding: 1.5rem 0 1rem 0;
+  padding: 1.2rem 0 0.7rem 0;
   text-align: center;
   font-size: 1rem;
   color: #FFD700;
   border-top: 2px solid #FFD700;
   margin-top: 2rem;
   box-shadow: 0 -2px 16px #2d5ea044;
+  width: 100vw;
 }
 
 /* =========================
@@ -686,8 +686,8 @@ footer {
     margin-bottom: 0;
   }
   .social-icon {
-    width: 32px;
-    height: 32px;
+    width: 36px;
+    height: 36px;
   }
 }
 
