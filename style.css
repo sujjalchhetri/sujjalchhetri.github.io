@@ -111,10 +111,16 @@ nav {
     background: #001F3F;
     width: 200px;
     display: none;
+    z-index: 100;
   }
   .menu li { margin: 15px 0; text-align: center; }
-  .menu-icon { display: block; }
-  #menu-toggle:checked ~ .menu { display: flex; }
+  .menu-icon { display: block; cursor: pointer; }
+  #menu-toggle:checked + .menu {
+    display: flex;
+  }
+  #menu-toggle {
+    display: none;
+  }
 }
 
 /* =========================
