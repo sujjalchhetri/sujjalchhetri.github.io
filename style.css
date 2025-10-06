@@ -98,6 +98,25 @@ nav {
   cursor: pointer;
 }
 
+/* Responsive Navigation */
+@media (max-width: 900px) {
+  nav { padding: 1rem 1rem; }
+}
+@media (max-width: 700px) {
+  .menu {
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: #001F3F;
+    width: 200px;
+    display: none;
+  }
+  .menu li { margin: 15px 0; text-align: center; }
+  .menu-icon { display: block; }
+  #menu-toggle:checked ~ .menu { display: flex; }
+}
+
 /* =========================
    HERO SECTION
 ========================= */
