@@ -311,14 +311,14 @@ nav {
   }
 }
 
-/* Main Interface Stats */
+/* Main Interface Stats - Two Column Layout */
 .main-interface-stats {
   margin: 2.5rem auto 1.5rem auto;
   text-align: center;
   background: rgba(255,255,255,0.07);
   border-radius: 18px;
   padding: 2rem 1rem;
-  max-width: 900px;
+  max-width: 700px;
   box-shadow: 0 2px 18px #FFD70022;
   border: 2px solid #FFD700;
 }
@@ -331,7 +331,7 @@ nav {
 }
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: 1fr 1fr;
   gap: 22px;
   justify-items: center;
 }
@@ -365,9 +365,10 @@ nav {
 @media (max-width: 700px) {
   .main-interface-stats {
     padding: 1.2rem 0.3rem;
+    max-width: 98vw;
   }
   .stats-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 12px;
   }
   .stat-card {
@@ -378,12 +379,7 @@ nav {
     font-size: 1.3rem;
   }
 }
-@media (max-width: 480px) {
-  .stats-grid {
-    grid-template-columns: 1fr;
-    gap: 10px;
-  }
-}
+
 /* =========================
    INFO GRID & CARDS (General)
 ========================= */
