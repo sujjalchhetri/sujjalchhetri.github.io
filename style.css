@@ -631,6 +631,81 @@ nav {
   }
 }
 
+/* Main Interface Stats */
+.main-interface-stats {
+  margin: 2.5rem auto 1.5rem auto;
+  text-align: center;
+  background: rgba(255,255,255,0.07);
+  border-radius: 18px;
+  padding: 2rem 1rem;
+  max-width: 900px;
+  box-shadow: 0 2px 18px #FFD70022;
+  border: 2px solid #FFD700;
+}
+.main-interface-stats h3 {
+  color: #FFD700;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 22px;
+  justify-items: center;
+}
+.stat-card {
+  background: rgba(255,255,255,0.12);
+  border-radius: 12px;
+  padding: 1.2rem 0.8rem;
+  box-shadow: 0 2px 12px #FFD70022;
+  border: 1.5px solid #FFD700;
+  color: #FFD700;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 120px;
+}
+.stat-value {
+  font-size: 1.7rem;
+  font-weight: bold;
+  color: #FFD700;
+  margin-bottom: 0.4rem;
+  text-shadow: 0 2px 8px #2d5ea044;
+}
+.stat-label {
+  font-size: 1rem;
+  color: #fff;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* =========================
+   RESPONSIVE STATS SECTION
+========================= */
+@media (max-width: 700px) {
+  .main-interface-stats {
+    padding: 1.2rem 0.3rem;
+  }
+  .stats-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .stat-card {
+    min-width: 0;
+    padding: 1rem 0.5rem;
+  }
+  .main-interface-stats h3 {
+    font-size: 1.3rem;
+  }
+}
+@media (max-width: 480px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+}
 /* =========================
    SOCIAL MEDIA ICONS & FOOTER
 ========================= */
