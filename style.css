@@ -105,8 +105,8 @@ nav {
 .hero span { color: #FFD700; }
 .hero p { margin: 1rem 0; font-size: 1.2rem; }
 .hero-img {
-  width: 320px;
-  max-width: 90vw;
+  width: 100%;
+  max-width: 340px;
   height: auto;
   border-radius: 18px;
   margin-bottom: 24px;
@@ -114,7 +114,7 @@ nav {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  object-fit: cover;
+  object-fit: contain;
 }
 .hero-video {
   width: 100%;
@@ -155,6 +155,12 @@ nav {
   color: #FFD700;
   box-shadow: 0 0 32px #FFD700cc, 0 0 8px #2d5ea0cc;
   transform: scale(1.07);
+}
+@media (max-width: 480px) {
+  .hero-img {
+    max-width: 96vw;
+    border-radius: 12px;
+  }
 }
 
 /* =========================
