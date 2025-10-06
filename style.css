@@ -19,6 +19,16 @@ body {
 }
 
 /* =========================
+   RESPONSIVE BACKGROUND
+========================= */
+@media (max-width: 768px) {
+  body {
+    background-attachment: scroll;
+    background-position: center top;
+  }
+}
+
+/* =========================
    HEADER & NAVIGATION
 ========================= */
 header {
@@ -39,6 +49,7 @@ nav {
 .logo {
   display: flex;
   align-items: center;
+  font-family: 'Times New Roman', serif;
   font-size: 2rem;
   color: #FFD700;
   font-weight: bold;
@@ -92,21 +103,21 @@ nav {
    HERO SECTION
 ========================= */
 .hero {
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
   padding: 2rem;
-  margin-top: 80px; /* Prevent header overlap */
+  margin-top: 80px;
 }
 .hero h2 { font-size: 3rem; }
 .hero span { color: #FFD700; }
 .hero p { margin: 1rem 0; font-size: 1.2rem; }
 .hero-img {
-  width: 100%;
-  max-width: 340px;
+  width: 320px;
+  max-width: 90vw;
   height: auto;
   border-radius: 18px;
   margin-bottom: 24px;
@@ -114,18 +125,14 @@ nav {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  object-fit: contain;
+  object-fit: cover;
 }
-.hero-video {
-  width: 100%;
-  max-width: 480px;
-  height: auto;
-  border-radius: 18px;
-  margin-bottom: 24px;
-  box-shadow: 0 4px 24px #2d5ea044;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+@media (max-width: 600px) {
+  .hero-img {
+    width: 96vw;
+    max-width: 96vw;
+    border-radius: 12px;
+  }
 }
 .btn {
   background: linear-gradient(90deg, #FFD700 60%, #2d5ea0 100%);
@@ -155,12 +162,6 @@ nav {
   color: #FFD700;
   box-shadow: 0 0 32px #FFD700cc, 0 0 8px #2d5ea0cc;
   transform: scale(1.07);
-}
-@media (max-width: 480px) {
-  .hero-img {
-    max-width: 96vw;
-    border-radius: 12px;
-  }
 }
 
 /* =========================
@@ -261,6 +262,16 @@ nav {
 @keyframes cardPop {
   from { opacity: 0; transform: translateY(40px) scale(0.95); }
   to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+@media (max-width: 600px) {
+  .ventures .info-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .ventures .info-card {
+    max-width: 98vw;
+    padding: 1.2rem 0.5rem;
+  }
 }
 
 /* =========================
@@ -461,9 +472,9 @@ nav {
   margin-bottom: 1.5rem;
 }
 .venture-img {
-  width: 300px;
-  max-width: 90vw;
-  border-radius: 16px;
+  width: 420px;
+  max-width: 98vw;
+  border-radius: 18px;
   box-shadow: 0 4px 24px #FFD700cc, 0 0 0 4px #001F3Fcc;
   border: 2px solid #FFD700;
   background: #fff;
@@ -473,6 +484,19 @@ nav {
 .venture-img:hover {
   transform: scale(1.07) rotate(-2deg);
   box-shadow: 0 8px 32px #FFD700cc;
+}
+@media (max-width: 600px) {
+  .venture-card {
+    padding: 8vw 1vw 4vw 1vw;
+  }
+  .venture-detail {
+    padding: 0;
+  }
+  .venture-img {
+    width: 98vw;
+    max-width: 98vw;
+    border-radius: 12px;
+  }
 }
 
 /* =========================
@@ -557,7 +581,6 @@ nav {
   box-shadow: 0 0 32px #FFD700cc, 0 0 8px #2d5ea0cc;
   transform: scale(1.07);
 }
-/* Responsive for contact card */
 @media (max-width: 480px) {
   .contact-form {
     width: 98%;
@@ -566,7 +589,7 @@ nav {
 }
 
 /* =========================
-   SOCIAL MEDIA ICONS & FOOTER (Cloud Pages & Main)
+   SOCIAL MEDIA ICONS & FOOTER
 ========================= */
 footer {
   background: #001F3F;
@@ -617,10 +640,11 @@ footer {
   text-align: center;
   font-size: 0.85rem;
 }
-/* =========================
-   RESPONSIVE FOOTER SOCIAL LINKS
-========================= */
 @media (max-width: 600px) {
+  footer {
+    padding: 1rem 0 0.5rem 0;
+    font-size: 0.95rem;
+  }
   .social-links {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -638,62 +662,58 @@ footer {
     width: 36px;
     height: 36px;
   }
-  footer {
-    padding: 1rem 0 0.5rem 0;
-    font-size: 0.95rem;
-  }
 }
 
 /* =========================
-   RESPONSIVE DESIGN FIXES
+   OPTIONAL: BACKGROUND ANIMATION (currently hidden)
 ========================= */
-@media (max-width: 900px) {
-  .venture-card {
-    padding: 6vw 2vw 3vw 2vw;
-  }
+.background {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  z-index: -1;
+  pointer-events: none;
+  display: none;
 }
-@media (max-width: 600px) {
-  /* Header & Menu */
-  nav { padding: 1rem 1rem; }
-  .menu { display: none; flex-direction: column; background: #001F3F; position: absolute; top: 70px; right: 0; width: 200px; }
-  .menu li { margin: 15px 0; text-align: center; }
-  #menu-toggle:checked ~ .menu { display: flex; }
-  .menu-icon { display: block; }
-
-  /* Hero */
-  .hero h2 { font-size: 2rem; }
-  .hero-img { width: 96vw; max-width: 96vw; border-radius: 12px; }
-  .hero p { font-size: 1rem; }
-
-  /* Sections */
-  .about h2, .ventures h2, .ambassador h2, .president h2, .contact h2, .members h2 { font-size: 2rem; }
-  .info-grid { grid-template-columns: 1fr; gap: 12px; }
-  .contact-form { width: 98%; padding: 1.2rem 0.5rem; }
-
-  /* Venture Cloud */
-  .venture-card { padding: 8vw 1vw 4vw 1vw; }
-  .venture-img { width: 96vw; max-width: 96vw; border-radius: 12px; }
-
-  /* Footer Social Links: 2 per row */
-  .social-links {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    align-items: center;
-    justify-items: center;
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, #FFD700 0%, #2d5ea0 80%);
+  opacity: 0.18;
+  animation: float 18s linear infinite;
+  display: none;
+}
+.circle:nth-child(1) {
+  width: 200px; height: 200px;
+  left: 10%; top: 80%;
+  animation-duration: 25s;
+}
+.circle:nth-child(2) {
+  width: 150px; height: 150px;
+  left: 60%; top: 90%;
+  animation-duration: 30s;
+  animation-delay: 5s;
+}
+.circle:nth-child(3) {
+  width: 100px; height: 100px;
+  left: 80%; top: 85%;
+  animation-duration: 20s;
+  animation-delay: 2s;
+}
+@keyframes float {
+  0% {
+    transform: translateY(0) scale(1) rotate(0deg);
+    opacity: 0.7;
   }
-  .social-item {
-    min-width: unset;
-    width: 100%;
-    font-size: 0.9rem;
-    margin-bottom: 0;
+  50% {
+    opacity: 1;
+    transform: translateY(-50vh) scale(1.1) rotate(180deg);
   }
-  .social-icon {
-    width: 36px;
-    height: 36px;
-  }
-  footer {
-    padding: 1rem 0 0.5rem 0;
-    font-size: 0.95rem;
+  100% {
+    transform: translateY(-100vh) scale(1) rotate(360deg);
+    opacity: 0.7;
   }
 }
