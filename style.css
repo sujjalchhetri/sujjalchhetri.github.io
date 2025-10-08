@@ -554,7 +554,7 @@ nav {
   margin: 0;
   padding: 4vw 4vw 2vw 4vw;
   border-radius: 0;
-  background: rgba(20, 20, 40, 0.88);
+  background: rgba(20, 20, 40, 0.88) cover;
   box-shadow: none;
   display: flex;
   flex-direction: column;
