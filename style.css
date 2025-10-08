@@ -826,7 +826,7 @@ footer {
 .faq-section {
   max-width: 700px;
   margin: 3rem auto 2rem auto;
-  background: rgba(255,255,255,0.92); /* bright white, slightly transparent */
+  background: rgba(255,255,255,0.96); /* bright white, slightly transparent */
   border-radius: 22px;
   padding: 2.5rem 1.2rem;
   box-shadow: 0 8px 32px #FFD70044, 0 2px 18px #2d5ea044;
@@ -840,7 +840,7 @@ footer {
   to   { opacity: 1; transform: translateY(0); }
 }
 .faq-section h2 {
-  color: #FFD700;
+  color: #2d5ea0;
   font-size: 2.2rem;
   margin-bottom: 2rem;
   text-align: center;
@@ -850,7 +850,7 @@ footer {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  text-shadow: 0 2px 8px #2d5ea044;
+  text-shadow: 0 2px 8px #FFD70044, 0 1px 2px #fff;
 }
 .faq-icon {
   font-size: 2.2rem;
@@ -870,12 +870,12 @@ footer {
   background: rgba(255,215,0,0.12);
 }
 .faq-item summary {
-  color: #2d5ea0;
-  font-size: 1.18rem;
-  font-weight: bold;
+  color: #222; /* Black by default */
+  font-size: 1.25rem;
+  font-weight: 900;
   cursor: pointer;
   outline: none;
-  padding: 1rem 0.5rem 1rem 0.5rem;
+  padding: 1.1rem 0.7rem 1.1rem 0.7rem;
   border-radius: 8px;
   transition: background 0.2s, color 0.2s;
   list-style: none;
@@ -883,8 +883,9 @@ footer {
   align-items: center;
   gap: 10px;
   position: relative;
-  background: rgba(255,255,255,0.6);
+  background: rgba(255,255,255,0.7);
   text-shadow: 0 2px 8px #FFD70022, 0 1px 2px #fff;
+  letter-spacing: 0.5px;
 }
 .faq-qicon {
   font-size: 1.2rem;
@@ -894,22 +895,23 @@ footer {
 }
 .faq-item[open] .faq-qicon {
   transform: rotate(90deg) scale(1.2);
-  color: #2d5ea0;
+  color: #FFD700;
   filter: drop-shadow(0 0 8px #FFD700);
 }
 .faq-item summary:hover,
 .faq-item[open] summary {
-  background: rgba(255,215,0,0.18);
-  color: #FFD700;
+  background: rgba(255,215,0,0.22);
+  color: #1565c0; /* Blue on hover/open */
+  text-shadow: 0 2px 12px #FFD70099, 0 1px 2px #fff;
 }
 .faq-answer {
-  color: #2d5ea0;
+  color: #222;
   font-size: 1.08rem;
   font-weight: 500;
   padding: 0.5rem 0 1rem 2.2rem;
   transition: all 0.3s;
   animation: slideDown 0.4s cubic-bezier(.42,0,.58,1);
-  background: rgba(255,255,255,0.7);
+  background: rgba(255,255,255,0.85);
   border-radius: 0 0 12px 12px;
   text-shadow: 0 2px 8px #FFD70022, 0 1px 2px #fff;
 }
