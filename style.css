@@ -819,11 +819,68 @@ nav {
 }
 
 /* =========================
-   REGISTRATION SECTION (Google Form)
+   REGISTRATION CARD (Top of Page)
+========================= */
+.registration-top-wrap {
+  width: 100%;
+  text-align: center;
+  margin: 2rem 0 0.5rem 0;
+  z-index: 100;
+}
+.register-card {
+  display: inline-block;
+  cursor: pointer;
+  background: linear-gradient(120deg, #fff 80%, #FFD70022 100%);
+  border-radius: 24px;
+  box-shadow: 0 8px 32px #FFD70044, 0 2px 18px #1565c044;
+  border: 2px solid #1565c0;
+  padding: 2rem 2.5rem;
+  margin: 0 auto;
+  transition: box-shadow 0.3s, transform 0.2s, border 0.2s;
+  animation: fadeInUp 0.8s cubic-bezier(.42,0,.58,1);
+  position: relative;
+}
+.register-card,
+.register-card * {
+  text-decoration: none !important;
+}
+.register-card:hover {
+  box-shadow: 0 12px 40px #FFD70088, 0 4px 24px #1565c088;
+  transform: scale(1.04) translateY(-4px);
+  border-color: #FFD700;
+}
+.register-card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.7rem;
+}
+.register-icon {
+  font-size: 2.5rem;
+  color: #FFD700;
+  filter: drop-shadow(0 2px 8px #FFD70088);
+  margin-bottom: 0.5rem;
+}
+.register-card h3 {
+  color: #1565c0;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.2rem;
+  text-shadow: 0 2px 8px #FFD70044;
+}
+.register-card p {
+  color: #222;
+  font-size: 1.08rem;
+  margin-bottom: 0;
+  text-shadow: 0 1px 2px #fff;
+}
+
+/* =========================
+   REGISTRATION FORM BOX (Always Visible, Top of Page)
 ========================= */
 .registration-section {
   max-width: 800px;
-  margin: 3rem auto 2rem auto;
+  margin: 2rem auto 2rem auto;
   background: linear-gradient(120deg, #fff 80%, #FFD70022 100%);
   border-radius: 22px;
   padding: 2.5rem 1.2rem;
@@ -832,6 +889,7 @@ nav {
   text-align: center;
   position: relative;
   animation: fadeInUp 1s cubic-bezier(.42,0,.58,1);
+  z-index: 99;
 }
 .registration-header h2 {
   color: #1565c0;
@@ -878,161 +936,6 @@ nav {
   }
   .registration-form-container iframe {
     max-width: 98vw;
-    min-height: 500px;
-  }
-  .registration-header h2 {
-    font-size: 1.3rem;
-  }
-}
-
-/* Registration Card - CSS Only Toggle & Animation */
-.registration-toggle-wrap {
-  position: relative;
-  width: 100%;
-  text-align: center;
-  margin: 2rem 0;
-  z-index: 2;
-}
-.registration-toggle {
-  display: none;
-}
-
-/* Registration Card Style */
-.register-card {
-  display: inline-block;
-  cursor: pointer;
-  background: linear-gradient(120deg, #fff 80%, #FFD70022 100%);
-  border-radius: 24px;
-  box-shadow: 0 8px 32px #FFD70044, 0 2px 18px #1565c044;
-  border: 2px solid #1565c0;
-  padding: 2rem 2.5rem;
-  margin: 0 auto;
-  transition: box-shadow 0.3s, transform 0.2s, border 0.2s;
-  animation: fadeInUp 0.8s cubic-bezier(.42,0,.58,1);
-  position: relative;
-}
-.register-card:hover, .registration-toggle:checked + .register-card {
-  box-shadow: 0 12px 40px #FFD70088, 0 4px 24px #1565c088;
-  transform: scale(1.04) translateY(-4px);
-  border-color: #FFD700;
-}
-.register-card-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.7rem;
-}
-.register-icon {
-  font-size: 2.5rem;
-  color: #FFD700;
-  filter: drop-shadow(0 2px 8px #FFD70088);
-  margin-bottom: 0.5rem;
-}
-.register-card h3 {
-  color: #1565c0;
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin-bottom: 0.2rem;
-  text-shadow: 0 2px 8px #FFD70044;
-}
-.register-card p {
-  color: #222;
-  font-size: 1.08rem;
-  margin-bottom: 0;
-  text-shadow: 0 1px 2px #fff;
-}
-
-/* Hide registration box by default */
-.registration-box {
-  display: none;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  z-index: 9999;
-  transform: translate(-50%, -50%) scale(0.95);
-  background: rgba(255,255,255,0.98);
-  border-radius: 28px;
-  box-shadow: 0 8px 32px #FFD70044, 0 2px 18px #1565c044;
-  border: 2px solid #1565c0;
-  width: 90vw;
-  max-width: 700px;
-  padding: 2.5rem 1.2rem 1.2rem 1.2rem;
-  animation: fadeInUp 0.7s cubic-bezier(.42,0,.58,1);
-}
-.registration-toggle:checked ~ .registration-box {
-  display: block;
-  animation: fadeInUp 0.7s cubic-bezier(.42,0,.58,1);
-}
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translate(-50%, -60%) scale(0.95);}
-  to   { opacity: 1; transform: translate(-50%, -50%) scale(1);}
-}
-.registration-header {
-  position: relative;
-  text-align: center;
-  margin-bottom: 1.2rem;
-}
-.registration-header h2 {
-  color: #1565c0;
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-  font-weight: bold;
-  letter-spacing: 1px;
-  text-shadow: 0 2px 8px #FFD70044;
-}
-.registration-header p {
-  color: #222;
-  font-size: 1.1rem;
-  margin-bottom: 1.5rem;
-  text-shadow: 0 1px 2px #fff;
-}
-.close-btn {
-  position: absolute;
-  top: 10px;
-  right: 18px;
-  background: #FFD700;
-  color: #1565c0;
-  border: none;
-  font-size: 2rem;
-  border-radius: 50%;
-  width: 38px;
-  height: 38px;
-  cursor: pointer;
-  box-shadow: 0 2px 8px #FFD70044;
-  transition: background 0.2s, color 0.2s;
-  text-align: center;
-  line-height: 38px;
-}
-.close-btn:hover {
-  background: #1565c0;
-  color: #FFD700;
-}
-.registration-form-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.registration-form-container iframe {
-  width: 100%;
-  max-width: 640px;
-  min-height: 600px;
-  border-radius: 16px;
-  border: 2px solid #1565c0;
-  box-shadow: 0 2px 18px #1565c044;
-  background: #fff;
-  transition: box-shadow 0.3s;
-}
-.registration-form-container iframe:hover {
-  box-shadow: 0 4px 32px #FFD70088, 0 0 8px #1565c088;
-  border-color: #FFD700;
-}
-@media (max-width: 700px) {
-  .registration-box {
-    padding: 1.2rem 0.3rem 0.7rem 0.3rem;
-    max-width: 98vw;
-  }
-  .registration-form-container iframe {
-    max-width: 98vw;
     min-height: 400px;
   }
   .registration-header h2 {
@@ -1041,6 +944,33 @@ nav {
   .register-card {
     padding: 1.2rem 1rem;
   }
+}
+/* Registration Toggle */
+.registration-toggle {
+  display: none;
+}
+
+/* Registration Box Overlay (hidden by default) */
+.registration-box {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 99999;
+  transform: translate(-50%, -50%) scale(0.95);
+  background: linear-gradient(120deg, #fff 80%, #FFD70022 100%);
+  border-radius: 22px;
+  box-shadow: 0 8px 32px #FFD70044, 0 2px 18px #2d5ea044;
+  border: 2px solid #1565c0;
+  text-align: center;
+  width: 90vw;
+  max-width: 700px;
+  padding: 2.5rem 1.2rem;
+  animation: fadeInUp 0.7s cubic-bezier(.42,0,.58,1);
+}
+.registration-toggle:checked ~ .registration-box {
+  display: block;
+  animation: fadeInUp 0.7s cubic-bezier(.42,0,.58,1);
 }
 
 /* =========================
