@@ -7,6 +7,9 @@
   <link rel="icon" type="image/x-icon" href="bssl_logo.jpg">
 </head>
 <body>
+  <!-- =========================
+       HERO SECTION
+  ========================== -->
   <section class="venture-detail">
     <div class="venture-card fade-in">
       <h2>Bengaluru Super Sports League</h2>
@@ -18,9 +21,44 @@
         <!-- <img src="BSSL1.JPG" alt="Event Photo" class="venture-img">
         <img src="BSSL2.JPG" alt="Event Photo" class="venture-img"> -->
       </div>
+      <!-- Back to Home button below hero content -->
       <a href="index.html" class="btn">Back to Home</a>
     </div>
   </section>
+
+  <!-- =========================
+       REGISTRATION CARD (CSS Only)
+  ========================== -->
+  <div class="registration-toggle-wrap">
+    <!-- Hidden checkbox for CSS toggle -->
+    <input type="checkbox" id="showRegistration" class="registration-toggle" />
+    <!-- Registration card trigger -->
+    <label for="showRegistration" class="register-card">
+      <div class="register-card-content">
+        <span class="register-icon">📝</span>
+        <h3>Ready to Play?</h3>
+        <p>Grab the opportunity now before your chance slips away! <br>Tap here to open the BSSL Registration Form</b></p>
+      </div>
+    </label>
+    <!-- Registration box (hidden by default) -->
+    <div class="registration-box">
+      <div class="registration-header">
+        <h2>Register for BSSL Event</h2>
+        <p>Fill out the form below to secure your spot in the Bengaluru Super Sports League!</p>
+        <!-- Close button (CSS only) -->
+        <label for="showRegistration" class="close-btn" title="Close">&times;</label>
+      </div>
+      <div class="registration-form-container">
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdZ018C6eB8wG1q4Xb8Lv1wwdwGEOKUDNaxNQdOCob1gtKbtQ/viewform"
+        allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================
+       FAQ SECTION
+  ========================== -->
   <section class="faq-section">
     <h2><span class="faq-icon">❓</span> BSSL FAQs</h2>
     <details class="faq-item">
@@ -55,17 +93,9 @@
     </details>
   </section>
 
-  <section class="registration-section">
-    <div class="registration-header">
-      <h2>Register for BSSL Event</h2>
-      <p>Fill out the form below to secure your spot in the Bengaluru Super Sports League!</p>
-    </div>
-    <div class="registration-form-container">
-      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdZ018C6eB8wG1q4Xb8Lv1wwdwGEOKUDNaxNQdOCob1gtKbtQ/viewform"
-        allowfullscreen></iframe>
-    </div>
-  </section>
-
+  <!-- =========================
+       FOOTER & SOCIAL LINKS
+  ========================== -->
   <footer>
     <div class="social-links">
       <div class="social-item">
