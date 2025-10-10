@@ -419,10 +419,17 @@ nav {
   border: 1.5px solid #fff;
   box-shadow: 0 4px 24px #FFD70044;
 }
-@media (max-width: 600px) {
+@media (max-width: 900px) {
   .info-grid {
     grid-template-columns: 1fr;
-    gap: 12px;
+    gap: 16px;
+  }
+  .ventures, .members, .about, .ambassador, .president, .contact {
+    padding: 2rem 0.5rem;
+  }
+  .main-interface-stats {
+    max-width: 98vw;
+    padding: 1.2rem 0.3rem;
   }
 }
 
