@@ -16,6 +16,16 @@ body {
   background-attachment: fixed;
   overflow-x: hidden;
   position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 /* =========================
@@ -214,9 +224,13 @@ nav {
 /* =========================
    MAIN SECTIONS (About, Ventures, Ambassador, President, Members, Contact)
 ========================= */
-.about, .ventures, .ambassador, .president, .contact, .members {
+.about, .ventures, .ambassador, .president, .contact, .members, .registration-section, .faq-section {
   padding: 5rem 2rem;
   text-align: center;
+  width: 100%;
+  max-width: 100vw;
+  margin: 0 auto;
+  display: block;
 }
 .about h2, .ventures h2, .ambassador h2, .president h2, .contact h2, .members h2 {
   font-size: 2.5rem;
@@ -559,6 +573,14 @@ nav {
 /* =========================
    CONTACT SECTION (Animated Card)
 ========================= */
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 5rem 2rem;
+  min-height: 60vh;
+}
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -630,22 +652,6 @@ nav {
   position: relative;
   z-index: 1;
   animation: btnPulse 2s infinite alternate;
-}
-@media (max-width: 600px) {
-  .contact {
-    padding: 1.2rem 0.3rem;
-    min-height: 40vh;
-  }
-  .contact-form {
-    margin: 0 auto;
-    padding: 1.2rem 0.5rem;
-  }
-}
-
-@media (max-width: 400px) {
-  .contact-form {
-    padding: 0.7rem 0.2rem;
-  }
 }
 
 /* =========================
@@ -732,7 +738,7 @@ nav {
   color: #222;
   font-size: 1.08rem;
   font-weight: 500;
-  padding: 0.5rem 0 1rem 1.2rem; /* <-- fixed for mobile */
+  padding: 0.5rem 0 1rem 1.2rem;
   transition: all 0.3s;
   animation: slideDown 0.4s cubic-bezier(.42,0,.58,1);
   background: rgba(255,255,255,0.85);
@@ -864,6 +870,7 @@ footer {
   padding: 1.2rem 0 0.7rem 0;
   text-align: center;
   font-size: 1rem;
+  flex-shrink: 0;
   color: #FFD700;
   border-top: 2px solid #FFD700;
   margin-top: 2rem;
@@ -981,7 +988,7 @@ footer {
   }
 }
 @media (max-width: 600px) {
-  .about, .ventures, .ambassador, .president, .contact, .members {
+  .about, .ventures, .ambassador, .president, .contact, .members, .registration-section, .faq-section {
     padding: 1.2rem 0.3rem;
   }
   .about h2, .ventures h2, .ambassador h2, .president h2, .contact h2, .members h2 {
@@ -1117,5 +1124,20 @@ footer {
   }
   .registration-form-container iframe {
     min-height: 250px;
+  }
+}
+@media (max-width: 350px) {
+  .contact-form {
+    margin: 0 auto;
+    padding: 0.4rem 0.05rem;
+  }
+  .about h2, .ventures h2, .ambassador h2, .president h2, .contact h2, .members h2 {
+    font-size: 0.95rem;
+  }
+  .about p, .ventures p, .ambassador p, .president p, .members p {
+    font-size: 0.85rem;
+  }
+  .registration-form-container iframe {
+    min-height: 180px;
   }
 }
