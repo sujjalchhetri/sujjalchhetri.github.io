@@ -97,8 +97,6 @@ nav {
   color: #FFD700;
   cursor: pointer;
 }
-
-/* --- Responsive Navigation --- */
 @media (max-width: 900px) {
   nav { padding: 1rem 1rem; }
 }
@@ -230,14 +228,6 @@ nav {
   margin: auto;
   line-height: 1.6;
 }
-@media (max-width: 600px) {
-  .about, .ventures, .ambassador, .president, .contact, .members {
-    padding: 2rem 0.5rem;
-  }
-  .about h2, .ventures h2, .ambassador h2, .president h2, .contact h2, .members h2 {
-    font-size: 2rem;
-  }
-}
 
 /* =========================
    VENTURES SECTION (Main Page)
@@ -300,16 +290,6 @@ nav {
   from { opacity: 0; transform: translateY(40px) scale(0.95); }
   to   { opacity: 1; transform: translateY(0) scale(1); }
 }
-@media (max-width: 600px) {
-  .ventures .info-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-  .ventures .info-card {
-    max-width: 98vw;
-    padding: 1.2rem 0.5rem;
-  }
-}
 
 /* =========================
    MAIN INTERFACE STATS (Two Column Layout)
@@ -362,29 +342,6 @@ nav {
   font-weight: 500;
   text-align: center;
 }
-@media (max-width: 900px) {
-  .main-interface-stats {
-    max-width: 98vw;
-    padding: 1.2rem 0.3rem;
-  }
-  .stats-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-  }
-}
-@media (max-width: 600px) {
-  .stats-grid {
-    grid-template-columns: 1fr;
-    gap: 10px;
-  }
-  .stat-card {
-    min-width: 0;
-    padding: 1rem 0.5rem;
-  }
-  .main-interface-stats h3 {
-    font-size: 1.3rem;
-  }
-}
 
 /* =========================
    INFO GRID & CARDS (General)
@@ -418,19 +375,6 @@ nav {
   color: #002B5B;
   border: 1.5px solid #fff;
   box-shadow: 0 4px 24px #FFD70044;
-}
-@media (max-width: 900px) {
-  .info-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-  .ventures, .members, .about, .ambassador, .president, .contact {
-    padding: 2rem 0.5rem;
-  }
-  .main-interface-stats {
-    max-width: 98vw;
-    padding: 1.2rem 0.3rem;
-  }
 }
 
 /* =========================
@@ -611,18 +555,6 @@ nav {
   transform: scale(1.07) rotate(-2deg);
   box-shadow: 0 8px 32px #FFD700cc;
 }
-@media (max-width: 600px) {
-  .venture-card {
-    padding: 8vw 1vw 4vw 1vw;
-  }
-  .venture-detail {
-    padding: 0;
-  }
-  .venture-img {
-    max-width: 98vw;
-    border-radius: 12px;
-  }
-}
 
 /* =========================
    CONTACT SECTION (Animated Card)
@@ -643,7 +575,6 @@ nav {
   position: relative;
   overflow: hidden;
 }
-
 @keyframes contactFadeIn {
   from {
     opacity: 0;
@@ -656,7 +587,6 @@ nav {
     box-shadow: 0 8px 32px #FFD70044;
   }
 }
-
 .contact-form input,
 .contact-form textarea {
   width: 100%;
@@ -674,18 +604,15 @@ nav {
   box-shadow: 0 2px 8px #FFD70022;
   border: 1.5px solid transparent;
 }
-
 .contact-form input:focus,
 .contact-form textarea:focus {
   border: 1.5px solid #FFD700;
   box-shadow: 0 0 12px #FFD70088;
 }
-
 .contact-form textarea {
   min-height: 100px;
   resize: none;
 }
-
 .contact-form button {
   width: 100%;
   background: linear-gradient(90deg, #FFD700 60%, #2d5ea0 100%);
@@ -705,49 +632,13 @@ nav {
   animation: btnPulse 2s infinite alternate;
 }
 
-/* Improved mobile responsiveness for contact form */
-@media (max-width: 700px) {
-  .contact-form {
-    width: 98vw;
-    max-width: 98vw;
-    padding: 1.2rem 0.5rem;
-    margin: 1.5rem auto 0 auto;
-  }
-  .contact-form input,
-  .contact-form textarea,
-  .contact-form button {
-    font-size: 0.98rem;
-    padding: 10px;
-    margin: 8px 0;
-  }
-  .contact-form textarea {
-    min-height: 70px;
-  }
-}
-
-/* Extra small screens */
-@media (max-width: 400px) {
-  .contact-form {
-    padding: 0.7rem 0.2rem;
-  }
-  .contact-form input,
-  .contact-form textarea,
-  .contact-form button {
-    font-size: 0.92rem;
-    padding: 8px;
-  }
-  .contact-form textarea {
-    min-height: 50px;
-  }
-}
-
 /* =========================
    FAQ SECTION (Accordion)
 ========================= */
 .faq-section {
   max-width: 700px;
   margin: 3rem auto 2rem auto;
-  background: rgba(255,255,255,0.96); /* bright white, slightly transparent */
+  background: rgba(255,255,255,0.96);
   border-radius: 22px;
   padding: 2.5rem 1.2rem;
   box-shadow: 0 8px 32px #FFD70044, 0 2px 18px #2d5ea044;
@@ -787,7 +678,7 @@ nav {
   background: rgba(255,215,0,0.12);
 }
 .faq-item summary {
-  color: #222; /* Black by default */
+  color: #222;
   font-size: 1.25rem;
   font-weight: 900;
   cursor: pointer;
@@ -818,14 +709,14 @@ nav {
 .faq-item summary:hover,
 .faq-item[open] summary {
   background: rgba(255,215,0,0.22);
-  color: #1565c0; /* Blue on hover/open */
+  color: #1565c0;
   text-shadow: 0 2px 12px #FFD70099, 0 1px 2px #fff;
 }
 .faq-answer {
   color: #222;
   font-size: 1.08rem;
   font-weight: 500;
-  padding: 0.5rem 0 1rem 2.2rem;
+  padding: 0.5rem 0 1rem 1.2rem; /* <-- fixed for mobile */
   transition: all 0.3s;
   animation: slideDown 0.4s cubic-bezier(.42,0,.58,1);
   background: rgba(255,255,255,0.85);
@@ -835,23 +726,6 @@ nav {
 @keyframes slideDown {
   from { opacity: 0; transform: translateY(-10px); }
   to   { opacity: 1; transform: translateY(0); }
-}
-@media (max-width: 600px) {
-  .faq-section {
-    padding: 1.2rem 0.5rem;
-    max-width: 98vw;
-  }
-  .faq-section h2 {
-    font-size: 1.3rem;
-  }
-  .faq-item summary {
-    font-size: 1rem;
-    padding: 0.7rem 0.3rem 0.7rem 0.3rem;
-  }
-  .faq-answer {
-    font-size: 0.98rem;
-    padding-left: 1.2rem;
-  }
 }
 
 /* =========================
@@ -965,49 +839,6 @@ nav {
   box-shadow: 0 4px 32px #FFD70088, 0 0 8px #1565c088;
   border-color: #FFD700;
 }
-@media (max-width: 700px) {
-  .registration-section {
-    padding: 1.2rem 0.3rem;
-    max-width: 98vw;
-  }
-  .registration-form-container iframe {
-    max-width: 98vw;
-    min-height: 400px;
-  }
-  .registration-header h2 {
-    font-size: 1.3rem;
-  }
-  .register-card {
-    padding: 1.2rem 1rem;
-  }
-}
-/* Registration Toggle */
-.registration-toggle {
-  display: none;
-}
-
-/* Registration Box Overlay (hidden by default) */
-.registration-box {
-  display: none;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  z-index: 99999;
-  transform: translate(-50%, -50%) scale(0.95);
-  background: linear-gradient(120deg, #fff 80%, #FFD70022 100%);
-  border-radius: 22px;
-  box-shadow: 0 8px 32px #FFD70044, 0 2px 18px #2d5ea044;
-  border: 2px solid #1565c0;
-  text-align: center;
-  width: 90vw;
-  max-width: 700px;
-  padding: 2.5rem 1.2rem;
-  animation: fadeInUp 0.7s cubic-bezier(.42,0,.58,1);
-}
-.registration-toggle:checked ~ .registration-box {
-  display: block;
-  animation: fadeInUp 0.7s cubic-bezier(.42,0,.58,1);
-}
 
 /* =========================
    SOCIAL MEDIA ICONS & FOOTER
@@ -1061,29 +892,6 @@ footer {
   text-align: center;
   font-size: 0.85rem;
 }
-@media (max-width: 600px) {
-  footer {
-    padding: 1rem 0 0.5rem 0;
-    font-size: 0.95rem;
-  }
-  .social-links {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    align-items: center;
-    justify-items: center;
-  }
-  .social-item {
-    min-width: unset;
-    width: 100%;
-    font-size: 0.9rem;
-    margin-bottom: 0;
-  }
-  .social-icon {
-    width: 36px;
-    height: 36px;
-  }
-}
 
 /* =========================
    OPTIONAL: BACKGROUND ANIMATION (currently hidden)
@@ -1136,5 +944,161 @@ footer {
   100% {
     transform: translateY(-100vh) scale(1) rotate(360deg);
     opacity: 0.7;
+  }
+}
+
+/* =========================
+   EXTRA MOBILE RESPONSIVENESS
+========================= */
+@media (max-width: 900px) {
+  .info-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .ventures, .members, .about, .ambassador, .president, .contact {
+    padding: 2rem 0.5rem;
+  }
+  .main-interface-stats {
+    max-width: 98vw;
+    padding: 1.2rem 0.3rem;
+  }
+}
+@media (max-width: 600px) {
+  .about, .ventures, .ambassador, .president, .contact, .members {
+    padding: 1.2rem 0.3rem;
+  }
+  .about h2, .ventures h2, .ambassador h2, .president h2, .contact h2, .members h2 {
+    font-size: 1.3rem;
+  }
+  .about p, .ventures p, .ambassador p, .president p, .members p {
+    font-size: 0.98rem;
+  }
+  .ventures .info-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .ventures .info-card {
+    max-width: 98vw;
+    padding: 1.2rem 0.5rem;
+  }
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .stat-card {
+    min-width: 0;
+    padding: 1rem 0.5rem;
+  }
+  .main-interface-stats h3 {
+    font-size: 1.3rem;
+  }
+  .faq-section {
+    padding: 1.2rem 0.5rem;
+    max-width: 98vw;
+  }
+  .faq-section h2 {
+    font-size: 1rem;
+  }
+  .faq-item summary {
+    font-size: 1rem;
+    padding: 0.7rem 0.3rem 0.7rem 0.3rem;
+  }
+  .faq-answer {
+    font-size: 0.9rem;
+    padding-left: 1.2rem;
+  }
+  footer {
+    padding: 1rem 0 0.5rem 0;
+    font-size: 0.95rem;
+  }
+  .social-links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    align-items: center;
+    justify-items: center;
+  }
+  .social-item {
+    min-width: unset;
+    width: 100%;
+    font-size: 0.9rem;
+    margin-bottom: 0;
+  }
+  .social-icon {
+    width: 36px;
+    height: 36px;
+  }
+  .venture-card {
+    padding: 8vw 1vw 4vw 1vw;
+  }
+  .venture-detail {
+    padding: 0;
+  }
+  .venture-img {
+    max-width: 98vw;
+    border-radius: 12px;
+  }
+  .contact-form {
+    width: 98vw;
+    max-width: 98vw;
+    padding: 1.2rem 0.5rem;
+    margin: 1.5rem auto 0 auto;
+  }
+  .contact-form input,
+  .contact-form textarea,
+  .contact-form button {
+    font-size: 0.98rem;
+    padding: 10px;
+    margin: 8px 0;
+  }
+  .contact-form textarea {
+    min-height: 70px;
+  }
+  .registration-form-container iframe {
+    max-width: 98vw;
+    min-height: 400px;
+  }
+  .registration-header h2 {
+    font-size: 1.3rem;
+  }
+  .register-card {
+    padding: 1.2rem 1rem;
+  }
+}
+@media (max-width: 400px) {
+  .contact-form {
+    padding: 0.7rem 0.2rem;
+  }
+  .contact-form input,
+  .contact-form textarea,
+  .contact-form button {
+    font-size: 0.92rem;
+    padding: 8px;
+  }
+  .contact-form textarea {
+    min-height: 50px;
+  }
+  .registration-section {
+    padding: 0.7rem 0.1rem;
+  }
+  .registration-header h2 {
+    font-size: 1rem;
+  }
+  .registration-header p {
+    font-size: 0.95rem;
+  }
+  .faq-section h2 {
+    font-size: 1rem;
+  }
+  .faq-answer {
+    font-size: 0.9rem;
+    padding-left: 1.2rem;
+  }
+  footer {
+    padding: 0.5rem 0 0.2rem 0;
+    font-size: 0.85rem;
+  }
+  .registration-form-container iframe {
+    min-height: 250px;
   }
 }
