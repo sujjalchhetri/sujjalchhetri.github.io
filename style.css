@@ -643,6 +643,7 @@ nav {
   position: relative;
   overflow: hidden;
 }
+
 @keyframes contactFadeIn {
   from {
     opacity: 0;
@@ -655,6 +656,7 @@ nav {
     box-shadow: 0 8px 32px #FFD70044;
   }
 }
+
 .contact-form input,
 .contact-form textarea {
   width: 100%;
@@ -672,15 +674,18 @@ nav {
   box-shadow: 0 2px 8px #FFD70022;
   border: 1.5px solid transparent;
 }
+
 .contact-form input:focus,
 .contact-form textarea:focus {
   border: 1.5px solid #FFD700;
   box-shadow: 0 0 12px #FFD70088;
 }
+
 .contact-form textarea {
   min-height: 100px;
   resize: none;
 }
+
 .contact-form button {
   width: 100%;
   background: linear-gradient(90deg, #FFD700 60%, #2d5ea0 100%);
@@ -699,16 +704,40 @@ nav {
   z-index: 1;
   animation: btnPulse 2s infinite alternate;
 }
-@media (max-width: 480px) {
+
+/* Improved mobile responsiveness for contact form */
+@media (max-width: 700px) {
   .contact-form {
     width: 98vw;
+    max-width: 98vw;
     padding: 1.2rem 0.5rem;
+    margin: 1.5rem auto 0 auto;
   }
   .contact-form input,
   .contact-form textarea,
   .contact-form button {
-    font-size: 1rem;
-    padding: 12px;
+    font-size: 0.98rem;
+    padding: 10px;
+    margin: 8px 0;
+  }
+  .contact-form textarea {
+    min-height: 70px;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 400px) {
+  .contact-form {
+    padding: 0.7rem 0.2rem;
+  }
+  .contact-form input,
+  .contact-form textarea,
+  .contact-form button {
+    font-size: 0.92rem;
+    padding: 8px;
+  }
+  .contact-form textarea {
+    min-height: 50px;
   }
 }
 
