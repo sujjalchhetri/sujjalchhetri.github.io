@@ -564,7 +564,7 @@ nav {
   flex-direction: column;
   width: 340px;
   max-width: 98vw;
-  margin: 2.5rem auto 0 auto;
+  margin: 0 auto;
   background: rgba(255, 255, 255, 0.10);
   border-radius: 18px;
   box-shadow: 0 8px 32px #FFD70044, 0 2px 12px #2d5ea022;
@@ -630,6 +630,22 @@ nav {
   position: relative;
   z-index: 1;
   animation: btnPulse 2s infinite alternate;
+}
+@media (max-width: 600px) {
+  .contact {
+    padding: 1.2rem 0.3rem;
+    min-height: 40vh;
+  }
+  .contact-form {
+    margin: 0 auto;
+    padding: 1.2rem 0.5rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .contact-form {
+    padding: 0.7rem 0.2rem;
+  }
 }
 
 /* =========================
@@ -852,7 +868,8 @@ footer {
   border-top: 2px solid #FFD700;
   margin-top: 2rem;
   box-shadow: 0 -2px 16px #2d5ea044;
-  width: 100vw;
+  width: 100%;
+  box-sizing: border-box;
 }
 .social-links {
   margin-top: 12px;
