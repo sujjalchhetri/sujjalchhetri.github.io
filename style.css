@@ -1277,3 +1277,107 @@ footer {
     min-height: 180px;
   }
 }
+
+/* =========================
+   VENUE GALLERY SECTION
+========================= */
+.venue-gallery-section {
+  max-width: 700px;
+  margin: 2.5rem auto 1.5rem auto;
+  padding: 2rem 1rem;
+  background: rgba(255,255,255,0.10);
+  border-radius: 24px;
+  box-shadow: 0 8px 32px #FFD70044, 0 2px 18px #2d5ea044;
+  text-align: center;
+  position: relative;
+  animation: fadeInUp 1s cubic-bezier(.42,0,.58,1);
+}
+
+.venue-gallery-header {
+  font-family: 'Times New Roman', serif;
+  color: #FFD700;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1.2rem;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 8px #FFD70044;
+  animation: pulseHeader 2s infinite alternate;
+}
+
+@keyframes pulseHeader {
+  from { text-shadow: 0 2px 8px #FFD70044; }
+  to   { text-shadow: 0 4px 24px #FFD70088; }
+}
+
+.venue-gallery {
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.venue-img-wrap {
+  flex: 1 1 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 120px;
+  max-width: 220px;
+  position: relative;
+  animation: imgPop 1.2s cubic-bezier(.42,0,.58,1);
+}
+
+@keyframes imgPop {
+  from { opacity: 0; transform: scale(0.85) translateY(30px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.venue-img {
+  width: 100%;
+  max-width: 200px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px #FFD70044, 0 2px 12px #2d5ea022;
+  border: 2px solid #FFD700;
+  background: #fff;
+  transition: transform 0.3s, box-shadow 0.3s;
+  animation: venueFloat 4s infinite ease-in-out;
+}
+
+.venue-img:hover {
+  transform: scale(1.07) rotate(-2deg);
+  box-shadow: 0 12px 40px #FFD70088, 0 4px 24px #2d5ea044;
+}
+
+@keyframes venueFloat {
+  0%   { transform: translateY(0) scale(1); }
+  50%  { transform: translateY(-10px) scale(1.04); }
+  100% { transform: translateY(0) scale(1); }
+}
+
+/* Responsive for mobile */
+@media (max-width: 700px) {
+  .venue-gallery-section {
+    max-width: 98vw;
+    padding: 1.2rem 0.5rem;
+  }
+  .venue-gallery {
+    flex-direction: column;
+    gap: 14px;
+    align-items: center;
+  }
+  .venue-img-wrap {
+    max-width: 98vw;
+    min-width: 0;
+  }
+  .venue-img {
+    max-width: 98vw;
+    height: 110px;
+    border-radius: 10px;
+  }
+  .venue-gallery-header {
+    font-size: 1.3rem;
+  }
+}
