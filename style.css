@@ -1,11 +1,6 @@
 /* =========================
-   RESET & BASE STYLES
+   FONT: DAVETICA
 ========================= */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-/* Davetica font - put font files in /fonts/ or update the src paths below.
-   If you have a web-hosted URL for Davetica, replace the url(...) values.
-   Fallback to Times New Roman and generic serif if Davetica isn't available. */
 @font-face {
   font-family: 'Davetica';
   src: url('fonts/Davetica-Regular.woff2') format('woff2'),
@@ -19,9 +14,14 @@
   src: url('fonts/Davetica-Bold.woff2') format('woff2'),
        url('fonts/Davetica-Bold.woff') format('woff');
   font-weight: 700;
-  font-style: bold;
+  font-style: normal;
   font-display: swap;
 }
+
+/* =========================
+   RESET & BASE STYLES
+========================= */
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 html, body {
   font-family: 'Davetica', 'Times New Roman', serif;
@@ -150,10 +150,16 @@ nav {
     display: none;
   }
 }
+header, nav, .logo, .menu li a {
+  font-family: 'Davetica', 'Times New Roman', serif;
+}
 
 /* =========================
    HERO SECTION
 ========================= */
+.hero, .hero h2, .hero span, .hero p, .btn {
+  font-family: 'Davetica', 'Times New Roman', serif;
+}
 .hero {
   min-height: 100vh;
   display: flex;
@@ -244,6 +250,12 @@ nav {
 /* =========================
    MAIN SECTIONS (About, Ventures, Ambassador, President, Members, Contact, Registration, FAQ)
 ========================= */
+.about, .ventures, .ambassador, .president, .contact, .members, .registration-section, .faq-section,
+.about h2, .ventures h2, .ambassador h2, .president h2, .contact h2, .members h2,
+.about p, .ventures p, .ambassador p, .president p, .members p {
+  font-family: 'Davetica', 'Times New Roman', serif;
+}
+
 .about, .ventures, .ambassador, .president, .contact, .members, .registration-section, .faq-section {
   padding: 5rem 2rem;
   text-align: center;
@@ -266,6 +278,9 @@ nav {
 /* =========================
    VENTURES SECTION (Main Page)
 ========================= */
+.ventures .info-grid, .ventures .info-card, .venture-logo {
+  font-family: 'Davetica', 'Times New Roman', serif;
+}
 .ventures .info-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -328,6 +343,10 @@ nav {
 /* =========================
    MAIN INTERFACE STATS (Two Column Layout)
 ========================= */
+.main-interface-stats, .main-interface-stats h3, .stats-grid, .stat-card, .stat-value, .stat-label {
+  font-family: 'Davetica', 'Times New Roman', serif;
+}
+
 .main-interface-stats {
   margin: 2.5rem auto 1.5rem auto;
   text-align: center;
@@ -380,6 +399,10 @@ nav {
 /* =========================
    INFO GRID & CARDS (General)
 ========================= */
+.info-grid, .info-card, .member-card, .president-card, .ambassador-card {
+  font-family: 'Davetica', 'Times New Roman', serif;
+}
+
 .info-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -414,6 +437,10 @@ nav {
 /* =========================
    PRESIDENT & AMBASSADOR CARDS
 ========================= */
+.president-card, .ambassador-card, .president-img, .ambassador-img, .member-img,
+.president-mission, .president-vision, .ambassador-message {
+  font-family: 'Davetica', 'Times New Roman', serif;
+}
 .president-card, .ambassador-card {
   display: flex;
   flex-direction: column;
@@ -445,6 +472,10 @@ nav {
 /* =========================
    MEMBERS SECTION
 ========================= */
+.members, .members h2, .members .info-grid, .member-card, .member-img, .member-card h3, .member-role, .member-bio {
+  font-family: 'Davetica', 'Times New Roman', serif;
+}
+
 .members {
   padding: 5rem 2rem;
   text-align: center;
@@ -515,6 +546,9 @@ nav {
 /* =========================
    VENTURE DETAIL PAGE (Cloud Section)
 ========================= */
+.venture-detail, .venture-card, .venture-card h2, .venture-card p, .venture-gallery, .venture-img {
+  font-family: 'Davetica', 'Times New Roman', serif;
+}
 .venture-detail {
   width: 100vw;
   background:
@@ -586,6 +620,9 @@ nav {
 /* =========================
    CONTACT SECTION (Animated Card)
 ========================= */
+.contact, .contact-form, .contact-form input, .contact-form textarea, .contact-form button {
+  font-family: 'Davetica', 'Times New Roman', serif;
+}
 .contact {
   display: flex;
   flex-direction: column;
@@ -676,6 +713,7 @@ nav {
 .faq-answer {
   font-family: 'Davetica', 'Times New Roman', serif;
 }
+
 .faq-section {
   max-width: 700px;
   margin: 3rem auto 2rem auto;
@@ -772,6 +810,11 @@ nav {
 /* =========================
    REGISTRATION CARD (Top of Page)
 ========================= */
+.registration-top-wrap, .register-card, .register-card-content, .register-icon, .register-card h3, .register-card p,
+.registration-section, .registration-header h2, .registration-header p, .registration-form-container, .registration-form-container iframe {
+  font-family: 'Davetica', 'Times New Roman', serif;
+}
+
 .registration-top-wrap {
   width: 100%;
   text-align: center;
@@ -884,6 +927,10 @@ nav {
 /* =========================
    LOCATION BOX (Venue Picture & Button)
 ========================= */
+.location-box, .location-img-wrap, .location-img, .location-box-header, .location-box-header h3, .location-box-desc, .location-box .location-btn {
+  font-family: 'Davetica', 'Times New Roman', serif;
+}
+
 .location-box {
   max-width: 420px;
   margin: 2rem auto;
@@ -998,7 +1045,6 @@ nav {
   font-size: 1.3em;
   animation: bounceIcon 1.2s infinite alternate;
 }
-/* Subtle animated border highlight */
 .location-box::after {
   content: "";
   position: absolute;
@@ -1016,6 +1062,9 @@ nav {
 /* =========================
    SOCIAL MEDIA ICONS & FOOTER
 ========================= */
+footer, .social-links, .social-item, .social-icon, .social-item span {
+  font-family: 'Davetica', 'Times New Roman', serif;
+}
 footer {
   background: #001F3F;
   padding: 1.2rem 0 0.7rem 0;
@@ -1301,6 +1350,9 @@ footer {
 /* =========================
    VENUE GALLERY SECTION
 ========================= */
+.venue-gallery-section, .venue-gallery-header, .venue-gallery, .venue-img-wrap, .venue-img {
+  font-family: 'Davetica', 'Times New Roman', serif;
+}
 .venue-gallery-section {
   max-width: 700px;
   margin: 2.5rem auto 1.5rem auto;
@@ -1312,7 +1364,6 @@ footer {
   position: relative;
   animation: fadeInUp 1s cubic-bezier(.42,0,.58,1);
 }
-
 .venue-gallery-header {
   font-family: 'Times New Roman', serif;
   color: #FFD700;
@@ -1323,12 +1374,10 @@ footer {
   text-shadow: 0 2px 8px #FFD70044;
   animation: pulseHeader 2s infinite alternate;
 }
-
 @keyframes pulseHeader {
   from { text-shadow: 0 2px 8px #FFD70044; }
   to   { text-shadow: 0 4px 24px #FFD70088; }
 }
-
 .venue-gallery {
   display: flex;
   gap: 18px;
@@ -1336,7 +1385,6 @@ footer {
   align-items: flex-start;
   flex-wrap: wrap;
 }
-
 .venue-img-wrap {
   flex: 1 1 180px;
   display: flex;
@@ -1347,12 +1395,10 @@ footer {
   position: relative;
   animation: imgPop 1.2s cubic-bezier(.42,0,.58,1);
 }
-
 @keyframes imgPop {
   from { opacity: 0; transform: scale(0.85) translateY(30px); }
   to   { opacity: 1; transform: scale(1) translateY(0); }
 }
-
 .venue-img {
   width: 100%;
   max-width: 200px;
@@ -1365,18 +1411,15 @@ footer {
   transition: transform 0.3s, box-shadow 0.3s;
   animation: venueFloat 4s infinite ease-in-out;
 }
-
 .venue-img:hover {
   transform: scale(1.07) rotate(-2deg);
   box-shadow: 0 12px 40px #FFD70088, 0 4px 24px #2d5ea044;
 }
-
 @keyframes venueFloat {
   0%   { transform: translateY(0) scale(1); }
   50%  { transform: translateY(-10px) scale(1.04); }
   100% { transform: translateY(0) scale(1); }
 }
-
 /* Responsive for mobile */
 @media (max-width: 700px) {
   .venue-gallery-section {
