@@ -1440,23 +1440,32 @@ footer {
 @media (max-width: 700px) {
   .venue-gallery-section {
     max-width: 98vw;
+    width: auto;
     padding: 1.2rem 0.5rem;
+    box-sizing: border-box;
   }
   .venue-gallery {
     flex-direction: column;
     gap: 14px;
     align-items: center;
+    width: auto;
+    box-sizing: border-box;
   }
   .venue-img-wrap {
     max-width: 98vw;
     min-width: 0;
+    width: auto;
   }
   .venue-img {
+    width: 100%;
     max-width: 98vw;
-    height: 110px;
+    height: auto;
     border-radius: 10px;
-  }
-  .venue-gallery-header {
-    font-size: 1.3rem;
+    box-shadow: 0 8px 32px #FFD70044, 0 2px 12px #2d5ea022;
+    border: 2px solid #FFD700;
+    background: #fff;
+    transition: transform 0.3s, box-shadow 0.3s;
+    animation: venueFloat 4s infinite ease-in-out;
+    display: block;
   }
 }
