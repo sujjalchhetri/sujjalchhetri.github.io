@@ -1373,15 +1373,10 @@ footer {
   font-family: 'Davetica', 'Times New Roman', serif;
 }
 .venue-gallery-section {
-  max-width: 700px;
-  margin: 2.5rem auto 1.5rem auto;
-  padding: 2rem 1rem;
-  background: rgba(255,255,255,0.10);
-  border-radius: 24px;
-  box-shadow: 0 8px 32px #FFD70044, 0 2px 18px #2d5ea044;
-  text-align: center;
-  position: relative;
-  animation: fadeInUp 1s cubic-bezier(.42,0,.58,1);
+  max-width: 100vw;
+  width: 100vw;
+  padding: 2rem 0.5rem;
+  box-sizing: border-box;
 }
 .venue-gallery-header {
   font-family: 'Times New Roman', serif;
@@ -1399,20 +1394,21 @@ footer {
 }
 .venue-gallery {
   display: flex;
-  gap: 18px;
-  justify-content: center;
-  align-items: flex-start;
   flex-wrap: wrap;
+  gap: 14px;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  box-sizing: border-box;
+  margin: 0 auto;
 }
 .venue-img-wrap {
-  flex: 1 1 180px;
+  width: 100%;
+  max-width: 400px;
+  min-width: 220px;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-width: 120px;
-  max-width: 220px;
-  position: relative;
-  animation: imgPop 1.2s cubic-bezier(.42,0,.58,1);
 }
 @keyframes imgPop {
   from { opacity: 0; transform: scale(0.85) translateY(30px); }
@@ -1420,8 +1416,8 @@ footer {
 }
 .venue-img {
   width: 100%;
-  max-width: 200px;
-  height: 130px;
+  max-width: 400px;
+  height: auto;
   object-fit: cover;
   border-radius: 16px;
   box-shadow: 0 8px 32px #FFD70044, 0 2px 12px #2d5ea022;
@@ -1429,6 +1425,7 @@ footer {
   background: #fff;
   transition: transform 0.3s, box-shadow 0.3s;
   animation: venueFloat 4s infinite ease-in-out;
+  display: block;
 }
 .venue-img:hover {
   transform: scale(1.07) rotate(-2deg);
