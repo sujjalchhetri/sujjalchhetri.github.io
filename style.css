@@ -3,8 +3,28 @@
 ========================= */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-body {
-  font-family: 'Times New Roman', serif;
+/* Davetica font - put font files in /fonts/ or update the src paths below.
+   If you have a web-hosted URL for Davetica, replace the url(...) values.
+   Fallback to Times New Roman and generic serif if Davetica isn't available. */
+@font-face {
+  font-family: 'Davetica';
+  src: url('fonts/Davetica-Regular.woff2') format('woff2'),
+       url('fonts/Davetica-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Davetica';
+  src: url('fonts/Davetica-Bold.woff2') format('woff2'),
+       url('fonts/Davetica-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: bold;
+  font-display: swap;
+}
+
+html, body {
+  font-family: 'Davetica', 'Times New Roman', serif;
   color: #fff;
   background: #001F3F;
   background-image:
@@ -654,7 +674,7 @@ nav {
 .faq-section h2,
 .faq-item summary,
 .faq-answer {
-  font-family: 'Times New Roman', serif;
+  font-family: 'Davetica', 'Times New Roman', serif;
 }
 .faq-section {
   max-width: 700px;
@@ -935,7 +955,7 @@ nav {
   to   { transform: translateY(-8px) scale(1.15); }
 }
 .location-box-header h3 {
-  font-family: 'Times New Roman', serif;
+  font-family: 'Davetica', 'Times New Roman', serif;
   color: #fff;
   font-size: 1.5rem;
   font-weight: bold;
@@ -948,7 +968,7 @@ nav {
   font-size: 1.08rem;
   margin-bottom: 1.5rem;
   text-shadow: 0 1px 2px #FFD70088;
-  font-family: 'Times New Roman', serif;
+  font-family: 'Davetica', 'Times New Roman', serif;
 }
 .location-box .location-btn {
   margin-top: 0.5rem;
@@ -958,7 +978,7 @@ nav {
   box-shadow: 0 0 18px #FFD70088, 0 2px 12px #2d5ea022;
   background: linear-gradient(90deg, #FFD700 60%, #2d5ea0 100%);
   color: #002B5B;
-  font-family: 'Times New Roman', serif;
+  font-family: 'Davetica', 'Times New Roman', serif;
   font-weight: bold;
   text-decoration: none;
   display: inline-flex;
