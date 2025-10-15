@@ -561,11 +561,12 @@ nav {
   max-width: 420px;
   border-radius: 18px;
   box-shadow: 0 4px 24px #FFD700cc;
-  border: 2px solid #FFD700;
+  border: 2px solid #fff; /* was #FFD700 */
   background: #fff;
   transition: transform 0.3s, box-shadow 0.3s;
   margin-bottom: 1.2rem;
   object-fit: contain;
+  aspect-ratio: 16 / 9; /* keep consistent height without changing alignment or colors */
 }
 .venture-img:hover {
   transform: scale(1.07) rotate(-2deg);
@@ -1019,27 +1020,13 @@ nav {
   justify-items: center;
   align-items: stretch;
   width: 100%;
-  max-width: 1100px; /* constrain gallery so it centers with whitespace */
   box-sizing: border-box;
-  margin: 0 auto; /* center the gallery container */
-  justify-content: center; /* ensure grid content is centered when narrower */
-}
-
-/* Center only the BSSL venue gallery (venture2) explicitly */
-#bssl-venue .venue-gallery {
-  max-width: 900px;
   margin: 0 auto;
-  justify-content: center;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 18px;
 }
 .venue-img-wrap {
   width: 100%;
   max-width: none;
   min-width: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 .venue-img {
   width: 100%;
@@ -1049,7 +1036,7 @@ nav {
   object-position: center;
   border-radius: 16px;
   box-shadow: 0 8px 32px #FFD70044, 0 2px 12px #2d5ea022;
-  border: 2px solid #fff;
+  border: 2px solid #fff; /* was #FFD700 */
   background: #fff;
   transition: transform 0.3s, box-shadow 0.3s;
 }
@@ -1439,7 +1426,7 @@ header, nav, .logo, .menu li a {
   object-position: center;
   border-radius: 16px;
   box-shadow: 0 8px 32px #FFD70044, 0 2px 12px #2d5ea022;
-  border: 2px solid #fff;
+  border: 2px solid #fff; /* was #FFD700 */
   background: #fff;
   transition: transform 0.3s, box-shadow 0.3s;
 }
@@ -1477,46 +1464,4 @@ header, nav, .logo, .menu li a {
 .location-box .location-btn,
 .register-card {
   touch-action: manipulation;
-}
-
-/* Page-specific: center the Venue heading for the BSSL (venture2) page */
-#bssl-venue .venue-gallery-header,
-#bssl-venue .venue-gallery-header * {
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-#bssl-venue .venue-gallery-header {
-  font-size: 2.4rem; /* slightly larger */
-  line-height: 1.1;
-}
-#bssl-venue .venue-gallery-header {
-  color: #ffffff;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.6), 0 1px 2px rgba(255,215,0,0.12);
-}
-
-/* Small visual effect for venue images on BSSL page */
-#bssl-venue .venue-img {
-  transition: transform 300ms cubic-bezier(.22,.9,.35,1),
-              box-shadow 300ms ease, filter 300ms ease;
-}
-
-@media (hover: hover) and (pointer: fine) {
-  #bssl-venue .venue-img:hover,
-  #bssl-venue .venue-img:focus {
-    transform: scale(1.04) rotate(-1.5deg);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.35), 0 4px 12px rgba(255,215,0,0.12);
-    filter: brightness(1.04) saturate(1.05);
-    z-index: 2;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  #bssl-venue .venue-img,
-  #bssl-venue .venue-img:hover,
-  #bssl-venue .venue-img:focus {
-    transition: none;
-    transform: none;
-  }
 }
