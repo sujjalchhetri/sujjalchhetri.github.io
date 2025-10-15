@@ -130,6 +130,28 @@ nav {
   cursor: pointer;
 }
 
+/* Header/nav paddings and mobile menu */
+@media (max-width: 900px) {
+  nav { padding: 1rem 1rem; }
+}
+@media (max-width: 700px) {
+  .menu {
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: #001F3F;
+    width: 200px;
+    display: none;
+    z-index: 100;
+  }
+  .menu li { margin: 15px 0; text-align: center; }
+  .menu-icon { display: block; cursor: pointer; }
+  /* Use general sibling to match structure: input + label + ul.menu */
+  #menu-toggle:checked ~ .menu { display: flex; }
+  #menu-toggle { display: none; }
+}
+
 /* =========================
    HERO SECTION
 ========================= */
@@ -1005,13 +1027,14 @@ nav {
 }
 .venue-gallery-header {
   font-family: 'Times New Roman', serif;
-  color: #FFD700;
+  color: #fff;
   font-size: 2rem;
   font-weight: bold;
   margin-bottom: 1.2rem;
   letter-spacing: 1px;
   text-shadow: 0 2px 8px #FFD70044;
   animation: pulseHeader 2s infinite alternate;
+  text-align: center;
 }
 .venue-gallery {
   display: grid;
@@ -1051,12 +1074,65 @@ nav {
   .venue-img { border-radius: 12px; }
 }
 
-/* =========================
-   SOCIAL MEDIA ICONS & FOOTER
-========================= */
-footer, .social-links, .social-item, .social-icon, .social-item span {
-  font-family: 'Davetica', 'Times New Roman', serif;
+/* Mobile background behavior for performance */
+@media (max-width: 768px) {
+  body {
+    background-attachment: scroll;
+    background-position: center top;
+  }
 }
+
+/* Responsive grids on small screens */
+@media (max-width: 900px) {
+  .info-grid { grid-template-columns: 1fr; gap: 16px; }
+}
+@media (max-width: 700px) {
+  .stats-grid { grid-template-columns: 1fr; gap: 12px; }
+}
+
+/* Enhance keyboard focus for primary interactive elements */
+.btn:focus-visible,
+.contact-form button:focus-visible,
+.location-box .location-btn:focus-visible {
+  background: linear-gradient(90deg, #2d5ea0 60%, #FFD700 100%);
+  color: #FFD700;
+  box-shadow: 0 0 32px #FFD700cc, 0 0 8px #2d5ea0cc;
+  transform: scale(1.07);
+  outline: none;
+}
+.register-card:focus-visible {
+  box-shadow: 0 12px 40px #FFD70088, 0 4px 24px #1565c088;
+  transform: scale(1.04) translateY(-4px);
+  border-color: #FFD700;
+  outline: none;
+}
+
+/* Faster taps on mobile */
+.btn,
+.contact-form button,
+.location-box .location-btn,
+.register-card {
+  touch-action: manipulation;
+}
+
+/* Sticky footer on short pages */
+footer {
+  margin-top: auto; /* ensures footer sticks to bottom */
+}
+
+/* BSSL page: responsive poster above the registration card */
+/* Remove/disable the poster */
+#bssl-hero .registration-top-wrap::before {
+  display: none !important;
+  content: none !important;
+}
+/* Hide any inline poster image if it exists */
+#bssl-hero .registration-top-wrap .bssl-poster,
+#bssl-hero .registration-top-wrap img[src*="bssl_poster"] {
+  display: none !important;
+}
+
+/* Footer and social links (restored and responsive) */
 footer {
   background: #001F3F;
   padding: 1.2rem 0 0.7rem 0;
@@ -1065,7 +1141,7 @@ footer {
   flex-shrink: 0;
   color: #FFD700;
   border-top: 2px solid #FFD700;
-  margin-top: 2rem;
+  margin-top: auto; /* sticky to bottom on short pages */
   box-shadow: 0 -2px 16px #2d5ea044;
   width: 100%;
   box-sizing: border-box;
@@ -1102,215 +1178,7 @@ footer {
   box-shadow: 0 4px 16px #FFD70088;
   background: #FFD700;
 }
-.social-item span {
-  margin-top: 2px;
-  color: #FFD700;
-  text-align: center;
-  font-size: 0.85rem;
-}
-
-/* =========================
-   OPTIONAL: BACKGROUND ANIMATION
-========================= */
-.background {
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  left: 0;
-  top: 0;
-  overflow: hidden;
-  z-index: -1;
-  pointer-events: none;
-  display: none;
-}
-.circle {
-  position: absolute;
-  border-radius: 50%;
-  background: radial-gradient(circle, #FFD700 0%, #2d5ea0 80%);
-  opacity: 0.18;
-  animation: float 18s linear infinite;
-  display: none;
-}
-.circle:nth-child(1) {
-  width: 200px; height: 200px;
-  left: 10%; top: 80%;
-  animation-duration: 25s;
-}
-.circle:nth-child(2) {
-  width: 150px; height: 150px;
-  left: 60%; top: 90%;
-  animation-duration: 30s;
-  animation-delay: 5s;
-}
-.circle:nth-child(3) {
-  width: 100px; height: 100px;
-  left: 80%; top: 85%;
-  animation-duration: 20s;
-  animation-delay: 2s;
-}
-
-/* =========================
-   ANIMATIONS (Consolidated)
-========================= */
-@keyframes btnPulse {
-  from { box-shadow: 0 0 18px #FFD70088; }
-  to { box-shadow: 0 0 32px #FFD700cc, 0 0 8px #2d5ea0cc; }
-}
-@keyframes cardPop {
-  from { opacity: 0; transform: translateY(40px) scale(0.95); }
-  to { opacity: 1; transform: translateY(0) scale(1); }
-}
-@keyframes contactFadeIn {
-  from { opacity: 0; transform: translateY(40px) scale(0.95); box-shadow: 0 0 0 #FFD70044; }
-  to { opacity: 1; transform: translateY(0) scale(1); box-shadow: 0 8px 32px #FFD70044; }
-}
-@keyframes slideDown {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-@keyframes pulseGlow {
-  from { box-shadow: 0 0 18px #FFD70044; }
-  to { box-shadow: 0 0 32px #1565c088, 0 0 8px #FFD70088; }
-}
-@keyframes glassPulse {
-  from {
-    box-shadow: 0 8px 32px rgba(45,94,160,0.18), 0 2px 24px #FFD70022;
-    border-color: rgba(255,215,0,0.18);
-  }
-  to {
-    box-shadow: 0 16px 48px rgba(45,94,160,0.28), 0 4px 32px #FFD70044;
-    border-color: rgba(255,215,0,0.28);
-  }
-}
-@keyframes venuePulse {
-  from { box-shadow: 0 8px 32px #FFD70044, 0 2px 12px #2d5ea022; }
-  to { box-shadow: 0 16px 48px #FFD70088, 0 4px 24px #2d5ea044; }
-}
-@keyframes venueFloat {
-  0% { transform: translateY(0) scale(1) rotate(0deg); opacity: 0.7; }
-  50% { transform: translateY(-10px) scale(1.04); }
-  100% { transform: translateY(0) scale(1); }
-}
-@keyframes bounceIcon {
-  from { transform: translateY(0); }
-  to { transform: translateY(-8px) scale(1.15); }
-}
-@keyframes borderGlow {
-  from { border-color: rgba(255,215,0,0.12); }
-  to { border-color: rgba(255,215,0,0.22); }
-}
-
-/* Page-specific: center the venture card on the BSSL (venture2) page */
-#bssl-hero .venture-card {
-  width: 100%;
-  max-width: 920px;
-  margin: 0 auto;
-  padding: 4vw 2vw 2vw 2vw;
-  align-items: center; /* keep content centered */
-}
-@keyframes float {
-  0% { transform: translateY(0) scale(1) rotate(0deg); opacity: 0.7; }
-  50% { transform: translateY(-50vh) scale(1.1) rotate(180deg); opacity: 1; }
-  100% { transform: translateY(-100vh) scale(1) rotate(360deg); opacity: 0.7; }
-}
-@keyframes pulseHeader {
-  from { text-shadow: 0 2px 8px #FFD70044; }
-  to { text-shadow: 0 4px 24px #FFD70088; }
-}
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-@keyframes imgPop {
-  from { opacity: 0; transform: scale(0.85) translateY(30px); }
-  to   { opacity: 1; transform: scale(1) translateY(0); }
-}
-
-/* =========================
-   ACCESSIBILITY: Reduced motion
-========================= */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation: none !important;
-    transition: none !important;
-    scroll-behavior: auto !important;
-  }
-}
-
-/* =========================
-   RESPONSIVE
-========================= */
-/* Background behavior */
-@media (max-width: 768px) {
-  body {
-    background-attachment: scroll;
-    background-position: center top;
-  }
-}
-
-/* Header/nav paddings */
-@media (max-width: 900px) {
-  nav { padding: 1rem 1rem; }
-}
-
-/* Mobile menu */
-@media (max-width: 700px) {
-  .menu {
-    flex-direction: column;
-    position: absolute;
-    top: 70px;
-    right: 0;
-    background: #001F3F;
-    width: 200px;
-    display: none;
-    z-index: 100;
-  }
-  .menu li { margin: 15px 0; text-align: center; }
-  .menu-icon { display: block; cursor: pointer; }
-  #menu-toggle:checked + .menu { display: flex; }
-  #menu-toggle { display: none; }
-}
-
-/* Shared font-family on nav/link text */
-header, nav, .logo, .menu li a {
-  font-family: 'Davetica', 'Times New Roman', serif;
-}
-
-/* Extra mobile responsiveness */
-@media (max-width: 900px) {
-  .info-grid { grid-template-columns: 1fr; gap: 16px; }
-  .ventures, .members, .about, .ambassador, .president, .contact { padding: 2rem 0.5rem; }
-  .main-interface-stats { max-width: 98vw; padding: 1.2rem 0.3rem; }
-}
-@media (max-width: 700px) {
-  .venue-gallery-section { max-width: 98vw; width: auto; padding: 1.2rem 0.5rem; box-sizing: border-box; }
-  .venue-gallery { flex-direction: column; gap: 14px; align-items: center; width: auto; box-sizing: border-box; }
-  .venue-img-wrap { max-width: 98vw; min-width: 0; width: auto; }
-  .venue-img { width: 100%; max-width: 98vw; height: auto; border-radius: 10px; }
-}
 @media (max-width: 600px) {
-  .hero { padding: 1rem; margin-top: 70px; }
-  .hero h2 { font-size: 2rem; }
-  .hero p { font-size: 1rem; }
-  .hero-img { max-width: 96vw; border-radius: 12px; }
-
-  .about, .ventures, .ambassador, .president, .contact, .members, .registration-section, .faq-section { padding: 1.2rem 0.3rem; }
-  .about h2, .ventures h2, .ambassador h2, .president h2, .contact h2, .members h2 { font-size: 1.3rem; }
-  .about p, .ventures p, .ambassador p, .president p, .members p { font-size: 0.98rem; }
-
-  .ventures .info-grid { grid-template-columns: 1fr; gap: 16px; }
-  .ventures .info-card { max-width: 98vw; padding: 1.2rem 0.5rem; }
-
-  .stats-grid { grid-template-columns: 1fr; gap: 10px; }
-  .stat-card { min-width: 0; padding: 1rem 0.5rem; }
-  .main-interface-stats h3 { font-size: 1.3rem; }
-
-  .faq-section { padding: 1.2rem 0.5rem; max-width: 98vw; }
-  .faq-section h2 { font-size: 1rem; }
-  .faq-item summary { font-size: 1rem; padding: 0.7rem 0.3rem 0.7rem 0.3rem; }
-  .faq-answer { font-size: 0.9rem; padding-left: 1.2rem; }
-
-  footer { padding: 1rem 0 0.5rem 0; font-size: 0.95rem; }
   .social-links {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -1320,148 +1188,4 @@ header, nav, .logo, .menu li a {
   }
   .social-item { min-width: unset; width: 100%; font-size: 0.9rem; margin-bottom: 0; }
   .social-icon { width: 36px; height: 36px; }
-
-  .venture-card { padding: 8vw 1vw 4vw 1vw; }
-  .venture-detail { padding: 0; }
-  .venture-img { max-width: 98vw; border-radius: 12px; }
-
-  .contact-form { width: 98vw; max-width: 98vw; padding: 1.2rem 0.5rem; margin: 1.5rem auto 0 auto; }
-  .contact-form input, .contact-form textarea, .contact-form button { font-size: 0.98rem; padding: 10px; margin: 8px 0; }
-  .contact-form textarea { min-height: 70px; }
-
-  .registration-form-container iframe { max-width: 98vw; min-height: 400px; }
-  .registration-header h2 { font-size: 1.3rem; }
-
-  .register-card { padding: 1.2rem 1rem; }
-
-  .location-img { max-width: 98vw; height: 120px; border-radius: 12px; }
-}
-@media (max-width: 400px) {
-  .contact-form { padding: 0.7rem 0.2rem; }
-  .contact-form input, .contact-form textarea, .contact-form button { font-size: 0.92rem; padding: 8px; }
-  .contact-form textarea { min-height: 50px; }
-
-  .registration-section { padding: 0.7rem 0.1rem; }
-  .registration-header h2 { font-size: 1rem; }
-  .registration-header p { font-size: 0.95rem; }
-
-  .faq-section h2 { font-size: 1rem; }
-  .faq-answer { font-size: 0.9rem; padding-left: 1.2rem; }
-
-  footer { padding: 0.5rem 0 0.2rem 0; font-size: 0.85rem; }
-  .registration-form-container iframe { min-height: 250px; }
-}
-@media (max-width: 350px) {
-  .contact-form { margin: 0 auto; padding: 0.4rem 0.05rem; }
-  .about h2, .ventures h2, .ambassador h2, .president h2, .contact h2, .members h2 { font-size: 0.95rem; }
-  .about p, .ventures p, .ambassador p, .president p, .members p { font-size: 0.85rem; }
-  .registration-form-container iframe { min-height: 180px; }
-}
-
-/* =========================
-   SPECIAL CASE: Location image full overlay on <=900px
-========================= */
-@media (max-width: 900px) {
-  .location-img {
-    width: 100vw;
-    height: 100vh;
-    max-width: 100vw;
-    max-height: 100vh;
-    object-fit: cover;
-    border-radius: 0;
-    box-shadow: none;
-    border: none;
-    background: #fff;
-    display: block;
-    margin: 0;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 999;
-  }
-}
-
-/* =========================
-   VENUE GALLERY SECTION
-========================= */
-.venue-gallery-section, .venue-gallery-header, .venue-gallery, .venue-img-wrap, .venue-img {
-  font-family: 'Davetica', 'Times New Roman', serif;
-}
-.venue-gallery-section {
-  max-width: 100vw;
-  width: 100vw;
-  padding: 2rem 0.5rem;
-  box-sizing: border-box;
-}
-.venue-gallery-header {
-  font-family: 'Times New Roman', serif;
-  color: #FFD700;
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 1.2rem;
-  letter-spacing: 1px;
-  text-shadow: 0 2px 8px #FFD70044;
-  animation: pulseHeader 2s infinite alternate;
-}
-.venue-gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 16px;
-  justify-items: center;
-  align-items: stretch;
-  width: 100%;
-  box-sizing: border-box;
-  margin: 0 auto;
-}
-.venue-img-wrap {
-  width: 100%;
-  max-width: none;
-  min-width: 0;
-}
-.venue-img {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  height: auto;
-  object-fit: cover;
-  object-position: center;
-  border-radius: 16px;
-  box-shadow: 0 8px 32px #FFD70044, 0 2px 12px #2d5ea022;
-  border: 2px solid #fff; /* was #FFD700 */
-  background: #fff;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-@media (hover: hover) and (pointer: fine) {
-  .venue-img:hover {
-    transform: scale(1.05) rotate(-2deg);
-    box-shadow: 0 12px 40px #ffffff88, 0 4px 24px #2d5ea044;
-  }
-}
-@media (max-width: 600px) {
-  .venue-gallery { gap: 12px; }
-  .venue-img { border-radius: 12px; }
-}
-
-/* Enhance keyboard focus for primary interactive elements */
-.btn:focus-visible,
-.contact-form button:focus-visible,
-.location-box .location-btn:focus-visible {
-  background: linear-gradient(90deg, #2d5ea0 60%, #FFD700 100%);
-  color: #FFD700;
-  box-shadow: 0 0 32px #FFD700cc, 0 0 8px #2d5ea0cc;
-  transform: scale(1.07);
-  outline: none;
-}
-.register-card:focus-visible {
-  box-shadow: 0 12px 40px #FFD70088, 0 4px 24px #1565c088;
-  transform: scale(1.04) translateY(-4px);
-  border-color: #FFD700;
-  outline: none;
-}
-
-/* Faster taps on mobile */
-.btn,
-.contact-form button,
-.location-box .location-btn,
-.register-card {
-  touch-action: manipulation;
 }
