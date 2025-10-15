@@ -523,7 +523,7 @@ nav {
   margin: 0;
   padding: 4vw 4vw 2vw 4vw;
   border-radius: 0;
-  background: rgba(20, 20, 40, 0.88); /* fixed invalid 'cover' token */
+  background: transparent; /* removed dark overlay */
   box-shadow: none;
   display: flex;
   flex-direction: column;
@@ -560,7 +560,7 @@ nav {
   width: 100%;
   max-width: 420px;
   border-radius: 18px;
-  box-shadow: 0 4px 24px #FFD700cc, 0 0 0 4px #001F3Fcc;
+  box-shadow: 0 4px 24px #FFD700cc;
   border: 2px solid #FFD700;
   background: #fff;
   transition: transform 0.3s, box-shadow 0.3s;
@@ -570,6 +570,27 @@ nav {
 .venture-img:hover {
   transform: scale(1.07) rotate(-2deg);
   box-shadow: 0 8px 32px #FFD700cc;
+}
+.venture-brand-logo {
+  width: 90px;
+  height: 90px;
+  display: block;
+  margin: 10px auto 12px auto;
+  padding: 8px;
+  border-radius: 16px;
+  border: 2px solid #FFD700;
+  background: #fff;
+  object-fit: contain;
+  box-shadow: 0 4px 18px #FFD70044, 0 2px 8px #00000033;
+  animation: cardPop 0.6s cubic-bezier(.42,0,.58,1) both;
+}
+@media (max-width: 600px) {
+  .venture-brand-logo {
+    width: 64px;
+    height: 64px;
+    padding: 6px;
+    border-radius: 12px;
+  }
 }
 
 /* =========================
@@ -992,43 +1013,41 @@ nav {
   animation: pulseHeader 2s infinite alternate;
 }
 .venue-gallery {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  justify-items: center;
+  align-items: stretch;
+  width: 100%;
   box-sizing: border-box;
   margin: 0 auto;
 }
 .venue-img-wrap {
   width: 100%;
-  max-width: 400px;
-  min-width: 220px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-@keyframes imgPop {
-  from { opacity: 0; transform: scale(0.85) translateY(30px); }
-  to   { opacity: 1; transform: scale(1) translateY(0); }
+  max-width: none;
+  min-width: 0;
 }
 .venue-img {
   width: 100%;
-  max-width: 400px;
+  aspect-ratio: 16 / 9;
   height: auto;
   object-fit: cover;
+  object-position: center;
   border-radius: 16px;
   box-shadow: 0 8px 32px #FFD70044, 0 2px 12px #2d5ea022;
   border: 2px solid #FFD700;
   background: #fff;
   transition: transform 0.3s, box-shadow 0.3s;
-  animation: venueFloat 4s infinite ease-in-out;
-  display: block;
 }
-.venue-img:hover {
-  transform: scale(1.07) rotate(-2deg);
-  box-shadow: 0 12px 40px #FFD70088, 0 4px 24px #2d5ea044;
+@media (hover: hover) and (pointer: fine) {
+  .venue-img:hover {
+    transform: scale(1.05) rotate(-2deg);
+    box-shadow: 0 12px 40px #FFD70088, 0 4px 24px #2d5ea044;
+  }
+}
+@media (max-width: 600px) {
+  .venue-gallery { gap: 12px; }
+  .venue-img { border-radius: 12px; }
 }
 
 /* =========================
@@ -1167,7 +1186,7 @@ footer {
   to { box-shadow: 0 16px 48px #FFD70088, 0 4px 24px #2d5ea044; }
 }
 @keyframes venueFloat {
-  0% { transform: translateY(0) scale(1); }
+  0% { transform: translateY(0) scale(1) rotate(0deg); opacity: 0.7; }
   50% { transform: translateY(-10px) scale(1.04); }
   100% { transform: translateY(0) scale(1); }
 }
@@ -1191,6 +1210,10 @@ footer {
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
+}
+@keyframes imgPop {
+  from { opacity: 0; transform: scale(0.85) translateY(30px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
 }
 
 /* =========================
@@ -1346,4 +1369,89 @@ header, nav, .logo, .menu li a {
     left: 0;
     z-index: 999;
   }
+}
+
+/* =========================
+   VENUE GALLERY SECTION
+========================= */
+.venue-gallery-section, .venue-gallery-header, .venue-gallery, .venue-img-wrap, .venue-img {
+  font-family: 'Davetica', 'Times New Roman', serif;
+}
+.venue-gallery-section {
+  max-width: 100vw;
+  width: 100vw;
+  padding: 2rem 0.5rem;
+  box-sizing: border-box;
+}
+.venue-gallery-header {
+  font-family: 'Times New Roman', serif;
+  color: #FFD700;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1.2rem;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 8px #FFD70044;
+  animation: pulseHeader 2s infinite alternate;
+}
+.venue-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  justify-items: center;
+  align-items: stretch;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+.venue-img-wrap {
+  width: 100%;
+  max-width: none;
+  min-width: 0;
+}
+.venue-img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px #FFD70044, 0 2px 12px #2d5ea022;
+  border: 2px solid #FFD700;
+  background: #fff;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+@media (hover: hover) and (pointer: fine) {
+  .venue-img:hover {
+    transform: scale(1.05) rotate(-2deg);
+    box-shadow: 0 12px 40px #FFD70088, 0 4px 24px #2d5ea044;
+  }
+}
+@media (max-width: 600px) {
+  .venue-gallery { gap: 12px; }
+  .venue-img { border-radius: 12px; }
+}
+
+/* Enhance keyboard focus for primary interactive elements */
+.btn:focus-visible,
+.contact-form button:focus-visible,
+.location-box .location-btn:focus-visible {
+  background: linear-gradient(90deg, #2d5ea0 60%, #FFD700 100%);
+  color: #FFD700;
+  box-shadow: 0 0 32px #FFD700cc, 0 0 8px #2d5ea0cc;
+  transform: scale(1.07);
+  outline: none;
+}
+.register-card:focus-visible {
+  box-shadow: 0 12px 40px #FFD70088, 0 4px 24px #1565c088;
+  transform: scale(1.04) translateY(-4px);
+  border-color: #FFD700;
+  outline: none;
+}
+
+/* Faster taps on mobile */
+.btn,
+.contact-form button,
+.location-box .location-btn,
+.register-card {
+  touch-action: manipulation;
 }
