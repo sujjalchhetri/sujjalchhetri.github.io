@@ -580,7 +580,7 @@ nav {
 }
 .venture-img {
   width: 100%;
-  max-width: 420px;
+  max-width: 520px; /* was 420px */
   border-radius: 18px;
   box-shadow: 0 4px 24px #FFD700cc;
   border: 2px solid #fff; /* was #FFD700 */
@@ -614,6 +614,27 @@ nav {
     padding: 6px;
     border-radius: 12px;
   }
+}
+
+/* Tablet and up: larger images and text */
+@media (min-width: 900px) {
+  .venture-card {
+    padding: 3vw 2vw 2vw; /* slight tightening while enlarging content */
+  }
+  .venture-card h2 { font-size: 3rem; }        /* was 2.6rem */
+  .venture-card p  { font-size: 1.5rem; }      /* was 1.35rem */
+  .venture-img     { max-width: 640px; }       /* bigger images like BSSL */
+}
+
+/* Desktop-wide: push image a bit larger */
+@media (min-width: 1200px) {
+  .venture-card h2 { font-size: 3.2rem; }
+  .venture-img     { max-width: 760px; }
+}
+
+/* Mobile: let images span most of the width for a bigger feel */
+@media (max-width: 700px) {
+  .venture-img { max-width: 96vw; }
 }
 
 /* =========================
@@ -1072,6 +1093,32 @@ nav {
 @media (max-width: 600px) {
   .venue-gallery { gap: 12px; }
   .venue-img { border-radius: 12px; }
+}
+
+/* Enlarge the venture "cloud" across viewports (match BSSL look) */
+.venture-img {
+  max-width: 520px; /* was 420px */
+}
+
+/* Tablet and up: larger images and text */
+@media (min-width: 900px) {
+  .venture-card {
+    padding: 3vw 2vw 2vw; /* slight tightening while enlarging content */
+  }
+  .venture-card h2 { font-size: 3rem; }        /* was 2.6rem */
+  .venture-card p  { font-size: 1.5rem; }      /* was 1.35rem */
+  .venture-img     { max-width: 640px; }       /* bigger images like BSSL */
+}
+
+/* Desktop-wide: push image a bit larger */
+@media (min-width: 1200px) {
+  .venture-card h2 { font-size: 3.2rem; }
+  .venture-img     { max-width: 760px; }
+}
+
+/* Mobile: let images span most of the width for a bigger feel */
+@media (max-width: 700px) {
+  .venture-img { max-width: 96vw; }
 }
 
 /* Mobile background behavior for performance */
