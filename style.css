@@ -252,6 +252,28 @@ nav:hover {
   nav {
     padding: 0.55rem 1.2rem; /* was 1rem 1rem */
     gap: 0.6rem;
+    justify-content: center;
+  }
+  .about,
+  .ventures,
+  .ambassador,
+  .president,
+  .members,
+  .contact,
+  .main-interface-stats {
+    padding: 4rem 1.5rem;
+  }
+  .about h2,
+  .ventures h2,
+  .ambassador h2,
+  .president h2,
+  .members h2,
+  .contact h2 {
+    font-size: 2.2rem;
+  }
+  .info-grid,
+  .ventures .info-grid {
+    gap: 18px;
   }
 }
 @media (max-width: 700px) {
@@ -259,6 +281,7 @@ nav:hover {
     padding: 0.5rem 0.9rem; /* was default */
     border-radius: 28px;
     gap: 0.5rem;
+    justify-content: space-between;
   }
   .menu {
     flex-direction: column;
@@ -273,25 +296,59 @@ nav:hover {
     -webkit-backdrop-filter: blur(18px);
     flex-basis: 100%;
     justify-content: center;
-  }
-  .menu li { margin: 8px 0; }
-  .menu li a {
-    width: 100%;
-    border-radius: 14px;
-  }
-  .menu-icon { display: block; cursor: pointer; }
-  /* Use general sibling to match structure: input + label + ul.menu */
-  #menu-toggle:checked ~ .menu { display: flex; }
-  #menu-toggle { display: none; }
-  .nav-search {
+    width: calc(100% - 1.2rem);
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    padding: 0.75rem 0.5rem;
     gap: 0.4rem;
-    padding: 0.35rem 0.75rem;
-    order: 2;
-    width: 100%;
-    justify-content: space-between;
+  }
+  .hero {
+    padding: 2.8rem 1.5rem;
+    margin-top: 72px;
+  }
+  .hero h2 {
+    font-size: 2.4rem;
+  }
+  .hero p {
+    font-size: 1.05rem;
+  }
+  .ventures .info-card,
+  .member-card,
+  .president-card,
+  .ambassador-card {
+    max-width: 360px;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 480px) {
+  nav {
+    padding: 0.45rem 0.7rem;
+    gap: 0.35rem;
+  }
+  .nav-search {
+    padding: 0.3rem 0.6rem;
   }
   .nav-search input {
-    flex: 1 1 auto;
+    font-size: 0.9rem;
+  }
+  .btn {
+    padding: 10px 26px;
+    font-size: 1rem;
+  }
+  .hero h2 {
+    font-size: 2.1rem;
+  }
+  .hero p {
+    font-size: 0.98rem;
+  }
+  .about,
+  .ventures,
+  .ambassador,
+  .president,
+  .members,
+  .contact {
+    padding: 3.5rem 1.1rem;
   }
 }
 
