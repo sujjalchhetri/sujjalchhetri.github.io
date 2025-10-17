@@ -85,7 +85,7 @@ nav:hover {
 .logo {
   display: flex;
   align-items: center;
-  font-size: 2rem;
+  font-size: 1.65rem;
   color: #FFD700;
   font-weight: bold;
   letter-spacing: 2px;
@@ -269,8 +269,8 @@ nav:hover {
     padding: 0.38rem 0.75rem; /* was 0.5rem 0.9rem */
     border-radius: 28px;
     gap: 0.4rem;
-    justify-content: space-between;
-    flex-wrap: nowrap;
+    justify-content: center;
+    flex-wrap: wrap;
     overflow-x: auto;
     align-items: center;
   }
@@ -279,20 +279,18 @@ nav:hover {
     display: none !important;
   }
   .nav-search {
-    order: 2;
-    width: auto;
-    padding: 0.3rem 0.6rem;
-    flex: 1 1 160px;
-    min-width: 160px;
-    justify-content: flex-end;
-    gap: 0.35rem;
+    order: 3;
+    flex: 1 1 100%;
+    min-width: 0;
+    padding: 0.4rem 0.6rem;
+    margin-top: 0.3rem;
+    justify-content: center;
   }
   .nav-search input {
     flex: 1 1 auto;
-    min-width: 0;
   }
   .menu {
-    order: 3;
+    order: 2;
     position: static;
     transform: none;
     background: transparent;
