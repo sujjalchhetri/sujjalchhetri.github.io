@@ -8,6 +8,7 @@
   <meta name="keywords" content="SBSO Foundation, sports, youth, cricket, Bengaluru Super Sports League, BSSL, fitness, India">
   <link rel="icon" type="image/jpeg" href="SBSO_FOUNDATION.jpg">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
   <title>SBSO Foundation</title>
 </head>
 <body>
@@ -22,6 +23,13 @@
       </div>
       <input type="checkbox" id="menu-toggle">
       <label for="menu-toggle" class="menu-icon">&#9776;</label>
+      <form class="nav-search" role="search">
+        <input type="search" id="nav-search-input" name="q" placeholder="Search..." aria-label="Search site">
+        <button type="submit" aria-label="Submit search">
+          <span class="fa-solid fa-magnifying-glass" aria-hidden="true"></span>
+          <span class="sr-only">Search</span>
+        </button>
+      </form>
       <ul class="menu">
         <li><a href="#about">About</a></li>
         <li><a href="#ventures">Our Ventures</a></li>
@@ -36,174 +44,176 @@
   <!-- =========================
        HERO SECTION
   ========================== -->
-  <section class="hero">
-    <img src="hero-image.jpg" alt="Hero Image" class="hero-img" decoding="async">
-    <h2>Welcome to <span>SBSO Foundation</span></h2>
-    <p>Come. Commit. Conquer.</p>
-    <a href="venture2.html" class="btn">Register Now</a>
-  </section>
+  <main>
+    <section class="hero">
+      <img src="hero-image.jpg" alt="Hero Image" class="hero-img" decoding="async">
+      <h2>Welcome to <span>SBSO Foundation</span></h2>
+      <p>Come. Commit. Conquer.</p>
+      <a href="venture2.html" class="btn">Register Now</a>
+    </section>
 
-  <!-- =========================
-       ORGANISATION LOGO SECTION
-  ========================== -->
-  <div class="org-logo-section">
-    <img src="SBSO_FOUNDATION.jpg" alt="Organisation Logo" class="org-logo-img" width="180" height="180" loading="lazy" decoding="async">
-  </div>
-
-  <!-- =========================
-       ABOUT SECTION
-  ========================== -->
-  <section id="about" class="about">
-    <h2>About Us</h2>
-    <p>
-      At SBSO Foundation, we believe that sports have the power to unite, inspire, and transform lives. As a dynamic sports event organization, we bring together players, enthusiasts, and communities through exciting tournaments in cricket, badminton, football, and more — across cities in India.
-      Beyond the field, we are an NGO dedicated to building a healthier, more active, and empowered society. Our initiatives focus on promoting fitness, inclusion, and youth development, nurturing the next generation of athletes and changemakers.
-      With our motto — “Come. Commit. Conquer.” — we invite everyone to step forward, give their best, and achieve greatness both on and off the ground. At SBSO Foundation, every game we organize is more than a competition — it’s a movement towards a better tomorrow through sports.
-    </p>
-  </section>
-
-  <!-- =========================
-       VENTURES SECTION (Main Page)
-  ========================== -->
-  <section id="ventures" class="ventures">
-    <h2>Our Ventures</h2>
-    <div class="info-grid">
-      <a class="info-card" href="venture1.html" target="_blank" rel="noopener noreferrer">
-        <img src="sbcl_logo.jpg" alt="Siliguri Boys Cricket League Logo" class="venture-logo" width="64" height="64" loading="lazy" decoding="async">
-        <p>Siliguri Boys Cricket League</p>
-      </a>
-      <a class="info-card" href="venture2.html" target="_blank" rel="noopener noreferrer">
-        <img src="bssl_logo.jpg" alt="Bengaluru Super Sports League Logo" class="venture-logo" width="64" height="64" loading="lazy" decoding="async">
-        <p>Bengaluru Super Sports League</p>
-      </a>
-      <a class="info-card" href="venture3.html" target="_blank" rel="noopener noreferrer">
-        <img src="kspl_logo.jpg" alt="Kolkata Sports Premier League Logo" class="venture-logo" width="64" height="64" loading="lazy" decoding="async">
-        <p>Kolkata Sports Premier League</p>
-      </a>
-      <a class="info-card" href="venture4.html" target="_blank" rel="noopener noreferrer">
-        <img src="wbssl_logo.jpg" alt="Womens Bengaluru Super Sports League Logo" class="venture-logo" width="64" height="64" loading="lazy" decoding="async">
-        <p>Womens Bengaluru Super Sports League</p>
-      </a>
-      <a class="info-card" href="venture5.html" target="_blank" rel="noopener noreferrer">
-        <img src="dpsl_logo.jpg" alt="Divyang Pro Super League Logo" class="venture-logo" width="64" height="64" loading="lazy" decoding="async">
-        <p>Divyang Pro Super League</p>
-      </a>
+    <!-- =========================
+         ORGANISATION LOGO SECTION
+    ========================== -->
+    <div class="org-logo-section">
+      <img src="SBSO_FOUNDATION.jpg" alt="Organisation Logo" class="org-logo-img" width="180" height="180" loading="lazy" decoding="async">
     </div>
-  </section>
 
-  <!-- =========================
-       MAIN INTERFACE / STATS SECTION
-  ========================== -->
-  <section class="main-interface-stats">
-    <div class="stats-grid">
-      <div class="stat-card"><span class="stat-value">5,000+</span><span class="stat-label">Live Streaming Viewership</span></div>
-      <div class="stat-card"><span class="stat-value">5,000+</span><span class="stat-label">Live Footfall</span></div>
-      <div class="stat-card"><span class="stat-value">10+</span><span class="stat-label">Events Hosted</span></div>
-      <div class="stat-card"><span class="stat-value">3</span><span class="stat-label">No. Of Cities</span></div>
-      <div class="stat-card"><span class="stat-value">30+</span><span class="stat-label">No. Of Partnerships</span></div>
-      <div class="stat-card"><span class="stat-value">4+</span><span class="stat-label">Initiatives Hosted</span></div>
-      <div class="stat-card"><span class="stat-value">1,00,000</span><span class="stat-label">Total Viewership</span></div>
-      <div class="stat-card"><span class="stat-value">50+</span><span class="stat-label">Members Strength</span></div>
-    </div>
-  </section>
+    <!-- =========================
+         ABOUT SECTION
+    ========================== -->
+    <section id="about" class="about">
+      <h2>About Us</h2>
+      <p>
+        At SBSO Foundation, we believe that sports have the power to unite, inspire, and transform lives. As a dynamic sports event organization, we bring together players, enthusiasts, and communities through exciting tournaments in cricket, badminton, football, and more — across cities in India.
+        Beyond the field, we are an NGO dedicated to building a healthier, more active, and empowered society. Our initiatives focus on promoting fitness, inclusion, and youth development, nurturing the next generation of athletes and changemakers.
+        With our motto — “Come. Commit. Conquer.” — we invite everyone to step forward, give their best, and achieve greatness both on and off the ground. At SBSO Foundation, every game we organize is more than a competition — it’s a movement towards a better tomorrow through sports.
+      </p>
+    </section>
 
-  <!-- =========================
-       AMBASSADOR SECTION
-  ========================== -->
-  <section id="ambassador" class="ambassador">
-    <h2>Our Brand Ambassadors</h2>
-    <div class="info-grid">
-      <div class="info-card ambassador-card">
-        <img src="Ambassador1.jpg" alt="Ivanko Bobeiko Photo" class="ambassador-img" width="110" height="110" loading="lazy" decoding="async">
-        <h3>Ivanko Bobeiko</h3>
-        <p class="ambassador-message">
-          "Ivanko Bobeiko exemplifies a powerful blend of climate advocacy and wartime humanitarian service—bringing environmental justice into conversation with peace-building. Where innovation meets performance."
-        </p>
+    <!-- =========================
+         VENTURES SECTION (Main Page)
+    ========================== -->
+    <section id="ventures" class="ventures">
+      <h2>Our Ventures</h2>
+      <div class="info-grid">
+        <a class="info-card" href="venture1.html" target="_blank" rel="noopener noreferrer">
+          <img src="sbcl_logo.jpg" alt="Siliguri Boys Cricket League Logo" class="venture-logo" width="64" height="64" loading="lazy" decoding="async">
+          <p>Siliguri Boys Cricket League</p>
+        </a>
+        <a class="info-card" href="venture2.html" target="_blank" rel="noopener noreferrer">
+          <img src="bssl_logo.jpg" alt="Bengaluru Super Sports League Logo" class="venture-logo" width="64" height="64" loading="lazy" decoding="async">
+          <p>Bengaluru Super Sports League</p>
+        </a>
+        <a class="info-card" href="venture3.html" target="_blank" rel="noopener noreferrer">
+          <img src="kspl_logo.jpg" alt="Kolkata Sports Premier League Logo" class="venture-logo" width="64" height="64" loading="lazy" decoding="async">
+          <p>Kolkata Sports Premier League</p>
+        </a>
+        <a class="info-card" href="venture4.html" target="_blank" rel="noopener noreferrer">
+          <img src="wbssl_logo.jpg" alt="Womens Bengaluru Super Sports League Logo" class="venture-logo" width="64" height="64" loading="lazy" decoding="async">
+          <p>Womens Bengaluru Super Sports League</p>
+        </a>
+        <a class="info-card" href="venture5.html" target="_blank" rel="noopener noreferrer">
+          <img src="dpsl_logo.jpg" alt="Divyang Pro Super League Logo" class="venture-logo" width="64" height="64" loading="lazy" decoding="async">
+          <p>Divyang Pro Super League</p>
+        </a>
       </div>
-      <div class="info-card ambassador-card">
-        <img src="Ambassador2.jpg" alt="RTN Ravindra Jain Photo" class="ambassador-img" width="110" height="110" loading="lazy" decoding="async">
-        <h3>RTN Ravindra Jain</h3>
-        <p class="ambassador-message">
-          "RTN Ravindra Jain A distinguished entrepreneur-turned-philanthropist from North Bengal, Mr. Jain has dedicated over five decades to community-building-leading major healthcare, education, environmental, and disability initiatives. His inspiring journey and unwavering support for youth and sports make him a perfect guide and motivator for our young cricketers."
-        </p>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- =========================
-       PRESIDENT SECTION
-  ========================== -->
-  <section id="president" class="president">
-    <h2>Our President, Founder & Director</h2>
-    <div class="info-grid">
-      <div class="info-card president-card">
-        <img src="president_pic.jpg" alt="President Photo" class="president-img" width="110" height="110" loading="lazy" decoding="async">
-        <h3>Argha Sengupta</h3>
-        <p class="president-mission">
-          "The backbone of the event and leads every aspect—sponsorship, team management, public relations, finance, and marketing. His tireless efforts have turned SBSO Foundation into more than just Event Venture; it’s a social movement. By promoting inclusivity, youth development, and community spirit through Sports, Argha empowers young talent and unites Sports across different cities of India. His leadership continues to inspire, shaping lives both on and off the pitch."
-        </p>
+    <!-- =========================
+         MAIN INTERFACE / STATS SECTION
+    ========================== -->
+    <section class="main-interface-stats">
+      <div class="stats-grid">
+        <div class="stat-card"><span class="stat-value">5,000+</span><span class="stat-label">Live Streaming Viewership</span></div>
+        <div class="stat-card"><span class="stat-value">5,000+</span><span class="stat-label">Live Footfall</span></div>
+        <div class="stat-card"><span class="stat-value">10+</span><span class="stat-label">Events Hosted</span></div>
+        <div class="stat-card"><span class="stat-value">3</span><span class="stat-label">No. Of Cities</span></div>
+        <div class="stat-card"><span class="stat-value">30+</span><span class="stat-label">No. Of Partnerships</span></div>
+        <div class="stat-card"><span class="stat-value">4+</span><span class="stat-label">Initiatives Hosted</span></div>
+        <div class="stat-card"><span class="stat-value">1,00,000</span><span class="stat-label">Total Viewership</span></div>
+        <div class="stat-card"><span class="stat-value">50+</span><span class="stat-label">Members Strength</span></div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- =========================
-       MEMBERS SECTION
-  ========================== -->
-  <section id="members" class="members">
-    <h2>Board Members</h2>
-    <div class="info-grid">
-      <div class="info-card member-card">
-        <img src="sayan.jpg" alt="Sayan Karmakar" class="member-img" width="110" height="110" loading="lazy" decoding="async">
-        <h3>Sayan Karmakar</h3>
-        <p class="member-role">Co-founder & Vice President</p>
-        <p class="member-bio">As Co-founder and Vice President of SBSO, I drive the development of sports initiatives, fostering talent and work as the Executive Embodiment . With a passion for sports, I work closely with athletes, and teams to achieve excellence and build a stronger sporting community.</p>
+    <!-- =========================
+         AMBASSADOR SECTION
+    ========================== -->
+    <section id="ambassador" class="ambassador">
+      <h2>Our Brand Ambassadors</h2>
+      <div class="info-grid">
+        <div class="info-card ambassador-card">
+          <img src="Ambassador1.jpg" alt="Ivanko Bobeiko Photo" class="ambassador-img" width="110" height="110" loading="lazy" decoding="async">
+          <h3>Ivanko Bobeiko</h3>
+          <p class="ambassador-message">
+            "Ivanko Bobeiko exemplifies a powerful blend of climate advocacy and wartime humanitarian service—bringing environmental justice into conversation with peace-building. Where innovation meets performance."
+          </p>
+        </div>
+        <div class="info-card ambassador-card">
+          <img src="Ambassador2.jpg" alt="RTN Ravindra Jain Photo" class="ambassador-img" width="110" height="110" loading="lazy" decoding="async">
+          <h3>RTN Ravindra Jain</h3>
+          <p class="ambassador-message">
+            "RTN Ravindra Jain A distinguished entrepreneur-turned-philanthropist from North Bengal, Mr. Jain has dedicated over five decades to community-building-leading major healthcare, education, environmental, and disability initiatives. His inspiring journey and unwavering support for youth and sports make him a perfect guide and motivator for our young cricketers."
+          </p>
+        </div>
       </div>
-      <div class="info-card member-card">
-        <img src="asif.jpg" alt="Md Asif" class="member-img" width="110" height="110" loading="lazy" decoding="async">
-        <h3>Md Asif</h3>
-        <p class="member-role">Secretary of Divyang Pro Super League</p>
-        <p class="member-bio">Md Asif, Divyang Pro Super League Secretary, is committed to holistic youth development through sports, education, and social impact. With leagues running across India, SBSO fosters talent, discipline, and community spirit. Asif ensures the foundation’s vision is executed through strategic planning, strong leadership, and impactful programs that go beyond the field to build future-ready citizens.</p>
-      </div>
-      <div class="info-card member-card">
-        <img src="spandan.jpg" alt="Spandan Chaudhury" class="member-img" width="110" height="110" loading="lazy" decoding="async">
-        <h3>Spandan Chaudhury</h3>
-        <p class="member-role">Vice President of BSSL</p>
-        <p class="member-bio">Spandan Chaudhury is the dynamic Vice President of the Bengaluru Super Sports League (BSSL). With a keen eye for detail and a passion for sports management, Spandan oversees event planning, team coordination, and on-ground execution. His leadership ensures that every tournament runs smoothly, from scheduling matches to managing logistics and supporting players. Spandan is known for his ability to motivate teams, resolve challenges quickly, and create a positive, energetic atmosphere for all participants. His dedication and organizational skills are vital to the continued success and growth of BSSL.</p>
-      </div>
-      <div class="info-card member-card">
-        <img src="krithika.jpg" alt="Krithika Vijay" class="member-img" width="110" height="110" loading="lazy" decoding="async">
-        <h3>Krithika Vijay</h3>
-        <p class="member-role">Director of WBSSL</p>
-        <p class="member-bio">Krithika Vijay is the Director of the Women’s Bengaluru Super Sports League (WBSSL). She is passionate about promoting women’s participation in sports and creating opportunities that highlight their talent and leadership. With a vision for an inclusive sporting culture, she empowers athletes, fosters teamwork, and inspires the next generation to break barriers and excel.</p>
-      </div>
-      <div class="info-card member-card">
-        <img src="krish.jpg" alt="Krish" class="member-img" width="110" height="110" loading="lazy" decoding="async">
-        <h3>Krish</h3>
-        <p class="member-role">Deputy Secretary of Divyang Pro Super League</p>
-        <p class="member-bio">I am currently serving as the Vice Secretary of the SBSO Foundation. I am deeply passionate about contributing to meaningful initiatives and driving positive change through our work. With full dedication and commitment, I look forward to supporting the foundation’s mission and making a lasting impact. I believe in working collaboratively and giving my best efforts to ensure the growth and success of SBSO.</p>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- =========================
-       CONTACT SECTION
-  ========================== -->
-  <section id="contact" class="contact">
-    <h2>Contact Us</h2>
-    <p>We'd love to hear from you! Fill out the form below to get in touch.</p>
-    <form class="contact-form animated-contact" action="mailto:blrsupersportsleague@gmail.com" method="POST" enctype="text/plain">
-      <div class="contact-fields">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <textarea name="message" placeholder="Your Message" required></textarea>
+    <!-- =========================
+         PRESIDENT SECTION
+    ========================== -->
+    <section id="president" class="president">
+      <h2>Our President, Founder & Director</h2>
+      <div class="info-grid">
+        <div class="info-card president-card">
+          <img src="president_pic.jpg" alt="President Photo" class="president-img" width="110" height="110" loading="lazy" decoding="async">
+          <h3>Argha Sengupta</h3>
+          <p class="president-mission">
+            "The backbone of the event and leads every aspect—sponsorship, team management, public relations, finance, and marketing. His tireless efforts have turned SBSO Foundation into more than just Event Venture; it’s a social movement. By promoting inclusivity, youth development, and community spirit through Sports, Argha empowers young talent and unites Sports across different cities of India. His leadership continues to inspire, shaping lives both on and off the pitch."
+          </p>
+        </div>
       </div>
-      <button type="submit" class="btn contact-btn">Send</button>
-    </form>
-  </section>
+    </section>
+
+    <!-- =========================
+         MEMBERS SECTION
+    ========================== -->
+    <section id="members" class="members">
+      <h2>Board Members</h2>
+      <div class="info-grid">
+        <div class="info-card member-card">
+          <img src="sayan.jpg" alt="Sayan Karmakar" class="member-img" width="110" height="110" loading="lazy" decoding="async">
+          <h3>Sayan Karmakar</h3>
+          <p class="member-role">Co-founder & Vice President</p>
+          <p class="member-bio">As Co-founder and Vice President of SBSO, I drive the development of sports initiatives, fostering talent and work as the Executive Embodiment . With a passion for sports, I work closely with athletes, and teams to achieve excellence and build a stronger sporting community.</p>
+        </div>
+        <div class="info-card member-card">
+          <img src="asif.jpg" alt="Md Asif" class="member-img" width="110" height="110" loading="lazy" decoding="async">
+          <h3>Md Asif</h3>
+          <p class="member-role">Secretary of Divyang Pro Super League</p>
+          <p class="member-bio">Md Asif, Divyang Pro Super League Secretary, is committed to holistic youth development through sports, education, and social impact. With leagues running across India, SBSO fosters talent, discipline, and community spirit. Asif ensures the foundation’s vision is executed through strategic planning, strong leadership, and impactful programs that go beyond the field to build future-ready citizens.</p>
+        </div>
+        <div class="info-card member-card">
+          <img src="spandan.jpg" alt="Spandan Chaudhury" class="member-img" width="110" height="110" loading="lazy" decoding="async">
+          <h3>Spandan Chaudhury</h3>
+          <p class="member-role">Vice President of BSSL</p>
+          <p class="member-bio">Spandan Chaudhury is the dynamic Vice President of the Bengaluru Super Sports League (BSSL). With a keen eye for detail and a passion for sports management, Spandan oversees event planning, team coordination, and on-ground execution. His leadership ensures that every tournament runs smoothly, from scheduling matches to managing logistics and supporting players. Spandan is known for his ability to motivate teams, resolve challenges quickly, and create a positive, energetic atmosphere for all participants. His dedication and organizational skills are vital to the continued success and growth of BSSL.</p>
+        </div>
+        <div class="info-card member-card">
+          <img src="krithika.jpg" alt="Krithika Vijay" class="member-img" width="110" height="110" loading="lazy" decoding="async">
+          <h3>Krithika Vijay</h3>
+          <p class="member-role">Director of WBSSL</p>
+          <p class="member-bio">Krithika Vijay is the Director of the Women’s Bengaluru Super Sports League (WBSSL). She is passionate about promoting women’s participation in sports and creating opportunities that highlight their talent and leadership. With a vision for an inclusive sporting culture, she empowers athletes, fosters teamwork, and inspires the next generation to break barriers and excel.</p>
+        </div>
+        <div class="info-card member-card">
+          <img src="krish.jpg" alt="Krish" class="member-img" width="110" height="110" loading="lazy" decoding="async">
+          <h3>Krish</h3>
+          <p class="member-role">Deputy Secretary of Divyang Pro Super League</p>
+          <p class="member-bio">I am currently serving as the Vice Secretary of the SBSO Foundation. I am deeply passionate about contributing to meaningful initiatives and driving positive change through our work. With full dedication and commitment, I look forward to supporting the foundation’s mission and making a lasting impact. I believe in working collaboratively and giving my best efforts to ensure the growth and success of SBSO.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         CONTACT SECTION
+    ========================== -->
+    <section id="contact" class="contact">
+      <h2>Contact Us</h2>
+      <p>We'd love to hear from you! Fill out the form below to get in touch.</p>
+      <form class="contact-form animated-contact" action="mailto:blrsupersportsleague@gmail.com" method="POST" enctype="text/plain">
+        <div class="contact-fields">
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Your Email" required>
+          <textarea name="message" placeholder="Your Message" required></textarea>
+        </div>
+        <button type="submit" class="btn contact-btn">Send</button>
+      </form>
+    </section>
+  </main>
 
   <!-- =========================
        FOOTER
-  ========================== -->
+    ========================== -->
   <footer>
     <div class="social-links">
       <div class="social-item">
@@ -233,5 +243,53 @@
     </div>
     <p>&copy; 2024 SBSO Foundation. All rights reserved.</p>
   </footer>
+
+  <script>
+    (function () {
+      const form = document.querySelector('.nav-search');
+      const input = document.getElementById('nav-search-input');
+      const menuToggle = document.getElementById('menu-toggle');
+      if (!form || !input) return;
+
+      form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const term = input.value.trim().toLowerCase();
+        if (!term) {
+          input.focus();
+          return;
+        }
+
+        const sections = Array.from(document.querySelectorAll('section[id]'));
+        const links = Array.from(document.querySelectorAll('nav .menu a[href^="#"]'));
+
+        const matchInLinks = links.find((link) =>
+          link.textContent.trim().toLowerCase().includes(term)
+        );
+        const targetId = matchInLinks ? matchInLinks.getAttribute('href').slice(1) : null;
+
+        let targetSection = targetId
+          ? document.getElementById(targetId)
+          : sections.find((section) => {
+              const heading = section.querySelector('h1, h2, h3');
+              return heading && heading.textContent.trim().toLowerCase().includes(term);
+            });
+
+        if (!targetSection && sections.length) {
+          targetSection = sections.find((section) =>
+            section.id.toLowerCase().includes(term.replace(/\s+/g, ''))
+          );
+        }
+
+        if (targetSection) {
+          targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          if (menuToggle && menuToggle.checked) menuToggle.checked = false;
+        } else {
+          alert('No matching section found. Try keywords like About, Ventures, Contact, etc.');
+          input.focus();
+          input.select();
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
