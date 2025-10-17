@@ -424,8 +424,8 @@ nav:hover {
   width: 100%;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  border: 2px solid #FFD700;
-  color: #FFD700;
+  border: 2px solid #fff; /* default white border */
+  color: #fff; /* default white text */
   font-weight: bold;
   font-size: 1.15rem;
   text-align: center;
@@ -449,7 +449,7 @@ nav:hover {
   border-radius: 12px;
   background: #fff;
   box-shadow: 0 2px 8px #FFD70044;
-  border: 2px solid #FFD700;
+  border: 2px solid #fff;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -457,9 +457,10 @@ nav:hover {
 .ventures .info-card:hover {
   transform: scale(1.07) translateY(-8px) rotate(-2deg);
   background: rgba(255,215,0,0.18);
-  color: #002B5B;
+  color: #fff; /* light color for readability */
+  text-shadow: 0 1px 2px rgba(0,0,0,0.4);
   box-shadow: 0 8px 32px #FFD70088, 0 2px 12px #2d5ea044;
-  border: 2px solid #fff;
+  border: 2px solid #FFD700; /* hover: gold */
 }
 
 /* =========================
@@ -547,11 +548,25 @@ nav:hover {
   align-items: center;
   text-align: center;
 }
-.info-card:hover, .member-card:hover, .president-card:hover, .ambassador-card:hover {
+
+.info-card:hover, .member-card:hover, .president-card:hover {
   transform: translateY(-10px) scale(1.03);
   background: rgba(255, 215, 0, 0.15);
   color: #002B5B;
   border: 1.5px solid #fff;
+  box-shadow: 0 4px 24px #FFD70044;
+}
+
+/* Ambassador cards: default white border, gold on hover */
+.ambassador-card {
+  border: 1.5px solid #fff;
+  color: #fff;
+}
+.ambassador-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  background: rgba(255, 215, 0, 0.15);
+  color: #002B5B;
+  border: 1.5px solid #FFD700;
   box-shadow: 0 4px 24px #FFD70044;
 }
 
@@ -569,21 +584,43 @@ nav:hover {
   text-align: center;
   padding-top: 2rem;
 }
+/* President card default white border */
+.president-card {
+  border: 1.5px solid #fff;
+  color: #fff;
+}
+.president-card:hover {
+  border: 1.5px solid #FFD700;
+  color: #002B5B;
+  background: rgba(255, 215, 0, 0.15);
+  box-shadow: 0 4px 24px #FFD70044;
+  transform: translateY(-10px) scale(1.03);
+}
 .president-img, .ambassador-img, .member-img {
   width: 110px;
   height: 110px;
   object-fit: cover;
   border-radius: 50%;
-  border: 3px solid #FFD700;
+  border: 3px solid #fff; /* default white */
   margin-bottom: 1rem;
   background: #fff;
   box-shadow: 0 2px 12px #2d5ea044;
+  transition: border-color 220ms ease, box-shadow 220ms ease, transform 220ms ease;
 }
 .president-mission, .president-vision, .ambassador-message {
   margin: 0.7rem 0;
   color: #FFD700;
   font-size: 1.08rem;
   font-weight: 500;
+}
+
+/* Make avatar borders switch to gold when their card is hovered */
+.president-card:hover .president-img,
+.ambassador-card:hover .ambassador-img,
+.member-card:hover .member-img {
+  border-color: #FFD700;
+  box-shadow: 0 6px 22px rgba(255,215,0,0.16), 0 4px 12px rgba(0,0,0,0.12);
+  transform: translateY(-3px) scale(1.02);
 }
 .president-mission strong, .president-vision strong, .ambassador-message strong {
   color: #fff;
@@ -618,8 +655,8 @@ nav:hover {
   transition: 0.3s;
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
-  border: 1.5px solid #FFD700;
-  color: #FFD700;
+  border: 1.5px solid #fff;
+  color: #fff;
   font-weight: bold;
   box-shadow: 0 2px 12px #FFD70022;
   position: relative;
@@ -633,7 +670,7 @@ nav:hover {
   transform: translateY(-10px) scale(1.03);
   background: rgba(255, 215, 0, 0.15);
   color: #002B5B;
-  border: 1.5px solid #fff;
+  border: 1.5px solid #FFD700;
   box-shadow: 0 4px 24px #FFD70044;
 }
 .member-img {
