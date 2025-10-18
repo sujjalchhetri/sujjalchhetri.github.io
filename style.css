@@ -1909,7 +1909,6 @@ li {
 }
 
 /* =========================
-<<<<<<< HEAD
    BSSL SPECIFIC STYLES
 ========================= */
 /* SBCL venture page: ensure the cloud fills mobile screens */
@@ -1921,7 +1920,6 @@ li {
 footer {
   margin-top: auto; /* ensures footer sticks to bottom */
 }
-=======
    MODERN FOOTER (Cricket-themed) - consolidated
    Full-bleed background with constrained content and responsive layout
    ========================= */
@@ -2049,4 +2047,3 @@ footer {
 /* floating animation for logo */
 @keyframes floaty { 0% { transform: translateY(0);} 50% { transform: translateY(-6px);} 100% { transform: translateY(0);} }
 .footer-logo { animation: floaty 6s ease-in-out infinite; }
->>>>>>> 1c4f0930ecc82b6ebad2bae4e1826b598c0afd4b
