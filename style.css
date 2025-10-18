@@ -1452,7 +1452,7 @@ nav:hover {
 /* =========================
    FOOTER AND SOCIAL LINKS (restored and responsive)
 ========================= */
-footer {
+footer:not(.cricket-footer) {
   background: #001F3F;
   padding: 1.2rem 0 0.7rem 0;
   text-align: center;
@@ -1509,7 +1509,7 @@ footer {
   .social-icon { width: 36px; height: 36px; }
 }
 @media (max-width: 600px) {
-  footer {
+  footer:not(.cricket-footer) {
     padding: 1.6rem 0 1.1rem;
     font-size: 1.05rem;
   }
@@ -1925,31 +1925,44 @@ footer {
 ========================= */
 .site-footer {
   position: relative;
-  /* full-bleed to viewport edges */
-  width: 100vw;
-  max-width: 100vw;
-  left: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  padding: 0; /* outer padding removed so footer is flush */
-  overflow: hidden;
+  width: 100%;
+  margin: 0;
+  padding: 0;
   color: #fff;
   box-sizing: border-box;
-  background-color: #001F3F; /* fallback solid color so footer always appears covered */
+  background-color: transparent;
   box-shadow: 0 -2px 12px rgba(0,0,0,0.35); /* subtle separation from page */
   font-family: 'Davetica', 'Times New Roman', serif;
+  overflow: hidden;
 }
 .site-footer::before {
   content: '';
   position: absolute;
-  inset: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   z-index: 0;
-  /* Decorative overlay disabled to ensure footer remains fully opaque */
-  background: rgba(0,31,63,1); /* solid fallback colour */
-  background-blend-mode: normal;
-  background-size: 280% 280%;
-  animation: footerGlow 18s ease-in-out infinite alternate;
-  pointer-events: none; /* allow clicks through decorative layer */
+  background:
+    radial-gradient(circle at 8% 12%, rgba(255,215,0,0.18), transparent 58%),
+    radial-gradient(circle at 92% 88%, rgba(13,142,84,0.16), transparent 62%),
+    repeating-linear-gradient(-36deg, rgba(255,215,0,0.12) 0 14px, transparent 14px 28px),
+    linear-gradient(135deg, #001631 0%, #002a57 48%, #01264b 100%);
+  background-repeat: no-repeat;
+  pointer-events: none;
+}
+.site-footer::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 3px;
+  transform: none;
+  background: linear-gradient(90deg, transparent, rgba(255,215,0,0.65), transparent);
+  opacity: 0.45;
+  pointer-events: none;
 }
 
 /* ensure children sit above the decorative background */
@@ -1957,11 +1970,11 @@ footer {
 
 .site-footer > .footer-top,
 .site-footer > .footer-bottom {
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   box-sizing: border-box;
-  padding-top: 6px; /* tightened vertical spacing */
-  padding-bottom: 6px;
+  padding: 24px 1.5rem;
 }
 
 /* Make sure small viewport won't get a horizontal scrollbar from the full-bleed trick */
@@ -1970,94 +1983,168 @@ footer {
 }
 
 /* Guarantee footer fills visible area and removes any accidental gaps */
-.site-footer, .site-footer > .footer-top, .site-footer > .footer-bottom {
-  min-width: 100%;
-}
+.site-footer, .site-footer > .footer-top, .site-footer > .footer-bottom { min-width: 0; }
 
 .site-footer .footer-top {
-  display: flex;
-  gap: 1.5rem;
-  align-items: flex-start;
-  justify-content: space-between;
-  border-bottom: 2px solid rgba(255,215,0,0.14);
-  padding-top: 6px; /* extra safety for tighter layout */
-  padding-bottom: 6px;
+  display: grid;
+  grid-template-columns: minmax(260px, 0.75fr) minmax(340px, 1fr);
+  align-items: stretch;
+  gap: clamp(2rem, 4vw, 3.2rem);
+  padding: clamp(32px, 4vw, 48px) clamp(1.5rem, 4vw, 2.8rem);
+  border-bottom: 1px solid rgba(255,215,0,0.2);
+  position: relative;
+  overflow: hidden;
 }
 
 .footer-brand {
-  display: flex;
-  gap: 0.9rem;
   align-items: center;
+  justify-content: flex-start;
+  gap: 1.1rem;
   margin: 0;
-  padding: 12px 16px;
+  padding: 0;
+  flex: 0 0 320px;
 }
-.footer-brand { flex: 0 0 320px; }
 .footer-logo {
   width: 60px;
   height: 60px;
-  border-radius: 8px;
-  border: 2px solid rgba(255,215,0,0.14);
-  box-shadow: 0 6px 24px rgba(0,0,0,0.4);
+  border-radius: 12px;
   background: #fff;
+  border: 2px solid rgba(255,215,0,0.35);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.35);
 }
-.footer-brand h3 { color: #FFD700; font-size: 1.1rem; margin: 0; }
-.footer-tag { color: rgba(255,255,255,0.85); margin: 0; font-size: 0.95rem; }
-
-.footer-links { display: flex; gap: 1.2rem; flex: 1 1 480px; justify-content: flex-end; align-items: flex-start; flex-wrap: wrap; }
-.links-col { flex: 1 1 160px; min-width: 140px; padding: 12px 8px; }
-.links-col h4 { color: #FFD700; margin: 0 0 6px 0; font-size: 1rem; }
-.links-col ul { list-style: none; margin: 0; padding: 0; }
-.links-col li { margin: 0.35rem 0; }
-.links-col a { color: rgba(255,255,255,0.95); text-decoration: none; transition: color 0.18s, transform 0.18s; }
-.links-col a:hover { color: #FFD700; transform: translateX(4px); }
-
-.footer-social { display: flex; flex-direction: column; gap: 8px; margin: 0; padding: 12px 8px; }
-.footer-social { flex: 0 0 160px; }
-.footer-social li { list-style: none; }
-.footer-social a { display: inline-flex; align-items: center; gap: 8px; padding: 6px 8px; background: rgba(255,255,255,0.02); border-radius: 6px; box-shadow: 0 4px 12px rgba(0,0,0,0.28); color: inherit; }
-.footer-social i { width: 28px; height: 28px; display: inline-grid; place-items: center; font-size: 14px; background: rgba(0,43,91,0.85); color: #FFD700; border-radius: 50%; }
-
-.site-footer .footer-bottom { display: flex; justify-content: space-between; align-items: center; gap: 0.6rem; padding: 6px 12px; color: rgba(255,255,255,0.7); font-size: 0.95rem; }
-.site-footer .footer-bottom p { margin: 0; line-height: 1.15; }
-.site-footer .footer-bottom a { color: rgba(255,255,255,0.95); text-decoration: underline; }
-
-@media (max-width: 900px) {
-  /* stack footer sections vertically on narrow screens and control order */
-  .site-footer .footer-top { flex-direction: column; align-items: stretch; gap: 14px; }
-  .footer-brand { order: 1; padding: 8px 12px; }
-  .footer-links { order: 2; width: 100%; justify-content: flex-start; }
-  .links-col { min-width:  100%; flex: 1 1 100%; }
-  .footer-social { order: 3; display: flex; flex-direction: row; gap: 10px; justify-content: flex-start; }
-  .footer-brand h3 { font-size: 1rem; }
+.footer-brand h3 {
+  color: #FFD700;
+  font-size: 1.3rem;
+  margin: 0;
+  letter-spacing: 0.05em;
+}
+.footer-tag {
+  color: rgba(255,255,255,0.8);
+  margin: 0.25rem 0 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
 }
 
-@media (max-width: 600px) {
-  .footer-social { flex-direction: row; gap: 10px; flex-wrap: wrap; }
-  .site-footer .footer-bottom { flex-direction: column; align-items: center; text-align: center; gap: 6px; }
-  .site-footer > .footer-top, .site-footer > .footer-bottom { padding-left: 12px; padding-right: 12px; }
-  .footer-logo { width: 48px; height: 48px; }
-  .footer-tag { font-size: 0.9rem; }
-  .links-col h4 { font-size: 0.95rem; }
+.footer-connect {
+  flex: 1 1 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: clamp(1.6rem, 3vw, 2.6rem);
+  align-items: flex-start;
+  justify-items: flex-start;
 }
 
-/* larger screens: spread footer links into columns and align brand/contact */
-@media (min-width: 1200px) {
-  .site-footer .footer-top { align-items: center; }
-  .footer-links { gap: 2rem; }
+.footer-connect-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 2rem;
+  width: 100%;
 }
 
-/* floating animation for logo */
-@keyframes floaty { 0% { transform: translateY(0);} 50% { transform: translateY(-6px);} 100% { transform: translateY(0);} }
-.footer-logo { animation: floaty 6s ease-in-out infinite; }
+.footer-social-wrap,
+.footer-links,
+.footer-contact {
+  text-align: left;
+}
+
+.footer-social-wrap h4,
+.footer-contact h4 {
+  margin: 0 0 0.6rem;
+  color: rgba(255,255,255,0.9);
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.footer-social {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+.footer-social a {
+  gap: 0.6rem;
+  padding: 0.3rem 0;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+.footer-social a:hover {
+  color: #ffd700;
+  transform: translateX(4px);
+}
+.footer-social i {
+  width: 28px;
+  height: 28px;
+  display: inline-grid;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(255,215,0,0.15);
+  color: #FFD700;
+}
+
+.footer-links ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-links li {
+  margin: 0.35rem 0;
+}
+
+.footer-links a {
+  color: rgba(255,255,255,0.82);
+  text-decoration: none;
+  transition: color 0.18s ease, transform 0.2s ease;
+  display: inline-block;
+  padding: 0.25rem 0;
+}
+
+.footer-links a:hover {
+  color: #FFD700;
+  transform: translateX(4px);
+}
+
+.footer-contact-list {
+  align-items: flex-start;
+}
+.footer-contact-list li {
+  gap: 0.6rem;
+}
+.footer-contact-list a:hover {
+  color: #ffd700;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.2rem;
+  width: 100%;
+}
+.footer-links .links-col {
+  min-width: 0;
+}
+.footer-links .links-col + .links-col {
+  border-top: 1px solid rgba(255,215,0,0.18);
+  padding-top: 0.8rem;
+}
 
 /* =========================
-   FOOTER GLOW ANIMATION
+   FOOTER STYLES FOR SPECIFIC PAGES
 ========================= */
-@keyframes footerGlow {
-  0%   { background-position: 0% 50%; opacity: 0.92; }
-  50%  { background-position: 50% 52%; opacity: 1; }
-  100% { background-position: 100% 48%; opacity: 0.94; }
+footer {
+  background:
+    radial-gradient(circle at top left, rgba(255,215,0,0.12), transparent 55%),
+    radial-gradient(circle at bottom right, rgba(21,101,192,0.26), transparent 60%),
+    #001F3F;
 }
+.cricket-footer .footer-top { gap: 3rem; }
+.cricket-footer .footer-bottom {
+  border-top: 1px solid rgba(255,215,0,0.2);
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+.cricket-footer .footer-credit { letter-spacing: 0.04em; }
 
 /* =========================
    IMAGE AND VIDEO RESPONSIVENESS
@@ -2067,4 +2154,138 @@ video {
   max-width: 100%;
   height: auto;
   display: block;
+}
+
+/* Modern Cricket Footer container and layout */
+.cricket-footer {
+  position: relative;
+  width: 100%;
+  padding: 0;
+  color: #fff;
+  background: transparent;
+  box-shadow: 0 -2px 12px rgba(0,0,0,0.35);
+  overflow: hidden;
+}
+.cricket-footer::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(255,215,0,0.18), transparent 58%),
+    radial-gradient(circle at 85% 85%, rgba(187,37,40,0.12), transparent 62%),
+    repeating-linear-gradient(-36deg, rgba(255,215,0,0.12) 0 12px, transparent 12px 24px),
+    linear-gradient(135deg, #001631 0%, #002a57 48%, #01264b 100%);
+  background-repeat: no-repeat;
+  pointer-events: none;
+}
+.cricket-footer::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, rgba(255,215,0,0.65), transparent);
+  opacity: 0.45;
+  pointer-events: none;
+}
+.cricket-footer > .footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+.cricket-footer .footer-top {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.9fr) minmax(340px, 1.2fr);
+  gap: clamp(1.8rem, 4vw, 3rem);
+  padding: clamp(32px, 4vw, 48px) clamp(1.2rem, 3vw, 2rem);
+  border-bottom: 1px solid rgba(255,215,0,0.2);
+}
+.cricket-footer .footer-logo {
+  width: 68px;
+  height: 68px;
+  border-radius: 12px;
+  background: #fff;
+  border: 2px solid rgba(255,215,0,0.45);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.25);
+  object-fit: contain;
+  animation: floaty 6s ease-in-out infinite;
+}
+
+/* Lists and items */
+.cricket-footer .footer-social {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.65rem;
+}
+.cricket-footer .footer-social li a {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  color: rgba(255,255,255,0.85);
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+  padding: 0.25rem 0;
+}
+.cricket-footer .footer-social li a:hover {
+  color: #FFD700;
+  transform: translateX(4px);
+}
+.cricket-footer .footer-contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.cricket-footer .footer-contact-list a { color: inherit; text-decoration: none; }
+.cricket-footer .footer-contact-list a:hover { color: #FFD700; }
+
+/* Bottom row */
+.cricket-footer .footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px clamp(1.2rem, 3vw, 2rem);
+  color: rgba(255,255,255,0.7);
+  font-size: 0.95rem;
+}
+.cricket-footer .footer-bottom p { margin: 0; }
+
+/* Float animation for logo */
+@keyframes floaty { 0% { transform: translateY(0);} 50% { transform: translateY(-5px);} 100% { transform: translateY(0);} }
+
+/* Responsive */
+@media (max-width: 900px) {
+  .cricket-footer .footer-top { grid-template-columns: 1fr; text-align: center; }
+  .cricket-footer .footer-brand { justify-content: center; margin-bottom: 1rem; }
+  .cricket-footer .footer-connect {
+    grid-template-columns: repeat(2, minmax(200px, 1fr));
+    justify-items: center;
+  }
+  .cricket-footer .footer-social,
+  .cricket-footer .footer-contact-list { align-items: center; }
+  .cricket-footer .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+}
+@media (max-width: 700px) {
+  .cricket-footer .footer-connect { grid-template-columns: 1fr; gap: 1.2rem; }
+  .cricket-footer .footer-logo { width: 56px; height: 56px; }
+  .cricket-footer .footer-contact-list li { flex-wrap: wrap; }
+}
+@media (max-width: 400px) {
+  .cricket-footer .footer-top { padding: 24px 12px; }
+  .cricket-footer .footer-bottom { padding: 12px 12px; }
+}
+
+/* Improve long text wrapping in contact & links */
+.cricket-footer .footer-contact-list,
+.cricket-footer .footer-links ul {
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
