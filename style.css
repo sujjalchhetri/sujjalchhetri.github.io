@@ -358,14 +358,24 @@ nav:hover {
     font-size: 1.2rem;
   }
 }
-@media (max-width: 480px) {
-  nav {
-    padding: 0.34rem 0.6rem; /* was 0.45rem 0.7rem */
-    gap: 0.35rem;
-  }
-  .nav-search {
-    padding: 0.3rem 0.6rem;
-  }
+:root {
+  --footer-safe-space: calc(88px + env(safe-area-inset-bottom, 16px));
+}
+/* Keep a small default bottom gutter so content doesn't butt against
+   the footer. On smaller screens we reserve the larger safe-space to
+   avoid overlap with device safe-area insets. */
+main { padding-bottom: 12px; }
+
+@media (max-width: 900px) {
+  /* on narrow screens, make room for the footer (avoid overlap) */
+  main { padding-bottom: var(--footer-safe-space); }
+}
+
+@media (max-width: 420px) {
+  /* slightly more room on very small devices */
+  main { padding-bottom: calc(var(--footer-safe-space) + 12px); }
+  .footer-logo { width: 52px; height: auto; }
+}
   .nav-search input {
     font-size: 0.9rem;
   }
@@ -403,7 +413,7 @@ nav:hover {
   .partner-card {
     padding: 1.8rem 1.1rem;
   }
-}
+
 
 /* =========================
    HERO SECTION
@@ -1906,17 +1916,4 @@ li {
   .menu {
     gap: 0.3rem;
   }
-}
-
-/* =========================
-   BSSL SPECIFIC STYLES
-========================= */
-/* SBCL venture page: ensure the cloud fills mobile screens */
-/* redundant SBCL-only overrides removed in favour of shared block above */
-
-/* =========================
-   STICKY FOOTER
-========================= */
-footer {
-  margin-top: auto; /* ensures footer sticks to bottom */
 }
