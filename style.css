@@ -828,7 +828,12 @@ nav:hover {
   background-attachment: fixed;
   margin: 0;
   padding: 0;
-  /* Removed flex centering for better scrolling */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: clamp(5rem, 8vw, 7rem) clamp(1.8rem, 6vw, 4rem);
+  box-sizing: border-box;
 }
 .venture-card {
   width: 100vw;
