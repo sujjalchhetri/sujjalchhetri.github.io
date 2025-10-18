@@ -358,24 +358,14 @@ nav:hover {
     font-size: 1.2rem;
   }
 }
-:root {
-  --footer-safe-space: calc(88px + env(safe-area-inset-bottom, 16px));
-}
-/* Keep a small default bottom gutter so content doesn't butt against
-   the footer. On smaller screens we reserve the larger safe-space to
-   avoid overlap with device safe-area insets. */
-main { padding-bottom: 12px; }
-
-@media (max-width: 900px) {
-  /* on narrow screens, make room for the footer (avoid overlap) */
-  main { padding-bottom: var(--footer-safe-space); }
-}
-
-@media (max-width: 420px) {
-  /* slightly more room on very small devices */
-  main { padding-bottom: calc(var(--footer-safe-space) + 12px); }
-  .footer-logo { width: 52px; height: auto; }
-}
+@media (max-width: 480px) {
+  nav {
+    padding: 0.34rem 0.6rem; /* was 0.45rem 0.7rem */
+    gap: 0.35rem;
+  }
+  .nav-search {
+    padding: 0.3rem 0.6rem;
+  }
   .nav-search input {
     font-size: 0.9rem;
   }
@@ -413,7 +403,7 @@ main { padding-bottom: 12px; }
   .partner-card {
     padding: 1.8rem 1.1rem;
   }
-
+}
 
 /* =========================
    HERO SECTION
@@ -836,23 +826,27 @@ main { padding-bottom: 12px; }
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  margin: 0;
-  padding: 0;
-  /* Removed flex centering for better scrolling */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: clamp(5rem, 8vw, 7rem) clamp(1.8rem, 6vw, 4rem);
+  box-sizing: border-box;
 }
 .venture-card {
-  width: 100vw;
-  max-width: 100vw;
-  margin: 0;
-  padding: 4vw 4vw 2vw 4vw;
-  border-radius: 0;
-  background: transparent; /* removed dark overlay */
-  box-shadow: none;
+  max-width: min(1140px, 96vw);
+  width: 100%;
+  min-height: clamp(560px, 72vh, 820px);
+  margin: 0 auto;
+  padding: clamp(2rem, 3.8vw, 3rem);
+  border-radius: 28px;
+  background: linear-gradient(140deg, rgba(0, 31, 63, 0.92), rgba(0, 64, 128, 0.68));
+  border: 1.5px solid rgba(255, 255, 255, 0.28);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  animation: cardPop 0.7s cubic-bezier(.42,0,.58,1) both;
-  /* Removed justify-content: center for better scrolling */
+  gap: clamp(1.6rem, 3vw, 2.6rem);
+  justify-content: center;
 }
 .fade-in {
   animation: cardPop 0.7s cubic-bezier(.42,0,.58,1) both;
@@ -929,8 +923,13 @@ main { padding-bottom: 12px; }
 
 /* Desktop-wide: push image a bit larger */
 @media (min-width: 1200px) {
-  .venture-card h2 { font-size: 3.2rem; }
-  .venture-img     { max-width: 760px; }
+  .venture-card--split {
+    grid-template-columns: minmax(320px, 0.9fr) minmax(420px, 1.1fr);
+    gap: clamp(2.2rem, 3vw, 3rem);
+  }
+  .venture-card--split .venture-gallery {
+    grid-template-columns: repeat(2, minmax(240px, 1fr));
+  }
 }
 
 /* Mobile: let images span most of the width for a bigger feel */
@@ -1400,100 +1399,59 @@ main { padding-bottom: 12px; }
   .venue-img { border-radius: 12px; }
 }
 
-/* SBCL venture page: ensure the cloud fills mobile screens */
-#sbcl-hero {
-  min-height: 100vh;
+/* Shared cloud layout (BSSL & SBCL) */
+#sbcl-hero,
+#bssl-hero {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 4vw 0;
+  padding: clamp(5rem, 8vw, 7rem) clamp(1.8rem, 6vw, 4rem);
+  min-height: 100vh;
 }
-#sbcl-hero .venture-card {
-  width: min(100vw, 960px);
+#sbcl-hero .venture-card,
+#bssl-hero .venture-card {
+  width: min(1100px, 94vw);
+  padding: clamp(1.8rem, 3vw, 2.6rem);
+  border-radius: 28px;
+  background: linear-gradient(140deg, rgba(0, 31, 63, 0.92), rgba(0, 64, 128, 0.68));
+  border: 1.5px solid rgba(255, 255, 255, 0.28);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+  backdrop-filter: none;
 }
-@media (max-width: 700px) {
-  #sbcl-hero {
-    padding: 8vw 0 14vw;
-  }
-  #sbcl-hero .venture-card {
-    padding: 12vw 6vw 10vw;
-    width: 100%;
-  }
-  #sbcl-hero .venture-card h2 {
-    font-size: 2.4rem;
-    line-height: 1.1;
-  }
-  #sbcl-hero .venture-card p {
-    font-size: 1.15rem;
-    line-height: 1.65;
-  }
-  #sbcl-hero .venture-gallery {
-    gap: 14px;
-  }
-  #sbcl-hero .venture-img {
-    max-width: 100%;
-  }
+.venture-card--split {
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(280px, 0.95fr) minmax(360px, 1.05fr);
+  gap: clamp(1.8rem, 3vw, 2.6rem);
+  align-items: center;
+  justify-items: stretch;
 }
-
-/* Mobile background behavior for performance */
-@media (max-width: 768px) {
-  body {
-    background-attachment: scroll;
-    background-position: center top;
-  }
+.venture-card--split .venture-card__intro {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.45rem;
+  text-align: left;
 }
-
-/* Responsive grids on small screens */
-@media (max-width: 900px) {
-  .info-grid { grid-template-columns: 1fr; gap: 16px; }
+.venture-card--split .venture-card__intro .btn {
+  align-self: flex-start;
 }
-@media (max-width: 700px) {
-  .stats-grid { grid-template-columns: 1fr; gap: 12px; }
+.venture-card--split .venture-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  justify-items: center;
+  gap: clamp(1rem, 2vw, 1.6rem);
+  align-self: stretch;
 }
-
-/* Enhance keyboard focus for primary interactive elements */
-.btn:focus-visible,
-.contact-form button:focus-visible,
-.location-box .location-btn:focus-visible {
-  background: linear-gradient(90deg, #2d5ea0 60%, #FFD700 100%);
-  color: #FFD700;
-  box-shadow: 0 0 32px #FFD700cc, 0 0 8px #2d5ea0cc;
-  transform: scale(1.07);
-  outline: none;
-}
-.register-card:focus-visible {
-  box-shadow: 0 12px 40px #FFD70088, 0 4px 24px #1565c088;
-  transform: scale(1.04) translateY(-4px);
-  border-color: #FFD700;
-  outline: none;
+.venture-card--split .venture-img {
+  width: 100%;
+  max-width: 100%;
+  aspect-ratio: 16 / 9;
 }
 
-/* Faster taps on mobile */
-.btn,
-.contact-form button,
-.location-box .location-btn,
-.register-card {
-  touch-action: manipulation;
-}
-
-/* Sticky footer on short pages */
-footer {
-  margin-top: auto; /* ensures footer sticks to bottom */
-}
-
-/* BSSL page: responsive poster above the registration card */
-/* Remove/disable the poster */
-#bssl-hero .registration-top-wrap::before {
-  display: none !important;
-  content: none !important;
-}
-/* Hide any inline poster image if it exists */
-#bssl-hero .registration-top-wrap .bssl-poster,
-#bssl-hero .registration-top-wrap img[src*="bssl_poster"] {
-  display: none !important;
-}
-
-/* Footer and social links (restored and responsive) */
+/* =========================
+   FOOTER AND SOCIAL LINKS (restored and responsive)
+========================= */
 footer {
   background: #001F3F;
   padding: 1.2rem 0 0.7rem 0;
@@ -1950,9 +1908,21 @@ li {
 }
 
 /* =========================
+   BSSL SPECIFIC STYLES
+========================= */
+/* SBCL venture page: ensure the cloud fills mobile screens */
+/* redundant SBCL-only overrides removed in favour of shared block above */
+
+/* =========================
+   STICKY FOOTER
+========================= */
+footer {
+  margin-top: auto; /* ensures footer sticks to bottom */
+}
+/* =========================
    MODERN FOOTER (Cricket-themed) - consolidated
    Full-bleed background with constrained content and responsive layout
-   ========================= */
+========================= */
 .site-footer {
   position: relative;
   /* full-bleed to viewport edges */
@@ -2087,4 +2057,14 @@ li {
   0%   { background-position: 0% 50%; opacity: 0.92; }
   50%  { background-position: 50% 52%; opacity: 1; }
   100% { background-position: 100% 48%; opacity: 0.94; }
+}
+
+/* =========================
+   IMAGE AND VIDEO RESPONSIVENESS
+========================= */
+img,
+video {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
