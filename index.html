@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,75 +10,102 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
   <title>SBSO Foundation</title>
+
+  <!-- Additional SEO and social metadata -->
+  <link rel="canonical" href="https://sujjalchhetri.github.io/">
+  <meta name="author" content="SBSO Foundation">
+  <meta name="theme-color" content="#001F3F">
+  <link rel="apple-touch-icon" href="SBSO_FOUNDATION.jpg">
+  <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <!-- Preload LCP hero image -->
+  <link rel="preload" as="image" href="hero-image.jpg" imagesrcset="hero-image.jpg" fetchpriority="high">
+  <!-- Open Graph -->
+  <meta property="og:site_name" content="SBSO Foundation">
+  <meta property="og:title" content="SBSO Foundation — Come. Commit. Conquer.">
+  <meta property="og:description" content="Sports events and youth empowerment across India. Join SBSO Foundation’s tournaments and initiatives.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://sujjalchhetri.github.io/">
+  <meta property="og:image" content="https://sujjalchhetri.github.io/SBSO_FOUNDATION.jpg">
+  <meta property="og:locale" content="en_IN">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SBSO Foundation — Come. Commit. Conquer.">
+  <meta name="twitter:description" content="Sports events and youth empowerment across India. Join SBSO Foundation’s tournaments and initiatives.">
+  <meta name="twitter:image" content="https://sujjalchhetri.github.io/SBSO_FOUNDATION.jpg">
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "SBSO Foundation",
+    "url": "https://sujjalchhetri.github.io/",
+    "logo": "https://sujjalchhetri.github.io/SBSO_FOUNDATION.jpg",
+    "sameAs": [
+      "mailto:sbsofoundation@gmail.com",
+      "https://www.instagram.com/sbso_foundation",
+      "https://www.linkedin.com/company/sbso-foundation/",
+      "https://www.youtube.com/@sbsofoundation"
+    ]
+  }
+  </script>
 </head>
 <body>
-  <!-- PAGE LAYOUT GUIDE:
-       01. Header & Navigation
-       02. Hero (+ Org Logo)
-       03. About
-       04. Ventures
-       05. Stats
-       06. Ambassadors
-       07. President
-       08. Members
-       09. Contact
-       10. Partnerships
-       11. Footer
-  -->
+  <!-- Skip to content for accessibility -->
+  <a href="#main-content" class="sr-only">Skip to main content</a>
+
   <!-- SECTION 01: HEADER & NAVIGATION -->
   <header>
-    <nav>
+    <nav aria-label="Primary" role="navigation">
       <div class="logo">
-        <img src="SBSO_FOUNDATION.jpg" alt="SBSO Logo" class="logo-img" width="38" height="38" decoding="async">
+        <img src="SBSO_FOUNDATION.jpg" alt="SBSO Foundation logo" class="logo-img" width="38" height="38" decoding="async">
         SBSO Foundation
       </div>
-      <input type="checkbox" id="menu-toggle">
-      <label for="menu-toggle" class="menu-icon">&#9776;</label>
-      <form class="nav-search" role="search">
+      <form class="nav-search" role="search" aria-label="Site search">
         <input type="search" id="nav-search-input" name="q" placeholder="Search..." aria-label="Search site">
         <button type="submit" aria-label="Submit search">
           <span class="fa-solid fa-magnifying-glass" aria-hidden="true"></span>
           <span class="sr-only">Search</span>
         </button>
       </form>
-      <ul class="menu">
-        <li><a href="#about">About</a></li>
-        <li><a href="#ventures">Our Ventures</a></li>
-        <li><a href="#ambassador">Brand Ambassador</a></li>
-        <li><a href="#president">President</a></li>
-        <li><a href="#members">Members</a></li>
-        <li><a href="#contact">Contact</a></li>
+      <ul class="menu" role="menubar" aria-label="Primary navigation">
+        <li role="none"><a role="menuitem" href="#about">About</a></li>
+        <li role="none"><a role="menuitem" href="#ventures">Our Ventures</a></li>
+        <li role="none"><a role="menuitem" href="#ambassador">Brand Ambassador</a></li>
+        <li role="none"><a role="menuitem" href="#president">President</a></li>
+        <li role="none"><a role="menuitem" href="#members">Members</a></li>
+        <li role="none"><a role="menuitem" href="#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
 
   <!-- SECTION 02: HERO -->
-  <main>
+  <main id="main-content" role="main">
 
     <!-- =========================
          HERO SECTION
     ========================== -->
-    <section class="hero">
-      <img src="hero-image.jpg" alt="Hero Image" class="hero-img" decoding="async">
-      <h2>Welcome to <span>SBSO Foundation</span></h2>
+    <section class="hero" aria-labelledby="hero-title">
+      <img src="hero-image.jpg" alt="Athletes celebrating a win" class="hero-img" width="340" fetchpriority="high" decoding="async">
+      <h2 id="hero-title">Welcome to <span>SBSO Foundation</span></h2>
       <p>Come. Commit. Conquer.</p>
-      <a href="venture2.html" class="btn">Register Now</a>
+      <a href="venture2.html" class="btn" aria-label="Register now for Bengaluru Super Sports League">Register Now</a>
     </section>
 
     <!-- SECTION 02A: ORGANISATION LOGO -->
     <!-- =========================
          ORGANISATION LOGO SECTION
     ========================== -->
-    <div class="org-logo-section">
-      <img src="SBSO_FOUNDATION.jpg" alt="Organisation Logo" class="org-logo-img" width="180" height="180" loading="lazy" decoding="async">
+    <div class="org-logo-section" aria-label="Organisation logo">
+      <img src="SBSO_FOUNDATION.jpg" alt="SBSO Foundation emblem" class="org-logo-img" width="180" height="180" loading="lazy" decoding="async">
     </div>
 
     <!-- SECTION 03: ABOUT -->
     <!-- =========================
          ABOUT SECTION
     ========================== -->
-    <section id="about" class="about">
-      <h2>About Us</h2>
+    <section id="about" class="about" aria-labelledby="about-title">
+      <h2 id="about-title">About Us</h2>
       <p>
         At SBSO Foundation, we believe that sports have the power to unite, inspire, and transform lives. As a dynamic sports event organization, we bring together players, enthusiasts, and communities through exciting tournaments in cricket, badminton, football, and more — across cities in India.
         Beyond the field, we are an NGO dedicated to building a healthier, more active, and empowered society. Our initiatives focus on promoting fitness, inclusion, and youth development, nurturing the next generation of athletes and changemakers.
@@ -90,8 +117,8 @@
     <!-- =========================
          VENTURES SECTION (Main Page)
     ========================== -->
-    <section id="ventures" class="ventures">
-      <h2>Our Ventures</h2>
+    <section id="ventures" class="ventures" aria-labelledby="ventures-title">
+      <h2 id="ventures-title">Our Ventures</h2>
       <div class="info-grid">
         <a class="info-card" href="venture1.html" target="_blank" rel="noopener noreferrer">
           <img src="sbcl_logo.jpg" alt="Siliguri Boys Cricket League Logo" class="venture-logo" width="64" height="64" loading="lazy" decoding="async">
@@ -120,7 +147,8 @@
     <!-- =========================
          MAIN INTERFACE / STATS SECTION
     ========================== -->
-    <section class="main-interface-stats">
+    <section class="main-interface-stats" aria-labelledby="stats-title">
+      <h3 id="stats-title">Key Stats</h3>
       <div class="stats-grid">
         <div class="stat-card"><span class="stat-value">5,000+</span><span class="stat-label">Live Streaming Viewership</span></div>
         <div class="stat-card"><span class="stat-value">5,000+</span><span class="stat-label">Live Footfall</span></div>
@@ -137,8 +165,8 @@
     <!-- =========================
          AMBASSADOR SECTION
     ========================== -->
-    <section id="ambassador" class="ambassador">
-      <h2>Our Brand Ambassadors</h2>
+    <section id="ambassador" class="ambassador" aria-labelledby="ambassador-title">
+      <h2 id="ambassador-title">Our Brand Ambassadors</h2>
       <div class="info-grid">
         <div class="info-card ambassador-card">
           <img src="Ambassador1.jpg" alt="Ivanko Bobeiko Photo" class="ambassador-img" width="110" height="110" loading="lazy" decoding="async">
@@ -161,8 +189,8 @@
     <!-- =========================
          PRESIDENT SECTION
     ========================== -->
-    <section id="president" class="president">
-      <h2>Our President, Founder & Director</h2>
+    <section id="president" class="president" aria-labelledby="president-title">
+      <h2 id="president-title">Our President, Founder &amp; Director</h2>
       <div class="info-grid">
         <div class="info-card president-card">
           <img src="president_pic.jpg" alt="President Photo" class="president-img" width="110" height="110" loading="lazy" decoding="async">
@@ -178,8 +206,8 @@
     <!-- =========================
          MEMBERS SECTION
     ========================== -->
-    <section id="members" class="members">
-      <h2>Board Members</h2>
+    <section id="members" class="members" aria-labelledby="members-title">
+      <h2 id="members-title">Board Members</h2>
       <div class="info-grid">
         <div class="info-card member-card">
           <img src="sayan.jpg" alt="Sayan Karmakar" class="member-img" width="110" height="110" loading="lazy" decoding="async">
@@ -218,9 +246,9 @@
     <!-- =========================
          CONTACT SECTION
     ========================== -->
-    <section id="contact" class="contact">
-      <h2>Contact Us</h2>
-      <form class="contact-form animated-contact" action="mailto:blrsupersportsleague@gmail.com" method="POST" enctype="text/plain">
+    <section id="contact" class="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title">Contact Us</h2>
+      <form class="contact-form animated-contact" action="mailto:blrsupersportsleague@gmail.com" method="POST" enctype="text/plain" aria-label="Contact form">
         <div class="contact-fields">
           <input type="text" name="name" placeholder="Your Name" required>
           <input type="email" name="email" placeholder="Your Email" required>
@@ -234,31 +262,31 @@
     <!-- =========================
          PARTNERSHIPS SECTION
     ========================== -->
-    <section id="partnerships" class="partnerships">
-      <h2>Our Partners</h2>
+    <section id="partnerships" class="partnerships" aria-labelledby="partners-title">
+      <h2 id="partners-title">Our Partners</h2>
       <div class="partnerships-grid">
         <div class="partner-group">
-          <article class="partner-card">
+          <article class="partner-card" tabindex="0" aria-label="Prime Sports Arena">
             <div class="partner-logo">
               <img src="partnership1.png" alt="Prime Sports Arena logo" loading="lazy" decoding="async">
             </div>
           </article>
-          <article class="partner-card">
+          <article class="partner-card" tabindex="0" aria-label="Champion Gear Co.">
             <div class="partner-logo">
               <img src="partnership2.jpg" alt="Champion Gear Co. logo" loading="lazy" decoding="async">
             </div>
           </article>
-          <article class="partner-card">
+          <article class="partner-card" tabindex="0" aria-label="Pulse Media Network">
             <div class="partner-logo">
               <img src="partnership3.png" alt="Pulse Media Network logo" loading="lazy" decoding="async">
             </div>
           </article>
-          <article class="partner-card">
+          <article class="partner-card" tabindex="0" aria-label="FitNation Labs">
             <div class="partner-logo">
               <img src="partnership4.jpg" alt="FitNation Labs logo" loading="lazy" decoding="async">
             </div>
           </article>
-          <article class="partner-card">
+          <article class="partner-card" tabindex="0" aria-label="Cityline Hospitality">
             <div class="partner-logo">
               <img src="partnership5.jpg" alt="Cityline Hospitality logo" loading="lazy" decoding="async">
             </div>
@@ -266,24 +294,29 @@
         </div>
         <hr class="partner-group-divider">
         <div class="partner-group">
-          <article class="partner-card">
+          <article class="partner-card" tabindex="0" aria-label="NextGen Analytics">
             <div class="partner-logo">
               <img src="partnership6.jpg" alt="NextGen Analytics logo" loading="lazy" decoding="async">
             </div>
           </article>
-          <article class="partner-card">
+          <article class="partner-card" tabindex="0" aria-label="PulseCare Clinics">
             <div class="partner-logo">
               <img src="partnership7.jpg" alt="PulseCare Clinics logo" loading="lazy" decoding="async">
             </div>
           </article>
-          <article class="partner-card">
+          <article class="partner-card" tabindex="0" aria-label="AllStar Nutrition">
             <div class="partner-logo">
               <img src="partnership8.jpg" alt="AllStar Nutrition logo" loading="lazy" decoding="async">
             </div>
           </article>
-          <article class="partner-card">
+          <article class="partner-card" tabindex="0" aria-label="Community United">
             <div class="partner-logo">
               <img src="partnership9.jpg" alt="Community United logo" loading="lazy" decoding="async">
+            </div>
+          </article>
+          <article class="partner-card" tabindex="0" aria-label="New Partner">
+            <div class="partner-logo">
+              <img src="partnership10.jpg" alt="New Partner logo" loading="lazy" decoding="async">
             </div>
           </article>
         </div>
@@ -296,12 +329,12 @@
   <!-- =========================
        FOOTER
     ========================== -->
-  <footer class="cricket-footer">
+  <footer class="cricket-footer" role="contentinfo" aria-label="Site footer">
     <div class="footer-container">
       <div class="footer-top">
         <!-- Left: Logo & Brand -->
         <div class="footer-brand">
-          <img src="SBSO_FOUNDATION.jpg" alt="SBSO Foundation Logo" class="footer-logo" width="68" height="68" decoding="async">
+          <img src="SBSO_FOUNDATION.jpg" alt="SBSO Foundation logo" class="footer-logo" width="68" height="68" decoding="async">
           <div>
             <h3>SBSO Foundation</h3>
             <p class="footer-tag">Come. Commit. Conquer.</p>
@@ -366,7 +399,6 @@
     (function () {
       const form = document.querySelector('.nav-search');
       const input = document.getElementById('nav-search-input');
-      const menuToggle = document.getElementById('menu-toggle');
       if (!form || !input) return;
 
       form.addEventListener('submit', (event) => {
@@ -400,7 +432,6 @@
 
         if (targetSection) {
           targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          if (menuToggle && menuToggle.checked) menuToggle.checked = false;
         } else {
           alert('No matching section found. Try keywords like About, Ventures, Contact, etc.');
           input.focus();
