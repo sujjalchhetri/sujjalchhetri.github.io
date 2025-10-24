@@ -56,26 +56,36 @@
 
   <!-- SECTION 01: HEADER & NAVIGATION -->
   <header>
-    <nav aria-label="Primary" role="navigation">
-      <div class="logo">
-        <img src="SBSO_FOUNDATION.jpg" alt="SBSO Foundation logo" class="logo-img" width="38" height="38" decoding="async">
-        SBSO Foundation
-      </div>
-      <form class="nav-search" role="search" aria-label="Site search">
-        <input type="search" id="nav-search-input" name="q" placeholder="Search..." aria-label="Search site">
-        <button type="submit" aria-label="Submit search">
-          <span class="fa-solid fa-magnifying-glass" aria-hidden="true"></span>
-          <span class="sr-only">Search</span>
+    <nav class="pro-nav" aria-label="Primary navigation">
+      <div class="pro-nav__shell">
+        <a class="pro-nav__brand" href="index.html">
+          <img src="SBSO_FOUNDATION.jpg" alt="SBSO Foundation crest" class="pro-nav__logo" width="58" height="58" decoding="async">
+          <div class="pro-nav__identity">
+            <span class="pro-nav__name">SBSO Foundation</span>
+            <span class="pro-nav__motto">Come · Commit · Conquer</span>
+          </div>
+        </a>
+        <button class="pro-nav__toggle" type="button" aria-controls="nav-panel" aria-label="Toggle navigation" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="pro-nav__toggle-bar"></span>
         </button>
-      </form>
-      <ul class="menu" role="menubar" aria-label="Primary navigation">
-        <li role="none"><a role="menuitem" href="#about">About</a></li>
-        <li role="none"><a role="menuitem" href="#ventures">Our Ventures</a></li>
-        <li role="none"><a role="menuitem" href="#ambassador">Brand Ambassador</a></li>
-        <li role="none"><a role="menuitem" href="#president">President</a></li>
-        <li role="none"><a role="menuitem" href="#members">Members</a></li>
-        <li role="none"><a role="menuitem" href="#contact">Contact</a></li>
-      </ul>
+        <div class="pro-nav__panel" id="nav-panel">
+          <ul class="pro-nav__links" role="menubar">
+            <li role="none"><a role="menuitem" href="#about">About</a></li>
+            <li role="none"><a role="menuitem" href="#ventures">Our Ventures</a></li>
+            <li role="none"><a role="menuitem" href="#ambassador">Brand Ambassador</a></li>
+            <li role="none"><a role="menuitem" href="#president">President</a></li>
+            <li role="none"><a role="menuitem" href="#members">Members</a></li>
+            <li role="none"><a role="menuitem" href="#contact">Contact</a></li>
+          </ul>
+          <form class="pro-nav__search" role="search" aria-label="Site search">
+            <span class="fa-solid fa-magnifying-glass pro-nav__search-icon" aria-hidden="true"></span>
+            <input type="search" id="nav-search-input" name="q" placeholder="Search teams, sections..." autocomplete="off" aria-expanded="false" aria-controls="nav-search-results">
+            <button type="submit" aria-label="Submit search"></button>
+          </form>
+        </div>
+      </div>
+      <ul class="pro-nav__search-results" id="nav-search-results" data-search-results hidden role="listbox" aria-live="polite"></ul>
     </nav>
   </header>
 
@@ -263,64 +273,48 @@
          PARTNERSHIPS SECTION
     ========================== -->
     <section id="partnerships" class="partnerships" aria-labelledby="partners-title">
-      <h2 id="partners-title">Our Partners</h2>
+      <div class="partnerships-header">
+        <h2 id="partners-title">Our Partners</h2>
+        <p>Strategic collaborators who power every over, every breakthrough.</p>
+      </div>
       <div class="partnerships-grid">
-        <div class="partner-group">
-          <article class="partner-card" tabindex="0" aria-label="Prime Sports Arena">
-            <div class="partner-logo">
-              <img src="partnership1.png" alt="Prime Sports Arena logo" loading="lazy" decoding="async">
-            </div>
-          </article>
-          <article class="partner-card" tabindex="0" aria-label="Champion Gear Co.">
-            <div class="partner-logo">
-              <img src="partnership2.jpg" alt="Champion Gear Co. logo" loading="lazy" decoding="async">
-            </div>
-          </article>
-          <article class="partner-card" tabindex="0" aria-label="Pulse Media Network">
-            <div class="partner-logo">
-              <img src="partnership3.png" alt="Pulse Media Network logo" loading="lazy" decoding="async">
-            </div>
-          </article>
-          <article class="partner-card" tabindex="0" aria-label="FitNation Labs">
-            <div class="partner-logo">
-              <img src="partnership4.jpg" alt="FitNation Labs logo" loading="lazy" decoding="async">
-            </div>
-          </article>
-          <article class="partner-card" tabindex="0" aria-label="Cityline Hospitality">
-            <div class="partner-logo">
-              <img src="partnership5.jpg" alt="Cityline Hospitality logo" loading="lazy" decoding="async">
-            </div>
-          </article>
-        </div>
-        <hr class="partner-group-divider">
-        <div class="partner-group">
-          <article class="partner-card" tabindex="0" aria-label="NextGen Analytics">
-            <div class="partner-logo">
-              <img src="partnership6.jpg" alt="NextGen Analytics logo" loading="lazy" decoding="async">
-            </div>
-          </article>
-          <article class="partner-card" tabindex="0" aria-label="PulseCare Clinics">
-            <div class="partner-logo">
-              <img src="partnership7.jpg" alt="PulseCare Clinics logo" loading="lazy" decoding="async">
-            </div>
-          </article>
-          <article class="partner-card" tabindex="0" aria-label="AllStar Nutrition">
-            <div class="partner-logo">
-              <img src="partnership8.jpg" alt="AllStar Nutrition logo" loading="lazy" decoding="async">
-            </div>
-          </article>
-          <article class="partner-card" tabindex="0" aria-label="Community United">
-            <div class="partner-logo">
-              <img src="partnership9.jpg" alt="Community United logo" loading="lazy" decoding="async">
-            </div>
-          </article>
-          <article class="partner-card" tabindex="0" aria-label="New Partner">
-            <div class="partner-logo">
-              <img src="partnership10.jpg" alt="New Partner logo" loading="lazy" decoding="async">
-            </div>
-          </article>
-        </div>
-        <hr class="partner-group-divider">
+        <figure class="partner-card">
+          <img src="partnership1.png" alt="Prime Sports Arena logo" loading="lazy" decoding="async">
+        </figure>
+        <figure class="partner-card">
+          <img src="partnership2.jpg" alt="Champion Gear Co. logo" loading="lazy" decoding="async">
+        </figure>
+        <figure class="partner-card">
+          <img src="partnership3.png" alt="Pulse Media Network logo" loading="lazy" decoding="async">
+        </figure>
+        <figure class="partner-card">
+          <img src="partnership4.jpg" alt="FitNation Labs logo" loading="lazy" decoding="async">
+        </figure>
+        <figure class="partner-card">
+          <img src="partnership5.jpg" alt="Cityline Hospitality logo" loading="lazy" decoding="async">
+        </figure>
+        <span class="partner-divider" aria-hidden="true"></span>
+        <figure class="partner-card">
+          <img src="partnership6.jpg" alt="NextGen Analytics logo" loading="lazy" decoding="async">
+        </figure>
+        <figure class="partner-card">
+          <img src="partnership7.jpg" alt="PulseCare Clinics logo" loading="lazy" decoding="async">
+        </figure>
+        <figure class="partner-card">
+          <img src="partnership8.jpg" alt="AllStar Nutrition logo" loading="lazy" decoding="async">
+        </figure>
+        <figure class="partner-card">
+          <img src="partnership9.jpg" alt="Community United logo" loading="lazy" decoding="async">
+        </figure>
+        <figure class="partner-card">
+          <img src="partnership10.jpg" alt="New Partner logo" loading="lazy" decoding="async">
+        </figure>
+        <figure class="partner-card">
+          <img src="partnership11.jpg" alt="Skyline Sports Media logo" loading="lazy" decoding="async">
+        </figure>
+        <figure class="partner-card">
+          <img src="partnership12.png" alt="Velocity Sports Tech logo" loading="lazy" decoding="async">
+        </figure>
       </div>
     </section>
   </main>
@@ -377,7 +371,7 @@
               </li>
               <li>
                 <i class="fa-solid fa-phone"></i>
-                <a href="tel:+918971941208">+91 8971 941 208</a>
+                <a href="tel:+918971941208">+91 99003 84517</a>
               </li>
               <li>
                 <i class="fa-solid fa-location-dot"></i>
@@ -397,47 +391,162 @@
 
   <script>
     (function () {
-      const form = document.querySelector('.nav-search');
+      const nav = document.querySelector('.pro-nav');
+      if (!nav) return;
+      const toggle = nav.querySelector('.pro-nav__toggle');
+      const panel = nav.querySelector('.pro-nav__panel');
+      const results = nav.parentElement.querySelector('[data-search-results]');
+      const searchInput = nav.querySelector('#nav-search-input');
+      const setOpen = (open) => {
+        nav.classList.toggle('nav-open', open);
+        toggle.setAttribute('aria-expanded', String(open));
+      };
+
+      toggle.addEventListener('click', () => {
+        const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+        setOpen(!isOpen);
+      });
+
+      panel.addEventListener('click', (event) => {
+        if (event.target.closest('.pro-nav__links a')) {
+          setOpen(false);
+          results?.classList.remove('is-visible');
+          results?.setAttribute('hidden', '');
+          searchInput?.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      window.addEventListener('resize', () => {
+        if (window.innerWidth > 880) {
+          setOpen(false);
+        }
+      });
+
+      const handleScroll = () => {
+        nav.classList.toggle('is-stuck', window.scrollY > 24);
+      };
+
+      handleScroll();
+      window.addEventListener('scroll', handleScroll, { passive: true });
+    })();
+  </script>
+  <script>
+    (function () {
+      const form = document.querySelector('.pro-nav__search');
       const input = document.getElementById('nav-search-input');
-      if (!form || !input) return;
+      const results = document.querySelector('[data-search-results]');
+      if (!form || !input || !results) return;
+
+      const catalog = [
+        { label: 'About Us', id: 'about', type: 'Section' },
+        { label: 'Our Ventures', id: 'ventures', type: 'Section' },
+        { label: 'Brand Ambassador', id: 'ambassador', type: 'Section' },
+        { label: 'President', id: 'president', type: 'Section' },
+        { label: 'Board Members', id: 'members', type: 'Section' },
+        { label: 'Contact', id: 'contact', type: 'Section' },
+        { label: 'Siliguri Boys Cricket League', href: 'venture1.html', type: 'Venture' },
+        { label: 'Bengaluru Super Sports League', href: 'venture2.html', type: 'Venture' },
+        { label: 'Kolkata Sports Premier League', href: 'venture3.html', type: 'Venture' },
+        { label: 'Womens Bengaluru Super Sports League', href: 'venture4.html', type: 'Venture' },
+        { label: 'Divyang Pro Super League', href: 'venture5.html', type: 'Venture' }
+      ];
+
+      const escapeTerm = (value) => value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      const highlight = (text, term) => term
+        ? text.replace(new RegExp(`(${escapeTerm(term)})`, 'ig'), '<mark>$1</mark>')
+        : text;
+
+      const toggleResults = (show) => {
+        if (show) {
+          results.classList.add('is-visible');
+          results.removeAttribute('hidden');
+          input.setAttribute('aria-expanded', 'true');
+        } else {
+          results.classList.remove('is-visible');
+          results.setAttribute('hidden', '');
+          results.innerHTML = '';
+          input.setAttribute('aria-expanded', 'false');
+        }
+      };
+
+      const renderResults = (matches, term) => {
+        if (!matches.length) {
+          results.innerHTML = '<li class="is-empty" role="presentation"><a href="#">No matches found<span class="result-meta">Hint</span></a></li>';
+        } else {
+          results.innerHTML = matches.map((item, index) => {
+            const label = highlight(item.label, term);
+            const type = highlight(item.type, term);
+            const href = item.href ? item.href : `#${item.id}`;
+            const attrs = item.href ? 'target="_blank" rel="noopener noreferrer"' : '';
+            return `<li role="option" id="nav-search-option-${index}">
+                <a href="${href}" ${attrs}>
+                  <span>${label}</span>
+                  <span class="result-meta">${type}</span>
+                </a>
+              </li>`;
+          }).join('');
+        }
+        toggleResults(true);
+      };
+
+      input.addEventListener('input', () => {
+        const term = input.value.trim().toLowerCase();
+        if (!term) {
+          toggleResults(false);
+          return;
+        }
+        const matches = catalog.filter(({ label, type }) =>
+          label.toLowerCase().includes(term) || type.toLowerCase().includes(term)
+        ).slice(0, 6);
+        renderResults(matches, term);
+      });
 
       form.addEventListener('submit', (event) => {
         event.preventDefault();
-        const term = input.value.trim().toLowerCase();
-        if (!term) {
-          input.focus();
-          return;
+        const firstLink = results.querySelector('a[href]') || document.querySelector('.pro-nav__links a');
+        if (firstLink) {
+          firstLink.click();
         }
+        toggleResults(false);
+      });
 
-        const sections = Array.from(document.querySelectorAll('section[id]'));
-        const links = Array.from(document.querySelectorAll('nav .menu a[href^="#"]'));
-
-        const matchInLinks = links.find((link) =>
-          link.textContent.trim().toLowerCase().includes(term)
-        );
-        const targetId = matchInLinks ? matchInLinks.getAttribute('href').slice(1) : null;
-
-        let targetSection = targetId
-          ? document.getElementById(targetId)
-          : sections.find((section) => {
-              const heading = section.querySelector('h1, h2, h3');
-              return heading && heading.textContent.trim().toLowerCase().includes(term);
-            });
-
-        if (!targetSection && sections.length) {
-          targetSection = sections.find((section) =>
-            section.id.toLowerCase().includes(term.replace(/\s+/g, ''))
-          );
-        }
-
-        if (targetSection) {
-          targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        } else {
-          alert('No matching section found. Try keywords like About, Ventures, Contact, etc.');
-          input.focus();
-          input.select();
+      input.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+          toggleResults(false);
         }
       });
+
+      document.addEventListener('click', (event) => {
+        if (!form.contains(event.target) && !results.contains(event.target)) {
+          toggleResults(false);
+        }
+      });
+    })();
+  </script>
+  <script>
+    (function () {
+      const sections = document.querySelectorAll('main section[id]');
+      const links = Array.from(document.querySelectorAll('.pro-nav__links a[href^="#"]'));
+      if (!sections.length || !links.length) return;
+
+      const setActive = (id) => {
+        links.forEach((link) => {
+          link.classList.toggle('active', link.getAttribute('href').slice(1) === id);
+        });
+      };
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              setActive(entry.target.id);
+            }
+          });
+        },
+        { rootMargin: '-45% 0px -45% 0px', threshold: 0.1 }
+      );
+
+      sections.forEach((section) => observer.observe(section));
     })();
   </script>
 </body>
