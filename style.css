@@ -62,6 +62,7 @@ html, body {
   display: flex;
   flex-direction: column;
   scroll-behavior: smooth;
+  padding: 0;
 }
 
 main {
@@ -69,6 +70,92 @@ main {
   width: 100%;
   display: flex;
   flex-direction: column;
+}
+
+/* Responsive container widths */
+main > section,
+.org-logo-section,
+.partnerships,
+.main-interface-stats,
+.faq-section,
+.registration-section,
+.registration-top-wrap,
+.location-box,
+.venue-gallery-section {
+  width: min(1100px, 94vw);
+  margin-inline: auto;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+.hero {
+  /* ...existing code... */
+  margin-top: clamp(70px, 9vw, 110px);
+  padding: clamp(3.2rem, 10vw, 5.6rem) clamp(1.2rem, 5vw, 2.4rem);
+  min-height: min(720px, 100vh);
+}
+.about,
+.ventures,
+.ambassador,
+.president,
+.contact,
+.members,
+.registration-section,
+.faq-section {
+  padding: clamp(3.5rem, 7vw, 5rem) clamp(1.4rem, 6vw, 3rem);
+}
+.main-interface-stats {
+  /* ...existing code... */
+  padding: clamp(1.6rem, 6vw, 2.8rem) clamp(1rem, 5vw, 2.2rem);
+}
+.stats-grid {
+  /* ...existing code... */
+  gap: clamp(1rem, 4vw, 1.6rem);
+}
+@media (min-width: 1024px) {
+  .stats-grid {
+    grid-template-columns: repeat(4, minmax(140px, 1fr));
+  }
+}
+@media (max-width: 560px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.ventures .info-grid,
+.members .info-grid,
+.info-grid {
+  width: 100%;
+  margin-inline: auto;
+  gap: clamp(1rem, 4vw, 2rem);
+}
+.contact-form {
+  /* ...existing code... */
+  width: clamp(320px, 90vw, 420px);
+}
+.partnerships {
+  /* ...existing code... */
+  width: min(1100px, 94vw);
+}
+@media (max-width: 480px) {
+  .hero h2 {
+    font-size: clamp(2rem, 9vw, 2.4rem);
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .about p,
+  .ventures p,
+  .ambassador p,
+  .president p,
+  .members p {
+    font-size: 1rem;
+  }
 }
 
 /* =========================
@@ -90,6 +177,9 @@ header {
   backdrop-filter: blur(20px);
   box-shadow: 0 24px 48px rgba(0, 0, 0, 0.48);
   position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   isolation: isolate;
   border-bottom: 1px solid rgba(83, 146, 255, 0.25);
 }
@@ -119,7 +209,7 @@ header {
   gap: clamp(0.8rem, 2vw, 1.4rem);
   justify-content: space-between;
   flex-wrap: nowrap;
-  padding: clamp(0.65rem, 1.4vw, 0.95rem) clamp(1.4rem, 3vw, 2.6rem);
+  padding: clamp(0.65rem, 1.4vw, 0.95rem) clamp(1rem, 5vw, 1.6rem);
   max-width: min(1240px, 92vw);
   margin: 0 auto;
 }
@@ -256,26 +346,30 @@ header {
   padding: 0.35rem 0.65rem;
   gap: 0.55rem;
   margin-left: auto;
+  background: linear-gradient(120deg, rgba(255,255,255,0.16), rgba(119,185,255,0.08));
+  border: 1px solid rgba(173,208,255,0.38);
+  border-radius: 999px;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.06), 0 8px 24px rgba(0,0,0,0.28);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
-.pro-nav__search-icon {
-  color: rgba(255, 215, 0, 0.85);
-  font-size: 1.2rem;
-  margin-right: 0.4rem;
+.pro-nav__search:hover,
+.pro-nav__search:focus-within {
+  border-color: rgba(255,215,0,0.7);
+  box-shadow: inset 0 0 0 1px rgba(255,215,0,0.25), 0 14px 32px rgba(0,0,0,0.32);
+  transform: translateY(-1px);
 }
 .pro-nav__search input {
   width: 100%;
-  padding: 0.4rem 0.6rem;
-  border: 1px solid rgba(255, 215, 0, 0.45);
-  border-radius: 12px;
+  padding: 0.35rem 0;
+  border: none;
+  border-radius: 999px;
   background: transparent;
   color: #fff;
   font-size: 1rem;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
-.pro-nav__search input:focus {
-  border-color: #ffd700;
-  box-shadow: 0 0 8px rgba(255, 215, 0, 0.6);
-  outline: none;
+.pro-nav__search input::placeholder {
+  color: rgba(230,238,255,0.7);
 }
 .pro-nav__search-results {
   position: absolute;
@@ -287,21 +381,60 @@ header {
   border-radius: 12px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.32);
   padding: 0.5rem 0;
-  display: none;
-  flex-direction: column;
-  z-index: 120;
+  display: grid;
+  gap: 0.35rem;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-6px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
 }
 .pro-nav__search-results.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+.pro-nav__search-heading {
+  padding: 0.35rem 1rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(173,208,255,0.75);
+}
+.pro-nav__search-result a {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.55rem 1rem;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.02);
+  transition: background 0.22s ease, transform 0.22s ease;
 }
-.pro-nav__search-result {
-  padding: 0.8rem 1.2rem;
-  color: #fff;
-  font-size: 0.95rem;
-  transition: background 0.2s ease;
+.pro-nav__search-result a:hover,
+.pro-nav__search-result a:focus-visible {
+  background: rgba(70,126,255,0.28);
+  transform: translateX(4px);
+  outline: none;
 }
-.pro-nav__search-result:hover {
-  background: rgba(255, 215, 0, 0.1);
+.pro-nav__search-result .result-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: inline-grid;
+  place-items: center;
+  background: rgba(255,215,0,0.16);
+  color: #ffd700;
+}
+.pro-nav__search-result .result-meta {
+  font-size: 0.68rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(173,208,255,0.68);
+}
+.pro-nav__search-result.is-empty {
+  text-align: center;
+  padding: 0.85rem 1rem;
+  color: rgba(230,238,255,0.6);
 }
 @media (max-width: 880px) {
   .pro-nav__panel {
@@ -321,6 +454,20 @@ header {
   .pro-nav__search-results {
     /* ...existing code... */
     top: auto;
+    right: auto;
+  }
+}
+@media (max-width: 640px) {
+  .hero {
+    padding: clamp(3rem, 12vw, 4.5rem) clamp(1rem, 6vw, 1.5rem);
+  }
+  .hero h2 {
+    font-size: clamp(2.1rem, 8vw, 2.6rem);
+  }
+  .stats-grid,
+  .info-grid,
+  .members .info-grid {
+    grid-template-columns: 1fr;
   }
 }
 .pro-nav__links {
@@ -660,7 +807,7 @@ button.pro-nav__link {
   text-align: center;
   background: rgba(255,255,255,0.07);
   border-radius: 18px;
-  padding: 2rem 1rem;
+  padding: clamp(1.6rem, 6vw, 2.8rem) clamp(1rem, 5vw, 2.2rem);
   max-width: 700px;
   box-shadow: 0 2px 18px #FFD70022;
   border: 2px solid #FFD700;
@@ -675,7 +822,7 @@ button.pro-nav__link {
 .stats-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 22px;
+  gap: clamp(1rem, 4vw, 1.6rem);
   justify-items: center;
 }
 .stat-card {
@@ -890,128 +1037,8 @@ button.pro-nav__link {
 /* =========================
    VENTURE DETAIL PAGE (Cloud Section)
 ========================= */
-.venture-detail, .venture-card, .venture-card h2, .venture-card p, .venture-gallery, .venture-img {
-  font-family: 'Davetica', 'Times New Roman', serif;
-}
-.venture-detail {
-  width: 100vw;
-  background:
-    linear-gradient(rgba(0,31,63,0.85), rgba(0,31,63,0.85)),
-    url('Background_Img.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  padding: clamp(5rem, 8vw, 7rem) clamp(1.8rem, 6vw, 4rem);
-  box-sizing: border-box;
-}
-.venture-card {
-  max-width: min(1140px, 96vw);
-  width: 100%;
-  min-height: clamp(560px, 72vh, 820px);
-  margin: 0 auto;
-  padding: clamp(2rem, 3.8vw, 3rem);
-  border-radius: 28px;
-  background: linear-gradient(140deg, rgba(0, 31, 63, 0.92), rgba(0, 64, 128, 0.68));
-  border: 1.5px solid rgba(255, 255, 255, 0.28);
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
-  display: flex;
-  flex-direction: column;
-  gap: clamp(1.6rem, 3vw, 2.6rem);
-  justify-content: center;
-}
-.fade-in {
-  animation: cardPop 0.7s cubic-bezier(.42,0,.58,1) both;
-}
-.venture-card h2 {
-  color: #FFD700;
-  font-size: 2.6rem;
-  font-weight: 800;
-  margin-bottom: 1.2rem;
-  text-shadow: 0 2px 8px #000, 0 0px 2px #FFD70088;
-}
-.venture-card p {
-  color: #fff;
-  font-size: 1.35rem;
-  font-weight: 600;
-  margin-bottom: 1.7rem;
-  line-height: 1.7;
-  text-shadow: 0 1px 6px #000;
-}
-.venture-gallery {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  justify-content: center;
-  margin-bottom: 1.5rem;
-}
-.venture-img {
-  width: 100%;
-  max-width: 520px; /* was 420px */
-  border-radius: 18px;
-  box-shadow: 0 4px 24px #FFD700cc;
-  border: 2px solid #fff; /* was #FFD700 */
-  background: #fff;
-  transition: transform 0.3s, box-shadow 0.3s;
-  margin-bottom: 1.2rem;
-  object-fit: contain;
-  aspect-ratio: 16 / 9; /* keep consistent height without changing alignment or colors */
-}
-.venture-img:hover {
-  transform: scale(1.07) rotate(-2deg);
-  box-shadow: 0 8px 32px #FFD700cc;
-}
-.venture-brand-logo {
-  width: 90px;
-  height: 90px;
-  display: block;
-  margin: 10px auto 12px auto;
-  padding: 8px;
-  border-radius: 16px;
-  border: 2px solid #FFD700;
-  background: #fff;
-  object-fit: contain;
-  box-shadow: 0 4px 18px #FFD70044, 0 2px 8px #00000033;
-  animation: cardPop 0.6s cubic-bezier(.42,0,.58,1) both;
-}
-@media (max-width: 600px) {
-  .venture-brand-logo {
-    width: 64px;
-    height: 64px;
-    padding: 6px;
-    border-radius: 12px;
-  }
-}
-
-/* Tablet and up: larger images and text */
-@media (min-width: 900px) {
-  .venture-card {
-    padding: 3vw 2vw 2vw; /* slight tightening while enlarging content */
-  }
-  .venture-card h2 { font-size: 3rem; }        /* was 2.6rem */
-  .venture-card p  { font-size: 1.5rem; }      /* was 1.35rem */
-  .venture-img     { max-width: 640px; }       /* bigger images like BSSL */
-}
-
-/* Desktop-wide: push image a bit larger */
-@media (min-width: 1200px) {
-  .venture-card--split {
-    grid-template-columns: minmax(320px, 0.9fr) minmax(420px, 1.1fr);
-    gap: clamp(2.2rem, 3vw, 3rem);
-  }
-  .venture-card--split .venture-gallery {
-    grid-template-columns: repeat(2, minmax(240px, 1fr));
-  }
-}
-
-/* Mobile: let images span most of the width for a bigger feel */
-@media (max-width: 700px) {
-  .venture-detail { background-attachment: scroll; }
-}
+/* --- Moved all .venture-detail, .venture-card, .venture-img, .venture-gallery, .venture-brand-logo,
+   and their responsive rules to venture.css --- */
 
 /* =========================
    CONTACT SECTION (Animated Card)
@@ -1030,7 +1057,7 @@ button.pro-nav__link {
 .contact-form {
   display: flex;
   flex-direction: column;
-  width: 340px;
+  width: clamp(320px, 90vw, 420px);
   max-width: 98vw;
   margin: 0 auto;
   background: rgba(255, 255, 255, 0.10);
@@ -1786,7 +1813,7 @@ html {
 body {
   font-size: 1rem; /* 1rem = 16px */
   line-height: 1.625;
-  padding: 0 1rem;
+  padding: 0;
 }
 h1 {
   font-size: 2.5rem; /* 40px */
@@ -1862,7 +1889,7 @@ li {
   z-index: 10;
 }
 .z-20 {
-  z-index: 20;
+     z-index: 20;
 }
 .z-30 {
   z-index: 30;
@@ -1993,38 +2020,36 @@ li {
 /* Partnerships: enforce 2-column grid and center alignment (fix single-column issue) */
 .partnerships-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: clamp(1rem, 2.8vw, 2.2rem);
-  justify-items: center;
-  align-items: center;
-  width: min(760px, 94vw);
+  grid-template-columns: repeat(2, minmax(140px, 1fr));
+  gap: clamp(1rem, 2vw, 1.6rem);
+  width: min(560px, 94vw);
 }
 .partner-card {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: clamp(0.6rem, 1.6vw, 1rem);
-  background: rgba(255,255,255,0.08);
-  border-radius: 18px;
-  border: 1px solid rgba(255,215,0,0.28);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.18);
-  transition: transform 0.22s ease, box-shadow 0.22s ease;
+  padding: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  transition: none;
 }
 .partner-card:hover,
 .partner-card:focus-within {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(255,215,0,0.28);
+  transform: none;
+  box-shadow: none;
 }
 .partner-logo,
 .partner-card img,
 .partner-logo img {
-  width: clamp(110px, 16vw, 160px);
-  max-height: 72px;
-  object-fit: contain;
-  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.18));
+  width: clamp(120px, 18vw, 180px);
+  height: auto;
+  display: block;
+  filter: none;
 }
 @media (max-width: 640px) {
   .partnerships-grid {
-    width: min(500px, 94vw);
+    grid-template-columns: 1fr;
+    width: min(360px, 94vw);
   }
 }

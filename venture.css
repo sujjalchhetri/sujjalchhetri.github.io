@@ -1,0 +1,122 @@
+/* =========================
+   VENTURE DETAIL PAGE (Cloud Section)
+========================= */
+.venture-detail, .venture-card, .venture-card h2, .venture-card p, .venture-gallery, .venture-img {
+  font-family: 'Davetica', 'Times New Roman', serif;
+}
+.venture-detail {
+  width: 100vw;
+  background:
+    linear-gradient(rgba(0,31,63,0.85), rgba(0,31,63,0.85)),
+    url('Background_Img.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: clamp(5rem, 8vw, 7rem) clamp(1.8rem, 6vw, 4rem);
+  box-sizing: border-box;
+}
+.venture-card {
+  max-width: min(1140px, 96vw);
+  width: 100%;
+  min-height: clamp(560px, 72vh, 820px);
+  margin: 0 auto;
+  padding: clamp(2rem, 3.8vw, 3rem);
+  border-radius: 28px;
+  background: linear-gradient(140deg, rgba(0, 31, 63, 0.92), rgba(0, 64, 128, 0.68));
+  border: 1.5px solid rgba(255, 255, 255, 0.28);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.6rem, 3vw, 2.6rem);
+  justify-content: center;
+}
+.fade-in {
+  animation: cardPop 0.7s cubic-bezier(.42,0,.58,1) both;
+}
+.venture-card h2 {
+  color: #FFD700;
+  font-size: 2.6rem;
+  font-weight: 800;
+  margin-bottom: 1.2rem;
+  text-shadow: 0 2px 8px #000, 0 0px 2px #FFD70088;
+}
+.venture-card p {
+  color: #fff;
+  font-size: 1.35rem;
+  font-weight: 600;
+  margin-bottom: 1.7rem;
+  line-height: 1.7;
+  text-shadow: 0 1px 6px #000;
+}
+.venture-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+.venture-img {
+  width: 100%;
+  max-width: 520px;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px #FFD700cc;
+  border: 2px solid #fff;
+  background: #fff;
+  transition: transform 0.3s, box-shadow 0.3s;
+  margin-bottom: 1.2rem;
+  object-fit: contain;
+  aspect-ratio: 16 / 9;
+}
+.venture-img:hover {
+  transform: scale(1.07) rotate(-2deg);
+  box-shadow: 0 8px 32px #FFD700cc;
+}
+.venture-brand-logo {
+  width: 90px;
+  height: 90px;
+  display: block;
+  margin: 10px auto 12px auto;
+  padding: 8px;
+  border-radius: 16px;
+  border: 2px solid #FFD700;
+  background: #fff;
+  object-fit: contain;
+  box-shadow: 0 4px 18px #FFD70044, 0 2px 8px #00000033;
+  animation: cardPop 0.6s cubic-bezier(.42,0,.58,1) both;
+}
+@media (max-width: 600px) {
+  .venture-brand-logo {
+    width: 64px;
+    height: 64px;
+    padding: 6px;
+    border-radius: 12px;
+  }
+}
+/* Tablet and up: larger images and text */
+@media (min-width: 900px) {
+  .venture-card {
+    padding: 3vw 2vw 2vw;
+  }
+  .venture-card h2 { font-size: 3rem; }
+  .venture-card p  { font-size: 1.5rem; }
+  .venture-img     { max-width: 640px; }
+}
+/* Desktop-wide: push image a bit larger */
+@media (min-width: 1200px) {
+  .venture-card--split {
+    grid-template-columns: minmax(320px, 0.9fr) minmax(420px, 1.1fr);
+    gap: clamp(2.2rem, 3vw, 3rem);
+  }
+  .venture-card--split .venture-gallery {
+    grid-template-columns: repeat(2, minmax(240px, 1fr));
+  }
+}
+/* Mobile: let images span most of the width for a bigger feel */
+@media (max-width: 700px) {
+  .venture-detail { background-attachment: scroll; }
+}

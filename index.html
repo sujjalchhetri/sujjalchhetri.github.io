@@ -156,6 +156,7 @@
       <p>
         At SBSO Foundation, we believe that sports have the power to unite, inspire, and transform lives. As a dynamic sports event organization, we bring together players, enthusiasts, and communities through exciting tournaments in cricket, badminton, football, and more — across cities in India.
         Beyond the field, we are an NGO dedicated to building a healthier, more active, and empowered society. Our initiatives focus on promoting fitness, inclusion, and youth development, nurturing the next generation of athletes and changemakers.
+      </p>
 
     <!-- SECTION 04: VENTURES -->
     <!-- =========================
@@ -308,62 +309,18 @@
     <section id="partnerships" class="partnerships">
       <h2>Our Partners</h2>
       <div class="partnerships-grid">
-        <div class="partner-group">
-          <article class="partner-card">
-            <div class="partner-logo">
-              <img src="partnership1.png" alt="Prime Sports Arena logo" loading="lazy" decoding="async">
-            </div>
-          </article>
-          <article class="partner-card">
-            <div class="partner-logo">
-              <img src="partnership2.jpg" alt="Champion Gear Co. logo" loading="lazy" decoding="async">
-            </div>
-          </article>
-          <article class="partner-card">
-            <div class="partner-logo">
-              <img src="partnership3.png" alt="Pulse Media Network logo" loading="lazy" decoding="async">
-            </div>
-          </article>
-          <article class="partner-card">
-            <div class="partner-logo">
-              <img src="partnership4.jpg" alt="FitNation Labs logo" loading="lazy" decoding="async">
-            </div>
-          </article>
-          <article class="partner-card">
-            <div class="partner-logo">
-              <img src="partnership5.jpg" alt="Cityline Hospitality logo" loading="lazy" decoding="async">
-            </div>
-          </article>
-        </div>
-        <hr class="partner-group-divider">
-        <div class="partner-group">
-          <article class="partner-card">
-            <div class="partner-logo">
-              <img src="partnership6.jpg" alt="NextGen Analytics logo" loading="lazy" decoding="async">
-            </div>
-          </article>
-          <article class="partner-card">
-            <div class="partner-logo">
-              <img src="partnership7.jpg" alt="PulseCare Clinics logo" loading="lazy" decoding="async">
-            </div>
-          </article>
-          <article class="partner-card">
-            <div class="partner-logo">
-              <img src="partnership8.jpg" alt="AllStar Nutrition logo" loading="lazy" decoding="async">
-            </div>
-          </article>
-          <article class="partner-card">
-            <div class="partner-logo">
-              <img src="partnership9.jpg" alt="Community United logo" loading="lazy" decoding="async">
-            </div>
-          </article>
-        </div>
-        <article class="partner-card">
-          <div class="partner-logo">
-            <img src="partnership10.jpg" alt="New Partner logo" loading="lazy" decoding="async">
-          </div>
-        </article>
-        <hr class="partner-group-divider">
+        <article class="partner-card"><img src="partnership1.png" alt="Prime Sports Arena logo" loading="lazy" decoding="async"></article>
+        <article class="partner-card"><img src="partnership2.jpg" alt="Champion Gear Co. logo" loading="lazy" decoding="async"></article>
+        <article class="partner-card"><img src="partnership3.png" alt="Pulse Media Network logo" loading="lazy" decoding="async"></article>
+        <article class="partner-card"><img src="partnership4.jpg" alt="FitNation Labs logo" loading="lazy" decoding="async"></article>
+        <article class="partner-card"><img src="partnership5.jpg" alt="Cityline Hospitality logo" loading="lazy" decoding="async"></article>
+        <article class="partner-card"><img src="partnership6.jpg" alt="NextGen Analytics logo" loading="lazy" decoding="async"></article>
+        <article class="partner-card"><img src="partnership7.jpg" alt="PulseCare Clinics logo" loading="lazy" decoding="async"></article>
+        <article class="partner-card"><img src="partnership8.jpg" alt="AllStar Nutrition logo" loading="lazy" decoding="async"></article>
+        <article class="partner-card"><img src="partnership9.jpg" alt="Community United logo" loading="lazy" decoding="async"></article>
+        <article class="partner-card"><img src="partnership10.jpg" alt="New Partner logo" loading="lazy" decoding="async"></article>
+        <article class="partner-card"><img src="partnership11.jpg" alt="Alliance Sports Network logo" loading="lazy" decoding="async"></article>
+        <article class="partner-card"><img src="partnership12.png" alt="Victory Edge Solutions logo" loading="lazy" decoding="async"></article>
       </div>
     </section>
   </main>
@@ -452,11 +409,11 @@
 
       const searchIndex = [
         { label: 'About Us', hint: 'Foundation story', target: '#about', icon: 'fa-landmark' },
-        { label: 'Ventures', hint: 'Our active leagues', target: '#ventures', icon: 'fa-trophy' },
+        { label: 'Ventures', hint: 'Active leagues', target: '#ventures', icon: 'fa-trophy' },
         { label: 'Brand Ambassador', hint: 'Ambassador spotlight', target: '#ambassador', icon: 'fa-star' },
         { label: 'President', hint: 'Leadership insights', target: '#president', icon: 'fa-user-tie' },
         { label: 'Board Members', hint: 'Core committee', target: '#members', icon: 'fa-users' },
-        { label: 'Contact', hint: 'Get in touch', target: '#contact', icon: 'fa-phone-volume' },
+        { label: 'Contact', hint: 'Reach the team', target: '#contact', icon: 'fa-phone-volume' },
         { label: 'BSSL Cloud', hint: 'Bengaluru Super Sports League', target: 'venture2.html', icon: 'fa-baseball-bat-ball' }
       ];
       const quickLinks = searchIndex.slice(0, 5);
@@ -470,7 +427,11 @@
       const renderResults = (items, headingText) => {
         if (!searchResults) return;
         if (!items.length) {
-          hideResults();
+          searchResults.innerHTML = `
+            <li class="pro-nav__search-heading">${headingText}</li>
+            <li class="pro-nav__search-result is-empty">No matches found</li>
+          `;
+          searchResults.classList.add('visible');
           return;
         }
         searchResults.innerHTML = `
@@ -507,45 +468,44 @@
       };
 
       const closeNav = () => {
-        nav.classList.remove('nav-open');
+        nav?.classList.remove('nav-open');
         toggle?.setAttribute('aria-expanded', 'false');
         closePopovers();
         hideResults();
       };
 
       toggle?.addEventListener('click', () => {
-        const isOpen = nav.classList.toggle('nav-open');
-        toggle?.setAttribute('aria-expanded', String(isOpen));
+        const isOpen = nav?.classList.toggle('nav-open');
+        toggle?.setAttribute('aria-expanded', String(!!isOpen));
         if (!isOpen) closePopovers();
       });
 
       popTriggers?.forEach(btn => {
-        btn.addEventListener('click', (event) => {
+        btn.addEventListener('click', () => {
           const parent = btn.closest('.pro-nav__item');
           const isOpen = parent?.classList.toggle('is-open');
           popItems?.forEach(item => {
             if (item !== parent) item.classList.remove('is-open');
+            item.querySelector('.pro-nav__link--trigger')?.setAttribute('aria-expanded', String(item === parent && isOpen));
           });
-          btn.setAttribute('aria-expanded', String(!!isOpen));
         });
       });
 
       document.addEventListener('click', (event) => {
-        if (!nav.contains(event.target)) closePopovers();
-      });
-      document.addEventListener('keyup', (event) => {
-        if (event.key === 'Escape') {
+        if (!nav?.contains(event.target)) {
           closePopovers();
           hideResults();
         }
       });
 
+      document.addEventListener('keyup', (event) => {
+        if (event.key === 'Escape') closeNav();
+      });
+
       links?.forEach(link => link.addEventListener('click', closeNav));
 
       searchInput?.addEventListener('focus', () => {
-        if (!searchInput.value.trim()) {
-          renderResults(quickLinks, 'Quick Links');
-        }
+        renderResults(quickLinks, 'Quick Links');
       });
 
       searchInput?.addEventListener('input', () => {
@@ -566,12 +526,7 @@
         if (!link) return;
         event.preventDefault();
         performScroll(link.dataset.target);
-        hideResults();
         closeNav();
-      });
-
-      searchInput?.addEventListener('blur', () => {
-        setTimeout(hideResults, 120);
       });
 
       searchForm?.addEventListener('submit', (event) => {
@@ -581,8 +536,22 @@
           searchInput?.focus();
           return;
         }
-        const match = searchIndex.find(item =>
+        const matches = searchIndex.filter(item =>
           item.label.toLowerCase().includes(term) ||
           item.hint.toLowerCase().includes(term)
         );
-        if
+        if (matches.length) {
+          performScroll(matches[0].target);
+          closeNav();
+        } else {
+          renderResults([], 'Search Results');
+        }
+      });
+
+      searchInput?.addEventListener('blur', () => {
+        setTimeout(hideResults, 140);
+      });
+    });
+  </script>
+</body>
+</html>
