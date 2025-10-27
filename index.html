@@ -10,6 +10,22 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
   <title>SBSO Foundation</title>
+  <style>
+    /* Center the hero image */
+    .hero-img-center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 1.2rem;
+    }
+    .hero-img {
+      display: block;
+      margin: 0 auto;
+      max-width: 220px;
+      width: 100%;
+      height: auto;
+    }
+  </style>
 </head>
 <body>
   <!-- PAGE LAYOUT GUIDE:
@@ -133,20 +149,13 @@
          HERO SECTION
     ========================== -->
     <section class="hero">
-      <img src="hero-image.jpg" alt="Hero Image" class="hero-img" decoding="async">
+      <div class="hero-img-center">
+        <img src="SBSO_FOUNDATION.jpg" alt="Hero Image" class="hero-img" decoding="async">
+      </div>
       <h2>Welcome to <span>SBSO Foundation</span></h2>
       <p>Come. Commit. Conquer.</p>
       <a href="venture2.html" class="btn">Register Now</a>
     </section>
-
-    <!-- SECTION 02A: ORGANISATION LOGO -->
-    <!-- =========================
-         ORGANISATION LOGO SECTION
-    ========================== -->
-    <div class="org-logo-section">
-      <img src="SBSO_FOUNDATION.jpg" alt="Organisation Logo" class="org-logo-img" width="180" height="180" loading="lazy" decoding="async">
-    </div>
-
     <!-- SECTION 03: ABOUT -->
     <!-- =========================
          ABOUT SECTION
@@ -156,8 +165,8 @@
       <p>
         At SBSO Foundation, we believe that sports have the power to unite, inspire, and transform lives. As a dynamic sports event organization, we bring together players, enthusiasts, and communities through exciting tournaments in cricket, badminton, football, and more — across cities in India.
         Beyond the field, we are an NGO dedicated to building a healthier, more active, and empowered society. Our initiatives focus on promoting fitness, inclusion, and youth development, nurturing the next generation of athletes and changemakers.
+        With our motto — “Come. Commit. Conquer.” — we invite everyone to step forward, give their best, and achieve greatness both on and off the ground. At SBSO Foundation, every game we organize is more than a competition — it’s a movement towards a better tomorrow through sports.
       </p>
-
     <!-- SECTION 04: VENTURES -->
     <!-- =========================
          VENTURES SECTION (Main Page)
@@ -187,7 +196,6 @@
         </a>
       </div>
     </section>
-
     <!-- SECTION 05: MAIN INTERFACE / STATS -->
     <!-- =========================
          MAIN INTERFACE / STATS SECTION
@@ -204,7 +212,6 @@
         <div class="stat-card"><span class="stat-value">50+</span><span class="stat-label">Members Strength</span></div>
       </div>
     </section>
-
     <!-- SECTION 06: BRAND AMBASSADORS -->
     <!-- =========================
          AMBASSADOR SECTION
@@ -228,7 +235,6 @@
         </div>
       </div>
     </section>
-
     <!-- SECTION 07: PRESIDENT -->
     <!-- =========================
          PRESIDENT SECTION
@@ -396,162 +402,187 @@
   </footer>
 
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const nav = document.getElementById('site-nav');
-      const toggle = nav?.querySelector('.pro-nav__toggle');
-      const panel = nav?.querySelector('.pro-nav__panel');
-      const links = panel?.querySelectorAll('.pro-nav__submenu a');
-      const searchForm = nav?.querySelector('.pro-nav__search');
-      const searchInput = document.getElementById('nav-search-input');
-      const popItems = nav?.querySelectorAll('.pro-nav__item');
-      const popTriggers = nav?.querySelectorAll('.pro-nav__link--trigger');
-      const searchResults = document.getElementById('nav-search-results');
+/* filepath: d:\PROGRAMS\HTML\SBSO-FOUNDATION\sujjalchhetri.github.io\index.html
+   Replaced search logic: builds a dynamic index (quick links + headings + anchors + image alts)
+   and renders clickable results. */
+document.addEventListener('DOMContentLoaded', () => {
+  const nav = document.getElementById('site-nav');
+  const searchForm = nav?.querySelector('.pro-nav__search');
+  const searchInput = document.getElementById('nav-search-input');
+  const searchResults = document.getElementById('nav-search-results');
 
-      const searchIndex = [
-        { label: 'About Us', hint: 'Foundation story', target: '#about', icon: 'fa-landmark' },
-        { label: 'Ventures', hint: 'Active leagues', target: '#ventures', icon: 'fa-trophy' },
-        { label: 'Brand Ambassador', hint: 'Ambassador spotlight', target: '#ambassador', icon: 'fa-star' },
-        { label: 'President', hint: 'Leadership insights', target: '#president', icon: 'fa-user-tie' },
-        { label: 'Board Members', hint: 'Core committee', target: '#members', icon: 'fa-users' },
-        { label: 'Contact', hint: 'Reach the team', target: '#contact', icon: 'fa-phone-volume' },
-        { label: 'BSSL Cloud', hint: 'Bengaluru Super Sports League', target: 'venture2.html', icon: 'fa-baseball-bat-ball' }
-      ];
-      const quickLinks = searchIndex.slice(0, 5);
+  if (!searchInput || !searchResults) return;
 
-      const hideResults = () => {
-        if (!searchResults) return;
-        searchResults.innerHTML = '';
-        searchResults.classList.remove('visible');
-      };
+  // initial static items
+  const staticIndex = [
+    { label: 'About Us', hint: 'Foundation story', target: '#about', icon: 'fa-landmark' },
+    { label: 'Ventures', hint: 'Active leagues', target: '#ventures', icon: 'fa-trophy' },
+    { label: 'Brand Ambassador', hint: 'Ambassador spotlight', target: '#ambassador', icon: 'fa-star' },
+    { label: 'President', hint: 'Leadership insights', target: '#president', icon: 'fa-user-tie' },
+    { label: 'Board Members', hint: 'Core committee', target: '#members', icon: 'fa-users' },
+    { label: 'Contact', hint: 'Reach the team', target: '#contact', icon: 'fa-phone-volume' },
+    { label: 'BSSL Cloud', hint: 'Bengaluru Super Sports League', target: 'venture2.html', icon: 'fa-baseball-bat-ball' }
+  ];
 
-      const renderResults = (items, headingText) => {
-        if (!searchResults) return;
-        if (!items.length) {
-          searchResults.innerHTML = `
-            <li class="pro-nav__search-heading">${headingText}</li>
-            <li class="pro-nav__search-result is-empty">No matches found</li>
-          `;
-          searchResults.classList.add('visible');
-          return;
-        }
-        searchResults.innerHTML = `
-          <li class="pro-nav__search-heading">${headingText}</li>
-          ${items.map(item => `
-            <li class="pro-nav__search-result">
-              <a href="${item.target}" data-target="${item.target}">
-                <span class="result-label">
-                  <span class="result-icon"><i class="fa-solid ${item.icon}" aria-hidden="true"></i></span>
-                  <span class="result-title">${item.label}</span>
-                </span>
-                <span class="result-meta">${item.hint}</span>
-              </a>
-            </li>
-          `).join('')}
-        `;
-        searchResults.classList.add('visible');
-      };
+  // Utility: escape HTML for safe insertion
+  const escapeHtml = (s = '') =>
+    s.replace?.(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;') ?? s;
 
-      const performScroll = (target) => {
-        if (!target) return;
-        if (target.startsWith('#')) {
-          document.querySelector(target)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        } else {
-          window.location.href = target;
-        }
-      };
+  // Build a search index from static items + headings + links + image alts
+  function buildIndex() {
+    const items = [...staticIndex];
 
-      const closePopovers = () => {
-        popItems?.forEach(item => {
-          item.classList.remove('is-open');
-          item.querySelector('.pro-nav__link--trigger')?.setAttribute('aria-expanded', 'false');
-        });
-      };
+    // headings
+    document.querySelectorAll('main h1, main h2, main h3').forEach(h => {
+      const text = (h.textContent || '').trim();
+      if (!text) return;
+      if (!h.id) {
+        // create safe id if missing
+        let id = text.toLowerCase().replace(/[^\w]+/g, '-').replace(/(^-+|-+$)/g, '');
+        let uniq = id; let i = 1;
+        while (document.getElementById(uniq)) { uniq = `${id}-${i++}`; }
+        h.id = uniq;
+      }
+      items.push({ label: text, hint: 'Section', target: `#${h.id}`, icon: 'fa-file-lines' });
+    });
 
-      const closeNav = () => {
-        nav?.classList.remove('nav-open');
-        toggle?.setAttribute('aria-expanded', 'false');
-        closePopovers();
-        hideResults();
-      };
-
-      toggle?.addEventListener('click', () => {
-        const isOpen = nav?.classList.toggle('nav-open');
-        toggle?.setAttribute('aria-expanded', String(!!isOpen));
-        if (!isOpen) closePopovers();
-      });
-
-      popTriggers?.forEach(btn => {
-        btn.addEventListener('click', () => {
-          const parent = btn.closest('.pro-nav__item');
-          const isOpen = parent?.classList.toggle('is-open');
-          popItems?.forEach(item => {
-            if (item !== parent) item.classList.remove('is-open');
-            item.querySelector('.pro-nav__link--trigger')?.setAttribute('aria-expanded', String(item === parent && isOpen));
-          });
-        });
-      });
-
-      document.addEventListener('click', (event) => {
-        if (!nav?.contains(event.target)) {
-          closePopovers();
-          hideResults();
-        }
-      });
-
-      document.addEventListener('keyup', (event) => {
-        if (event.key === 'Escape') closeNav();
-      });
-
-      links?.forEach(link => link.addEventListener('click', closeNav));
-
-      searchInput?.addEventListener('focus', () => {
-        renderResults(quickLinks, 'Quick Links');
-      });
-
-      searchInput?.addEventListener('input', () => {
-        const term = searchInput.value.trim().toLowerCase();
-        if (!term) {
-          renderResults(quickLinks, 'Quick Links');
-          return;
-        }
-        const matches = searchIndex.filter(item =>
-          item.label.toLowerCase().includes(term) ||
-          item.hint.toLowerCase().includes(term)
-        );
-        renderResults(matches, 'Search Results');
-      });
-
-      searchResults?.addEventListener('click', (event) => {
-        const link = event.target.closest('a[data-target]');
-        if (!link) return;
-        event.preventDefault();
-        performScroll(link.dataset.target);
-        closeNav();
-      });
-
-      searchForm?.addEventListener('submit', (event) => {
-        event.preventDefault();
-        const term = searchInput?.value.trim().toLowerCase();
-        if (!term) {
-          searchInput?.focus();
-          return;
-        }
-        const matches = searchIndex.filter(item =>
-          item.label.toLowerCase().includes(term) ||
-          item.hint.toLowerCase().includes(term)
-        );
-        if (matches.length) {
-          performScroll(matches[0].target);
-          closeNav();
-        } else {
-          renderResults([], 'Search Results');
-        }
-      });
-
-      searchInput?.addEventListener('blur', () => {
-        setTimeout(hideResults, 140);
+    // anchors/links
+    document.querySelectorAll('a[href]').forEach(a => {
+      const href = a.getAttribute('href') || '';
+      const text = (a.textContent || a.getAttribute('title') || a.getAttribute('aria-label') || href).trim();
+      if (!text) return;
+      // prefer internal nav anchors and internal pages
+      items.push({
+        label: text,
+        hint: href,
+        target: href,
+        icon: href.startsWith('#') ? 'fa-link' : 'fa-arrow-right'
       });
     });
-  </script>
+
+    // image alt texts
+    document.querySelectorAll('img[alt]').forEach(img => {
+      const alt = (img.alt || '').trim();
+      if (alt) items.push({ label: alt, hint: 'Image', target: '#', icon: 'fa-image' });
+    });
+
+    // dedupe by label+target
+    const map = new Map();
+    items.forEach(it => {
+      const key = `${(it.label||'').toLowerCase()}||${it.target||''}`;
+      if (!map.has(key)) map.set(key, it);
+    });
+
+    return Array.from(map.values());
+  }
+
+  let searchIndex = buildIndex();
+
+  // Render results (max limit)
+  function renderResults(items, headingText = 'Results') {
+    if (!searchResults) return;
+    if (!items || !items.length) {
+      searchResults.innerHTML = `
+        <li class="pro-nav__search-heading">${escapeHtml(headingText)}</li>
+        <li class="pro-nav__search-result is-empty">No matches found</li>
+      `;
+      searchResults.classList.add('visible');
+      return;
+    }
+    const html = [
+      `<li class="pro-nav__search-heading">${escapeHtml(headingText)}</li>`,
+      ...items.slice(0, 12).map(item => `
+        <li class="pro-nav__search-result">
+          <a href="${escapeHtml(item.target)}" data-target="${escapeHtml(item.target)}">
+            <span class="result-label">
+              <span class="result-icon"><i class="fa-solid ${escapeHtml(item.icon || 'fa-magnifying-glass')}" aria-hidden="true"></i></span>
+              <span class="result-title">${escapeHtml(item.label)}</span>
+            </span>
+            <span class="result-meta">${escapeHtml(item.hint || '')}</span>
+          </a>
+        </li>
+      `)
+    ].join('');
+    searchResults.innerHTML = html;
+    searchResults.classList.add('visible');
+  }
+
+  // Search function (fuzzy-ish: substring match on label, hint, target)
+  function doSearch(term) {
+    const q = (term || '').trim().toLowerCase();
+    if (!q) {
+      renderResults(searchIndex.slice(0, 6), 'Quick Links');
+      return;
+    }
+    const matches = searchIndex.filter(it =>
+      (it.label && it.label.toLowerCase().includes(q)) ||
+      (it.hint && it.hint.toLowerCase().includes(q)) ||
+      (it.target && it.target.toLowerCase().includes(q))
+    );
+    renderResults(matches, 'Search Results');
+  }
+
+  // input & focus handlers
+  searchInput.addEventListener('focus', () => renderResults(searchIndex.slice(0, 6), 'Quick Links'));
+  searchInput.addEventListener('input', () => doSearch(searchInput.value));
+
+  // click on result -> navigate or scroll
+  searchResults.addEventListener('click', (evt) => {
+    const a = evt.target.closest('a[data-target]');
+    if (!a) return;
+    evt.preventDefault();
+    const target = a.dataset.target;
+    if (target.startsWith('#')) {
+      const el = document.querySelector(target);
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      else window.location.hash = target;
+    } else {
+      // navigate to the href (internal or external)
+      window.location.href = target;
+    }
+    searchResults.classList.remove('visible');
+    searchInput.blur();
+  });
+
+  // form submit: navigate to best match
+  searchForm?.addEventListener('submit', (evt) => {
+    evt.preventDefault();
+    const term = (searchInput.value || '').trim().toLowerCase();
+    if (!term) { searchInput.focus(); return; }
+    const matches = searchIndex.filter(it =>
+      (it.label && it.label.toLowerCase().includes(term)) ||
+      (it.hint && it.hint.toLowerCase().includes(term))
+    );
+    if (matches.length) {
+      const target = matches[0].target;
+      if (target.startsWith('#')) {
+        document.querySelector(target)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      } else {
+        window.location.href = target;
+      }
+      searchResults.classList.remove('visible');
+      return;
+    }
+    renderResults([], 'Search Results');
+  });
+
+  // close results when clicking outside
+  document.addEventListener('click', (evt) => {
+    if (!nav?.contains(evt.target)) searchResults.classList.remove('visible');
+  });
+
+  // keyboard
+  document.addEventListener('keyup', (evt) => {
+    if (evt.key === 'Escape') {
+      searchResults.classList.remove('visible');
+      searchInput.blur();
+    }
+  });
+
+  // Rebuild index if DOM changes (optional small mutation observer)
+  const obs = new MutationObserver(() => { searchIndex = buildIndex(); });
+  obs.observe(document.body, { childList: true, subtree: true });
+});
+</script>
 </body>
 </html>

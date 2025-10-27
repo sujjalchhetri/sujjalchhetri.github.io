@@ -71,18 +71,17 @@ body {
 .venture-card {
   max-width: min(1140px, 96vw);
   width: 100%;
-  min-height: clamp(560px, 72vh, 820px);
-  margin: 0 auto;
-  padding: clamp(2rem, 3.8vw, 3rem);
-  border-radius: 28px;
+  min-height: auto;
+  padding: clamp(1.2rem, 3.2vw, 2.5rem);
+  border-radius: 22px;
+  gap: clamp(1rem, 2.6vw, 1.8rem);
+  text-align: left;
   background: linear-gradient(140deg, rgba(0,31,63,0.92), rgba(0,64,128,0.68));
   border: 1.5px solid rgba(255,255,255,0.28);
   box-shadow: 0 24px 60px rgba(0,0,0,0.45);
   display: flex;
   flex-direction: column;
-  gap: clamp(1.6rem, 3vw, 2.6rem);
   justify-content: center;
-  text-align: center;
 }
 .fade-in { animation: cardPop 0.7s cubic-bezier(.42,0,.58,1) both; }
 .venture-brand-logo {
@@ -99,25 +98,40 @@ body {
 }
 .venture-card h2 {
   color: #FFD700;
-  font-size: 2.6rem;
-  font-weight: 800;
-  margin-bottom: 1.2rem;
+  font-size: clamp(1.6rem, 3.2vw, 2.4rem);
+  margin: 0 0 0.6rem;
   text-shadow: 0 2px 8px #000, 0 0 2px #FFD70088;
 }
 .venture-card p {
-  color: #fff;
-  font-size: 1.35rem;
-  font-weight: 600;
-  margin-bottom: 1.7rem;
-  line-height: 1.7;
-  text-shadow: 0 1px 6px #000;
+  color: #eaf4ff;
+  font-size: clamp(1rem, 2.6vw, 1.15rem);
+  line-height: 1.5;
+  margin: 0 0 1rem;
 }
 .venture-gallery {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  justify-content: center;
-  margin-bottom: 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  justify-items: center;
+  align-items: center;
+}
+.media-wrap {
+  width: 100%;
+  max-width: 680px;
+  aspect-ratio: 16/9;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 2px solid #fff;
+  background: #000;
+  box-shadow: 0 8px 32px rgba(255,215,0,0.12);
+}
+.media-wrap img,
+.media-wrap video {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
 }
 .venture-img {
   width: 100%;
@@ -301,17 +315,17 @@ body {
 }
 .registration-form-container iframe {
   width: 100%;
-  max-width: 640px;
-  min-height: 700px;
-  border-radius: 16px;
-  border: 3px solid #000;
-  background: #fff;
-  box-shadow: 0 2px 18px #1565c044;
-  transition: box-shadow 0.3s, border-color 0.3s;
+  max-width: 720px;
+  min-height: 520px;
+  border-radius: 12px;
+  border: 2px solid #000;
+  box-shadow: 0 6px 18px rgba(21,101,192,0.12);
 }
-.registration-form-container iframe:hover {
-  box-shadow: 0 4px 32px #FFD70088, 0 0 8px #1565c088;
-  border-color: #000;
+@media (max-width: 880px) {
+  .registration-form-container iframe { min-height: 520px; }
+}
+@media (max-width: 480px) {
+  .registration-form-container iframe { min-height: 420px; border-radius: 10px; }
 }
 
 /* =========================
