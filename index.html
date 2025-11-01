@@ -10,22 +10,6 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
   <title>SBSO Foundation</title>
-  <style>
-    /* Center the hero image */
-    .hero-img-center {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-bottom: 1.2rem;
-    }
-    .hero-img {
-      display: block;
-      margin: 0 auto;
-      max-width: 220px;
-      width: 100%;
-      height: auto;
-    }
-  </style>
 </head>
 <body>
   <!-- PAGE LAYOUT GUIDE:
@@ -52,91 +36,22 @@
             <span class="pro-nav__motto">Come · Commit · Conquer</span>
           </span>
         </a>
+
         <button class="pro-nav__toggle" type="button" aria-expanded="false" aria-controls="nav-panel">
           <span class="pro-nav__toggle-bar"></span>
         </button>
+
         <div class="pro-nav__panel" id="nav-panel">
-          <ul class="pro-nav__links">
-            <li class="pro-nav__item">
-              <button class="pro-nav__link pro-nav__link--trigger" type="button" aria-expanded="false" aria-controls="nav-popover-about">
-                <span class="pro-nav__link-content">
-                  <i class="pro-nav__link-icon fa-solid fa-house-user" aria-hidden="true"></i>
-                  <span>About</span>
-                </span>
-              </button>
-              <div class="pro-nav__popover" id="nav-popover-about" role="menu">
-                <ul class="pro-nav__submenu">
-                  <li><a href="#about"><span>Overview</span> Foundation story</a></li>
-                  <li><a href="#members"><span>Team</span> Meet our board</a></li>
-                </ul>
-              </div>
-            </li>
-            <li class="pro-nav__item">
-              <button class="pro-nav__link pro-nav__link--trigger" type="button" aria-expanded="false" aria-controls="nav-popover-ventures">
-                <span class="pro-nav__link-content">
-                  <i class="pro-nav__link-icon fa-solid fa-trophy" aria-hidden="true"></i>
-                  <span>Ventures</span>
-                </span>
-              </button>
-              <div class="pro-nav__popover" id="nav-popover-ventures" role="menu">
-                <ul class="pro-nav__submenu">
-                  <li><a href="#ventures"><span>Highlights</span> Our active leagues</a></li>
-                  <li><a href="venture2.html"><span>BSSL Cloud</span> Bengaluru Super Sports</a></li>
-                </ul>
-              </div>
-            </li>
-            <li class="pro-nav__item">
-              <button class="pro-nav__link pro-nav__link--trigger" type="button" aria-expanded="false" aria-controls="nav-popover-ambassador">
-                <span class="pro-nav__link-content">
-                  <i class="pro-nav__link-icon fa-solid fa-star" aria-hidden="true"></i>
-                  <span>Ambassador</span>
-                </span>
-              </button>
-              <div class="pro-nav__popover" id="nav-popover-ambassador" role="menu">
-                <ul class="pro-nav__submenu">
-                  <li><a href="#ambassador"><span>Spotlight</span> Brand ambassadors</a></li>
-                  <li><a href="#president"><span>Leadership</span> President insights</a></li>
-                </ul>
-              </div>
-            </li>
-            <li class="pro-nav__item">
-              <button class="pro-nav__link pro-nav__link--trigger" type="button" aria-expanded="false" aria-controls="nav-popover-members">
-                <span class="pro-nav__link-content">
-                  <i class="pro-nav__link-icon fa-solid fa-users" aria-hidden="true"></i>
-                  <span>Members</span>
-                </span>
-              </button>
-              <div class="pro-nav__popover" id="nav-popover-members" role="menu">
-                <ul class="pro-nav__submenu">
-                  <li><a href="#members"><span>Board</span> Core committee</a></li>
-                  <li><a href="#contact"><span>Connect</span> Reach the team</a></li>
-                </ul>
-              </div>
-            </li>
-            <li class="pro-nav__item">
-              <button class="pro-nav__link pro-nav__link--trigger" type="button" aria-expanded="false" aria-controls="nav-popover-contact">
-                <span class="pro-nav__link-content">
-                  <i class="pro-nav__link-icon fa-solid fa-phone-volume" aria-hidden="true"></i>
-                  <span>Contact</span>
-                </span>
-              </button>
-              <div class="pro-nav__popover" id="nav-popover-contact" role="menu">
-                <ul class="pro-nav__submenu">
-                  <li><a href="#contact"><span>Form</span> Send a message</a></li>
-                  <li><a href="mailto:sbsofoundation@gmail.com"><span>Email</span> sbsofoundation@gmail.com</a></li>
-                </ul>
-              </div>
-            </li>
-          </ul>
-          <a class="pro-nav__cta" href="venture2.html">
-            <i class="fa-solid fa-ticket" aria-hidden="true"></i>
-            Register
-          </a>
           <form class="pro-nav__search" role="search">
             <span class="pro-nav__search-icon fa-solid fa-magnifying-glass" aria-hidden="true"></span>
             <input type="search" id="nav-search-input" name="q" placeholder="Search..." aria-label="Search site" autocomplete="off">
             <ul class="pro-nav__search-results" id="nav-search-results"></ul>
           </form>
+
+          <a class="pro-nav__cta" href="venture2.html">
+            <i class="fa-solid fa-ticket" aria-hidden="true"></i>
+            Register
+          </a>
         </div>
       </div>
     </nav>
@@ -149,12 +64,27 @@
          HERO SECTION
     ========================== -->
     <section class="hero">
-      <div class="hero-img-center">
-        <img src="SBSO_FOUNDATION.jpg" alt="Hero Image" class="hero-img" decoding="async">
+      <div class="hero__shell">
+        <div class="hero__content">
+          <p class="hero__eyebrow">Elite multi-city Sports Platform</p>
+          <h2>Welcome to <span>SBSO Foundation</span></h2>
+          <p>Come. Commit. Conquer.</p>
+          <div class="hero__actions">
+            <a href="venture2.html" class="btn">Register Now</a>
+            <a href="#ventures" class="btn btn--ghost">Explore Ventures</a>
+          </div>
+        </div>
+        <div class="hero__media">
+          <figure class="hero__badge">
+            <img src="SBSO_FOUNDATION.jpg" alt="SBSO Foundation crest" class="hero-img" decoding="async">
+          </figure>
+          <ul class="hero__meta">
+            <li><strong>10+</strong><span>Major events</span></li>
+            <li><strong>1L+</strong><span>Total viewers</span></li>
+            <li><strong>3</strong><span>Cities united</span></li>
+          </ul>
+        </div>
       </div>
-      <h2>Welcome to <span>SBSO Foundation</span></h2>
-      <p>Come. Commit. Conquer.</p>
-      <a href="venture2.html" class="btn">Register Now</a>
     </section>
     <!-- SECTION 03: ABOUT -->
     <!-- =========================
@@ -167,11 +97,11 @@
         Beyond the field, we are an NGO dedicated to building a healthier, more active, and empowered society. Our initiatives focus on promoting fitness, inclusion, and youth development, nurturing the next generation of athletes and changemakers.
         With our motto — “Come. Commit. Conquer.” — we invite everyone to step forward, give their best, and achieve greatness both on and off the ground. At SBSO Foundation, every game we organize is more than a competition — it’s a movement towards a better tomorrow through sports.
       </p>
-    <!-- SECTION 04: VENTURES -->
-    <!-- =========================
+    </section>
+    <section id="ventures" class="ventures">
+      <!-- =========================
          VENTURES SECTION (Main Page)
     ========================== -->
-    <section id="ventures" class="ventures">
       <h2>Our Ventures</h2>
       <div class="info-grid">
         <a class="info-card" href="venture1.html" target="_blank" rel="noopener noreferrer">
@@ -323,8 +253,8 @@
         <article class="partner-card"><img src="partnership6.jpg" alt="NextGen Analytics logo" loading="lazy" decoding="async"></article>
         <article class="partner-card"><img src="partnership7.jpg" alt="PulseCare Clinics logo" loading="lazy" decoding="async"></article>
         <article class="partner-card"><img src="partnership8.jpg" alt="AllStar Nutrition logo" loading="lazy" decoding="async"></article>
-        <article class="partner-card"><img src="partnership9.jpg" alt="Community United logo" loading="lazy" decoding="async"></article>
-        <article class="partner-card"><img src="partnership10.jpg" alt="New Partner logo" loading="lazy" decoding="async"></article>
+        <article class="partner-card"><img src="partnership9.png" alt="Community United logo" loading="lazy" decoding="async"></article>
+        <article class="partner-card"><img src="partnership10.png" alt="New Partner logo" loading="lazy" decoding="async"></article>
         <article class="partner-card"><img src="partnership11.jpg" alt="Alliance Sports Network logo" loading="lazy" decoding="async"></article>
         <article class="partner-card"><img src="partnership12.png" alt="Victory Edge Solutions logo" loading="lazy" decoding="async"></article>
       </div>
@@ -335,109 +265,116 @@
   <!-- =========================
        FOOTER
     ========================== -->
-  <footer class="cricket-footer">
-    <div class="footer-container">
-      <div class="footer-top">
-        <!-- Left: Logo & Brand -->
-        <div class="footer-brand">
-          <img src="SBSO_FOUNDATION.jpg" alt="SBSO Foundation Logo" class="footer-logo" width="68" height="68" decoding="async">
+  <footer class="site-footer">
+    <div class="footer-shell">
+      <section class="footer-panel footer-panel--brand">
+        <a class="footer-brand" href="#top">
+          <img src="SBSO_FOUNDATION.jpg" alt="SBSO Foundation" class="footer-brand__logo" width="68" height="68" decoding="async">
           <div>
-            <h3>SBSO Foundation</h3>
-            <p class="footer-tag">Come. Commit. Conquer.</p>
+            <h3 class="footer-brand__name">SBSO Foundation</h3>
+            <p class="footer-brand__tagline">Come. Commit. Conquer.</p>
           </div>
+        </a>
+        <p class="footer-brand__copy">
+          Building inclusive sporting ecosystems across cities with professional leagues, pathways, and social impact initiatives.
+        </p>
+        <div class="footer-social">
+          <a href="mailto:sbsofoundation@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+          <a href="https://www.instagram.com/sbso_foundation?igsh=MTA4NHZkZWp3ZmE1cw==" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/company/sbso-foundation/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="https://www.youtube.com/@sbsofoundation" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
         </div>
+      </section>
 
-        <!-- Right: Sections -->
-        <div class="footer-connect">
-          <!-- Follow Us -->
-          <div class="footer-social-wrap">
-            <h4>Follow Us</h4>
-            <ul class="footer-social">
-              <li><a href="mailto:sbsofoundation@gmail.com" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-envelope"></i> Email</a></li>
-              <li><a href="https://www.instagram.com/sbso_foundation?igsh=MTA4NHZkZWp3ZmE1cw==" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i> Instagram</a></li>
-              <li><a href="https://www.linkedin.com/company/sbso-foundation/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i> LinkedIn</a></li>
-              <li><a href="https://www.youtube.com/@sbsofoundation" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-youtube"></i> YouTube</a></li>
-            </ul>
-          </div>
+      <section class="footer-panel footer-panel--links">
+        <h4>Explore</h4>
+        <nav aria-label="Footer navigation">
+          <ul class="footer-links">
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#ventures">Ventures</a></li>
+            <li><a href="#ambassador">Ambassadors</a></li>
+            <li><a href="#members">Board Members</a></li>
+            <li><a href="venture2.html">Register Teams</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </section>
 
-          <!-- Explore -->
-          <div class="footer-links">
-            <h4>Explore</h4>
-            <ul>
-              <li><a href="#about">About Us</a></li>
-              <li><a href="#ventures">Our Ventures</a></li>
-              <li><a href="#ambassador">Brand Ambassador</a></li>
-              <li><a href="#president">President</a></li>
-              <li><a href="#members">Board Members</a></li>
-              <li><a href="#contact">Contact</a></li>
-            </ul>
-          </div>
+      <section class="footer-panel footer-panel--support">
+        <h4>Need Support?</h4>
+        <ul class="footer-contact">
+          <li>
+            <i class="fa-solid fa-envelope"></i>
+            <a href="mailto:sbsofoundation@gmail.com">sbsofoundation@gmail.com</a>
+          </li>
+          <li>
+            <i class="fa-solid fa-phone"></i>
+            <a href="tel:+919900384517">+91&nbsp;99003&nbsp;84517</a>
+          </li>
+          <li>
+            <i class="fa-solid fa-location-dot"></i>
+            <span>Bengaluru, Karnataka, India</span>
+          </li>
+        </ul>
+        <a class="btn btn--ghost footer-cta-link" href="#contact">Talk to Us</a>
+      </section>
+    </div>
 
-          <!-- Contact Us -->
-          <div class="footer-contact">
-            <h4>Contact Us</h4>
-            <ul class="footer-contact-list">
-              <li>
-                <i class="fa-solid fa-envelope"></i>
-                <a href="mailto:sbsofoundation@gmail.com">sbsofoundation@gmail.com</a>
-              </li>
-              <li>
-                <i class="fa-solid fa-phone"></i>
-                <a href="tel:+918971941208">+91 99003 84517</a>
-              </li>
-              <li>
-                <i class="fa-solid fa-location-dot"></i>
-                <span>Bengaluru, Karnataka, India</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <p class="footer-credit">&copy; 2024 SBSO Foundation. All Rights Reserved.</p>
-        <p>Empowering Youth Through Cricket</p>
-      </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 SBSO Foundation. All rights reserved.</p>
+      <p>Empowering Youth Through Cricket</p>
     </div>
   </footer>
 
   <script>
-/* filepath: d:\PROGRAMS\HTML\SBSO-FOUNDATION\sujjalchhetri.github.io\index.html
-   Replaced search logic: builds a dynamic index (quick links + headings + anchors + image alts)
-   and renders clickable results. */
+/* Enhanced search: debounced, scored, keyboard navigation, a11y roles */
 document.addEventListener('DOMContentLoaded', () => {
   const nav = document.getElementById('site-nav');
+  const navPanel = document.getElementById('nav-panel');
+  const navToggle = nav?.querySelector('.pro-nav__toggle');
+  const navTargets = navPanel?.querySelectorAll('a, button');
+  const breakpoint = window.matchMedia('(min-width: 981px)');
   const searchForm = nav?.querySelector('.pro-nav__search');
   const searchInput = document.getElementById('nav-search-input');
   const searchResults = document.getElementById('nav-search-results');
 
   if (!searchInput || !searchResults) return;
 
-  // initial static items
-  const staticIndex = [
-    { label: 'About Us', hint: 'Foundation story', target: '#about', icon: 'fa-landmark' },
-    { label: 'Ventures', hint: 'Active leagues', target: '#ventures', icon: 'fa-trophy' },
-    { label: 'Brand Ambassador', hint: 'Ambassador spotlight', target: '#ambassador', icon: 'fa-star' },
-    { label: 'President', hint: 'Leadership insights', target: '#president', icon: 'fa-user-tie' },
-    { label: 'Board Members', hint: 'Core committee', target: '#members', icon: 'fa-users' },
-    { label: 'Contact', hint: 'Reach the team', target: '#contact', icon: 'fa-phone-volume' },
-    { label: 'BSSL Cloud', hint: 'Bengaluru Super Sports League', target: 'venture2.html', icon: 'fa-baseball-bat-ball' }
-  ];
+  // ARIA plumbing for result list
+  searchResults.setAttribute('role', 'listbox');
+  searchResults.setAttribute('aria-label', 'Search results');
 
-  // Utility: escape HTML for safe insertion
+  // Utility: debounce
+  function debounce(fn, wait = 180) {
+    let t;
+    return (...args) => { clearTimeout(t); t = setTimeout(() => fn(...args), wait); };
+  }
+
+  // Escape HTML
   const escapeHtml = (s = '') =>
-    s.replace?.(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;') ?? s;
+    String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
-  // Build a search index from static items + headings + links + image alts
+  // Build a search index (deduped)
   function buildIndex() {
-    const items = [...staticIndex];
+    const items = [];
+
+    // static quick links
+    const staticIndex = [
+      { label: 'About Us', hint: 'Foundation story', target: '#about', icon: 'fa-landmark' },
+      { label: 'Ventures', hint: 'Active leagues', target: '#ventures', icon: 'fa-trophy' },
+      { label: 'Brand Ambassador', hint: 'Ambassador spotlight', target: '#ambassador', icon: 'fa-star' },
+      { label: 'President', hint: 'Leadership insights', target: '#president', icon: 'fa-user-tie' },
+      { label: 'Board Members', hint: 'Core committee', target: '#members', icon: 'fa-users' },
+      { label: 'Contact', hint: 'Reach the team', target: '#contact', icon: 'fa-phone-volume' },
+      { label: 'BSSL Cloud', hint: 'Bengaluru Super Sports League', target: 'venture2.html', icon: 'fa-baseball-bat-ball' }
+    ];
+    items.push(...staticIndex);
 
     // headings
     document.querySelectorAll('main h1, main h2, main h3').forEach(h => {
       const text = (h.textContent || '').trim();
       if (!text) return;
       if (!h.id) {
-        // create safe id if missing
         let id = text.toLowerCase().replace(/[^\w]+/g, '-').replace(/(^-+|-+$)/g, '');
         let uniq = id; let i = 1;
         while (document.getElementById(uniq)) { uniq = `${id}-${i++}`; }
@@ -451,7 +388,6 @@ document.addEventListener('DOMContentLoaded', () => {
       const href = a.getAttribute('href') || '';
       const text = (a.textContent || a.getAttribute('title') || a.getAttribute('aria-label') || href).trim();
       if (!text) return;
-      // prefer internal nav anchors and internal pages
       items.push({
         label: text,
         hint: href,
@@ -460,7 +396,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    // image alt texts
+    // image alts
     document.querySelectorAll('img[alt]').forEach(img => {
       const alt = (img.alt || '').trim();
       if (alt) items.push({ label: alt, hint: 'Image', target: '#', icon: 'fa-image' });
@@ -473,86 +409,200 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!map.has(key)) map.set(key, it);
     });
 
-    return Array.from(map.values());
+    return Array.from(map.values()).map((it, idx) => {
+      // precompute searchable normalized text for faster search
+      return Object.assign({}, it, {
+        _norm: `${it.label} ${it.hint} ${it.target}`.toLowerCase(),
+        _id: `sr-${idx}`
+      });
+    });
   }
 
   let searchIndex = buildIndex();
 
-  // Render results (max limit)
+  // Observe DOM changes and rebuild (light)
+  const obs = new MutationObserver(debounce(() => { searchIndex = buildIndex(); }, 400));
+  obs.observe(document.body, { childList: true, subtree: true });
+
+  // Scoring function (simple, fast)
+  function scoreItem(item, q) {
+    const label = (item.label || '').toLowerCase();
+    const hint = (item.hint || '').toLowerCase();
+    const target = (item.target || '').toLowerCase();
+    if (!q) return 0;
+    let score = 0;
+    if (label.startsWith(q)) score += 200;
+    if (label.includes(q)) score += 120;
+    if (hint.includes(q)) score += 40;
+    if (target.includes(q)) score += 20;
+    // word matches
+    const qParts = q.split(/\s+/).filter(Boolean);
+    qParts.forEach(part => {
+      if (label.split(/\s+/).some(w => w.startsWith(part))) score += 8;
+    });
+    // short boost for exact match
+    if (label === q) score += 400;
+    return score;
+  }
+
+  // render results (adds roles and ids)
   function renderResults(items, headingText = 'Results') {
-    if (!searchResults) return;
+    const max = 12;
     if (!items || !items.length) {
       searchResults.innerHTML = `
         <li class="pro-nav__search-heading">${escapeHtml(headingText)}</li>
         <li class="pro-nav__search-result is-empty">No matches found</li>
       `;
       searchResults.classList.add('visible');
+      searchResults.setAttribute('aria-hidden', 'false');
+      activeIndex = -1;
       return;
     }
+
     const html = [
       `<li class="pro-nav__search-heading">${escapeHtml(headingText)}</li>`,
-      ...items.slice(0, 12).map(item => `
-        <li class="pro-nav__search-result">
-          <a href="${escapeHtml(item.target)}" data-target="${escapeHtml(item.target)}">
-            <span class="result-label">
-              <span class="result-icon"><i class="fa-solid ${escapeHtml(item.icon || 'fa-magnifying-glass')}" aria-hidden="true"></i></span>
-              <span class="result-title">${escapeHtml(item.label)}</span>
-            </span>
-            <span class="result-meta">${escapeHtml(item.hint || '')}</span>
-          </a>
-        </li>
-      `)
+      ...items.slice(0, max).map((item, idx) => {
+        const id = escapeHtml(item._id || `sr-${idx}`);
+        return `
+          <li class="pro-nav__search-result" role="presentation">
+            <a id="${id}" role="option" tabindex="-1" aria-selected="false" href="${escapeHtml(item.target)}" data-target="${escapeHtml(item.target)}" class="search-link">
+              <span class="result-label">
+                <span class="result-icon"><i class="fa-solid ${escapeHtml(item.icon || 'fa-magnifying-glass')}" aria-hidden="true"></i></span>
+                <span class="result-title">${escapeHtml(item.label)}</span>
+              </span>
+              <span class="result-meta">${escapeHtml(item.hint || '')}</span>
+            </a>
+          </li>
+        `;
+      })
     ].join('');
     searchResults.innerHTML = html;
     searchResults.classList.add('visible');
+    searchResults.setAttribute('aria-hidden', 'false');
+    // reset active index
+    activeIndex = -1;
+    // Cache result anchors
+    resultAnchors = Array.from(searchResults.querySelectorAll('a.search-link'));
   }
 
-  // Search function (fuzzy-ish: substring match on label, hint, target)
-  function doSearch(term) {
-    const q = (term || '').trim().toLowerCase();
-    if (!q) {
+  // search engine: compute scores and sort
+  function searchQuery(q) {
+    const term = (q || '').trim().toLowerCase();
+    if (!term) {
       renderResults(searchIndex.slice(0, 6), 'Quick Links');
       return;
     }
-    const matches = searchIndex.filter(it =>
-      (it.label && it.label.toLowerCase().includes(q)) ||
-      (it.hint && it.hint.toLowerCase().includes(q)) ||
-      (it.target && it.target.toLowerCase().includes(q))
-    );
-    renderResults(matches, 'Search Results');
+    const scored = searchIndex.map(it => ({ it, s: scoreItem(it, term) }));
+    const filtered = scored.filter(x => x.s > 0).sort((a,b) => b.s - a.s).map(x => x.it);
+    renderResults(filtered, 'Search Results');
   }
 
-  // input & focus handlers
-  searchInput.addEventListener('focus', () => renderResults(searchIndex.slice(0, 6), 'Quick Links'));
-  searchInput.addEventListener('input', () => doSearch(searchInput.value));
+  const debouncedSearch = debounce((val) => searchQuery(val), 160);
 
-  // click on result -> navigate or scroll
+  // keyboard navigation
+  let resultAnchors = [];
+  let activeIndex = -1;
+  function setActive(index) {
+    if (!resultAnchors.length) return;
+    if (activeIndex >= 0 && resultAnchors[activeIndex]) {
+      resultAnchors[activeIndex].setAttribute('aria-selected', 'false');
+      resultAnchors[activeIndex].classList.remove('is-active');
+      resultAnchors[activeIndex].blur();
+    }
+    activeIndex = index;
+    if (activeIndex >= 0 && resultAnchors[activeIndex]) {
+      const el = resultAnchors[activeIndex];
+      el.setAttribute('aria-selected', 'true');
+      el.classList.add('is-active');
+      el.focus({ preventScroll: true });
+      searchInput.setAttribute('aria-activedescendant', el.id);
+    } else {
+      searchInput.removeAttribute('aria-activedescendant');
+    }
+  }
+
+  // input handlers
+  searchInput.setAttribute('aria-controls', searchResults.id);
+  searchInput.setAttribute('aria-autocomplete', 'list');
+
+  searchInput.addEventListener('input', (e) => {
+    debouncedSearch(e.target.value);
+  });
+
+  searchInput.addEventListener('focus', () => {
+    // show quick links
+    renderResults(searchIndex.slice(0,6), 'Quick Links');
+  });
+
+  // keydown: navigation
+  searchInput.addEventListener('keydown', (e) => {
+    if (!searchResults.classList.contains('visible')) return;
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      if (activeIndex < resultAnchors.length - 1) setActive(activeIndex + 1);
+      else setActive(0);
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      if (activeIndex > 0) setActive(activeIndex - 1);
+      else setActive(resultAnchors.length - 1);
+    } else if (e.key === 'Enter') {
+      // if an active result exists, follow it; otherwise allow form submit handler
+      if (activeIndex >= 0 && resultAnchors[activeIndex]) {
+        e.preventDefault();
+        const href = resultAnchors[activeIndex].dataset.target || resultAnchors[activeIndex].getAttribute('href');
+        if (href.startsWith('#')) {
+          const el = document.querySelector(href);
+          if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          else window.location.hash = href;
+        } else {
+          window.location.href = href;
+        }
+        closeResults();
+      }
+    } else if (e.key === 'Escape') {
+      closeResults();
+      searchInput.blur();
+    }
+  });
+
+  // mouse: clicking a result (delegated)
   searchResults.addEventListener('click', (evt) => {
     const a = evt.target.closest('a[data-target]');
     if (!a) return;
     evt.preventDefault();
-    const target = a.dataset.target;
+    const target = a.dataset.target || a.getAttribute('href');
     if (target.startsWith('#')) {
       const el = document.querySelector(target);
       if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
       else window.location.hash = target;
     } else {
-      // navigate to the href (internal or external)
       window.location.href = target;
     }
-    searchResults.classList.remove('visible');
-    searchInput.blur();
+    closeResults();
   });
 
-  // form submit: navigate to best match
+  // mouseover sets active for better a11y
+  searchResults.addEventListener('pointerover', (evt) => {
+    const a = evt.target.closest('a[data-target]');
+    if (!a) return;
+    const idx = resultAnchors.indexOf(a);
+    if (idx >= 0) setActive(idx);
+  });
+
+  function closeResults() {
+    searchResults.classList.remove('visible');
+    searchResults.setAttribute('aria-hidden', 'true');
+    activeIndex = -1;
+    resultAnchors = [];
+    searchInput.removeAttribute('aria-activedescendant');
+  }
+
+  // form submit behaviour: use best match
   searchForm?.addEventListener('submit', (evt) => {
     evt.preventDefault();
     const term = (searchInput.value || '').trim().toLowerCase();
     if (!term) { searchInput.focus(); return; }
-    const matches = searchIndex.filter(it =>
-      (it.label && it.label.toLowerCase().includes(term)) ||
-      (it.hint && it.hint.toLowerCase().includes(term))
-    );
+    const matches = searchIndex.filter(it => it._norm.includes(term));
     if (matches.length) {
       const target = matches[0].target;
       if (target.startsWith('#')) {
@@ -560,28 +610,40 @@ document.addEventListener('DOMContentLoaded', () => {
       } else {
         window.location.href = target;
       }
-      searchResults.classList.remove('visible');
+      closeResults();
       return;
     }
+    // show empty state
     renderResults([], 'Search Results');
   });
 
-  // close results when clicking outside
+  // click outside closes dropdown
   document.addEventListener('click', (evt) => {
-    if (!nav?.contains(evt.target)) searchResults.classList.remove('visible');
+    if (!nav?.contains(evt.target)) closeResults();
   });
 
-  // keyboard
-  document.addEventListener('keyup', (evt) => {
-    if (evt.key === 'Escape') {
-      searchResults.classList.remove('visible');
-      searchInput.blur();
-    }
-  });
-
-  // Rebuild index if DOM changes (optional small mutation observer)
-  const obs = new MutationObserver(() => { searchIndex = buildIndex(); });
-  obs.observe(document.body, { childList: true, subtree: true });
+  // keep existing nav toggle behavior intact (if present)
+  if (nav && navToggle) {
+    const closeNav = () => {
+      nav.classList.remove('is-open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    };
+    navToggle.addEventListener('click', () => {
+      const open = nav.classList.toggle('is-open');
+      navToggle.setAttribute('aria-expanded', String(open));
+      if (!open) closeResults();
+    });
+    navTargets?.forEach((node) => node.addEventListener('click', () => {
+      if (!breakpoint.matches) closeNav();
+    }));
+    breakpoint.addEventListener('change', (evt) => { if (evt.matches) closeNav(); });
+    document.addEventListener('click', (evt) => {
+      if (!nav.contains(evt.target)) {
+        closeNav();
+        closeResults();
+      }
+    });
+  }
 });
 </script>
 </body>

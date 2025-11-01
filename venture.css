@@ -17,21 +17,34 @@
 /* =========================
    01. BASE LAYOUT & BACKGROUND
 ========================= */
+:root {
+  --venture-surface: rgba(5,18,42,0.78);
+  --venture-glass: rgba(9,30,68,0.72);
+  --venture-gold: #ffd700;
+  --venture-blue: #4a8cff;
+  --venture-shadow: 0 26px 58px rgba(3,12,30,0.55);
+}
+
 body {
   margin: 0;
   padding: 0;
-  background-color: #00142c;
-  background-image:
-    radial-gradient(120% 120% at 15% 20%, rgba(83,146,255,0.22), transparent 60%),
-    radial-gradient(120% 140% at 85% -10%, rgba(255,215,0,0.18), transparent 65%),
-    linear-gradient(180deg, rgba(0,20,44,0.95), rgba(0,12,32,0.95)),
-    url('Background_Img.jpg');
-  background-size: cover;
-  background-position: center top;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  font-family: 'Davetica', 'Times New Roman', serif;
-  color: #fff;
+  background:
+    linear-gradient(160deg, rgba(4,19,47,0.82), rgba(4,19,47,0.76));
+  color: #f6f9ff;
+  font-family: 'Davetica', 'Segoe UI', sans-serif;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(120% 160% at 14% 10%, rgba(74,140,255,0.32), transparent 64%),
+    radial-gradient(140% 140% at 86% 14%, rgba(255,215,0,0.26), transparent 70%),
+    linear-gradient(205deg, rgba(3,12,28,0.76), rgba(2,9,24,0.84)),
+    url('Background_Img.jpg') center/cover no-repeat;
+  opacity: 0.7;
+  pointer-events: none;
 }
 .bssl-page-shell {
   min-height: 100vh;
@@ -61,27 +74,19 @@ body {
   padding: clamp(5rem, 8vw, 7rem) clamp(1.8rem, 6vw, 4rem);
   box-sizing: border-box;
   background:
-    linear-gradient(rgba(0,31,63,0.85), rgba(0,31,63,0.85)),
-    url('Background_Img.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+    linear-gradient(rgba(4,16,38,0.86), rgba(4,16,38,0.86)), url('Background_Img.jpg') center/cover no-repeat fixed;
 }
 .venture-card {
   max-width: min(1140px, 96vw);
   width: 100%;
   min-height: auto;
   padding: clamp(1.2rem, 3.2vw, 2.5rem);
-  border-radius: 22px;
+  border-radius: 26px;
   gap: clamp(1rem, 2.6vw, 1.8rem);
   text-align: left;
-  background: linear-gradient(140deg, rgba(0,31,63,0.92), rgba(0,64,128,0.68));
-  border: 1.5px solid rgba(255,255,255,0.28);
-  box-shadow: 0 24px 60px rgba(0,0,0,0.45);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  background: var(--venture-surface);
+  border: 1px solid rgba(136,192,255,0.22);
+  box-shadow: var(--venture-shadow);
 }
 .fade-in { animation: cardPop 0.7s cubic-bezier(.42,0,.58,1) both; }
 .venture-brand-logo {
@@ -101,9 +106,11 @@ body {
   font-size: clamp(1.6rem, 3.2vw, 2.4rem);
   margin: 0 0 0.6rem;
   text-shadow: 0 2px 8px #000, 0 0 2px #FFD70088;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 .venture-card p {
-  color: #eaf4ff;
+  color: rgba(220,234,255,0.78);
   font-size: clamp(1rem, 2.6vw, 1.15rem);
   line-height: 1.5;
   margin: 0 0 1rem;
@@ -266,10 +273,11 @@ body {
   filter: drop-shadow(0 2px 8px #FFD70088);
 }
 .register-card h3 {
-  color: #1565c0;
+  color: #173b6d;
   font-size: 1.5rem;
   font-weight: bold;
   text-shadow: 0 2px 8px #FFD70044;
+  letter-spacing: 0.08em;
 }
 .register-card p {
   color: #222;
@@ -294,7 +302,7 @@ body {
   z-index: 99;
 }
 .registration-header h2 {
-  color: #1565c0;
+  color: #173b6d;
   font-size: 2rem;
   font-weight: bold;
   letter-spacing: 1px;
@@ -520,11 +528,9 @@ body {
   margin-top: auto;
   padding: clamp(1.8rem, 4vw, 2.8rem);
   background:
-    radial-gradient(circle at top, rgba(255,215,0,0.22), transparent 60%),
-    linear-gradient(160deg, #00122c 0%, #002453 48%, #011739 100%);
-  color: #e9f3ff;
-  border-top: 1px solid rgba(255,215,0,0.4);
-  box-shadow: 0 -12px 28px rgba(0,0,0,0.38);
+    linear-gradient(180deg, rgba(4,16,38,0.95), rgba(2,9,24,0.94));
+  border-top: 1px solid rgba(136,192,255,0.24);
+  box-shadow: 0 -26px 52px rgba(0,0,0,0.46);
 }
 .bssl-footer__inner {
   max-width: min(960px, 94vw);
@@ -556,9 +562,9 @@ body {
   gap: 0.85rem;
   padding: clamp(0.6rem, 2vw, 0.9rem) clamp(1rem, 3vw, 1.6rem);
   border-radius: 14px;
-  border: 1px solid rgba(255,215,0,0.32);
-  background: rgba(255,255,255,0.08);
-  color: inherit;
+  border: 1px solid rgba(136,192,255,0.22);
+  background: rgba(6,22,50,0.72);
+  color: #f5f8ff;
   text-decoration: none;
   transition: transform 0.22s ease, background 0.22s ease, box-shadow 0.22s ease, color 0.22s ease;
 }
@@ -623,6 +629,14 @@ body {
     background-attachment: scroll;
     background-position: center;
   }
+  body::before {
+    position: absolute;
+    background:
+      radial-gradient(130% 160% at 18% 8%, rgba(74,140,255,0.36), transparent 72%),
+      radial-gradient(160% 130% at 82% 12%, rgba(255,215,0,0.24), transparent 74%),
+      linear-gradient(215deg, rgba(3,14,32,0.78), rgba(2,9,24,0.86)),
+      url('Background_Img.jpg') center top/cover no-repeat;
+  }
 }
 @media (max-width: 700px) {
   .venture-detail { background-attachment: scroll; }
@@ -636,6 +650,12 @@ body {
   .bssl-footer__text {
     align-items: center;
     text-align: center;
+  }
+  .register-card,
+  .registration-section,
+  .faq-section,
+  .location-box {
+    width: min(92vw, 420px);
   }
 }
 @media (max-width: 600px) {
@@ -653,4 +673,17 @@ body {
     transform: scale(1.05) rotate(-2deg);
     box-shadow: 0 12px 40px #ffffff88, 0 4px 24px #2d5ea044;
   }
+}
+@media (max-width: 860px) {
+  .venture-card--split { border-radius: 26px; }
+  .register-card,
+  .registration-section,
+  .faq-section,
+  .location-box { padding-inline: clamp(1.2rem, 6vw, 2rem); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .register-card,
+  .venue-img,
+  .location-img { transition: none !important; animation: none !important; }
 }
