@@ -23,15 +23,18 @@
   --venture-gold: #ffd700;
   --venture-blue: #4a8cff;
   --venture-shadow: 0 26px 58px rgba(3,12,30,0.55);
+  --font-base:'Davetica','Segoe UI',sans-serif;
 }
 
 body {
   margin: 0;
   padding: 0;
-  background:
-    linear-gradient(160deg, rgba(4,19,47,0.82), rgba(4,19,47,0.76));
+  background: linear-gradient(152deg,
+		rgba(12,38,94,0.78) 0%,
+		rgba(8,28,76,0.7) 48%,
+		rgba(4,18,58,0.64) 100%);
   color: #f6f9ff;
-  font-family: 'Davetica', 'Segoe UI', sans-serif;
+  font-family:var(--font-base);
 }
 body::before {
   content: "";
@@ -39,10 +42,13 @@ body::before {
   inset: 0;
   z-index: -1;
   background:
-    radial-gradient(120% 160% at 14% 10%, rgba(74,140,255,0.32), transparent 64%),
-    radial-gradient(140% 140% at 86% 14%, rgba(255,215,0,0.26), transparent 70%),
-    linear-gradient(205deg, rgba(3,12,28,0.76), rgba(2,9,24,0.84)),
-    url('Background_Img.jpg') center/cover no-repeat;
+		radial-gradient(155% 170% at 14% 12%, rgba(126,188,255,0.26), transparent 70%),
+		radial-gradient(184% 150% at 84% 18%, rgba(170,214,255,0.22), transparent 78%),
+		linear-gradient(206deg, rgba(8,30,82,0.44), rgba(6,20,56,0.5)),
+		url('Background_Img.jpg') center/cover no-repeat fixed;
+  background-size:180% 180%, 200% 160%, cover, cover;
+  background-position:center, center, center, center;
+  background-repeat:no-repeat;
   opacity: 0.7;
   pointer-events: none;
 }
@@ -66,27 +72,24 @@ body::before {
    02. VENTURE HERO & CARD
 ========================= */
 .venture-detail {
-  width: 100vw;
+  width: 100%;
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: clamp(5rem, 8vw, 7rem) clamp(1.8rem, 6vw, 4rem);
+  padding: clamp(4rem, 7vw, 6rem) clamp(1.4rem, 5vw, 3rem);
   box-sizing: border-box;
   background:
     linear-gradient(rgba(4,16,38,0.86), rgba(4,16,38,0.86)), url('Background_Img.jpg') center/cover no-repeat fixed;
 }
 .venture-card {
-  max-width: min(1140px, 96vw);
+  max-width: min(1120px, 92vw);
   width: 100%;
-  min-height: auto;
-  padding: clamp(1.2rem, 3.2vw, 2.5rem);
+  padding: clamp(1.2rem, 3vw, 2.4rem);
   border-radius: 26px;
-  gap: clamp(1rem, 2.6vw, 1.8rem);
-  text-align: left;
-  background: var(--venture-surface);
-  border: 1px solid rgba(136,192,255,0.22);
-  box-shadow: var(--venture-shadow);
+  background:linear-gradient(160deg, rgba(6,14,32,0.92), rgba(4,10,24,0.9));
+  border: 1px solid rgba(138,196,255,0.28);
+  box-shadow: 0 26px 58px rgba(3,12,30,0.55);
 }
 .fade-in { animation: cardPop 0.7s cubic-bezier(.42,0,.58,1) both; }
 .venture-brand-logo {
@@ -609,8 +612,8 @@ body::before {
 ========================= */
 @media (max-width: 900px) {
   .venture-card { padding: 3vw 2vw 2vw; }
-  .venture-card h2 { font-size: 3rem; }
-  .venture-card p { font-size: 1.5rem; }
+  .venture-card h2 { font-size: clamp(1.8rem, 5vw, 2.4rem); }
+  .venture-card p { font-size: clamp(1rem, 3.6vw, 1.1rem); }
   .venture-img { max-width: 640px; }
 }
 @media (min-width: 1200px) {
@@ -632,10 +635,13 @@ body::before {
   body::before {
     position: absolute;
     background:
-      radial-gradient(130% 160% at 18% 8%, rgba(74,140,255,0.36), transparent 72%),
-      radial-gradient(160% 130% at 82% 12%, rgba(255,215,0,0.24), transparent 74%),
-      linear-gradient(215deg, rgba(3,14,32,0.78), rgba(2,9,24,0.86)),
-      url('Background_Img.jpg') center top/cover no-repeat;
+			radial-gradient(168% 176% at 22% 18%, rgba(150,208,255,0.26), transparent 82%),
+			radial-gradient(198% 162% at 86% 26%, rgba(188,228,255,0.22), transparent 84%),
+			linear-gradient(218deg, rgba(8,28,70,0.44), rgba(4,16,40,0.52)),
+			url('Background_Img.jpg') center top/cover no-repeat fixed;
+		background-size:210% 210%, 230% 188%, cover, cover;
+		background-position:center, center, center, top;
+		background-repeat:no-repeat;
   }
 }
 @media (max-width: 700px) {
