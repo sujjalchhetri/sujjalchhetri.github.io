@@ -1,157 +1,234 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Bengaluru Super Sports League</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="venture.css">
-  <link rel="icon" type="image/x-icon" href="bssl_logo.jpg">
+	<meta charset="UTF-8">
+	<title>Bengaluru Super Sports League</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/jpeg" href="bssl_logo.jpg">
+	<link rel="stylesheet" href="venture.css">
 </head>
-<body>
-  <div class="bssl-page-shell">
-    <main class="bssl-main">
-      <!-- =========================
-        HERO SECTION
-      ========================= -->
-    <section id="bssl-hero" class="venture-detail">
-        <div class="venture-card fade-in">
-          <img class="venture-brand-logo" src="bssl_logo.jpg" alt="BSSL logo">
-          <h2>Bengaluru Super Sports League</h2>
-          <p>
-            The Bengaluru Super Sports League (BSSL) is a dynamic turf cricket tournament in T10 format, offering young players a chance to shine and connect with a vibrant audience. Season 1 coming November 2025!
-          </p>
-          <div class="venture-gallery">
-            <div class="media-wrap">
-              <video class="venture-media" src="hero-video.mp4" autoplay loop muted playsinline aria-label="BSSL highlight video" poster="bssl_poster.jpg"></video>
-            </div>
-            <!-- <img src="BSSL1.JPG" alt="Event Photo" class="venture-img">
-            <img src="BSSL2.JPG" alt="Event Photo" class="venture-img"> -->
-          </div>
-          <a href="index.html" class="btn">Back to Home</a>
+<body id="top">
+	<header class="site-header">
+		<nav class="site-nav" aria-label="Primary">
+			<a class="site-nav__brand" href="#top">
+				<img src="bssl_logo.jpg" alt="BSSL logo" class="site-nav__logo" width="54" height="54" decoding="async">
+				Bengaluru Super Sports League
+			</a>
+			<button class="site-nav__toggle" type="button" aria-expanded="false" aria-controls="nav-menu">☰</button>
+			<div class="site-nav__menu" id="nav-menu">
+				<div class="site-nav__links">
+					<a href="#overview">Overview</a>
+					<a href="#highlights">Highlights</a>
+					<a href="#stats">Stats</a>
+					<a href="#schedule">Schedule</a>
+					<a href="#teams">Teams</a>
+					<a href="#faq">FAQs</a>
+					<a href="#contact">Contact</a>
+				</div>
+				<a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSdZ018C6eB8wG1q4Xb8Lv1wwdwGEOKUDNaxNQdOCob1gtKbtQ/viewform" target="_blank" rel="noopener">
+					Register Now
+				</a>
+			</div>
+		</nav>
+	</header>
 
-          <!-- Responsive BSSL poster above registration form -->
-          <img
-            src="bssl_poster.jpg"
-            alt="BSSL Registration Poster"
-            loading="lazy"
-            decoding="async"
-            class="poster-img"
-          >
+	<main>
+		<section class="hero" id="overview">
+			<div class="hero__content">
+				<p class="hero__eyebrow">Elite Turf Cricket | Season 1 • November 2025</p>
+				<h1 class="hero__title">Welcome to <span>BSSL</span></h1>
+				<p>The Bengaluru Super Sports League is the city’s flagship T10 turf cricket championship designed to spotlight emerging athletes, unite communities, and deliver premium entertainment both on-ground and online.</p>
+				<div class="hero__actions">
+					<a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSdZ018C6eB8wG1q4Xb8Lv1wwdwGEOKUDNaxNQdOCob1gtKbtQ/viewform" target="_blank" rel="noopener">Secure Your Slot</a>
+					<a class="btn btn--ghost" href="#schedule">View Schedule</a>
+				</div>
+				<ul class="hero__meta">
+					<li><strong>16</strong><span>Competing Teams</span></li>
+					<li><strong>₹5L+</strong><span>Total Rewards</span></li>
+					<li><strong>7 Days</strong><span>Festival of Cricket</span></li>
+				</ul>
+			</div>
+			<div class="hero__media">
+				<video class="hero__video" src="hero-video.mp4" autoplay loop muted playsinline poster="bssl_poster.jpg" aria-label="BSSL highlight reel"></video>
+				<img src="bssl_poster.jpg" alt="BSSL Season 1 Poster" class="hero__poster" loading="lazy" decoding="async">
+			</div>
+		</section>
 
-          <!-- Registration Card -->
-          <section class="registration-top-wrap">
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdZ018C6eB8wG1q4Xb8Lv1wwdwGEOKUDNaxNQdOCob1gtKbtQ/viewform" target="_blank" class="register-card">
-              <div class="register-card-content">
-                <span class="register-icon">📝</span>
-                <h3><b>REGISTER NOW!</b></h3>
-                <p>Grab the opportunity now before your chance slips away!<br>Tap here to open the BSSL Registration Form.</p>
-              </div>
-            </a>
-          </section>
-        </div>
-      </section>
+		<section class="section" id="highlights">
+			<h2 class="section__title">League Highlights</h2>
+			<p class="section__lead">A professionally managed league engineered for speed, broadcast appeal, and unforgettable fan moments.</p>
+			<div class="card-grid">
+				<article class="card">
+					<span class="card__icon">⚡</span>
+					<h3>T10 Powerplay</h3>
+					<p>High-octane ten-over matches engineered to deliver impact, pressure, and constant action for stadium and streaming audiences.</p>
+				</article>
+				<article class="card">
+					<span class="card__icon">🎥</span>
+					<h3>Live Production</h3>
+					<p>Multi-camera live streaming, dynamic commentary, and real-time social updates amplify every wicket, six, and last-over finish.</p>
+				</article>
+				<article class="card">
+					<span class="card__icon">🤝</span>
+					<h3>Brand Collaborations</h3>
+					<p>Immersive sponsorship inventory across on-ground LED, jerseys, digital activations, and creator partnerships.</p>
+				</article>
+				<article class="card">
+					<span class="card__icon">🌐</span>
+					<h3>Talent Network</h3>
+					<p>Scouting pathways connecting standout performers to franchise trials and professional training ecosystems.</p>
+				</article>
+			</div>
+		</section>
 
-      <!-- =========================
-        VENUE GALLERY SECTION
-      ========================= -->
-    <section id="bssl-venue" class="venue-gallery-section">
-        <h2 class="venue-gallery-header">Venue</h2>
-        <div class="venue-gallery">
-          <div class="venue-img-wrap">
-            <img src="venue1.jpg" alt="Venue Photo 1" class="venue-img">
-          </div>
-          <div class="venue-img-wrap">
-            <img src="venue2.jpg" alt="Venue Photo 2" class="venue-img">
-          </div>
-          <div class="venue-img-wrap">
-            <img src="venue3.jpg" alt="Venue Photo 3" class="venue-img">
-          </div>
-          <div class="venue-img-wrap">
-            <img src="venue4.jpg" alt="Venue Photo 4" class="venue-img">
-          </div>
-        </div>
-      </section>
+		<section class="section" id="stats">
+			<h2 class="section__title">Season Metrics</h2>
+			<div class="stats-grid">
+				<div class="stat"><strong>50K+</strong><span>Digital Reach</span></div>
+				<div class="stat"><strong>10K+</strong><span>On-ground Footfall</span></div>
+				<div class="stat"><strong>1.5M+</strong><span>Live Stream Minutes</span></div>
+				<div class="stat"><strong>200+</strong><span>Media Stories</span></div>
+				<div class="stat"><strong>45+</strong><span>Sponsors & Partners</span></div>
+				<div class="stat"><strong>120+</strong><span>Players Onboarded</span></div>
+			</div>
+		</section>
 
-      <!-- =========================
-        LOCATION BOX
-      ========================= -->
-      <section class="location-box">
-        <div class="location-box-header">
-          <span class="location-icon"> 🗺️</span>
-          <h3>BSSL Event Location</h3>
-        </div>
-        <p class="location-box-desc">
-          Find us at the heart of Bengaluru! Click below to open the exact venue on Google Maps.
-        </p>
-        <a href="https://maps.app.goo.gl/zceoPEdMoaTFCWrQA?g_st=ipc" target="_blank" class="location-btn">
-          <span class="location-icon"> 🗺️</span>
-          View on Google Maps
-        </a>
-      </section>
+		<section class="section" id="schedule">
+			<h2 class="section__title">Tournament Schedule</h2>
+			<div class="timeline">
+				<div class="timeline__item">
+					<h3>Player Draft</h3>
+					<p>26 October 2025</p>
+					<span>Live auction and draft sessions with analysts and team owners.</span>
+				</div>
+				<div class="timeline__item">
+					<h3>Captains' Launch</h3>
+					<p>09 November 2025</p>
+					<span>Press conference, jersey reveal, and content shoot featuring all captains.</span>
+				</div>
+				<div class="timeline__item">
+					<h3>League Stage</h3>
+					<p>15–21 November 2025</p>
+					<span>Round-robin fixtures under lights with double-header prime-time slots.</span>
+				</div>
+				<div class="timeline__item">
+					<h3>Finals Day</h3>
+					<p>23 November 2025</p>
+					<span>Qualifier, eliminator, and grand final—plus fan carnival and trophy night.</span>
+				</div>
+			</div>
+		</section>
 
-      <!-- =========================
-        FAQ SECTION
-      ========================= -->
-      <section class="faq-section">
-        <h2><span class="faq-icon"></span> BSSL FAQs</h2>
-        <details class="faq-item">
-          <summary><span class="faq-qicon">▶</span> What is the BSSL (Bangalore Super Sports League)?</summary>
-          <div class="faq-answer">
-            BSSL is the Bangalore Super Sports League, a premier sports tournament bringing together top teams and athletes from Bangalore and beyond.
-          </div>
-        </details>
-        <details class="faq-item">
-          <summary><span class="faq-qicon">▶</span> Who can take participate in BSSL?</summary>
-          <div class="faq-answer">
-            Anyone can participate, including beginner, amateur and professional players.
-          </div>
-        </details>
-        <details class="faq-item">
-          <summary><span class="faq-qicon">▶</span> How can I register for the league?</summary>
-          <div class="faq-answer">
-            You can register online through the official BSSL website or contact the organizers for registration details.
-          </div>
-        </details>
-        <details class="faq-item">
-          <summary><span class="faq-qicon">▶</span> How many teams are part of the tournament?</summary>
-          <div class="faq-answer">
-            The number of teams taking participations are 16 in total.
-          </div>
-        </details>
-        <details class="faq-item">
-          <summary><span class="faq-qicon">▶</span> What is the minimum age to participate?</summary>
-          <div class="faq-answer">
-            There is no minimum age to participate. Everyone can participate.
-          </div>
-        </details>
-      </section>
-    </main>
-    <footer class="bssl-footer">
-      <div class="bssl-footer__inner">
-        <h2 class="bssl-footer__title">Stay Connected with BSSL</h2>
-        <ul class="bssl-footer__links">
-          <li>
-            <a class="bssl-footer__link" href="https://www.instagram.com/blrsupersports_league?igsh=MWEzb25tOGMxbG0xeA==" target="_blank" rel="noopener noreferrer" aria-label="Follow Bengaluru Super Sports League on Instagram">
-              <img src="instalogo.jpg" alt="" class="bssl-footer__icon" width="48" height="48" loading="lazy" decoding="async">
-              <span class="bssl-footer__text">
-                <span class="bssl-footer__label">Instagram</span>
-                <span class="bssl-footer__handle">@blrsupersports_league</span>
-              </span>
-            </a>
-          </li>
-          <li>
-            <a class="bssl-footer__link" href="mailto:blrsupersportsleague@gmail.com" aria-label="Email Bengaluru Super Sports League">
-              <img src="gmaillogo.jpg" alt="" class="bssl-footer__icon" width="48" height="48" loading="lazy" decoding="async">
-              <span class="bssl-footer__text">
-                <span class="bssl-footer__label">Email</span>
-                <span class="bssl-footer__handle">blrsupersportsleague@gmail.com</span>
-              </span>
-            </a>
-          </li>
-        </ul>
-        <p class="bssl-footer__note">© 2024 Bengaluru Super Sports League. All rights reserved.</p>
-      </div>
-    </footer>
-  </div>
+		<section class="section" id="registration">
+			<h2 class="section__title">Register Your Team</h2>
+			<p class="section__lead">Secure your slot before registrations close. Squad list, team photo, and payment confirmation due within 72 hours.</p>
+			<div class="cta-banner">
+				<img src="bssl_poster.jpg" alt="BSSL registration poster" class="cta-banner__poster" loading="lazy" decoding="async">
+				<a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSdZ018C6eB8wG1q4Xb8Lv1wwdwGEOKUDNaxNQdOCob1gtKbtQ/viewform" target="_blank" rel="noopener">Submit Registration Form</a>
+			</div>
+		</section>
+
+		<section class="section" id="teams">
+			<h2 class="section__title">Team Roster</h2>
+			<div class="teams-grid">
+				<div class="team-card"><strong>Southern Strikers</strong><span>Coach: Ravi Menon</span><span>Captain: Aakash Iyer</span></div>
+				<div class="team-card"><strong>Koramangala Kings</strong><span>Coach: Narayan Rao</span><span>Captain: Sushant Krish</span></div>
+				<div class="team-card"><strong>Whitefield Warriors</strong><span>Coach: Rhea Datar</span><span>Captain: Shrey Sharma</span></div>
+				<div class="team-card"><strong>Hebbal Hurricanes</strong><span>Coach: Bhavesh Desai</span><span>Captain: Nitin Kamat</span></div>
+				<div class="team-card"><strong>Ulsoor United</strong><span>Coach: Zafar Qureshi</span><span>Captain: Vedant Rao</span></div>
+				<div class="team-card"><strong>MG Road Mavericks</strong><span>Coach: Pawan Shetty</span><span>Captain: Joel Francis</span></div>
+			</div>
+		</section>
+
+		<section class="section" id="faq">
+			<h2 class="section__title">Frequently Asked Questions</h2>
+			<div class="faq">
+				<details>
+					<summary>Who can register for BSSL?</summary>
+					<div class="faq__answer">Corporate squads, academy teams, and curated all-star lineups; players must be 15+ and medically fit.</div>
+				</details>
+				<details>
+					<summary>What does the team package include?</summary>
+					<div class="faq__answer">Team branding kit, two jerseys per player, live scoring, HD broadcast, analytics, refreshments, and medical support.</div>
+				</details>
+				<details>
+					<summary>Are there player awards?</summary>
+					<div class="faq__answer">Orange Cap, Purple Cap, Power Striker, Game Changer, and Overall MVP—presented on Finals Day.</div>
+				</details>
+				<details>
+					<summary>Can fans attend the matches?</summary>
+					<div class="faq__answer">Yes. Entry is free with pre-registration; marquee fixtures include fan zones, music, and food pop-ups.</div>
+				</details>
+				<details>
+					<summary>How can brands collaborate?</summary>
+					<div class="faq__answer">Contact us for jersey placement, streaming integrations, stadium activations, and digital campaigns.</div>
+				</details>
+			</div>
+		</section>
+
+		<section class="section" id="contact">
+			<h2 class="section__title">Talk to the League Office</h2>
+			<div class="contact-card">
+				<div class="contact-card__info">
+					<p>Our competition managers can assist with registrations, logistics, sponsorships, and media queries.</p>
+					<p><strong>Email:</strong> <a href="mailto:blrsupersportsleague@gmail.com">blrsupersportsleague@gmail.com</a></p>
+					<p><strong>Phone:</strong> <a href="tel:+919900384517">+91 99003 84517</a></p>
+					<p><strong>Venue:</strong> Starfield Sports Arena, Sarjapur Road, Bengaluru</p>
+				</div>
+				<form class="contact-card__form" action="mailto:blrsupersportsleague@gmail.com" method="post" enctype="text/plain">
+					<input type="text" name="name" placeholder="Your Name" required>
+					<input type="email" name="email" placeholder="Email Address" required>
+					<textarea name="message" placeholder="Tell us how we can support your team" required></textarea>
+					<button class="btn btn--ghost" type="submit">Send Message</button>
+				</form>
+			</div>
+		</section>
+	</main>
+
+	<footer class="footer">
+		<div class="footer__shell">
+			<div class="footer__top">
+				<div class="footer__brand">
+					<img src="bssl_logo.jpg" alt="BSSL crest" class="footer__brand-logo" width="72" height="72" decoding="async">
+					<div>
+						<h3>Bengaluru Super Sports League</h3>
+						<p>Powered by SBSO Foundation • Come. Commit. Conquer.</p>
+					</div>
+				</div>
+				<ul class="footer__links">
+					<li><a href="#overview">Overview</a></li>
+					<li><a href="#highlights">Highlights</a></li>
+					<li><a href="#stats">Stats</a></li>
+					<li><a href="#schedule">Schedule</a></li>
+					<li><a href="#teams">Teams</a></li>
+					<li><a href="#faq">FAQs</a></li>
+				</ul>
+				<ul class="footer__links">
+					<li><a href="https://www.instagram.com/blrsupersports_league?igsh=MWEzb25tOGMxbG0xeA==" target="_blank" rel="noopener">Instagram</a></li>
+					<li><a href="mailto:blrsupersportsleague@gmail.com">Email</a></li>
+					<li><a href="tel:+919900384517">Call League Office</a></li>
+					<li><a href="https://maps.app.goo.gl/zceoPEdMoaTFCWrQA?g_st=iw" target="_blank" rel="noopener">Google Maps</a></li>
+				</ul>
+			</div>
+			<p class="footer__bottom">© 2024 Bengaluru Super Sports League • All rights reserved.</p>
+		</div>
+	</footer>
+
+	<script>
+		const nav = document.querySelector('.site-nav');
+		const toggle = document.querySelector('.site-nav__toggle');
+		if (nav && toggle) {
+			toggle.addEventListener('click', () => {
+				const open = nav.classList.toggle('is-open');
+				toggle.setAttribute('aria-expanded', String(open));
+			});
+			document.addEventListener('click', (event) => {
+				if (!nav.contains(event.target)) {
+					nav.classList.remove('is-open');
+					toggle.setAttribute('aria-expanded', 'false');
+				}
+			});
+		}
+	</script>
 </body>
 </html>
