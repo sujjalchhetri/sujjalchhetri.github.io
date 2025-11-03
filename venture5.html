@@ -1,36 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Divyang Pro Super League</title>
-  <link rel="stylesheet" href="venture.css">
-  <link rel="icon" type="image/x-icon" href="dpsl_logo.jpg">
+	<meta charset="UTF-8">
+	<title>Divyang Pro Super League</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/jpeg" href="dpsl_logo.jpg">
+	<link rel="stylesheet" href="venture.css">
 </head>
-<body>
-  <section class="venture-detail">
-    <div class="venture-card fade-in">
-      <!-- Add venture logo above the title -->
-      <img class="venture-brand-logo" src="dpsl_logo.jpg" alt="Divyang Pro Super League logo" width="90" height="90" decoding="async">
-      <h2>Divyang Pro Super League</h2>
-      <p>
-        The Divyang Pro Super League is an inclusive tournament designed for differently-abled athletes, celebrating their talent and determination.
-      </p>
-      <div class="venture-gallery">
-        <!-- <img src="DPSL1.JPG" alt="Event Photo" class="venture-img">
-        <img src="DPSL2.JPG" alt="Event Photo" class="venture-img"> -->
-      </div>
-      <a href="index.html" class="btn">Back to Home</a>
-    </div>
-  </section>
-  <footer>
-  <div class="social-links">
-    <div class="social-item">
-      <a href="https://www.instagram.com/divyangprosuperleague" target="_blank" title="Divyang Pro Super League Instagram">
-        <img src="instalogo.jpg" alt="Divyang Pro Super League Instagram" class="social-icon">
-      </a>
-      <span>Divyang Pro Super League</span>
-    </div>
-  </div>
-</footer>
+<body id="top">
+	<header class="site-header">
+		<nav class="site-nav" aria-label="Primary">
+			<a class="site-nav__brand" href="#top">
+				<img src="dpsl_logo.jpg" alt="DPSL crest" class="site-nav__logo" width="54" height="54" decoding="async">
+				Divyang Pro Super League
+			</a>
+			<button class="site-nav__toggle" type="button" aria-expanded="false" aria-controls="nav-menu">☰</button>
+			<div class="site-nav__menu" id="nav-menu">
+				<div class="site-nav__links">
+					<a href="#overview">Overview</a>
+					<a href="#highlights">Highlights</a>
+					<a href="#inclusion">Inclusion</a>
+					<a href="#gallery">Gallery</a>
+					<a href="#contact">Contact</a>
+				</div>
+				<a class="btn" href="mailto:divyangprosuperleague@gmail.com">Join the Movement</a>
+			</div>
+		</nav>
+	</header>
+
+	<main>
+		<section class="hero" id="overview">
+			<div class="hero__content">
+				<p class="hero__eyebrow">Adaptive Cricket • October 2025 • Bengaluru, India</p>
+				<h1 class="hero__title">Welcome to <span>DPSL</span></h1>
+				<p>The Divyang Pro Super League is India’s flagship adaptive cricket festival, celebrating differently-abled athletes with high-performance infrastructure, storytelling, and citywide support.</p>
+				<div class="hero__actions">
+					<a class="btn btn--ghost" href="#contact">Connect with DPSL</a>
+				</div>
+				<ul class="hero__meta">
+					<li><strong>14</strong><span>Adaptive Teams</span></li>
+					<li><strong>₹3.5L</strong><span>Support & Awards</span></li>
+					<li><strong>5 Days</strong><span>Inclusive Cricket</span></li>
+				</ul>
+			</div>
+			<div class="hero__media">
+				<img src="DPSL1.JPG" alt="Adaptive athletes celebrating a wicket at DPSL" class="hero__poster" loading="lazy" decoding="async">
+				<img src="DPSL2.JPG" alt="Divyang Pro Super League match under lights" class="hero__poster" loading="lazy" decoding="async">
+			</div>
+		</section>
+
+		<section class="section" id="highlights">
+			<h2 class="section__title">League Highlights</h2>
+			<p class="section__lead">Every DPSL edition is built around accessibility, empowerment, and world-class cricketing experiences for differently-abled athletes.</p>
+			<div class="card-grid">
+				<article class="card">
+					<span class="card__icon">🏟️</span>
+					<h3>Elite Venues</h3>
+					<p>Accessible turf stadiums, broadcast lighting, and professional match operations make every fixture unforgettable.</p>
+				</article>
+				<article class="card">
+					<span class="card__icon">🛡️</span>
+					<h3>Adaptive Support</h3>
+					<p>Specialised equipment, physio care, and classification experts help players compete confidently and safely.</p>
+				</article>
+				<article class="card">
+					<span class="card__icon">🎙️</span>
+					<h3>Storytelling Focus</h3>
+					<p>Live coverage, short films, and community showcases amplify the journeys of athletes beyond the boundary.</p>
+				</article>
+			</div>
+		</section>
+
+		<section class="section" id="inclusion">
+			<h2 class="section__title">Inclusion First</h2>
+			<p class="section__lead">DPSL partners with NGOs, adaptive sport federations, and corporates to deliver year-round programs that champion ability over disability.</p>
+			<div class="card-grid">
+				<article class="card">
+					<h3>Pathways</h3>
+					<p>Talent camps connect athletes to national squads, scholarships, and ongoing skill development opportunities.</p>
+				</article>
+				<article class="card">
+					<h3>Awareness</h3>
+					<p>City activations, school visits, and digital campaigns spread the message of inclusive sport across India.</p>
+				</article>
+				<article class="card">
+					<h3>Allies</h3>
+					<p>Corporate volunteers, civic bodies, and media allies join hands to ensure adaptive sport receives mainstream attention.</p>
+				</article>
+			</div>
+		</section>
+
+		<section class="section" id="gallery">
+			<h2 class="section__title">Past Event Gallery</h2>
+			<p class="section__lead">Moments that define the Divyang Pro Super League—courage, camaraderie, and cricketing excellence without limits.</p>
+			<div class="gallery-grid">
+				<img src="DPSL1.JPG" alt="Adaptive athletes applauding teammates at DPSL" loading="lazy" decoding="async">
+				<img src="DPSL2.JPG" alt="Action shot of a batter during DPSL fixtures" loading="lazy" decoding="async">
+			</div>
+		</section>
+
+		<section class="section" id="contact">
+			<h2 class="section__title">Stay Connected</h2>
+			<div class="contact-card">
+				<div class="contact-card__info">
+					<p>Be part of the DPSL collective—support the league, nominate athletes, or partner on adaptive sport initiatives.</p>
+					<p><strong>Instagram:</strong> <a href="https://www.instagram.com/divyangprosuperleague" target="_blank" rel="noopener">@divyangprosuperleague</a></p>
+					<p><strong>Email:</strong> <a href="mailto:divyangprosuperleague@gmail.com">divyangprosuperleague@gmail.com</a></p>
+					<p><strong>Venue:</strong> Inclusive Sports Arena Circuit, Bengaluru & Mysuru</p>
+				</div>
+				<div class="contact-card__actions">
+					<a class="btn" href="mailto:divyangprosuperleague@gmail.com">Email DPSL</a>
+					<a class="btn btn--light" href="https://www.instagram.com/divyangprosuperleague" target="_blank" rel="noopener">Follow on Instagram</a>
+					<a class="btn btn--ghost" href="https://maps.app.goo.gl/7Mqz1mRS3jVxCqQb8" target="_blank" rel="noopener">View Venue Map</a>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<footer class="footer">
+		<div class="footer__shell">
+			<div class="footer__top">
+				<div class="footer__brand">
+					<img src="dpsl_logo.jpg" alt="DPSL logo" class="footer__brand-logo" width="72" height="72" decoding="async">
+					<div>
+						<h3>Divyang Pro Super League</h3>
+						<p>Powered by SBSO Foundation • Ability. Courage. Pride.</p>
+					</div>
+				</div>
+				<ul class="footer__links">
+					<li><a href="#overview">Overview</a></li>
+					<li><a href="#highlights">Highlights</a></li>
+					<li><a href="#inclusion">Inclusion</a></li>
+					<li><a href="#gallery">Gallery</a></li>
+					<li><a href="#contact">Contact</a></li>
+				</ul>
+				<ul class="footer__links">
+					<li><a href="https://www.instagram.com/divyangprosuperleague" target="_blank" rel="noopener">Instagram</a></li>
+					<li><a href="mailto:divyangprosuperleague@gmail.com">Email DPSL</a></li>
+				</ul>
+			</div>
+			<p class="footer__bottom">© 2025 Divyang Pro Super League • All rights reserved.</p>
+		</div>
+	</footer>
+
+	<script>
+		const nav = document.querySelector('.site-nav');
+		const toggle = document.querySelector('.site-nav__toggle');
+		if (nav && toggle) {
+			toggle.addEventListener('click', () => {
+				const open = nav.classList.toggle('is-open');
+				toggle.setAttribute('aria-expanded', String(open));
+			});
+			document.addEventListener('click', (event) => {
+				if (!nav.contains(event.target)) {
+					nav.classList.remove('is-open');
+					toggle.setAttribute('aria-expanded', 'false');
+				}
+			});
+		}
+	</script>
 </body>
 </html>

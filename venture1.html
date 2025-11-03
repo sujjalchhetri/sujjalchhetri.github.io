@@ -1,52 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Siliguri Boys Cricket League</title>
-  <link rel="stylesheet" href="venture.css">
-  <link rel="icon" type="image/x-icon" href="sbcl_logo.jpg">
+	<meta charset="UTF-8">
+	<title>Siliguri Boys Cricket League</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/jpeg" href="sbcl_logo.jpg">
+	<link rel="stylesheet" href="venture.css">
 </head>
-<body>
-  <main>
-    <!-- =========================
-      HERO SECTION
-    ========================= -->
-    <section id="sbcl-hero" class="venture-detail">
-      <div class="venture-card fade-in venture-card--split">
-        <div class="venture-card__intro">
-          <img class="venture-brand-logo" src="sbcl_logo.jpg" alt="Siliguri Boys Cricket League logo" width="90" height="90" decoding="async">
-          <h2>Siliguri Boys Cricket League</h2>
-          <p>
-            The Siliguri Boys Cricket League is a premier youth cricket tournament fostering talent and sportsmanship in Siliguri.
-          </p>
-          <a href="index.html" class="btn">Back to Home</a>
-        </div>
-        <div class="venture-gallery">
-          <img src="SBCL1.JPG" alt="SBCL Event Photo 1" class="venture-img" loading="lazy" decoding="async">
-          <img src="SBCL2.JPG" alt="SBCL Event Photo 2" class="venture-img" loading="lazy" decoding="async">
-          <img src="SBCL3.JPG" alt="SBCL Event Photo 3" class="venture-img" loading="lazy" decoding="async">
-          <img src="SBCL4.JPG" alt="SBCL Event Photo 4" class="venture-img" loading="lazy" decoding="async">
-          <img src="SBCL5.JPG" alt="SBCL Event Photo 5" class="venture-img" loading="lazy" decoding="async">
-        </div>
-      </div>
-    </section>
+<body id="top">
+	<header class="site-header">
+		<nav class="site-nav" aria-label="Primary">
+			<a class="site-nav__brand" href="#top">
+				<img src="sbcl_logo.jpg" alt="SBCL crest" class="site-nav__logo" width="54" height="54" decoding="async">
+				Siliguri Boys Cricket League
+			</a>
+			<button class="site-nav__toggle" type="button" aria-expanded="false" aria-controls="nav-menu">☰</button>
+			<div class="site-nav__menu" id="nav-menu">
+				<div class="site-nav__links">
+					<a href="#overview">Overview</a>
+					<a href="#highlights">Highlights</a>
+					<a href="#stats">Stats</a>
+					<a href="#gallery">Gallery</a>
+					<a href="#contact">Contact</a>
+				</div>
+				<a class="btn" href="mailto:siliguribcl@gmail.com">Join the League</a>
+			</div>
+		</nav>
+	</header>
 
-    <footer>
-      <div class="social-links">
-        <div class="social-item">
-          <a href="https://www.instagram.com/siliguriboyssports_org?igsh=MTJzM25wYXUzZmoyag==" target="_blank" title="Siliguri Boys Cricket League Instagram">
-            <img src="instalogo.jpg" alt="Siliguri Boys Cricket League Instagram" class="social-icon">
-          </a>
-          <span>Siliguri Boys Cricket League</span>
-        </div>
-        <div class="social-item">
-          <a href="mailto:siliguribcl@gmail.com" title="SBCL Gmail">
-            <img src="gmaillogo.jpg" alt="SBCL Gmail" class="social-icon">
-          </a>
-          <span>SBCL Gmail</span>
-        </div>
-      </div>
-    </footer>
-  </main>
+	<main>
+		<section class="hero" id="overview">
+			<div class="hero__content">
+				<p class="hero__eyebrow">Grassroots Cricket • July 2025 • Siliguri, West Bengal</p>
+				<h1 class="hero__title">Welcome to <span>SBCL</span></h1>
+				<p>The Siliguri Boys Cricket League is the region’s premier youth tournament, curated to nurture high-potential cricketers, celebrate community spirit, and deliver top-tier turf cricket in North Bengal.</p>
+				<div class="hero__actions">
+					<a class="btn" href="mailto:siliguribcl@gmail.com?subject=SBCL%20Team%20Registration">Request Team Slot</a>
+					<a class="btn btn--ghost" href="#gallery">View Gallery</a>
+				</div>
+				<ul class="hero__meta">
+					<li><strong>18</strong><span>Academy & Club Teams</span></li>
+					<li><strong>₹2.5L</strong><span>Championship Purse</span></li>
+					<li><strong>9 Days</strong><span>Festival of Cricket</span></li>
+				</ul>
+			</div>
+			<div class="hero__media">
+				<img src="SBCL1.JPG" alt="SBCL captains huddle" class="hero__poster" loading="lazy" decoding="async">
+				<video class="hero__video" src="sbcl_highlights.mp4" autoplay loop muted playsinline poster="SBCL2.JPG" aria-label="SBCL highlight reel"></video>
+			</div>
+		</section>
+
+		<section class="section" id="highlights">
+			<h2 class="section__title">League Highlights</h2>
+			<p class="section__lead">Purpose-built for emerging talent, SBCL blends development pathways with the excitement of professionally produced cricket.</p>
+			<div class="card-grid">
+				<article class="card">
+					<span class="card__icon">🌠</span>
+					<h3>Talent Accelerator</h3>
+					<p>Regional selectors and partner academies scout every match, opening doors to district and state squads for standout players.</p>
+				</article>
+				<article class="card">
+					<span class="card__icon">🎙️</span>
+					<h3>Story-driven Broadcast</h3>
+					<p>Every inning is captured with commentary, social bite-sized reels, and spotlight interviews highlighting the journey of young cricketers.</p>
+				</article>
+				<article class="card">
+					<span class="card__icon">🏟️</span>
+					<h3>Night Turf Showcase</h3>
+					<p>Prime-time evening fixtures under lights with curated fan zones, community stalls, and music keep the arena buzzing.</p>
+				</article>
+				<article class="card">
+					<span class="card__icon">🤝</span>
+					<h3>Community Partnerships</h3>
+					<p>Collaborations with Siliguri schools, training centres, and local brands ensure grassroots cricket gets sustained support.</p>
+				</article>
+			</div>
+		</section>
+
+		<section class="section" id="stats">
+			<h2 class="section__title">Season Snapshot</h2>
+			<div class="stats-grid">
+				<div class="stat"><strong>32</strong><span>Matches Scheduled</span></div>
+				<div class="stat"><strong>240+</strong><span>Youth Athletes</span></div>
+				<div class="stat"><strong>75K</strong><span>Digital Reach</span></div>
+				<div class="stat"><strong>180+</strong><span>Talent Reports</span></div>
+				<div class="stat"><strong>28</strong><span>Sponsors & Partners</span></div>
+				<div class="stat"><strong>15</strong><span>Media Outlets</span></div>
+			</div>
+		</section>
+
+		<section class="section" id="gallery">
+			<h2 class="section__title">Past Event Gallery</h2>
+			<p class="section__lead">Snapshots from recent SBCL editions capturing the energy, dedication, and community that power Siliguri cricket.</p>
+			<div class="gallery-grid">
+				<img src="SBCL1.JPG" alt="Captains huddle during SBCL opening ceremony" loading="lazy" decoding="async">
+				<img src="SBCL2.JPG" alt="Power-hitter finishing a chase under lights" loading="lazy" decoding="async">
+				<img src="SBCL3.JPG" alt="Team celebrations after a tight win" loading="lazy" decoding="async">
+				<img src="SBCL4.JPG" alt="Young bowlers strategising with coach" loading="lazy" decoding="async">
+				<img src="SBCL5.JPG" alt="Fans and families cheering from the stands" loading="lazy" decoding="async">
+			</div>
+		</section>
+
+		<section class="section" id="registration">
+			<h2 class="section__title">Register Your Squad</h2>
+			<p class="section__lead">Academies and community clubs can apply for Season 3 now. Submit roster details, academy profile, and consent letters within 48 hours of confirmation.</p>
+			<div class="cta-banner">
+				<img src="SBCL3.JPG" alt="Team celebrations at SBCL" class="cta-banner__poster" loading="lazy" decoding="async">
+				<a class="btn" href="mailto:siliguribcl@gmail.com?subject=SBCL%20Squad%20Registration&body=Share%20your%20team%20name%2C%20coach%20details%2C%20and%20academy%20profile%20to%20begin%20the%20registration%20process.">Email Registration Desk</a>
+			</div>
+		</section>
+
+		<section class="section" id="contact">
+			<h2 class="section__title">Connect with SBCL</h2>
+			<div class="contact-card">
+				<div class="contact-card__info">
+					<p>Have a question about registrations, media, or partnerships? The SBCL competition office is ready to help.</p>
+					<p><strong>Email:</strong> <a href="mailto:siliguribcl@gmail.com">siliguribcl@gmail.com</a></p>
+					<p><strong>Instagram:</strong> <a href="https://www.instagram.com/siliguriboyssports_org?igsh=MTJzM25wYXUzZmoyag==" target="_blank" rel="noopener">@siliguriboyssports_org</a></p>
+					<p><strong>Venue:</strong> Siliguri Boys Sports Org Turf, Hill Cart Road, Siliguri</p>
+				</div>
+				<form class="contact-card__form" action="mailto:siliguribcl@gmail.com" method="post" enctype="text/plain">
+					<input type="text" name="name" placeholder="Your Name" required>
+					<input type="email" name="email" placeholder="Email Address" required>
+					<textarea name="message" placeholder="Share your query, proposal, or squad details" required></textarea>
+					<button class="btn btn--ghost" type="submit">Send Message</button>
+				</form>
+			</div>
+		</section>
+	</main>
+
+	<footer class="footer">
+		<div class="footer__shell">
+			<div class="footer__top">
+				<div class="footer__brand">
+					<img src="sbcl_logo.jpg" alt="SBCL logo" class="footer__brand-logo" width="72" height="72" decoding="async">
+					<div>
+						<h3>Siliguri Boys Cricket League</h3>
+						<p>Powered by Siliguri Boys Sports Organisation • Train. Believe. Rise.</p>
+					</div>
+				</div>
+				<ul class="footer__links">
+					<li><a href="#overview">Overview</a></li>
+					<li><a href="#highlights">Highlights</a></li>
+					<li><a href="#stats">Stats</a></li>
+					<li><a href="#gallery">Gallery</a></li>
+				</ul>
+				<ul class="footer__links">
+					<li><a href="https://www.instagram.com/siliguriboyssports_org?igsh=MTJzM25wYXUzZmoyag==" target="_blank" rel="noopener">Instagram</a></li>
+					<li><a href="mailto:siliguribcl@gmail.com">Email SBCL</a></li>
+					<li><a href="https://maps.app.goo.gl/vbT7nL6wN7iD9LxF6" target="_blank" rel="noopener">Google Maps</a></li>
+				</ul>
+			</div>
+			<p class="footer__bottom">© 2025 Siliguri Boys Cricket League • All rights reserved.</p>
+		</div>
+	</footer>
+
+	<script>
+		const nav = document.querySelector('.site-nav');
+		const toggle = document.querySelector('.site-nav__toggle');
+		if (nav && toggle) {
+			toggle.addEventListener('click', () => {
+				const open = nav.classList.toggle('is-open');
+				toggle.setAttribute('aria-expanded', String(open));
+			});
+			document.addEventListener('click', (event) => {
+				if (!nav.contains(event.target)) {
+					nav.classList.remove('is-open');
+					toggle.setAttribute('aria-expanded', 'false');
+				}
+			});
+		}
+	</script>
 </body>
 </html>

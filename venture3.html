@@ -1,36 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Kolkata Sports Premier League</title>
-  <link rel="stylesheet" href="venture.css">
-  <link rel="icon" type="image/x-icon" href="kspl_logo.jpg">
+	<meta charset="UTF-8">
+	<title>Kolkata Sports Premier League</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/jpeg" href="kspl_logo.jpg">
+	<link rel="stylesheet" href="venture.css">
 </head>
-<body>
-  <section class="venture-detail">
-    <div class="venture-card fade-in">
-      <img class="venture-brand-logo" src="kspl_logo.jpg" alt="Kolkata Sports Premier League logo" width="90" height="90" decoding="async">
-      <h2>Kolkata Sports Premier League</h2>
-      <p>
-        The Kolkata Sports Premier League brings together the best young cricket talent in Kolkata, promoting fitness, teamwork, and competitive spirit.
-      </p>
-      <div class="venture-gallery">
-        <img src="KSSL1.JPG" alt="Event Photo" class="venture-img">
-        <img src="KSSL2.JPG" alt="Event Photo" class="venture-img">
-      </div>
-      <a href="index.html" class="btn">Back to Home</a>
-    </div>
-  </section>
-  <footer>
-  <div class="social-links">
-    <div class="social-item">
-      <a href="https://www.instagram.com/kssl_official" target="_blank" title="Kolkata Sports Premier League Instagram">
-        <!-- <img src="instalogo.jpg" alt="Kolkata Sports Premier League Instagram" class="social-icon"> -->
-      </a>
-      <span>Kolkata Sports Premier League</span>
-    </div>
-    <!-- Add Gmail or other links if available -->
-  </div>
-</footer>
+<body id="top">
+	<header class="site-header">
+		<nav class="site-nav" aria-label="Primary">
+			<a class="site-nav__brand" href="#top">
+				<img src="kspl_logo.jpg" alt="KSPL crest" class="site-nav__logo" width="54" height="54" decoding="async">
+				Kolkata Sports Premier League
+			</a>
+			<button class="site-nav__toggle" type="button" aria-expanded="false" aria-controls="nav-menu">☰</button>
+			<div class="site-nav__menu" id="nav-menu">
+				<div class="site-nav__links">
+					<a href="#overview">Overview</a>
+					<a href="#highlights">Highlights</a>
+					<a href="#gallery">Gallery</a>
+					<a href="#contact">Contact</a>
+				</div>
+				<a class="btn btn--ghost" href="#gallery">Explore Moments</a>
+			</div>
+		</nav>
+	</header>
+
+	<main>
+		<section class="hero" id="overview">
+			<div class="hero__content">
+				<p class="hero__eyebrow">Citywide Cricket • August 2025 • Kolkata, West Bengal</p>
+				<h1 class="hero__title">Welcome to <span>KSPL</span></h1>
+				<p>The Kolkata Sports Premier League unites the city’s standout school and club cricketers, blending elite coaching, spirited rivalries, and community pride under the lights of iconic Kolkata venues.</p>
+				<div class="hero__actions">
+					<a class="btn btn--ghost" href="#contact">Connect with KSPL</a>
+				</div>
+				<ul class="hero__meta">
+					<li><strong>20</strong><span>Participating Squads</span></li>
+					<li><strong>₹3L</strong><span>In Prizes & Awards</span></li>
+					<li><strong>8 Days</strong><span>Cricket Festival</span></li>
+				</ul>
+			</div>
+			<div class="hero__media">
+				<img src="KSSL1.JPG" alt="KSPL opening ceremony celebrations" class="hero__poster" loading="lazy" decoding="async">
+				<img src="KSSL2.JPG" alt="Night match action during KSPL" class="hero__poster" loading="lazy" decoding="async">
+			</div>
+		</section>
+
+		<section class="section" id="highlights">
+			<h2 class="section__title">League Highlights</h2>
+			<p class="section__lead">KSPL celebrates Kolkata’s sporting spirit with curated experiences for players, families, and fans across the city.</p>
+			<div class="card-grid">
+				<article class="card">
+					<span class="card__icon">🌉</span>
+					<h3>Iconic Venues</h3>
+					<p>Matches staged across Kolkata’s premier turf arenas, bringing professional atmospherics to grassroots cricket.</p>
+				</article>
+				<article class="card">
+					<span class="card__icon">📽️</span>
+					<h3>Citywide Broadcast</h3>
+					<p>Highlight reels, commentary, and photo stories showcase every innings to an ever-growing urban audience.</p>
+				</article>
+				<article class="card">
+					<span class="card__icon">🎉</span>
+					<h3>Community Showcase</h3>
+					<p>Halftime performances, local food pop-ups, and fan contests ensure every fixture feels like a festival.</p>
+				</article>
+			</div>
+		</section>
+
+		<section class="section" id="gallery">
+			<h2 class="section__title">Past Event Gallery</h2>
+			<p class="section__lead">Glimpses from recent KSPL chapters—thrilling finishes, packed stands, and the spirit of Kolkata cricket.</p>
+			<div class="gallery-grid">
+				<img src="KSSL1.JPG" alt="Opening ceremony of Kolkata Sports Premier League" loading="lazy" decoding="async">
+				<img src="KSSL2.JPG" alt="Under lights action during KSPL" loading="lazy" decoding="async">
+			</div>
+		</section>
+
+		<section class="section" id="contact">
+			<h2 class="section__title">Stay Connected</h2>
+			<div class="contact-card">
+				<div class="contact-card__info">
+					<p>Follow KSPL for announcements, fixtures, and behind-the-scenes stories as we build the next chapter of Kolkata cricket.</p>
+					<p><strong>Instagram:</strong> <a href="https://www.instagram.com/kssl_official" target="_blank" rel="noopener">@kssl_official</a></p>
+					<p><strong>Email:</strong> <a href="mailto:info@ksplkolkata.com">info@ksplkolkata.com</a></p>
+					<p><strong>Venue:</strong> Kolkata Sports Arena Network, New Town & Salt Lake, West Bengal</p>
+				</div>
+				<div class="contact-card__actions">
+					<a class="btn" href="mailto:info@ksplkolkata.com">Email League Desk</a>
+					<a class="btn btn--light" href="https://www.instagram.com/kssl_official" target="_blank" rel="noopener">Follow on Instagram</a>
+					<a class="btn btn--ghost" href="https://maps.app.goo.gl/ep5tYrGdJrpqSxJr8" target="_blank" rel="noopener">View Venue Map</a>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<footer class="footer">
+		<div class="footer__shell">
+			<div class="footer__top">
+				<div class="footer__brand">
+					<img src="kspl_logo.jpg" alt="KSPL logo" class="footer__brand-logo" width="72" height="72" decoding="async">
+					<div>
+						<h3>Kolkata Sports Premier League</h3>
+						<p>Powered by Kolkata Sports Collective • Play. Inspire. Unite.</p>
+					</div>
+				</div>
+				<ul class="footer__links">
+					<li><a href="#overview">Overview</a></li>
+					<li><a href="#highlights">Highlights</a></li>
+					<li><a href="#gallery">Gallery</a></li>
+					<li><a href="#contact">Contact</a></li>
+				</ul>
+				<ul class="footer__links">
+					<li><a href="https://www.instagram.com/kssl_official" target="_blank" rel="noopener">Instagram</a></li>
+					<li><a href="mailto:info@ksplkolkata.com">Email KSPL</a></li>
+				</ul>
+			</div>
+			<p class="footer__bottom">© 2025 Kolkata Sports Premier League • All rights reserved.</p>
+		</div>
+	</footer>
+
+	<script>
+		const nav = document.querySelector('.site-nav');
+		const toggle = document.querySelector('.site-nav__toggle');
+		if (nav && toggle) {
+			toggle.addEventListener('click', () => {
+				const open = nav.classList.toggle('is-open');
+				toggle.setAttribute('aria-expanded', String(open));
+			});
+			document.addEventListener('click', (event) => {
+				if (!nav.contains(event.target)) {
+					nav.classList.remove('is-open');
+					toggle.setAttribute('aria-expanded', 'false');
+				}
+			});
+		}
+	</script>
 </body>
 </html>
