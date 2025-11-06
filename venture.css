@@ -406,7 +406,7 @@ main{
 .partners-grid{
 	display:grid;
 	gap:clamp(1rem,4vw,1.6rem);
-	grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+	grid-template-columns:repeat(3,minmax(0,1fr));
 	justify-items:center;
 }
 .partners-grid img{
@@ -550,5 +550,5 @@ main{
 	.hero__poster{width:min(220px,70vw)}
 	.section__title{font-size:clamp(1.6rem,7vw,2rem)}
 	.card-grid{grid-template-columns:minmax(0,1fr)}
-.partners-grid{grid-template-columns:repeat(auto-fit,minmax(120px,1fr))}
+	.partners-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
 }
