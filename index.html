@@ -7,6 +7,8 @@
   <meta name="robots" content="index, follow">
   <meta name="keywords" content="SBSO Foundation, sports, youth, cricket, Bengaluru Super Sports League, BSSL, fitness, India">
   <link rel="icon" type="image/jpeg" href="SBSO_FOUNDATION.jpg">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#04122c">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
   <title>SBSO Foundation</title>
@@ -394,324 +396,331 @@
   </footer>
 
   <script>
-/* Enhanced search: debounced, scored, keyboard navigation, a11y roles */
-document.addEventListener('DOMContentLoaded', () => {
-  const nav = document.getElementById('site-nav');
-  const navPanel = document.getElementById('nav-panel');
-  const navToggle = nav?.querySelector('.pro-nav__toggle');
-  const navTargets = navPanel?.querySelectorAll('a, button');
-  const breakpoint = window.matchMedia('(min-width: 981px)');
-  const searchForm = nav?.querySelector('.pro-nav__search');
-  const searchInput = document.getElementById('nav-search-input');
-  const searchResults = document.getElementById('nav-search-results');
+ /* Enhanced search: debounced, scored, keyboard navigation, a11y roles */
+ document.addEventListener('DOMContentLoaded', () => {
+ 	const nav = document.getElementById('site-nav');
+ 	const navPanel = document.getElementById('nav-panel');
+ 	const navToggle = nav?.querySelector('.pro-nav__toggle');
+ 	const navTargets = navPanel?.querySelectorAll('a, button');
+ 	const breakpoint = window.matchMedia('(min-width: 981px)');
+ 	const searchForm = nav?.querySelector('.pro-nav__search');
+ 	const searchInput = document.getElementById('nav-search-input');
+ 	const searchResults = document.getElementById('nav-search-results');
 
-  if (!searchInput || !searchResults) return;
+ 	if (!searchInput || !searchResults) return;
 
-  // ARIA plumbing for result list
-  searchResults.setAttribute('role', 'listbox');
-  searchResults.setAttribute('aria-label', 'Search results');
+ 	// ARIA plumbing for result list
+ 	searchResults.setAttribute('role', 'listbox');
+ 	searchResults.setAttribute('aria-label', 'Search results');
 
-  // Utility: debounce
-  function debounce(fn, wait = 180) {
-    let t;
-    return (...args) => { clearTimeout(t); t = setTimeout(() => fn(...args), wait); };
-  }
+ 	// Utility: debounce
+ 	function debounce(fn, wait = 180) {
+ 		let t;
+ 		return (...args) => { clearTimeout(t); t = setTimeout(() => fn(...args), wait); };
+ 	}
 
-  // Escape HTML
-  const escapeHtml = (s = '') =>
-    String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+ 	// Escape HTML
+ 	const escapeHtml = (s = '') =>
+ 		String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
-  // Build a search index (deduped)
-  function buildIndex() {
-    const items = [];
+ 	// Build a search index (deduped)
+ 	function buildIndex() {
+ 		const items = [];
 
-    // static quick links
-    const staticIndex = [
-      { label: 'About Us', hint: 'Foundation story', target: '#about', icon: 'fa-landmark' },
-      { label: 'Ventures', hint: 'Active leagues', target: '#ventures', icon: 'fa-trophy' },
-      { label: 'Brand Ambassador', hint: 'Ambassador spotlight', target: '#ambassador', icon: 'fa-star' },
-      { label: 'President', hint: 'Leadership insights', target: '#president', icon: 'fa-user-tie' },
-      { label: 'Board Members', hint: 'Core committee', target: '#members', icon: 'fa-users' },
-      { label: 'Contact', hint: 'Reach the team', target: '#contact', icon: 'fa-phone-volume' },
-      { label: 'BSSL Cloud', hint: 'Bengaluru Super Sports League', target: 'venture2.html', icon: 'fa-baseball-bat-ball' }
-    ];
-    items.push(...staticIndex);
+ 		// static quick links
+ 		const staticIndex = [
+ 			{ label: 'About Us', hint: 'Foundation story', target: '#about', icon: 'fa-landmark' },
+ 			{ label: 'Ventures', hint: 'Active leagues', target: '#ventures', icon: 'fa-trophy' },
+ 			{ label: 'Brand Ambassador', hint: 'Ambassador spotlight', target: '#ambassador', icon: 'fa-star' },
+ 			{ label: 'President', hint: 'Leadership insights', target: '#president', icon: 'fa-user-tie' },
+ 			{ label: 'Board Members', hint: 'Core committee', target: '#members', icon: 'fa-users' },
+ 			{ label: 'Contact', hint: 'Reach the team', target: '#contact', icon: 'fa-phone-volume' },
+ 			{ label: 'BSSL Cloud', hint: 'Bengaluru Super Sports League', target: 'venture2.html', icon: 'fa-baseball-bat-ball' }
+ 		];
+ 		items.push(...staticIndex);
 
-    // headings
-    document.querySelectorAll('main h1, main h2, main h3').forEach(h => {
-      const text = (h.textContent || '').trim();
-      if (!text) return;
-      if (!h.id) {
-        let id = text.toLowerCase().replace(/[^\w]+/g, '-').replace(/(^-+|-+$)/g, '');
-        let uniq = id; let i = 1;
-        while (document.getElementById(uniq)) { uniq = `${id}-${i++}`; }
-        h.id = uniq;
-      }
-      items.push({ label: text, hint: 'Section', target: `#${h.id}`, icon: 'fa-file-lines' });
-    });
+ 		// headings
+ 		document.querySelectorAll('main h1, main h2, main h3').forEach(h => {
+ 			const text = (h.textContent || '').trim();
+ 			if (!text) return;
+ 			if (!h.id) {
+ 				let id = text.toLowerCase().replace(/[^\w]+/g, '-').replace(/(^-+|-+$)/g, '');
+ 				let uniq = id; let i = 1;
+ 				while (document.getElementById(uniq)) { uniq = `${id}-${i++}`; }
+ 				h.id = uniq;
+ 			}
+ 			items.push({ label: text, hint: 'Section', target: `#${h.id}`, icon: 'fa-file-lines' });
+ 		});
 
-    // anchors/links
-    document.querySelectorAll('a[href]').forEach(a => {
-      const href = a.getAttribute('href') || '';
-      const text = (a.textContent || a.getAttribute('title') || a.getAttribute('aria-label') || href).trim();
-      if (!text) return;
-      items.push({
-        label: text,
-        hint: href,
-        target: href,
-        icon: href.startsWith('#') ? 'fa-link' : 'fa-arrow-right'
-      });
-    });
+ 		// anchors/links
+ 		document.querySelectorAll('a[href]').forEach(a => {
+ 			const href = a.getAttribute('href') || '';
+ 			const text = (a.textContent || a.getAttribute('title') || a.getAttribute('aria-label') || href).trim();
+ 			if (!text) return;
+ 			items.push({
+ 				label: text,
+ 				hint: href,
+ 				target: href,
+ 				icon: href.startsWith('#') ? 'fa-link' : 'fa-arrow-right'
+ 			});
+ 		});
 
-    // image alts
-    document.querySelectorAll('img[alt]').forEach(img => {
-      const alt = (img.alt || '').trim();
-      if (alt) items.push({ label: alt, hint: 'Image', target: '#', icon: 'fa-image' });
-    });
+ 		// image alts
+ 		document.querySelectorAll('img[alt]').forEach(img => {
+ 			const alt = (img.alt || '').trim();
+ 			if (alt) items.push({ label: alt, hint: 'Image', target: '#', icon: 'fa-image' });
+ 		});
 
-    // dedupe by label+target
-    const map = new Map();
-    items.forEach(it => {
-      const key = `${(it.label||'').toLowerCase()}||${it.target||''}`;
-      if (!map.has(key)) map.set(key, it);
-    });
+ 		// dedupe by label+target
+ 		const map = new Map();
+ 		items.forEach(it => {
+ 			const key = `${(it.label||'').toLowerCase()}||${it.target||''}`;
+ 			if (!map.has(key)) map.set(key, it);
+ 		});
 
-    return Array.from(map.values()).map((it, idx) => {
-      // precompute searchable normalized text for faster search
-      return Object.assign({}, it, {
-        _norm: `${it.label} ${it.hint} ${it.target}`.toLowerCase(),
-        _id: `sr-${idx}`
-      });
-    });
-  }
+ 		return Array.from(map.values()).map((it, idx) => {
+ 			// precompute searchable normalized text for faster search
+ 			return Object.assign({}, it, {
+ 				_norm: `${it.label} ${it.hint} ${it.target}`.toLowerCase(),
+ 				_id: `sr-${idx}`
+ 			});
+ 		});
+ 	}
 
-  let searchIndex = buildIndex();
+ 	let searchIndex = buildIndex();
 
-  // Observe DOM changes and rebuild (light)
-  const obs = new MutationObserver(debounce(() => { searchIndex = buildIndex(); }, 400));
-  obs.observe(document.body, { childList: true, subtree: true });
+ 	// Observe DOM changes and rebuild (light)
+ 	const obs = new MutationObserver(debounce(() => { searchIndex = buildIndex(); }, 400));
+ 	obs.observe(document.body, { childList: true, subtree: true });
 
-  // Scoring function (simple, fast)
-  function scoreItem(item, q) {
-    const label = (item.label || '').toLowerCase();
-    const hint = (item.hint || '').toLowerCase();
-    const target = (item.target || '').toLowerCase();
-    if (!q) return 0;
-    let score = 0;
-    if (label.startsWith(q)) score += 200;
-    if (label.includes(q)) score += 120;
-    if (hint.includes(q)) score += 40;
-    if (target.includes(q)) score += 20;
-    // word matches
-    const qParts = q.split(/\s+/).filter(Boolean);
-    qParts.forEach(part => {
-      if (label.split(/\s+/).some(w => w.startsWith(part))) score += 8;
-    });
-    // short boost for exact match
-    if (label === q) score += 400;
-    return score;
-  }
+ 	// Scoring function (simple, fast)
+ 	function scoreItem(item, q) {
+ 		const label = (item.label || '').toLowerCase();
+ 		const hint = (item.hint || '').toLowerCase();
+ 		const target = (item.target || '').toLowerCase();
+ 		if (!q) return 0;
+ 		let score = 0;
+ 		if (label.startsWith(q)) score += 200;
+ 		if (label.includes(q)) score += 120;
+ 		if (hint.includes(q)) score += 40;
+ 		if (target.includes(q)) score += 20;
+ 		// word matches
+ 		const qParts = q.split(/\s+/).filter(Boolean);
+ 		qParts.forEach(part => {
+ 			if (label.split(/\s+/).some(w => w.startsWith(part))) score += 8;
+ 		});
+ 		// short boost for exact match
+ 		if (label === q) score += 400;
+ 		return score;
+ 	}
 
-  // render results (adds roles and ids)
-  function renderResults(items, headingText = 'Results') {
-    const max = 12;
-    if (!items || !items.length) {
-      searchResults.innerHTML = `
-        <li class="pro-nav__search-heading">${escapeHtml(headingText)}</li>
-        <li class="pro-nav__search-result is-empty">No matches found</li>
-      `;
-      searchResults.classList.add('visible');
-      searchResults.setAttribute('aria-hidden', 'false');
-      activeIndex = -1;
-      return;
-    }
+ 	// render results (adds roles and ids)
+ 	function renderResults(items, headingText = 'Results') {
+ 		const max = 12;
+ 		if (!items || !items.length) {
+ 			searchResults.innerHTML = `
+ 				<li class="pro-nav__search-heading">${escapeHtml(headingText)}</li>
+ 				<li class="pro-nav__search-result is-empty">No matches found</li>
+ 			`;
+ 			searchResults.classList.add('visible');
+ 			searchResults.setAttribute('aria-hidden', 'false');
+ 			activeIndex = -1;
+ 			return;
+ 		}
 
-    const html = [
-      `<li class="pro-nav__search-heading">${escapeHtml(headingText)}</li>`,
-      ...items.slice(0, max).map((item, idx) => {
-        const id = escapeHtml(item._id || `sr-${idx}`);
-        return `
-          <li class="pro-nav__search-result" role="presentation">
-            <a id="${id}" role="option" tabindex="-1" aria-selected="false" href="${escapeHtml(item.target)}" data-target="${escapeHtml(item.target)}" class="search-link">
-              <span class="result-label">
-                <span class="result-icon"><i class="fa-solid ${escapeHtml(item.icon || 'fa-magnifying-glass')}" aria-hidden="true"></i></span>
-                <span class="result-title">${escapeHtml(item.label)}</span>
-              </span>
-              <span class="result-meta">${escapeHtml(item.hint || '')}</span>
-            </a>
-          </li>
-        `;
-      })
-    ].join('');
-    searchResults.innerHTML = html;
-    searchResults.classList.add('visible');
-    searchResults.setAttribute('aria-hidden', 'false');
-    // reset active index
-    activeIndex = -1;
-    // Cache result anchors
-    resultAnchors = Array.from(searchResults.querySelectorAll('a.search-link'));
-  }
+ 		const html = [
+ 			`<li class="pro-nav__search-heading">${escapeHtml(headingText)}</li>`,
+ 			...items.slice(0, max).map((item, idx) => {
+ 				const id = escapeHtml(item._id || `sr-${idx}`);
+ 				return `
+ 					<li class="pro-nav__search-result" role="presentation">
+ 						<a id="${id}" role="option" tabindex="-1" aria-selected="false" href="${escapeHtml(item.target)}" data-target="${escapeHtml(item.target)}" class="search-link">
+ 							<span class="result-label">
+ 								<span class="result-icon"><i class="fa-solid ${escapeHtml(item.icon || 'fa-magnifying-glass')}" aria-hidden="true"></i></span>
+ 								<span class="result-title">${escapeHtml(item.label)}</span>
+ 							</span>
+ 							<span class="result-meta">${escapeHtml(item.hint || '')}</span>
+ 						</a>
+ 					</li>
+ 				`;
+ 			})
+ 		].join('');
+ 		searchResults.innerHTML = html;
+ 		searchResults.classList.add('visible');
+ 		searchResults.setAttribute('aria-hidden', 'false');
+ 		// reset active index
+ 		activeIndex = -1;
+ 		// Cache result anchors
+ 		resultAnchors = Array.from(searchResults.querySelectorAll('a.search-link'));
+ 	}
 
-  // search engine: compute scores and sort
-  function searchQuery(q) {
-    const term = (q || '').trim().toLowerCase();
-    if (!term) {
-      renderResults(searchIndex.slice(0, 6), 'Quick Links');
-      return;
-    }
-    const scored = searchIndex.map(it => ({ it, s: scoreItem(it, term) }));
-    const filtered = scored.filter(x => x.s > 0).sort((a,b) => b.s - a.s).map(x => x.it);
-    renderResults(filtered, 'Search Results');
-  }
+ 	// search engine: compute scores and sort
+ 	function searchQuery(q) {
+ 		const term = (q || '').trim().toLowerCase();
+ 		if (!term) {
+ 			renderResults(searchIndex.slice(0, 6), 'Quick Links');
+ 			return;
+ 		}
+ 		const scored = searchIndex.map(it => ({ it, s: scoreItem(it, term) }));
+ 		const filtered = scored.filter(x => x.s > 0).sort((a,b) => b.s - a.s).map(x => x.it);
+ 		renderResults(filtered, 'Search Results');
+ 	}
 
-  const debouncedSearch = debounce((val) => searchQuery(val), 160);
+ 	const debouncedSearch = debounce((val) => searchQuery(val), 160);
 
-  // keyboard navigation
-  let resultAnchors = [];
-  let activeIndex = -1;
-  function setActive(index) {
-    if (!resultAnchors.length) return;
-    if (activeIndex >= 0 && resultAnchors[activeIndex]) {
-      resultAnchors[activeIndex].setAttribute('aria-selected', 'false');
-      resultAnchors[activeIndex].classList.remove('is-active');
-      resultAnchors[activeIndex].blur();
-    }
-    activeIndex = index;
-    if (activeIndex >= 0 && resultAnchors[activeIndex]) {
-      const el = resultAnchors[activeIndex];
-      el.setAttribute('aria-selected', 'true');
-      el.classList.add('is-active');
-      el.focus({ preventScroll: true });
-      searchInput.setAttribute('aria-activedescendant', el.id);
-    } else {
-      searchInput.removeAttribute('aria-activedescendant');
-    }
-  }
+ 	// keyboard navigation
+ 	let resultAnchors = [];
+ 	let activeIndex = -1;
+ 	function setActive(index) {
+ 		if (!resultAnchors.length) return;
+ 		if (activeIndex >= 0 && resultAnchors[activeIndex]) {
+ 			resultAnchors[activeIndex].setAttribute('aria-selected', 'false');
+ 			resultAnchors[activeIndex].classList.remove('is-active');
+ 			resultAnchors[activeIndex].blur();
+ 		}
+ 		activeIndex = index;
+ 		if (activeIndex >= 0 && resultAnchors[activeIndex]) {
+ 			const el = resultAnchors[activeIndex];
+ 			el.setAttribute('aria-selected', 'true');
+ 			el.classList.add('is-active');
+ 			el.focus({ preventScroll: true });
+ 			searchInput.setAttribute('aria-activedescendant', el.id);
+ 		} else {
+ 			searchInput.removeAttribute('aria-activedescendant');
+ 		}
+ 	}
 
-  // input handlers
-  searchInput.setAttribute('aria-controls', searchResults.id);
-  searchInput.setAttribute('aria-autocomplete', 'list');
+ 	// input handlers
+ 	searchInput.setAttribute('aria-controls', searchResults.id);
+ 	searchInput.setAttribute('aria-autocomplete', 'list');
 
-  searchInput.addEventListener('input', (e) => {
-    debouncedSearch(e.target.value);
-  });
+ 	searchInput.addEventListener('input', (e) => {
+ 		debouncedSearch(e.target.value);
+ 	});
 
-  searchInput.addEventListener('focus', () => {
-    // show quick links
-    renderResults(searchIndex.slice(0,6), 'Quick Links');
-  });
+ 	searchInput.addEventListener('focus', () => {
+ 		// show quick links
+ 		renderResults(searchIndex.slice(0,6), 'Quick Links');
+ 	});
 
-  // keydown: navigation
-  searchInput.addEventListener('keydown', (e) => {
-    if (!searchResults.classList.contains('visible')) return;
-    if (e.key === 'ArrowDown') {
-      e.preventDefault();
-      if (activeIndex < resultAnchors.length - 1) setActive(activeIndex + 1);
-      else setActive(0);
-    } else if (e.key === 'ArrowUp') {
-      e.preventDefault();
-      if (activeIndex > 0) setActive(activeIndex - 1);
-      else setActive(resultAnchors.length - 1);
-    } else if (e.key === 'Enter') {
-      // if an active result exists, follow it; otherwise allow form submit handler
-      if (activeIndex >= 0 && resultAnchors[activeIndex]) {
-        e.preventDefault();
-        const href = resultAnchors[activeIndex].dataset.target || resultAnchors[activeIndex].getAttribute('href');
-        if (href.startsWith('#')) {
-          const el = document.querySelector(href);
-          if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          else window.location.hash = href;
-        } else {
-          window.location.href = href;
-        }
-        closeResults();
-      }
-    } else if (e.key === 'Escape') {
-      closeResults();
-      searchInput.blur();
-    }
-  });
+ 	// keydown: navigation
+ 	searchInput.addEventListener('keydown', (e) => {
+ 		if (!searchResults.classList.contains('visible')) return;
+ 		if (e.key === 'ArrowDown') {
+ 			e.preventDefault();
+ 			if (activeIndex < resultAnchors.length - 1) setActive(activeIndex + 1);
+ 			else setActive(0);
+ 		} else if (e.key === 'ArrowUp') {
+ 			e.preventDefault();
+ 			if (activeIndex > 0) setActive(activeIndex - 1);
+ 			else setActive(resultAnchors.length - 1);
+ 		} else if (e.key === 'Enter') {
+ 			// if an active result exists, follow it; otherwise allow form submit handler
+ 			if (activeIndex >= 0 && resultAnchors[activeIndex]) {
+ 				e.preventDefault();
+ 				const href = resultAnchors[activeIndex].dataset.target || resultAnchors[activeIndex].getAttribute('href');
+ 				if (href.startsWith('#')) {
+ 					const el = document.querySelector(href);
+ 					if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+ 					else window.location.hash = href;
+ 				} else {
+ 					window.location.href = href;
+ 				}
+ 				closeResults();
+ 			}
+ 		} else if (e.key === 'Escape') {
+ 			closeResults();
+ 			searchInput.blur();
+ 		}
+ 	});
 
-  // mouse: clicking a result (delegated)
-  searchResults.addEventListener('click', (evt) => {
-    const a = evt.target.closest('a[data-target]');
-    if (!a) return;
-    evt.preventDefault();
-    const target = a.dataset.target || a.getAttribute('href');
-    if (target.startsWith('#')) {
-      const el = document.querySelector(target);
-      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      else window.location.hash = target;
-    } else {
-      window.location.href = target;
-    }
-    closeResults();
-  });
+ 	// mouse: clicking a result (delegated)
+ 	searchResults.addEventListener('click', (evt) => {
+ 		const a = evt.target.closest('a[data-target]');
+ 		if (!a) return;
+ 		evt.preventDefault();
+ 		const target = a.dataset.target || a.getAttribute('href');
+ 		if (target.startsWith('#')) {
+ 			const el = document.querySelector(target);
+ 			if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+ 			else window.location.hash = target;
+ 		} else {
+ 			window.location.href = target;
+ 		}
+ 		closeResults();
+ 	});
 
-  // mouseover sets active for better a11y
-  searchResults.addEventListener('pointerover', (evt) => {
-    const a = evt.target.closest('a[data-target]');
-    if (!a) return;
-    const idx = resultAnchors.indexOf(a);
-    if (idx >= 0) setActive(idx);
-  });
+ 	// mouseover sets active for better a11y
+ 	searchResults.addEventListener('pointerover', (evt) => {
+ 		const a = evt.target.closest('a[data-target]');
+ 		if (!a) return;
+ 		const idx = resultAnchors.indexOf(a);
+ 		if (idx >= 0) setActive(idx);
+ 	});
 
-  function closeResults() {
-    searchResults.classList.remove('visible');
-    searchResults.setAttribute('aria-hidden', 'true');
-    activeIndex = -1;
-    resultAnchors = [];
-    searchInput.removeAttribute('aria-activedescendant');
-  }
+ 	function closeResults() {
+ 		searchResults.classList.remove('visible');
+ 		searchResults.setAttribute('aria-hidden', 'true');
+ 		activeIndex = -1;
+ 		resultAnchors = [];
+ 		searchInput.removeAttribute('aria-activedescendant');
+ 	}
 
-  // form submit behaviour: use best match
-  searchForm?.addEventListener('submit', (evt) => {
-    evt.preventDefault();
-    const term = (searchInput.value || '').trim().toLowerCase();
-    if (!term) { searchInput.focus(); return; }
-    const matches = searchIndex.filter(it => it._norm.includes(term));
-    if (matches.length) {
-      const target = matches[0].target;
-      if (target.startsWith('#')) {
-        document.querySelector(target)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      } else {
-        window.location.href = target;
-      }
-      closeResults();
-      return;
-    }
-    // show empty state
-    renderResults([], 'Search Results');
-  });
+ 	// form submit behaviour: use best match
+ 	searchForm?.addEventListener('submit', (evt) => {
+ 		evt.preventDefault();
+ 		const term = (searchInput.value || '').trim().toLowerCase();
+ 		if (!term) { searchInput.focus(); return; }
+ 		const matches = searchIndex.filter(it => it._norm.includes(term));
+ 		if (matches.length) {
+ 			const target = matches[0].target;
+ 			if (target.startsWith('#')) {
+ 				document.querySelector(target)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+ 			} else {
+ 				window.location.href = target;
+ 			}
+ 			closeResults();
+ 			return;
+ 		}
+ 		// show empty state
+ 		renderResults([], 'Search Results');
+ 	});
 
-  // click outside closes dropdown
-  document.addEventListener('click', (evt) => {
-    if (!nav?.contains(evt.target)) closeResults();
-  });
+ 	// click outside closes dropdown
+ 	document.addEventListener('click', (evt) => {
+ 		if (!nav?.contains(evt.target)) closeResults();
+ 	});
 
-  // keep existing nav toggle behavior intact (if present)
-  if (nav && navToggle) {
-    const closeNav = () => {
-      nav.classList.remove('is-open');
-      navToggle.setAttribute('aria-expanded', 'false');
-    };
-    navToggle.addEventListener('click', () => {
-      const open = nav.classList.toggle('is-open');
-      navToggle.setAttribute('aria-expanded', String(open));
-      if (!open) closeResults();
-    });
-    navTargets?.forEach((node) => node.addEventListener('click', () => {
-      if (!breakpoint.matches) closeNav();
-    }));
-    breakpoint.addEventListener('change', (evt) => { if (evt.matches) closeNav(); });
-    document.addEventListener('click', (evt) => {
-      if (!nav.contains(evt.target)) {
-        closeNav();
-        closeResults();
-      }
-    });
-  }
-});
+ 	// keep existing nav toggle behavior intact (if present)
+ 	if (nav && navToggle) {
+ 		const closeNav = () => {
+ 			nav.classList.remove('is-open');
+ 			navToggle.setAttribute('aria-expanded', 'false');
+ 		};
+ 		navToggle.addEventListener('click', () => {
+ 			const open = nav.classList.toggle('is-open');
+ 			navToggle.setAttribute('aria-expanded', String(open));
+ 			if (!open) closeResults();
+ 		});
+ 		navTargets?.forEach((node) => node.addEventListener('click', () => {
+ 			if (!breakpoint.matches) closeNav();
+ 		}));
+ 		breakpoint.addEventListener('change', (evt) => { if (evt.matches) closeNav(); });
+ 		document.addEventListener('click', (evt) => {
+ 			if (!nav.contains(evt.target)) {
+ 				closeNav();
+ 				closeResults();
+ 			}
+ 		});
+ 	}
+ });
+</script>
+<script>
+if ('serviceWorker' in navigator) {
+	window.addEventListener('load', () => {
+		navigator.serviceWorker.register('sw.js').catch(console.error);
+	});
+}
 </script>
 </body>
 </html>

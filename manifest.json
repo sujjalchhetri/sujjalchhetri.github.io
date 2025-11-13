@@ -1,0 +1,14 @@
+{
+	"name": "SBSO Foundation",
+	"short_name": "SBSO",
+	"description": "Official hub for SBSO Foundation leagues, recognitions, and community programs.",
+	"start_url": "index.html",
+	"scope": "./",
+	"display": "standalone",
+	"background_color": "#04122c",
+	"theme_color": "#04122c",
+	"icons": [
+		{ "src": "SBSO_FOUNDATION.jpg", "sizes": "192x192", "type": "image/jpeg" },
+		{ "src": "SBSO_FOUNDATION.jpg", "sizes": "512x512", "type": "image/jpeg" }
+	]
+}
