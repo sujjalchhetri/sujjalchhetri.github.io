@@ -1,3 +1,6 @@
+/* ------------------------------------------------------------------
+   01. Design Tokens
+------------------------------------------------------------------- */
 :root{
 	--bg-ink:#260018;
 	--page-bg:linear-gradient(152deg,rgba(112,15,83,0.78) 0%,rgba(83,9,67,0.7) 52%,rgba(38,4,34,0.66) 100%);
@@ -22,6 +25,9 @@
 		--easing:cubic-bezier(.2,.9,.2,1);
 	}
 
+/* ------------------------------------------------------------------
+   02. Reset & Base
+------------------------------------------------------------------- */
 *,
 *::before,
 *::after{box-sizing:border-box;margin:0;padding:0}
@@ -40,19 +46,28 @@ body::before{
 	inset:0;
 	z-index:-1;
 	background:
-		var(--overlay-1),
-		var(--overlay-2),
-		var(--overlay-3),
-		url('Background_Img.jpg') center/cover no-repeat fixed;
-	background-size:165% 165%,185% 150%,cover,cover;
-	background-position:center,center,center,center;
-	pointer-events:none;
-	opacity:0.6;
+		radial-gradient(165% 185% at 16% 18%, rgba(255,128,206,0.18), transparent 74%),
+		radial-gradient(190% 190% at 84% 16%, rgba(255,173,223,0.14), transparent 78%),
+		linear-gradient(212deg, rgba(102,12,84,0.42), rgba(44,4,40,0.46));
+	background-size:220% 220%,220% 220%,cover;
+	background-position:center,center,center;
+	opacity:0.58;
+}
+body::after{
+	content:"";
+	position:fixed;
+	inset:0;
+	z-index:-2;
+	background:url('Background_Img.jpg') center/cover no-repeat fixed;
+	opacity:0.9;
 }
 
 a{text-decoration:none;color:inherit}
 img{display:block;max-width:100%;height:auto}
 
+/* ------------------------------------------------------------------
+   03. Header & Navigation
+------------------------------------------------------------------- */
 .site-header{
 	position:sticky;
 	top:0;
@@ -164,11 +179,14 @@ img{display:block;max-width:100%;height:auto}
 	cursor:pointer;
 }
 
+/* ------------------------------------------------------------------
+   04. Layout Shell
+------------------------------------------------------------------- */
 main{
 	display:flex;
 	flex-direction:column;
 	gap:clamp(2.8rem,6vw,4rem);
-	padding-block:clamp(2.4rem,6vw,3.4rem);
+	padding:clamp(2.4rem,6vw,3.4rem);
 }
 
 .section{
@@ -201,6 +219,9 @@ main{
 	margin-inline:auto;
 }
 
+/* ------------------------------------------------------------------
+   05. Galleries & Media
+------------------------------------------------------------------- */
 .gallery-grid{
 	display:grid;
 	gap:clamp(1rem,3vw,1.6rem);
@@ -220,6 +241,9 @@ main{
 	box-shadow:0 26px 54px rgba(0,0,0,0.5);
 }
 
+/* ------------------------------------------------------------------
+   06. Hero Module
+------------------------------------------------------------------- */
 .hero{
 	width:var(--container);
 	margin-inline:auto;
@@ -288,6 +312,9 @@ main{
 	box-shadow:0 18px 40px rgba(0,0,0,0.42);
 }
 
+/* ------------------------------------------------------------------
+   07. Feature Cards & Stats
+------------------------------------------------------------------- */
 .card-grid{
 	display:grid;
 	gap:clamp(1rem,3vw,1.6rem);
@@ -345,6 +372,9 @@ main{
 	background:rgba(4,12,32,0.82);
 }
 
+/* ------------------------------------------------------------------
+   08. CTA & Teams
+------------------------------------------------------------------- */
 .cta-banner{
 	display:grid;
 	gap:clamp(1rem,3vw,1.4rem);
@@ -374,6 +404,9 @@ main{
 	text-align:center;
 }
 
+/* ------------------------------------------------------------------
+   09. FAQs & Partners
+------------------------------------------------------------------- */
 .faq{
 	display:grid;
 	gap:0.8rem;
@@ -417,6 +450,9 @@ main{
 }
 .partners-grid img:hover{transform:translateY(-4px);filter:saturate(1.05) brightness(1.05)}
 
+/* ------------------------------------------------------------------
+   10. Contact Actions
+------------------------------------------------------------------- */
 .contact-card{
 	display:grid;
 	gap:clamp(1rem,3vw,1.6rem);
@@ -455,6 +491,9 @@ main{
 }
 .contact-card__form textarea{min-height:140px;resize:vertical}
 
+/* ------------------------------------------------------------------
+   11. Footer
+------------------------------------------------------------------- */
 .footer{
 	margin-top:auto;
 	padding:clamp(2.8rem,6vw,3.8rem) 1.2rem;
@@ -491,6 +530,9 @@ main{
 	font-size:0.82rem;
 }
 
+/* ------------------------------------------------------------------
+   12. Responsive Breakpoints
+------------------------------------------------------------------- */
 @media (max-width:1080px){
 	.hero{grid-template-columns:1fr;text-align:center}
 	.hero__actions{justify-content:center}

@@ -1,726 +1,693 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Official website of SBSO Foundation - Come. Commit. Conquer.">
-  <meta name="robots" content="index, follow">
-  <meta name="keywords" content="SBSO Foundation, sports, youth, cricket, Bengaluru Super Sports League, BSSL, fitness, India">
-  <link rel="icon" type="image/jpeg" href="SBSO_FOUNDATION.jpg">
-  <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#04122c">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
-  <title>SBSO Foundation</title>
-</head>
-<body>
-  <!-- PAGE LAYOUT GUIDE:
-       01. Header & Navigation
-       02. Hero (+ Org Logo)
-       03. About
-       04. Ventures
-       05. Stats
-       06. Ambassadors
-       07. President
-       08. Members
-       09. Contact
-       10. Partnerships
-       11. Footer
-  -->
-  <!-- SECTION 01: HEADER & NAVIGATION -->
-  <header>
-    <nav class="pro-nav" id="site-nav">
-      <div class="pro-nav__shell">
-        <a class="pro-nav__brand" href="#top">
-          <img src="SBSO_FOUNDATION.jpg" alt="SBSO logo" class="pro-nav__logo" width="58" height="58" decoding="async">
-          <span class="pro-nav__identity">
-            <span class="pro-nav__name">SBSO Foundation</span>
-            <span class="pro-nav__motto">Come · Commit · Conquer</span>
-          </span>
-        </a>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content="Official website of SBSO Foundation - Come. Commit. Conquer." />
+		<meta name="robots" content="index, follow" />
+		<meta name="keywords" content="SBSO Foundation, sports, youth, cricket, Bengaluru Super Sports League, BSSL, fitness, India" />
+		<link rel="icon" type="image/jpeg" href="SBSO_FOUNDATION.jpg" />
+		<link rel="manifest" href="manifest.json" />
+		<meta name="theme-color" content="#04122c" />
+		<link rel="stylesheet" href="style.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+		<title>SBSO Foundation</title>
+	</head>
+	<body id="top">
+		<header class="site-header">
+			<nav class="site-nav" id="site-nav">
+				<a class="site-nav__brand" href="#top">
+					<img src="SBSO_FOUNDATION.jpg" alt="SBSO Foundation crest" class="site-nav__logo" decoding="async" width="58" height="58" />
+					<span class="site-nav__identity">
+						<span class="site-nav__name">SBSO Foundation</span>
+						<span class="site-nav__motto">Come · Commit · Conquer</span>
+					</span>
+				</a>
+				<button class="site-nav__toggle" type="button" aria-expanded="false" aria-controls="nav-menu">
+					<i class="fa-solid fa-bars"></i>
+				</button>
+				<div class="site-nav__menu" id="nav-menu">
+					<form class="site-nav__search" role="search">
+						<label class="sr-only" for="site-search-input">Search SBSO Foundation</label>
+						<i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+						<input id="site-search-input" type="search" name="q" placeholder="Search SBSO Foundation" autocomplete="off" />
+						<ul class="site-nav__search-results" id="site-search-results" aria-live="polite"></ul>
+					</form>
+				</div>
+			</nav>
+		</header>
 
-        <button class="pro-nav__toggle" type="button" aria-expanded="false" aria-controls="nav-panel">
-          <span class="pro-nav__toggle-bar"></span>
-        </button>
+		<main>
+			<!-- ===== Hero ===== -->
+			<section class="section section--hero hero" data-animate="fade-up">
+				<div class="hero__aura" aria-hidden="true"></div>
+				<div class="hero__content">
+					<p class="badge">Elite multi-city sports platform</p>
+					<h1 class="hero__title"><span>SBSO Foundation</span> elevates multi-sport cities</h1>
+					<p class="hero__lead">Floodlit rivalries, inclusive pathways, and fan-first experiences across cricket, badminton, and emerging urban sports.</p>
+					<p class="hero__subtitle">Premier night cricket, championship badminton circuits, and adaptive pathways engineered for tomorrow.</p>
+					<div class="hero__actions">
+						<a href="venture2.html" class="btn btn--accent">Register Teams</a>
+						<a href="https://www.youtube.com/@sbsofoundation" class="btn btn--ghost" target="_blank" rel="noopener">Watch Highlight Reel</a>
+					</div>
+					<p class="hero__meta-note"><i class="fa-solid fa-signal-bars"></i> Live in three metros · 12 broadcast angles · 45K stadium fans</p>
+					<ul class="hero__highlights">
+						<li><strong>40+</strong><span>Pro &amp; development squads</span></li>
+						<li><strong>1L+</strong><span>Fans on-ground &amp; OTT</span></li>
+						<li><strong>360°</strong><span>Immersive fan labs &amp; clinics</span></li>
+					</ul>
+				</div>
+				<div class="hero__media">
+					<div class="hero__orbit">
+						<span class="hero__pulse" aria-hidden="true"></span>
+						<div class="hero__crest" data-animate-child="1">
+							<img src="SBSO_FOUNDATION.jpg" alt="SBSO Foundation crest" decoding="async" />
+						</div>
+					</div>
+					<div class="hero__scorecard" data-animate-child="2">
+						<span class="hero__scorecard-glow" aria-hidden="true"></span>
+						<span class="pill pill--live"><i class="fa-solid fa-bolt"></i> Upcoming · Feb 20</span>
+						<h2>WBSSL Championship Showcase</h2>
+						<div class="score-line">
+							<div class="score-team">
+								<span class="score-team__name">Bengaluru Smashers</span><strong class="score-team__run">21-19 · 18-21 · 22-20</strong>
+							</div>
+							<div class="score-team">
+								<span class="score-team__name">Siliguri Shuttlers</span><strong class="score-team__run">19-21 · 21-18 · 20-22</strong>
+							</div>
+						</div>
+						<p class="score-meta"><i class="fa-regular fa-clock"></i> 7:30 PM IST · Kanteerava Indoor Stadium</p>
+						<p class="score-broadcast"><i class="fa-solid fa-tower-broadcast"></i> SonyLIV · Radio Indigo · Badminton+ Live</p>
+						<a href="#contact" class="btn btn--outline">Enquire Hospitality</a>
+					</div>
+				</div>
+				<ul class="hero__ticker" data-marquee>
+					<li><i class="fa-solid fa-bullhorn"></i> Women’s BSSL auction night · 22 Dec</li>
+					<li><i class="fa-solid fa-graduation-cap"></i> Youth combine registrations now open</li>
+					<li><i class="fa-solid fa-earth-asia"></i> Zero single-use plastic pledge for 2025 season</li>
+					<li><i class="fa-solid fa-medal"></i> Adaptive cricket super camp · Hyderabad · 18 Jan</li>
+				</ul>
+			</section>
 
-        <div class="pro-nav__panel" id="nav-panel">
-          <form class="pro-nav__search" role="search">
-            <span class="pro-nav__search-icon fa-solid fa-magnifying-glass" aria-hidden="true"></span>
-            <input type="search" id="nav-search-input" name="q" placeholder="Search..." aria-label="Search site" autocomplete="off">
-            <ul class="pro-nav__search-results" id="nav-search-results"></ul>
-          </form>
+			<!-- ===== Title Sponsor ===== -->
+			<section id="title-sponsor" class="section sponsor" data-animate="fade-up">
+				<div class="section__header">
+					<p class="section__eyebrow">Title sponsor</p>
+					<h2 class="section__title">Powered by Accesco Living</h2>
+					<p class="section__lead">Our presenting partner shaping elevated experiences across every SBSO Foundation league.</p>
+				</div>
+				<div class="sponsor__overview">
+					<p>Introducing Accesco Living, a next-generation ecosystem built to simplify and elevate everyday living for millions of Indians.</p>
+					<p>We are developing a unified platform that brings together ultra-fast groceries, intelligent financial planning, curated fashion, smart rentals, immersive dining, community-driven rewards, and advanced AI tools—delivered in one seamless experience.</p>
+					<p>Accesco Living is designed for the modern Indian household: efficient, affordable, health-conscious, and technology-driven. This is everyday living, reimagined for the future.</p>
+				</div>
+				<div class="sponsor__card" data-animate-child="1">
+					<span class="sponsor__ribbon">Title Sponsor</span>
+					<a class="sponsor__brand" href="https://accesco.co.in/" target="_blank" rel="noopener">
+						<div class="sponsor__logo">
+							<img src="images/accesco_original.png" alt="Accesco Living logo" loading="lazy" decoding="async" />
+						</div>
+						<div class="sponsor__text">
+							<h3>Accesco Living</h3>
+							<p>Championing inclusive, multi-sport communities with design-forward living and fan-first hospitality.</p>
+						</div>
+					</a>
+					<a class="sponsor__cta" href="https://accesco.co.in/" target="_blank" rel="noopener">
+						<span>Visit Accesco.co.in</span>
+						<i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+					</a>
+					<ul class="sponsor__highlights">
+						<li><i class="fa-solid fa-medal"></i> Presenting partner across cricket, badminton, and adaptive sport showcases</li>
+						<li><i class="fa-solid fa-handshake-angle"></i> Building athlete housing, fan lounges, and wellness zones</li>
+						<li><i class="fa-solid fa-bolt"></i> Sustainability-led venues with smart lighting and energy stewardship</li>
+					</ul>
+				</div>
+			</section>
 
-          <a class="pro-nav__cta" href="venture2.html">
-            <i class="fa-solid fa-ticket" aria-hidden="true"></i>
-            Register
-          </a>
-        </div>
-      </div>
-    </nav>
-  </header>
+			<!-- ===== About ===== -->
+			<section id="about" class="section about" data-animate="fade-right">
+				<div class="section__header">
+					<p class="section__eyebrow">Foundation pillars</p>
+					<h2 class="section__title">Come. Commit. Conquer.</h2>
+					<p class="section__lead">We harness the power of cricket to unite cities, accelerate talent, and amplify community wellbeing.</p>
+				</div>
+				<div class="about__grid">
+					<div class="about__story">
+						<p>From stadium double-headers to neighbourhood showcases, SBSO Foundation designs cricket-first experiences that feel cinematic and inclusive.</p>
+						<p>Our teams co-create leagues with broadcasters, civic bodies, and wellness partners to deliver elite competition, adaptive access, and measurable social impact.</p>
+						<p>Every match night fuels scholarships, divyang training pathways, and grassroots clinics that keep the next generation inspired.</p>
+					</div>
+					<ul class="about__pillars">
+						<li class="about__pillar" data-animate-child="1">
+							<span class="about__icon"><i class="fa-solid fa-trophy"></i></span>
+							<h3>Prime-time leagues</h3>
+							<p>Floodlit venues, multilingual commentary, and immersive fan tech for year-round excitement.</p>
+						</li>
+						<li class="about__pillar" data-animate-child="2">
+							<span class="about__icon"><i class="fa-solid fa-people-arrows"></i></span>
+							<h3>Inclusive pathways</h3>
+							<p>Divyang cricket, women’s badminton, and youth academies with equal access to pro resources.</p>
+						</li>
+						<li class="about__pillar" data-animate-child="3">
+							<span class="about__icon"><i class="fa-solid fa-heart-pulse"></i></span>
+							<h3>Community uplift</h3>
+							<p>Wellness drives, nutrition labs, and scholarship programs across three states.</p>
+						</li>
+					</ul>
+				</div>
+			</section>
 
-  <!-- SECTION 02: HERO -->
-  <main>
+			<!-- ===== Ventures ===== -->
+			<section id="ventures" class="section ventures" data-animate="fade-up">
+				<div class="section__header">
+					<p class="section__eyebrow">Flagship properties</p>
+					<h2 class="section__title">Our cricket ventures</h2>
+					<p class="section__lead">Five marquee tournaments stitching together the biggest heartlands of Indian cricket.</p>
+				</div>
+				<div class="logo-grid logo-grid--ventures">
+					<figure class="logo-item" data-animate-child="1">
+						<a class="logo-item__link" href="venture1.html">
+							<img src="sbcl_logo.jpg" alt="Siliguri Boys Cricket League logo" loading="lazy" decoding="async" />
+							<span>Siliguri Boys Cricket League</span>
+						</a>
+					</figure>
+					<figure class="logo-item" data-animate-child="2">
+						<a class="logo-item__link" href="venture2.html">
+							<img src="bssl_logo.jpg" alt="Bengaluru Super Sports League logo" loading="lazy" decoding="async" />
+							<span>Bengaluru Super Sports League</span>
+						</a>
+					</figure>
+					<figure class="logo-item" data-animate-child="3">
+						<a class="logo-item__link" href="venture3.html">
+							<img src="kspl_logo.jpg" alt="Kolkata Sports Premier League logo" loading="lazy" decoding="async" />
+							<span>Kolkata Sports Premier League</span>
+						</a>
+					</figure>
+					<figure class="logo-item" data-animate-child="4">
+						<a class="logo-item__link" href="venture4.html">
+							<img src="wbssl_logo.jpg" alt="Women’s Bengaluru Super Sports League logo" loading="lazy" decoding="async" />
+							<span>Women's Bengaluru Super Sports League</span>
+						</a>
+					</figure>
+					<figure class="logo-item" data-animate-child="5">
+						<a class="logo-item__link" href="venture5.html">
+							<img src="dpsl_logo.jpg" alt="Divyang Pro Super League logo" loading="lazy" decoding="async" />
+							<span>Divyang Pro Super League</span>
+						</a>
+					</figure>
+				</div>
+			</section>
 
-    <!-- =========================
-         HERO SECTION
-    ========================== -->
-    <section class="hero">
-      <div class="hero__shell">
-        <div class="hero__content">
-          <p class="hero__eyebrow">Elite multi-city Sports Platform</p>
-          <h2>Welcome to <span>SBSO Foundation</span></h2>
-          <p>Come. Commit. Conquer.</p>
-          <div class="hero__actions">
-            <a href="venture2.html" class="btn">Register Now</a>
-            <a href="#ventures" class="btn btn--ghost">Explore Ventures</a>
-          </div>
-        </div>
-        <div class="hero__media">
-          <figure class="hero__badge">
-            <img src="SBSO_FOUNDATION.jpg" alt="SBSO Foundation crest" class="hero-img" decoding="async">
-          </figure>
-          <ul class="hero__meta">
-            <li><strong>10+</strong><span>Major events</span></li>
-            <li><strong>1L+</strong><span>Total viewers</span></li>
-            <li><strong>3</strong><span>Cities united</span></li>
-          </ul>
-        </div>
-      </div>
-    </section>
-    <!-- SECTION 03: ABOUT -->
-    <!-- =========================
-         ABOUT SECTION
-    ========================== -->
-    <section id="about" class="about">
-      <h2>About Us</h2>
-      <p>
-        At SBSO Foundation, we believe that sports have the power to unite, inspire, and transform lives. As a dynamic sports event organization, we bring together players, enthusiasts, and communities through exciting tournaments in cricket, badminton, football, and more — across cities in India.
-        Beyond the field, we are an NGO dedicated to building a healthier, more active, and empowered society. Our initiatives focus on promoting fitness, inclusion, and youth development, nurturing the next generation of athletes and changemakers.
-        With our motto — “Come. Commit. Conquer.” — we invite everyone to step forward, give their best, and achieve greatness both on and off the ground. At SBSO Foundation, every game we organize is more than a competition — it’s a movement towards a better tomorrow through sports.
-      </p>
-    </section>
-    <section id="ventures" class="ventures">
-      <!-- =========================
-         VENTURES SECTION (Main Page)
-    ========================== -->
-      <h2>Our Ventures</h2>
-      <div class="info-grid">
-        <a class="info-card" href="venture1.html" target="_blank" rel="noopener noreferrer">
-          <img src="sbcl_logo.jpg" alt="Siliguri Boys Cricket League Logo" class="venture-logo" width="64" height="64" loading="lazy" decoding="async">
-          <p>Siliguri Boys Cricket League</p>
-        </a>
-        <a class="info-card" href="venture2.html" target="_blank" rel="noopener noreferrer">
-          <img src="bssl_logo.jpg" alt="Bengaluru Super Sports League Logo" class="venture-logo" width="64" height="64" loading="lazy" decoding="async">
-          <p>Bengaluru Super Sports League</p>
-        </a>
-        <a class="info-card" href="venture3.html" target="_blank" rel="noopener noreferrer">
-          <img src="kspl_logo.jpg" alt="Kolkata Sports Premier League Logo" class="venture-logo" width="64" height="64" loading="lazy" decoding="async">
-          <p>Kolkata Sports Premier League</p>
-        </a>
-        <a class="info-card" href="venture4.html" target="_blank" rel="noopener noreferrer">
-          <img src="wbssl_logo.jpg" alt="Womens Bengaluru Super Sports League Logo" class="venture-logo" width="64" height="64" loading="lazy" decoding="async">
-          <p>Womens Bengaluru Super Sports League</p>
-        </a>
-        <a class="info-card" href="venture5.html" target="_blank" rel="noopener noreferrer">
-          <img src="dpsl_logo.jpg" alt="Divyang Pro Super League Logo" class="venture-logo" width="64" height="64" loading="lazy" decoding="async">
-          <p>Divyang Pro Super League</p>
-        </a>
-      </div>
-    </section>
-    <!-- SECTION 05: MAIN INTERFACE / STATS -->
-    <!-- =========================
-         MAIN INTERFACE / STATS SECTION
-    ========================== -->
-    <section class="main-interface-stats">
-      <div class="stats-grid">
-        <div class="stat-card"><span class="stat-value">5,000+</span><span class="stat-label">Live Streaming Viewership</span></div>
-        <div class="stat-card"><span class="stat-value">5,000+</span><span class="stat-label">Live Footfall</span></div>
-        <div class="stat-card"><span class="stat-value">10+</span><span class="stat-label">Events Hosted</span></div>
-        <div class="stat-card"><span class="stat-value">3</span><span class="stat-label">No. Of Cities</span></div>
-        <div class="stat-card"><span class="stat-value">30+</span><span class="stat-label">No. Of Partnerships</span></div>
-        <div class="stat-card"><span class="stat-value">4+</span><span class="stat-label">Initiatives Hosted</span></div>
-        <div class="stat-card"><span class="stat-value">1,00,000</span><span class="stat-label">Total Viewership</span></div>
-        <div class="stat-card"><span class="stat-value">50+</span><span class="stat-label">Members Strength</span></div>
-      </div>
-    </section>
-    <!-- SECTION 06: BRAND AMBASSADORS -->
-    <!-- =========================
-         AMBASSADOR SECTION
-    ========================== -->
-    <section id="ambassador" class="ambassador">
-      <h2>Our Brand Ambassadors</h2>
-      <div class="info-grid">
-        <div class="info-card ambassador-card">
-          <img src="Ambassador1.jpg" alt="Ivanko Bobeiko Photo" class="ambassador-img" width="110" height="110" loading="lazy" decoding="async">
-          <h3>Ivanko Bobeiko</h3>
-          <p class="ambassador-message">
-            "Ivanko Bobeiko exemplifies a powerful blend of climate advocacy and wartime humanitarian service—bringing environmental justice into conversation with peace-building. Where innovation meets performance."
-          </p>
-        </div>
-        <div class="info-card ambassador-card">
-          <img src="Ambassador2.jpg" alt="RTN Ravindra Jain Photo" class="ambassador-img" width="110" height="110" loading="lazy" decoding="async">
-          <h3>RTN Ravindra Jain</h3>
-          <p class="ambassador-message">
-            "RTN Ravindra Jain A distinguished entrepreneur-turned-philanthropist from North Bengal, Mr. Jain has dedicated over five decades to community-building-leading major healthcare, education, environmental, and disability initiatives. His inspiring journey and unwavering support for youth and sports make him a perfect guide and motivator for our young cricketers."
-          </p>
-        </div>
-      </div>
-    </section>
-    <!-- SECTION 07: PRESIDENT -->
-    <!-- =========================
-         PRESIDENT SECTION
-    ========================== -->
-    <section id="president" class="president">
-      <h2>Our President, Founder & Director</h2>
-      <div class="info-grid">
-        <div class="info-card president-card">
-          <img src="president_pic.jpg" alt="President Photo" class="president-img" width="110" height="110" loading="lazy" decoding="async">
-          <h3>Argha Sengupta</h3>
-          <p class="president-mission">
-            "The backbone of the event and leads every aspect—sponsorship, team management, public relations, finance, and marketing. His tireless efforts have turned SBSO Foundation into more than just Event Venture; it’s a social movement. By promoting inclusivity, youth development, and community spirit through Sports, Argha empowers young talent and unites Sports across different cities of India. His leadership continues to inspire, shaping lives both on and off the pitch."
-          </p>
-        </div>
-      </div>
-    </section>
+			<!-- ===== Stats ===== -->
+			<section class="section stats" data-animate="fade-left">
+				<div class="section__header">
+					<p class="section__eyebrow">Season snapshot</p>
+					<h2 class="section__title">Match centre metrics</h2>
+					<p class="section__lead">Numbers from our ongoing pro-am calendar, youth clinics, and national combines.</p>
+				</div>
+				<div class="stats__grid">
+					<article class="stat-card">
+						<i class="fa-solid fa-chart-line"></i><strong>5,200+</strong>
+						<p>Average live stream viewers per double-header night</p>
+					</article>
+					<article class="stat-card">
+						<i class="fa-solid fa-tv"></i><strong>28M</strong>
+						<p>Digital &amp; broadcast impressions last quarter</p>
+					</article>
+					<article class="stat-card">
+						<i class="fa-solid fa-graduation-cap"></i><strong>38</strong>
+						<p>Academy &amp; university tie-ups nationwide</p>
+					</article>
+					<article class="stat-card">
+						<i class="fa-solid fa-hand-holding-heart"></i><strong>12</strong>
+						<p>CSR collaborations powering adaptive cricket</p>
+					</article>
+				</div>
+				<div class="stats__timeline">
+					<article class="stats__timeline-item" data-animate-child="1">
+						<span class="stats__timeline-badge">DEC</span>
+						<h3>Women's BSSL auction</h3>
+						<p>Retention, rookie draft, and mentorship reveal on 22 December.</p>
+					</article>
+					<article class="stats__timeline-item" data-animate-child="2">
+						<span class="stats__timeline-badge">JAN</span>
+						<h3>Divyang skill combine</h3>
+						<p>Adaptive cricket scouting camp with national selectors and sports scientists.</p>
+					</article>
+					<article class="stats__timeline-item" data-animate-child="3">
+						<span class="stats__timeline-badge">FEB</span>
+						<h3>Fan &amp; fitness festival</h3>
+						<p>City-wide match screenings, esports qualifiers, and high-performance labs.</p>
+					</article>
+				</div>
+			</section>
 
-    <!-- SECTION 08: BOARD MEMBERS -->
-    <!-- =========================
-         MEMBERS SECTION
-    ========================== -->
-    <section id="members" class="members">
-      <h2>Board Members</h2>
-      <div class="info-grid">
-        <div class="info-card member-card">
-          <img src="sayan.jpg" alt="Sayan Karmakar" class="member-img" width="110" height="110" loading="lazy" decoding="async">
-          <h3>Sayan Karmakar</h3>
-          <p class="member-role">Co-founder & Vice President</p>
-          <p class="member-bio">As Co-founder and Vice President of SBCL, I drive the development of sports initiatives, fostering talent and work as the Executive Embodiment . With a passion for sports, I work closely with athletes, and teams to achieve excellence and build a stronger sporting community.</p>
-        </div>
-        <div class="info-card member-card">
-          <img src="asif.jpg" alt="Md Asif" class="member-img" width="110" height="110" loading="lazy" decoding="async">
-          <h3>Md Asif</h3>
-          <p class="member-role">Secretary of Divyang Pro Super League</p>
-          <p class="member-bio">Md Asif, Divyang Pro Super League Secretary, is committed to holistic youth development through sports, education, and social impact. With leagues running across India, SBSO fosters talent, discipline, and community spirit. Asif ensures the foundation’s vision is executed through strategic planning, strong leadership, and impactful programs that go beyond the field to build future-ready citizens.</p>
-        </div>
-        <div class="info-card member-card">
-          <img src="spandan.jpg" alt="Spandan Chaudhury" class="member-img" width="110" height="110" loading="lazy" decoding="async">
-          <h3>Spandan Chaudhury</h3>
-          <p class="member-role">Vice President of BSSL</p>
-          <p class="member-bio">Spandan Chaudhury is the dynamic Vice President of the Bengaluru Super Sports League (BSSL). With a keen eye for detail and a passion for sports management, Spandan oversees event planning, team coordination, and on-ground execution. His leadership ensures that every tournament runs smoothly, from scheduling matches to managing logistics and supporting players. Spandan is known for his ability to motivate teams, resolve challenges quickly, and create a positive, energetic atmosphere for all participants. His dedication and organizational skills are vital to the continued success and growth of BSSL.</p>
-        </div>
-        <div class="info-card member-card">
-          <img src="krithika.jpg" alt="Krithika Vijay" class="member-img" width="110" height="110" loading="lazy" decoding="async">
-          <h3>Krithika Vijay</h3>
-          <p class="member-role">Director of WBSSL</p>
-          <p class="member-bio">Krithika Vijay is the Director of the Women’s Bengaluru Super Sports League (WBSSL). She is passionate about promoting women’s participation in sports and creating opportunities that highlight their talent and leadership. With a vision for an inclusive sporting culture, she empowers athletes, fosters teamwork, and inspires the next generation to break barriers and excel.</p>
-        </div>
-        <div class="info-card member-card">
-          <img src="krish.jpg" alt="Krish" class="member-img" width="110" height="110" loading="lazy" decoding="async">
-          <h3>Krish</h3>
-          <p class="member-role">Deputy Secretary of Divyang Pro Super League</p>
-          <p class="member-bio">I am currently serving as the Vice Secretary of the SBSO Foundation. I am deeply passionate about contributing to meaningful initiatives and driving positive change through our work. With full dedication and commitment, I look forward to supporting the foundation’s mission and making a lasting impact. I believe in working collaboratively and giving my best efforts to ensure the growth and success of SBSO.</p>
-        </div>
-      </div>
-    </section>
+			<!-- ===== Ambassadors ===== -->
+			<section id="ambassador" class="section ambassador" data-animate="fade-up">
+				<div class="section__header">
+					<p class="section__eyebrow">Brand ambassadors</p>
+					<h2 class="section__title">Voices that champion our vision</h2>
+					<p class="section__lead">Leaders who amplify inclusion, resilience, and sporting excellence alongside SBSO Foundation.</p>
+				</div>
+				<div class="ambassador__grid">
+					<article class="ambassador-card" data-animate-child="1">
+						<div class="ambassador__media">
+							<img src="Ambassador1.jpg" alt="Ivanko Bobeiko portrait" loading="lazy" decoding="async" />
+						</div>
+						<div class="ambassador__content">
+							<h3>Ivanko Bobeiko</h3>
+							<p>"Ivanko Bobeiko exemplifies a powerful blend of climate advocacy and wartime humanitarian service—bringing environmental justice into conversation with peace-building. Where innovation meets performance."</p>
+						</div>
+					</article>
+					<article class="ambassador-card" data-animate-child="2">
+						<div class="ambassador__media">
+							<img src="Ambassador2.jpg" alt="RTN Ravindra Jain portrait" loading="lazy" decoding="async" />
+						</div>
+						<div class="ambassador__content">
+							<h3>RTN Ravindra Jain</h3>
+							<p>"A distinguished entrepreneur-turned-philanthropist, Mr. Jain has dedicated over five decades to community building—leading healthcare, education, environmental, and disability initiatives while inspiring youth sport."</p>
+						</div>
+					</article>
+				</div>
+			</section>
 
-    <!-- SECTION 09: CONTACT -->
-    <!-- =========================
-         CONTACT SECTION
-    ========================== -->
-    <section id="contact" class="contact">
-      <h2>Contact Us</h2>
-      <form class="contact-form animated-contact" action="mailto:blrsupersportsleague@gmail.com" method="POST" enctype="text/plain">
-        <div class="contact-fields">
-          <input type="text" name="name" placeholder="Your Name" required>
-          <input type="email" name="email" placeholder="Your Email" required>
-          <textarea name="message" placeholder="Your Message" required></textarea>
-        </div>
-        <button type="submit" class="btn contact-btn">Send</button>
-      </form>
-    </section>
+			<!-- ===== President ===== -->
+			<section id="president" class="section president" data-animate="fade-right">
+				<div class="section__header">
+					<p class="section__eyebrow">Leadership</p>
+					<h2 class="section__title">President &amp; founder</h2>
+				</div>
+				<article class="president__card" data-animate-child="1">
+					<div class="president__media">
+						<img src="president_pic.jpg" alt="Argha Sengupta portrait" loading="lazy" decoding="async" />
+					</div>
+					<div class="president__bio">
+						<h3>Argha Sengupta</h3>
+						<p>"The backbone of the event and leads every aspect—sponsorship, team management, public relations, finance, and marketing. His tireless efforts have turned SBSO Foundation into more than just an event venture; it’s a social movement."</p>
+						<p>By promoting inclusivity, youth development, and community spirit through sports, Argha empowers young talent and unites cities across India. His leadership continues to inspire, shaping lives both on and off the pitch.</p>
+					</div>
+				</article>
+			</section>
 
-    <!-- SECTION 10: PARTNERSHIPS -->
-    <!-- =========================
-         PARTNERSHIPS SECTION
-    ========================== -->
-    <section id="partnerships" class="partnerships">
-      <h2>Our Partners</h2>
-      <div class="partnerships-grid">
-        <article class="partner-card"><img src="partnership1.png" alt="Prime Sports Arena logo" loading="lazy" decoding="async"></article>
-        <article class="partner-card"><img src="partnership2.jpg" alt="Champion Gear Co. logo" loading="lazy" decoding="async"></article>
-        <article class="partner-card"><img src="partnership3.png" alt="Pulse Media Network logo" loading="lazy" decoding="async"></article>
-        <article class="partner-card"><img src="partnership4.jpg" alt="FitNation Labs logo" loading="lazy" decoding="async"></article>
-        <article class="partner-card"><img src="partnership5.jpg" alt="Cityline Hospitality logo" loading="lazy" decoding="async"></article>
-        <article class="partner-card"><img src="partnership6.jpg" alt="NextGen Analytics logo" loading="lazy" decoding="async"></article>
-        <article class="partner-card"><img src="partnership7.jpg" alt="PulseCare Clinics logo" loading="lazy" decoding="async"></article>
-        <article class="partner-card"><img src="partnership8.jpg" alt="AllStar Nutrition logo" loading="lazy" decoding="async"></article>
-        <article class="partner-card"><img src="partnership9.png" alt="Community United logo" loading="lazy" decoding="async"></article>
-        <article class="partner-card"><img src="partnership10.png" alt="New Partner logo" loading="lazy" decoding="async"></article>
-        <article class="partner-card"><img src="partnership11.jpg" alt="Alliance Sports Network logo" loading="lazy" decoding="async"></article>
-        <article class="partner-card"><img src="partnership12.png" alt="Victory Edge Solutions logo" loading="lazy" decoding="async"></article>
-        <article class="partner-card"><img src="partnership13.jpg" alt="ProActive Fitness Group logo" loading="lazy" decoding="async"></article>
-        <article class="partner-card"><img src="partnership14.jpg" alt="Urban League Collective logo" loading="lazy" decoding="async"></article>
-        <article class="partner-card"><img src="partnership15.jpg" alt="New Partner logo" loading="lazy" decoding="async"></article>
-        
-      </div>
-    </section>
-    <section id="recognitions" class="partnerships recognitions">
-      <h2>Our Recognitions &amp; Collaborations</h2>
-      <p class="u-center">Honours and co-created programs with leading institutions and civic bodies that champion our mission.</p>
-      <div class="partnerships-grid recognitions-grid">
-        <article class="partner-card"><img src="recognition1.jpg" alt="Sports Authority of India collaboration badge" loading="lazy" decoding="async"></article>
-        <article class="partner-card"><img src="recognition2.jpg" alt="Bengaluru City Council recognition seal" loading="lazy" decoding="async"></article>
-        <article class="partner-card"><img src="recognition3.jpg" alt="All India Schools Federation partnership mark" loading="lazy" decoding="async"></article>
-        <article class="partner-card"><img src="recognition4.jpg" alt="Grassroots Sports Innovation grant logo" loading="lazy" decoding="async"></article>
-        <article class="partner-card"><img src="recognition5.jpg" alt="Grassroots Sports Innovation grant logo" loading="lazy" decoding="async"></article>
-        <article class="partner-card"><img src="recognition6.jpg" alt="Grassroots Sports Innovation grant logo" loading="lazy" decoding="async"></article>
-      </div>
-    </section>
-    <section id="blogs" class="blogs">
-      <h2>Latest Insights</h2>
-      <p class="u-center">Stories from our leagues, athlete journeys, and community impact programs across India.</p>
-      <div class="blog-grid">
-        <article class="blog-card">
-          <a class="blog-card__media" href="blog1.html">
-            <img src="blog1.jpg" alt="Players celebrating a match-winning moment" loading="lazy" decoding="async">
-          </a>
-          <div class="blog-card__body">
-            <span class="blog-card__label">Feature</span>
-            <span class="blog-card__meta">November 6, 2024 · Bengaluru Super Sports League</span>
-            <h3><a href="blog1.html">How Night Cricket is Reimagining Fan Culture in Bengaluru</a></h3>
-            <p>Behind-the-scenes from our prime-time fixtures—broadcast innovation, player analytics, and community zones that keep the stands buzzing.</p>
-            <div class="blog-card__footer">
-              <span class="blog-card__author">By SBSO Media Desk</span>
-              <a class="blog-card__cta" href="blog1.html">Read Story <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-          </div>
-        </article>
-        <article class="blog-card">
-          <a class="blog-card__media" href="blog2.html">
-            <img src="blog2.jpg" alt="Women cricketers at a leadership workshop" loading="lazy" decoding="async">
-          </a>
-          <div class="blog-card__body">
-            <span class="blog-card__label">Leadership</span>
-            <span class="blog-card__meta">October 28, 2024 · Women’s BSSL</span>
-            <h3><a href="blog2.html">Building Leadership Pathways for Women Cricketers</a></h3>
-            <p>Workshops, mentorship, and scouting pipelines that are elevating women athletes from grassroots academies to national trials.</p>
-            <div class="blog-card__footer">
-              <span class="blog-card__author">By WBSSL Editorial</span>
-              <a class="blog-card__cta" href="blog2.html">Discover More <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-          </div>
-        </article>
-        <article class="blog-card">
-          <a class="blog-card__media" href="blog3.html">
-            <img src="blog3.jpg" alt="Inclusive cricket training session" loading="lazy" decoding="async">
-          </a>
-          <div class="blog-card__body">
-            <span class="blog-card__label">Inclusion</span>
-            <span class="blog-card__meta">October 15, 2024 · Divyang Pro Super League</span>
-            <h3><a href="blog3.html">Inclusive Cricket: Designing Events for Every Athlete</a></h3>
-            <p>Adaptive equipment, physio hubs, and broadcast storytelling that centre the courage and craft of our divyang cricketers.</p>
-            <div class="blog-card__footer">
-              <span class="blog-card__author">By DPSL Story Lab</span>
-              <a class="blog-card__cta" href="blog3.html">See How <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
-  </main>
+			<!-- ===== Members ===== -->
+			<section id="members" class="section members" data-animate="fade-up">
+				<div class="section__header">
+					<p class="section__eyebrow">Board</p>
+					<h2 class="section__title">Strategy council</h2>
+					<p class="section__lead">Seasoned operators steering sponsorships, athlete welfare, and broadcast innovation.</p>
+				</div>
+				<div class="members__grid">
 
-  <!-- SECTION 11: FOOTER -->
-  <!-- =========================
-       FOOTER
-    ========================== -->
-  <footer class="site-footer">
-    <div class="footer-shell">
-      <section class="footer-panel footer-panel--brand">
-        <a class="footer-brand" href="#top">
-          <img src="SBSO_FOUNDATION.jpg" alt="SBSO Foundation" class="footer-brand__logo" width="68" height="68" decoding="async">
-          <div>
-            <h3 class="footer-brand__name">SBSO Foundation</h3>
-            <p class="footer-brand__tagline">Come. Commit. Conquer.</p>
-          </div>
-        </a>
-        <p class="footer-brand__copy">
-          Building inclusive sporting ecosystems across cities with professional leagues, pathways, and social impact initiatives.
-        </p>
-        <div class="footer-social">
-          <a href="mailto:sbsofoundation@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
-          <a href="https://www.instagram.com/sbso_foundation?igsh=MTA4NHZkZWp3ZmE1cw==" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-          <a href="https://www.linkedin.com/company/sbso-foundation/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-          <a href="https://www.youtube.com/@sbsofoundation" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-        </div>
-      </section>
+					<article class="member-card" data-animate-child="0">
+						<img src="sujjal.jpeg" alt="Sujjal Chhetri portrait" loading="lazy" decoding="async" />
+						<h3>Sujjal Chhetri</h3>
+						<p class="member-role">General Secretary · SBSO</p>
+						<p class="member-bio">Oversees strategic vision, stakeholder partnerships, and operational excellence across all SBSO Foundation initiatives.</p>
+					</article>
+					<article class="member-card" data-animate-child="1">
+						<img src="kashvi.jpeg" alt="Kashvi portrait" loading="lazy" decoding="async" />
+						<h3>Kashvi</h3>
+						<p class="member-role">Joint Secretary · SBSO</p>
+						<p class="member-bio">Committed to driving inclusive initiatives and collaborative growth across all SBSO Foundation programs.</p>
+					</article>
+					<article class="member-card" data-animate-child="2">
+						<img src="sayan.jpg" alt="Sayan Karmakar portrait" loading="lazy" decoding="async" />
+						<h3>Sayan Karmakar</h3>
+						<p class="member-role">Co-founder &amp; Vice President</p>
+						<p class="member-bio">Drives sponsorship development, talent nurturing, and operational excellence to build a stronger sporting community.</p>
+					</article>
+					<article class="member-card" data-animate-child="3">
+						<img src="asif.jpg" alt="Md Asif portrait" loading="lazy" decoding="async" />
+						<h3>Md Asif</h3>
+						<p class="member-role">Secretary · Divyang Pro Super League</p>
+						<p class="member-bio">Ensures holistic youth development through strategic planning, inclusive coaching frameworks, and nationwide outreach.</p>
+					</article>
+					<article class="member-card" data-animate-child="4">
+						<img src="spandan.jpg" alt="Spandan Chaudhury portrait" loading="lazy" decoding="async" />
+						<h3>Spandan Chaudhury</h3>
+						<p class="member-role">Vice President · BSSL</p>
+						<p class="member-bio">Leads event planning, logistics, and team coordination to deliver consistently high-impact match nights.</p>
+					</article>
+					<article class="member-card" data-animate-child="5">
+						<img src="krithika.jpg" alt="Krithika Vijay portrait" loading="lazy" decoding="async" />
+						<h3>Krithika Vijay</h3>
+						<p class="member-role">Director · WBSSL</p>
+						<p class="member-bio">Champions women’s participation, leadership, and visibility through premier badminton and cricket showcases.</p>
+					</article>
+					<article class="member-card" data-animate-child="6">
+						<img src="krish.jpg" alt="Krish portrait" loading="lazy" decoding="async" />
+						<h3>Krish</h3>
+						<p class="member-role">Deputy Secretary · Divyang PSL</p>
+						<p class="member-bio">Committed to driving inclusive initiatives and collaborative growth across all SBSO Foundation programs.</p>
+					</article>
+				</div>
+			</section>
 
-      <section class="footer-panel footer-panel--links">
-        <h4>Explore</h4>
-        <nav aria-label="Footer navigation">
-          <ul class="footer-links">
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#ventures">Ventures</a></li>
-            <li><a href="#ambassador">Ambassadors</a></li>
-            <li><a href="#members">Board Members</a></li>
-            <li><a href="venture2.html">Register Teams</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </nav>
-      </section>
+			<!-- ===== Contact ===== -->
+			<section id="contact" class="section contact" data-animate="fade-left">
+				<div class="section__header">
+					<p class="section__eyebrow">Connect</p>
+					<h2 class="section__title">Co-create your next season</h2>
+					<p class="section__lead">Share partnership ideas, academy collaborations, or volunteer interest—our crew responds within 24 hours.</p>
+				</div>
+				<div class="contact__grid">
+					<form class="contact-card" action="mailto:blrsupersportsleague@gmail.com" method="POST" enctype="text/plain">
+						<div class="contact-fields">
+							<input type="text" name="name" placeholder="Your Name" required />
+							<input type="email" name="email" placeholder="Your Email" required />
+							<textarea name="message" placeholder="Tell us about your idea" required></textarea>
+						</div>
+						<button type="submit" class="btn btn--accent">Send Message</button>
+					</form>
+					<div class="contact-details">
+						<h3>Direct lines</h3>
+						<div class="contact-details__channels">
+							<div class="contact-channel"><i class="fa-solid fa-envelope"></i><a href="mailto:sbsofoundation@gmail.com">sbsofoundation@gmail.com</a></div>
+							<div class="contact-channel"><i class="fa-solid fa-phone-volume"></i><a href="tel:+919900384517">+91&nbsp;99003&nbsp;84517</a></div>
+							<div class="contact-channel"><i class="fa-solid fa-location-dot"></i><span>Bengaluru · Karnataka · India</span></div>
+						</div>
+						<p class="contact-note">Media &amp; accreditation desk: <a href="mailto:media@sbsofoundation.in">media@sbsofoundation.in</a></p>
+						<div class="footer-social">
+							<a href="mailto:sbsofoundation@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+							<a href="https://www.instagram.com/sbso_foundation?igsh=MTA4NHZkZWp3ZmE1cw==" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+							<a href="https://www.linkedin.com/company/sbso-foundation/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+							<a href="https://www.youtube.com/@sbsofoundation" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+						</div>
+					</div>
+				</div>
+			</section>
 
-      <section class="footer-panel footer-panel--support">
-        <h4>Need Support?</h4>
-        <ul class="footer-contact">
-          <li>
-            <i class="fa-solid fa-envelope"></i>
-            <a href="mailto:sbsofoundation@gmail.com">sbsofoundation@gmail.com</a>
-          </li>
-          <li>
-            <i class="fa-solid fa-phone"></i>
-            <a href="tel:+919900384517">+91&nbsp;99003&nbsp;84517</a>
-          </li>
-          <li>
-            <i class="fa-solid fa-location-dot"></i>
-            <span>Bengaluru, Karnataka, India</span>
-          </li>
-        </ul>
-        <a class="btn btn--ghost footer-cta-link" href="#contact">Talk to Us</a>
-      </section>
-    </div>
+			<!-- ===== Partnerships ===== -->
+			<section id="partnerships" class="section partnerships" data-animate="fade-up">
+				<div class="section__header">
+					<p class="section__eyebrow">Alliances</p>
+					<h2 class="section__title">Our partners</h2>
+					<p class="section__lead">Brands and institutions powering fan experiences, wellness labs, and high-performance ecosystems.</p>
+				</div>
+				<div class="logo-grid logo-grid--partners">
+					<figure class="logo-item" data-animate-child="1"><img src="partnership1.png" alt="Prime Sports Arena logo" loading="lazy" decoding="async" /></figure>
+					<figure class="logo-item" data-animate-child="2"><img src="partnership2.jpg" alt="Champion Gear Co. logo" loading="lazy" decoding="async" /></figure>
+					<figure class="logo-item" data-animate-child="3"><img src="partnership3.png" alt="Pulse Media Network logo" loading="lazy" decoding="async" /></figure>
+					<figure class="logo-item" data-animate-child="4"><img src="partnership4.jpg" alt="FitNation Labs logo" loading="lazy" decoding="async" /></figure>
+					<figure class="logo-item" data-animate-child="5"><img src="partnership5.jpg" alt="Cityline Hospitality logo" loading="lazy" decoding="async" /></figure>
+					<figure class="logo-item" data-animate-child="1"><img src="partnership6.jpg" alt="NextGen Analytics logo" loading="lazy" decoding="async" /></figure>
+					<figure class="logo-item" data-animate-child="2"><img src="partnership7.jpg" alt="PulseCare Clinics logo" loading="lazy" decoding="async" /></figure>
+					<figure class="logo-item" data-animate-child="3"><img src="partnership8.jpg" alt="AllStar Nutrition logo" loading="lazy" decoding="async" /></figure>
+					<figure class="logo-item" data-animate-child="4"><img src="partnership9.png" alt="Community United logo" loading="lazy" decoding="async" /></figure>
+					<figure class="logo-item" data-animate-child="5"><img src="partnership10.png" alt="New Partner logo" loading="lazy" decoding="async" /></figure>
+					<figure class="logo-item" data-animate-child="1"><img src="partnership11.jpg" alt="Alliance Sports Network logo" loading="lazy" decoding="async" /></figure>
+					<figure class="logo-item" data-animate-child="2"><img src="partnership12.png" alt="Victory Edge Solutions logo" loading="lazy" decoding="async" /></figure>
+					<figure class="logo-item" data-animate-child="3"><img src="partnership13.jpg" alt="ProActive Fitness Group logo" loading="lazy" decoding="async" /></figure>
+					<figure class="logo-item" data-animate-child="4"><img src="partnership14.jpg" alt="Urban League Collective logo" loading="lazy" decoding="async" /></figure>
+					<figure class="logo-item" data-animate-child="5"><img src="partnership15.jpg" alt="Additional partner logo" loading="lazy" decoding="async" /></figure>
+				</div>
+			</section>
 
-    <div class="footer-bottom">
-      <p>&copy; 2024 SBSO Foundation. All rights reserved.</p>
-      <p>Empowering Youth Through Sports</p>
-    </div>
-  </footer>
+			<!-- ===== Recognitions ===== -->
+			<section id="recognitions" class="section recognitions" data-animate="fade-up">
+				<div class="section__header">
+					<p class="section__eyebrow">Collaborations</p>
+					<h2 class="section__title">Recognitions &amp; civic partners</h2>
+					<p class="section__lead">Allies that power safer venues, equitable access, and elite officiating across our tournaments.</p>
+				</div>
+				<div class="logo-grid logo-grid--recognitions">
+					<figure class="logo-item" data-animate-child="1"><img src="recognition1.jpg" alt="Sports Authority of India collaboration badge" loading="lazy" decoding="async" /></figure>
+					<figure class="logo-item" data-animate-child="2"><img src="recognition2.jpg" alt="Bengaluru City Council recognition seal" loading="lazy" decoding="async" /></figure>
+					<figure class="logo-item" data-animate-child="3"><img src="recognition3.jpg" alt="All India Schools Federation partnership mark" loading="lazy" decoding="async" /></figure>
+					<figure class="logo-item" data-animate-child="4"><img src="recognition4.jpg" alt="Grassroots Sports Innovation grant logo" loading="lazy" decoding="async" /></figure>
+					<figure class="logo-item" data-animate-child="5"><img src="recognition5.jpg" alt="National Inclusivity Forum certificate" loading="lazy" decoding="async" /></figure>
+					<figure class="logo-item" data-animate-child="1"><img src="recognition6.jpg" alt="Community Impact Honour" loading="lazy" decoding="async" /></figure>
+				</div>
+			</section>
 
-  <script>
- /* Enhanced search: debounced, scored, keyboard navigation, a11y roles */
- document.addEventListener('DOMContentLoaded', () => {
- 	const nav = document.getElementById('site-nav');
- 	const navPanel = document.getElementById('nav-panel');
- 	const navToggle = nav?.querySelector('.pro-nav__toggle');
- 	const navTargets = navPanel?.querySelectorAll('a, button');
- 	const breakpoint = window.matchMedia('(min-width: 981px)');
- 	const searchForm = nav?.querySelector('.pro-nav__search');
- 	const searchInput = document.getElementById('nav-search-input');
- 	const searchResults = document.getElementById('nav-search-results');
+			<!-- ===== Blogs ===== -->
+			<section id="blogs" class="section blogs" data-animate="fade-up">
+				<div class="section__header">
+					<p class="section__eyebrow">Latest insight</p>
+					<h2 class="section__title">Stories from the circuit</h2>
+					<p class="section__lead">Highlights from our leagues, athlete journeys, and community impact programs across India.</p>
+				</div>
+				<article class="blog-card" data-animate-child="1">
+					<a class="blog-card__media" href="blog1.html"><img src="blog1.jpg" alt="Players celebrating a match-winning moment" loading="lazy" decoding="async" /></a>
+					<div class="blog-card__body">
+						<span class="blog-card__label">Feature</span>
+						<span class="blog-card__meta">November 16, 2025 · Women’s Bengaluru Super Sports League</span>
+						<h3><a href="blog1.html">How night cricket is reimagining fan culture in Bengaluru</a></h3>
+						<p>Behind-the-scenes from our prime-time fixtures—broadcast innovation, player analytics, and community zones that keep the stands buzzing.</p>
+						<div class="blog-card__footer"><span>By SBSO Media Desk</span><a class="btn btn--ghost" href="blog1.html">Read Story <i class="fa-solid fa-arrow-right"></i></a></div>
+					</div>
+				</article>
+			</section>
+		</main>
 
- 	if (!searchInput || !searchResults) return;
+		<footer class="site-footer">
+			<div class="footer-shell">
+				<section class="footer-panel footer-panel--brand">
+					<a class="footer-brand" href="#top">
+						<img src="SBSO_FOUNDATION.jpg" alt="SBSO Foundation" class="footer-brand__logo" decoding="async" width="68" height="68" />
+						<div>
+							<h3 class="footer-brand__name">SBSO Foundation</h3>
+							<p class="footer-brand__tagline">Come. Commit. Conquer.</p>
+						</div>
+					</a>
+					<p class="footer-brand__copy">Building inclusive sporting ecosystems across cities with professional leagues, pathways, and social impact initiatives.</p>
+					<div class="footer-social">
+						<a href="mailto:sbsofoundation@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+						<a href="https://www.instagram.com/sbso_foundation?igsh=MTA4NHZkZWp3ZmE1cw==" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+						<a href="https://www.linkedin.com/company/sbso-foundation/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+						<a href="https://www.youtube.com/@sbsofoundation" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+					</div>
+				</section>
+				<section class="footer-panel footer-panel--links">
+					<h4>Explore</h4>
+					<nav aria-label="Footer navigation">
+						<ul class="footer-links">
+							<li><a href="#about">About Us</a></li>
+							<li><a href="#ventures">Ventures</a></li>
+							<li><a href="#ambassador">Ambassadors</a></li>
+							<li><a href="#members">Board Members</a></li>
+							<li><a href="venture2.html">Register Teams</a></li>
+							<li><a href="#contact">Contact</a></li>
+						</ul>
+					</nav>
+				</section>
+				<section class="footer-panel footer-panel--support">
+					<h4>Need Support?</h4>
+					<ul class="footer-contact">
+						<li><i class="fa-solid fa-envelope"></i><a href="mailto:sbsofoundation@gmail.com">sbsofoundation@gmail.com</a></li>
+						<li><i class="fa-solid fa-phone"></i><a href="tel:+919900384517">+91&nbsp;99003&nbsp;84517</a></li>
+						<li><i class="fa-solid fa-location-dot"></i><span>Bengaluru, Karnataka, India</span></li>
+					</ul>
+					<a class="btn btn--ghost footer-cta-link" href="#contact">Talk to Us</a>
+				</section>
+			</div>
+			<div class="footer-bottom">
+				<p>&copy; 2024 SBSO Foundation. All rights reserved.</p>
+				<p>Empowering Youth Through Sports</p>
+			</div>
+		</footer>
 
- 	// ARIA plumbing for result list
- 	searchResults.setAttribute('role', 'listbox');
- 	searchResults.setAttribute('aria-label', 'Search results');
+		<script src="scripts/nav-animation.js" defer></script>
+		<script>
+			document.addEventListener('DOMContentLoaded', () => {
+				initNav();
+				initSectionObserver();
+				initSiteSearch();
+			});
 
- 	// Utility: debounce
- 	function debounce(fn, wait = 180) {
- 		let t;
- 		return (...args) => { clearTimeout(t); t = setTimeout(() => fn(...args), wait); };
- 	}
+			function initNav() {
+				const nav = document.getElementById('site-nav');
+				const toggle = nav?.querySelector('.site-nav__toggle');
+				const menu = document.getElementById('nav-menu');
 
- 	// Escape HTML
- 	const escapeHtml = (s = '') =>
- 		String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+				if (!nav || !toggle || !menu) return;
 
- 	// Build a search index (deduped)
- 	function buildIndex() {
- 		const items = [];
+				toggle.addEventListener('click', () => {
+					const isOpen = nav.classList.toggle('is-open');
+					toggle.setAttribute('aria-expanded', String(isOpen));
+				});
 
- 		// static quick links
- 		const staticIndex = [
- 			{ label: 'About Us', hint: 'Foundation story', target: '#about', icon: 'fa-landmark' },
- 			{ label: 'Ventures', hint: 'Active leagues', target: '#ventures', icon: 'fa-trophy' },
- 			{ label: 'Brand Ambassador', hint: 'Ambassador spotlight', target: '#ambassador', icon: 'fa-star' },
- 			{ label: 'President', hint: 'Leadership insights', target: '#president', icon: 'fa-user-tie' },
- 			{ label: 'Board Members', hint: 'Core committee', target: '#members', icon: 'fa-users' },
- 			{ label: 'Contact', hint: 'Reach the team', target: '#contact', icon: 'fa-phone-volume' },
- 			{ label: 'BSSL Cloud', hint: 'Bengaluru Super Sports League', target: 'venture2.html', icon: 'fa-baseball-bat-ball' }
- 		];
- 		items.push(...staticIndex);
+				document.addEventListener('click', (event) => {
+					if (nav.contains(event.target)) return;
+					nav.classList.remove('is-open');
+					toggle.setAttribute('aria-expanded', 'false');
+				});
+			}
 
- 		// headings
- 		document.querySelectorAll('main h1, main h2, main h3').forEach(h => {
- 			const text = (h.textContent || '').trim();
- 			if (!text) return;
- 			if (!h.id) {
- 				let id = text.toLowerCase().replace(/[^\w]+/g, '-').replace(/(^-+|-+$)/g, '');
- 				let uniq = id; let i = 1;
- 				while (document.getElementById(uniq)) { uniq = `${id}-${i++}`; }
- 				h.id = uniq;
- 			}
- 			items.push({ label: text, hint: 'Section', target: `#${h.id}`, icon: 'fa-file-lines' });
- 		});
+			function initSectionObserver() {
+				const sections = document.querySelectorAll('[data-animate]');
+				if (!sections.length) return;
 
- 		// anchors/links
- 		document.querySelectorAll('a[href]').forEach(a => {
- 			const href = a.getAttribute('href') || '';
- 			const text = (a.textContent || a.getAttribute('title') || a.getAttribute('aria-label') || href).trim();
- 			if (!text) return;
- 			items.push({
- 				label: text,
- 				hint: href,
- 				target: href,
- 				icon: href.startsWith('#') ? 'fa-link' : 'fa-arrow-right'
- 			});
- 		});
+				const observer = new IntersectionObserver(
+					(entries, instance) => {
+						entries.forEach((entry) => {
+							if (!entry.isIntersecting) return;
+							entry.target.classList.add('is-visible');
+							instance.unobserve(entry.target);
+						});
+					},
+					{ threshold: 0.24 }
+				);
 
- 		// image alts
- 		document.querySelectorAll('img[alt]').forEach(img => {
- 			const alt = (img.alt || '').trim();
- 			if (alt) items.push({ label: alt, hint: 'Image', target: '#', icon: 'fa-image' });
- 		});
+				sections.forEach((section) => observer.observe(section));
+			}
 
- 		// dedupe by label+target
- 		const map = new Map();
- 		items.forEach(it => {
- 			const key = `${(it.label||'').toLowerCase()}||${it.target||''}`;
- 			if (!map.has(key)) map.set(key, it);
- 		});
+			function initSiteSearch() {
+				const form = document.querySelector('.site-nav__search');
+				const input = document.getElementById('site-search-input');
+				const resultsList = document.getElementById('site-search-results');
+				const resultLimit = 10;
 
- 		return Array.from(map.values()).map((it, idx) => {
- 			// precompute searchable normalized text for faster search
- 			return Object.assign({}, it, {
- 				_norm: `${it.label} ${it.hint} ${it.target}`.toLowerCase(),
- 				_id: `sr-${idx}`
- 			});
- 		});
- 	}
+				if (!form || !input || !resultsList) return;
 
- 	let searchIndex = buildIndex();
+				let index = [];
+				let activeIndex = -1;
+				let resultLinks = [];
 
- 	// Observe DOM changes and rebuild (light)
- 	const obs = new MutationObserver(debounce(() => { searchIndex = buildIndex(); }, 400));
- 	obs.observe(document.body, { childList: true, subtree: true });
+				buildIndex();
 
- 	// Scoring function (simple, fast)
- 	function scoreItem(item, q) {
- 		const label = (item.label || '').toLowerCase();
- 		const hint = (item.hint || '').toLowerCase();
- 		const target = (item.target || '').toLowerCase();
- 		if (!q) return 0;
- 		let score = 0;
- 		if (label.startsWith(q)) score += 200;
- 		if (label.includes(q)) score += 120;
- 		if (hint.includes(q)) score += 40;
- 		if (target.includes(q)) score += 20;
- 		// word matches
- 		const qParts = q.split(/\s+/).filter(Boolean);
- 		qParts.forEach(part => {
- 			if (label.split(/\s+/).some(w => w.startsWith(part))) score += 8;
- 		});
- 		// short boost for exact match
- 		if (label === q) score += 400;
- 		return score;
- 	}
+				const debouncedRender = debounce(() => renderResults(score(input.value)), 160);
 
- 	// render results (adds roles and ids)
- 	function renderResults(items, headingText = 'Results') {
- 		const max = 12;
- 		if (!items || !items.length) {
- 			searchResults.innerHTML = `
- 				<li class="pro-nav__search-heading">${escapeHtml(headingText)}</li>
- 				<li class="pro-nav__search-result is-empty">No matches found</li>
- 			`;
- 			searchResults.classList.add('visible');
- 			searchResults.setAttribute('aria-hidden', 'false');
- 			activeIndex = -1;
- 			return;
- 		}
+				input.addEventListener('input', debouncedRender);
+				input.addEventListener('focus', () => renderResults(score(input.value)));
+				input.addEventListener('keydown', handleKeydown);
 
- 		const html = [
- 			`<li class="pro-nav__search-heading">${escapeHtml(headingText)}</li>`,
- 			...items.slice(0, max).map((item, idx) => {
- 				const id = escapeHtml(item._id || `sr-${idx}`);
- 				return `
- 					<li class="pro-nav__search-result" role="presentation">
- 						<a id="${id}" role="option" tabindex="-1" aria-selected="false" href="${escapeHtml(item.target)}" data-target="${escapeHtml(item.target)}" class="search-link">
- 							<span class="result-label">
- 								<span class="result-icon"><i class="fa-solid ${escapeHtml(item.icon || 'fa-magnifying-glass')}" aria-hidden="true"></i></span>
- 								<span class="result-title">${escapeHtml(item.label)}</span>
- 							</span>
- 							<span class="result-meta">${escapeHtml(item.hint || '')}</span>
- 						</a>
- 					</li>
- 				`;
- 			})
- 		].join('');
- 		searchResults.innerHTML = html;
- 		searchResults.classList.add('visible');
- 		searchResults.setAttribute('aria-hidden', 'false');
- 		// reset active index
- 		activeIndex = -1;
- 		// Cache result anchors
- 		resultAnchors = Array.from(searchResults.querySelectorAll('a.search-link'));
- 	}
+				resultsList.addEventListener('click', (event) => {
+					const link = event.target.closest('a');
+					if (!link) return;
 
- 	// search engine: compute scores and sort
- 	function searchQuery(q) {
- 		const term = (q || '').trim().toLowerCase();
- 		if (!term) {
- 			renderResults(searchIndex.slice(0, 6), 'Quick Links');
- 			return;
- 		}
- 		const scored = searchIndex.map(it => ({ it, s: scoreItem(it, term) }));
- 		const filtered = scored.filter(x => x.s > 0).sort((a,b) => b.s - a.s).map(x => x.it);
- 		renderResults(filtered, 'Search Results');
- 	}
+					const href = link.getAttribute('href') || '';
+					if (href.startsWith('#')) {
+						event.preventDefault();
+						document.querySelector(href)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+						closeResults();
+					}
+				});
 
- 	const debouncedSearch = debounce((val) => searchQuery(val), 160);
+				document.addEventListener('click', (event) => {
+					if (!form.contains(event.target)) closeResults();
+				});
 
- 	// keyboard navigation
- 	let resultAnchors = [];
- 	let activeIndex = -1;
- 	function setActive(index) {
- 		if (!resultAnchors.length) return;
- 		if (activeIndex >= 0 && resultAnchors[activeIndex]) {
- 			resultAnchors[activeIndex].setAttribute('aria-selected', 'false');
- 			resultAnchors[activeIndex].classList.remove('is-active');
- 			resultAnchors[activeIndex].blur();
- 		}
- 		activeIndex = index;
- 		if (activeIndex >= 0 && resultAnchors[activeIndex]) {
- 			const el = resultAnchors[activeIndex];
- 			el.setAttribute('aria-selected', 'true');
- 			el.classList.add('is-active');
- 			el.focus({ preventScroll: true });
- 			searchInput.setAttribute('aria-activedescendant', el.id);
- 		} else {
- 			searchInput.removeAttribute('aria-activedescendant');
- 		}
- 	}
+				function buildIndex() {
+					index = [];
+					const register = (label, target, hint = '') => {
+						if (!label || !target) return;
+						index.push({
+							label,
+							target,
+							hint,
+							search: `${label} ${hint} ${target}`.toLowerCase(),
+						});
+					};
 
- 	// input handlers
- 	searchInput.setAttribute('aria-controls', searchResults.id);
- 	searchInput.setAttribute('aria-autocomplete', 'list');
+					document.querySelectorAll('main h2, main h3').forEach((heading) => {
+						const text = heading.textContent?.trim();
+						if (!text) return;
 
- 	searchInput.addEventListener('input', (e) => {
- 		debouncedSearch(e.target.value);
- 	});
+						if (!heading.id) {
+							const base = text.toLowerCase().replace(/[^\w]+/g, '-');
+							let candidate = base;
+							let suffix = 1;
+							while (document.getElementById(candidate)) candidate = `${base}-${suffix++}`;
+							heading.id = candidate;
+						}
+						register(text, `#${heading.id}`, 'Section');
+					});
 
- 	searchInput.addEventListener('focus', () => {
- 		// show quick links
- 		renderResults(searchIndex.slice(0,6), 'Quick Links');
- 	});
+					document.querySelectorAll('a[href]').forEach((anchor) => {
+						const href = anchor.getAttribute('href') || '';
+						const text = anchor.textContent?.trim() || anchor.getAttribute('aria-label') || '';
+						if (!text || href.startsWith('javascript:')) return;
+						register(text, href, anchor.closest('nav') ? 'Navigation' : 'Link');
+					});
+				}
 
- 	// keydown: navigation
- 	searchInput.addEventListener('keydown', (e) => {
- 		if (!searchResults.classList.contains('visible')) return;
- 		if (e.key === 'ArrowDown') {
- 			e.preventDefault();
- 			if (activeIndex < resultAnchors.length - 1) setActive(activeIndex + 1);
- 			else setActive(0);
- 		} else if (e.key === 'ArrowUp') {
- 			e.preventDefault();
- 			if (activeIndex > 0) setActive(activeIndex - 1);
- 			else setActive(resultAnchors.length - 1);
- 		} else if (e.key === 'Enter') {
- 			// if an active result exists, follow it; otherwise allow form submit handler
- 			if (activeIndex >= 0 && resultAnchors[activeIndex]) {
- 				e.preventDefault();
- 				const href = resultAnchors[activeIndex].dataset.target || resultAnchors[activeIndex].getAttribute('href');
- 				if (href.startsWith('#')) {
- 					const el = document.querySelector(href);
- 					if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
- 					else window.location.hash = href;
- 				} else {
- 					window.location.href = href;
- 				}
- 				closeResults();
- 			}
- 		} else if (e.key === 'Escape') {
- 			closeResults();
- 			searchInput.blur();
- 		}
- 	});
+				function score(query = '') {
+					const term = query.toLowerCase().trim();
+					if (!term) return index.slice(0, resultLimit);
 
- 	// mouse: clicking a result (delegated)
- 	searchResults.addEventListener('click', (evt) => {
- 		const a = evt.target.closest('a[data-target]');
- 		if (!a) return;
- 		evt.preventDefault();
- 		const target = a.dataset.target || a.getAttribute('href');
- 		if (target.startsWith('#')) {
- 			const el = document.querySelector(target);
- 			if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
- 			else window.location.hash = target;
- 		} else {
- 			window.location.href = target;
- 		}
- 		closeResults();
- 	});
+					return index
+						.map((item) => ({
+							item,
+							score: item.search.startsWith(term) ? 220 : item.search.includes(term) ? 140 : 0,
+						}))
+						.filter(({ score }) => score > 0)
+						.sort((a, b) => b.score - a.score)
+						.map(({ item }) => item)
+						.slice(0, resultLimit);
+				}
 
- 	// mouseover sets active for better a11y
- 	searchResults.addEventListener('pointerover', (evt) => {
- 		const a = evt.target.closest('a[data-target]');
- 		if (!a) return;
- 		const idx = resultAnchors.indexOf(a);
- 		if (idx >= 0) setActive(idx);
- 	});
+				function renderResults(results) {
+					if (!results.length) {
+						resultsList.innerHTML = '<li class="site-nav__search-empty">No matches found</li>';
+					} else {
+						resultsList.innerHTML = results
+							.map(
+								(item, idx) => `
+									<li>
+										<a href="${item.target}" data-search-index="${idx}">
+											<strong>${item.label}</strong>
+											<span>${item.hint}</span>
+										</a>
+									</li>
+								`
+							)
+							.join('');
+					}
 
- 	function closeResults() {
- 		searchResults.classList.remove('visible');
- 		searchResults.setAttribute('aria-hidden', 'true');
- 		activeIndex = -1;
- 		resultAnchors = [];
- 		searchInput.removeAttribute('aria-activedescendant');
- 	}
+					resultsList.classList.add('is-visible');
+					resultLinks = Array.from(resultsList.querySelectorAll('a'));
+					activeIndex = -1;
+				}
 
- 	// form submit behaviour: use best match
- 	searchForm?.addEventListener('submit', (evt) => {
- 		evt.preventDefault();
- 		const term = (searchInput.value || '').trim().toLowerCase();
- 		if (!term) { searchInput.focus(); return; }
- 		const matches = searchIndex.filter(it => it._norm.includes(term));
- 		if (matches.length) {
- 			const target = matches[0].target;
- 			if (target.startsWith('#')) {
- 				document.querySelector(target)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
- 			} else {
- 				window.location.href = target;
- 			}
- 			closeResults();
- 			return;
- 		}
- 		// show empty state
- 		renderResults([], 'Search Results');
- 	});
+				function handleKeydown(event) {
+					if (!resultsList.classList.contains('is-visible') || !resultLinks.length) return;
 
- 	// click outside closes dropdown
- 	document.addEventListener('click', (evt) => {
- 		if (!nav?.contains(evt.target)) closeResults();
- 	});
+					if (event.key === 'ArrowDown') {
+						event.preventDefault();
+						updateActive((activeIndex + 1) % resultLinks.length);
+					} else if (event.key === 'ArrowUp') {
+						event.preventDefault();
+						updateActive((activeIndex - 1 + resultLinks.length) % resultLinks.length);
+					} else if (event.key === 'Enter' && activeIndex >= 0) {
+						event.preventDefault();
+						resultLinks[activeIndex].click();
+					} else if (event.key === 'Escape') {
+						closeResults();
+						input.blur();
+					}
+				}
 
- 	// keep existing nav toggle behavior intact (if present)
- 	if (nav && navToggle) {
- 		const closeNav = () => {
- 			nav.classList.remove('is-open');
- 			navToggle.setAttribute('aria-expanded', 'false');
- 		};
- 		navToggle.addEventListener('click', () => {
- 			const open = nav.classList.toggle('is-open');
- 			navToggle.setAttribute('aria-expanded', String(open));
- 			if (!open) closeResults();
- 		});
- 		navTargets?.forEach((node) => node.addEventListener('click', () => {
- 			if (!breakpoint.matches) closeNav();
- 		}));
- 		breakpoint.addEventListener('change', (evt) => { if (evt.matches) closeNav(); });
- 		document.addEventListener('click', (evt) => {
- 			if (!nav.contains(evt.target)) {
- 				closeNav();
- 				closeResults();
- 			}
- 		});
- 	}
- });
-</script>
-<script>
-if ('serviceWorker' in navigator) {
-	window.addEventListener('load', () => {
-		navigator.serviceWorker.register('sw.js').catch(console.error);
-	});
-}
-</script>
-</body>
+				function updateActive(nextIndex) {
+					if (activeIndex >= 0) resultLinks[activeIndex].classList.remove('is-active');
+					activeIndex = nextIndex;
+					const current = resultLinks[activeIndex];
+					if (current) {
+						current.classList.add('is-active');
+						current.focus();
+					}
+				}
+
+				function closeResults() {
+					resultsList.innerHTML = '';
+					resultsList.classList.remove('is-visible');
+					activeIndex = -1;
+					resultLinks = [];
+				}
+
+				function debounce(fn, delay) {
+					let timer;
+					return (...args) => {
+						clearTimeout(timer);
+						timer = setTimeout(() => fn(...args), delay);
+					};
+				}
+			}
+		</script>
+		<script>
+			if ('serviceWorker' in navigator) {
+				window.addEventListener('load', () => navigator.serviceWorker.register('sw.js').catch(console.error));
+			}
+		</script>
+	</body>
 </html>
