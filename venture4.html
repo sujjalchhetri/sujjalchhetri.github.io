@@ -4,14 +4,14 @@
 	<meta charset="UTF-8">
 	<title>Womens Bengaluru Super Sports League</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="icon" type="image/jpeg" href="wbssl_logo.jpg">
-	<link rel="stylesheet" href="venture.css">
+	<link rel="icon" type="image/jpeg" href="assets/images/wbssl_logo.jpg">
+	<link rel="stylesheet" href="assets/css/venture.css">
 </head>
 <body id="top">
 	<header class="site-header">
 		<nav class="site-nav" aria-label="Primary">
 			<a class="site-nav__brand" href="#top">
-				<img src="wbssl_logo.jpg" alt="WBSSL crest" class="site-nav__logo" width="54" height="54" decoding="async">
+				<img src="assets/images/wbssl_logo.jpg" alt="WBSSL crest" class="site-nav__logo" width="54" height="54" decoding="async">
 				Womens Bengaluru Super Sports League
 			</a>
 			<button class="site-nav__toggle" type="button" aria-expanded="false" aria-controls="nav-menu">☰</button>
@@ -44,8 +44,8 @@
 				</ul>
 			</div>
 			<div class="hero__media">
-				<img src="WBSSL1.JPG" alt="WBSSL players celebrating a wicket" class="hero__poster" loading="lazy" decoding="async">
-				<img src="WBSSL2.JPG" alt="Women's league action under lights" class="hero__poster" loading="lazy" decoding="async">
+				<img src="assets/images/venue3.jpg" alt="WBSSL players celebrating a wicket" class="hero__poster" loading="lazy" decoding="async">
+				<img src="assets/images/venue4.jpg" alt="Women's league action under lights" class="hero__poster" loading="lazy" decoding="async">
 			</div>
 		</section>
 
@@ -94,8 +94,8 @@
 			<h2 class="section__title">Past Event Gallery</h2>
 			<p class="section__lead">A look at the passion, precision, and camaraderie that define the Womens Bengaluru Super Sports League.</p>
 			<div class="gallery-grid">
-				<img src="WBSSL1.JPG" alt="Team huddle before a WBSSL badminton tie" loading="lazy" decoding="async">
-				<img src="WBSSL2.JPG" alt="Player unleashing a powerful smash in WBSSL" loading="lazy" decoding="async">
+				<img src="assets/images/venue3.jpg" alt="Team huddle before a WBSSL badminton tie" loading="lazy" decoding="async">
+				<img src="assets/images/venue4.jpg" alt="Player unleashing a powerful smash in WBSSL" loading="lazy" decoding="async">
 			</div>
 		</section>
 
@@ -121,7 +121,7 @@
 		<div class="footer__shell">
 			<div class="footer__top">
 				<div class="footer__brand">
-					<img src="wbssl_logo.jpg" alt="WBSSL logo" class="footer__brand-logo" width="72" height="72" decoding="async">
+					<img src="assets/images/wbssl_logo.jpg" alt="WBSSL logo" class="footer__brand-logo" width="72" height="72" decoding="async">
 					<div>
 						<h3>Womens Bengaluru Super Sports League</h3>
 						<p>Powered by SBSO Foundation • Empower. Excel. Elevate Badminton.</p>
@@ -143,21 +143,6 @@
 		</div>
 	</footer>
 
-	<script>
-		const nav = document.querySelector('.site-nav');
-		const toggle = document.querySelector('.site-nav__toggle');
-		if (nav && toggle) {
-			toggle.addEventListener('click', () => {
-				const open = nav.classList.toggle('is-open');
-				toggle.setAttribute('aria-expanded', String(open));
-			});
-			document.addEventListener('click', (event) => {
-				if (!nav.contains(event.target)) {
-					nav.classList.remove('is-open');
-					toggle.setAttribute('aria-expanded', 'false');
-				}
-			});
-		}
-	</script>
+	<script src="assets/js/venture-nav.js" defer></script>
 </body>
 </html>

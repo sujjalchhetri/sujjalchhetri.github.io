@@ -4,14 +4,14 @@
 	<meta charset="UTF-8">
 	<title>Divyang Pro Super League</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="icon" type="image/jpeg" href="dpsl_logo.jpg">
-	<link rel="stylesheet" href="venture.css">
+	<link rel="icon" type="image/jpeg" href="assets/images/dpsl_logo.jpg">
+	<link rel="stylesheet" href="assets/css/venture.css">
 </head>
 <body id="top">
 	<header class="site-header">
 		<nav class="site-nav" aria-label="Primary">
 			<a class="site-nav__brand" href="#top">
-				<img src="dpsl_logo.jpg" alt="DPSL crest" class="site-nav__logo" width="54" height="54" decoding="async">
+				<img src="assets/images/dpsl_logo.jpg" alt="DPSL crest" class="site-nav__logo" width="54" height="54" decoding="async">
 				Divyang Pro Super League
 			</a>
 			<button class="site-nav__toggle" type="button" aria-expanded="false" aria-controls="nav-menu">☰</button>
@@ -44,8 +44,8 @@
 				</ul>
 			</div>
 			<div class="hero__media">
-				<img src="DPSL1.JPG" alt="Adaptive athletes celebrating a wicket at DPSL" class="hero__poster" loading="lazy" decoding="async">
-				<img src="DPSL2.JPG" alt="Divyang Pro Super League match under lights" class="hero__poster" loading="lazy" decoding="async">
+				<img src="assets/images/venue1.jpg" alt="Adaptive athletes celebrating a wicket at DPSL" class="hero__poster" loading="lazy" decoding="async">
+				<img src="assets/images/venue2.jpg" alt="Divyang Pro Super League match under lights" class="hero__poster" loading="lazy" decoding="async">
 			</div>
 		</section>
 
@@ -94,8 +94,8 @@
 			<h2 class="section__title">Past Event Gallery</h2>
 			<p class="section__lead">Moments that define the Divyang Pro Super League—courage, camaraderie, and cricketing excellence without limits.</p>
 			<div class="gallery-grid">
-				<img src="DPSL1.JPG" alt="Adaptive athletes applauding teammates at DPSL" loading="lazy" decoding="async">
-				<img src="DPSL2.JPG" alt="Action shot of a batter during DPSL fixtures" loading="lazy" decoding="async">
+				<img src="assets/images/venue1.jpg" alt="Adaptive athletes applauding teammates at DPSL" loading="lazy" decoding="async">
+				<img src="assets/images/venue2.jpg" alt="Action shot of a batter during DPSL fixtures" loading="lazy" decoding="async">
 			</div>
 		</section>
 
@@ -121,7 +121,7 @@
 		<div class="footer__shell">
 			<div class="footer__top">
 				<div class="footer__brand">
-					<img src="dpsl_logo.jpg" alt="DPSL logo" class="footer__brand-logo" width="72" height="72" decoding="async">
+					<img src="assets/images/dpsl_logo.jpg" alt="DPSL logo" class="footer__brand-logo" width="72" height="72" decoding="async">
 					<div>
 						<h3>Divyang Pro Super League</h3>
 						<p>Powered by SBSO Foundation • Ability. Courage. Pride.</p>
@@ -143,21 +143,6 @@
 		</div>
 	</footer>
 
-	<script>
-		const nav = document.querySelector('.site-nav');
-		const toggle = document.querySelector('.site-nav__toggle');
-		if (nav && toggle) {
-			toggle.addEventListener('click', () => {
-				const open = nav.classList.toggle('is-open');
-				toggle.setAttribute('aria-expanded', String(open));
-			});
-			document.addEventListener('click', (event) => {
-				if (!nav.contains(event.target)) {
-					nav.classList.remove('is-open');
-					toggle.setAttribute('aria-expanded', 'false');
-				}
-			});
-		}
-	</script>
+	<script src="assets/js/venture-nav.js" defer></script>
 </body>
 </html>

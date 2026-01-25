@@ -8,7 +8,7 @@
 	"background_color": "#04122c",
 	"theme_color": "#04122c",
 	"icons": [
-		{ "src": "SBSO_FOUNDATION.jpg", "sizes": "192x192", "type": "image/jpeg" },
-		{ "src": "SBSO_FOUNDATION.jpg", "sizes": "512x512", "type": "image/jpeg" }
+		{ "src": "assets/images/SBSO_FOUNDATION.jpg", "sizes": "192x192", "type": "image/jpeg" },
+		{ "src": "assets/images/SBSO_FOUNDATION.jpg", "sizes": "512x512", "type": "image/jpeg" }
 	]
 }

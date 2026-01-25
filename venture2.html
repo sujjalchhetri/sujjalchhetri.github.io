@@ -4,14 +4,14 @@
 	<meta charset="UTF-8">
 	<title>Bengaluru Super Sports League</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="icon" type="image/jpeg" href="bssl_logo.jpg">
-	<link rel="stylesheet" href="venture.css">
+	<link rel="icon" type="image/jpeg" href="assets/images/bssl_logo.jpg">
+	<link rel="stylesheet" href="assets/css/venture.css">
 </head>
 <body id="top">
 	<header class="site-header">
 		<nav class="site-nav" aria-label="Primary">
 			<a class="site-nav__brand" href="#top">
-				<img src="bssl_logo.jpg" alt="BSSL logo" class="site-nav__logo" width="54" height="54" decoding="async">
+				<img src="assets/images/bssl_logo.jpg" alt="BSSL logo" class="site-nav__logo" width="54" height="54" decoding="async">
 				Bengaluru Super Sports League
 			</a>
 			<button class="site-nav__toggle" type="button" aria-expanded="false" aria-controls="nav-menu">☰</button>
@@ -49,8 +49,8 @@
 				</ul>
 			</div>
 			<div class="hero__media">
-				<video class="hero__video" src="hero-video.mp4" autoplay loop muted playsinline poster="bssl_poster.jpg" aria-label="BSSL highlight reel"></video>
-				<img src="bssl_poster.jpg" alt="BSSL Season 1 Poster" class="hero__poster" loading="lazy" decoding="async">
+				<video class="hero__video" src="assets/media/hero-video.mp4" autoplay loop muted playsinline poster="assets/images/bssl_poster.jpg" aria-label="BSSL highlight reel"></video>
+				<img src="assets/images/bssl_poster.jpg" alt="BSSL Season 1 Poster" class="hero__poster" loading="lazy" decoding="async">
 			</div>
 		</section>
 
@@ -118,7 +118,7 @@
 			<h2 class="section__title">Register Your Team</h2>
 			<p class="section__lead">Secure your slot before registrations close. Squad list, team photo, and payment confirmation due within 72 hours.</p>
 			<div class="cta-banner">
-				<img src="bssl_poster.jpg" alt="BSSL registration poster" class="cta-banner__poster" loading="lazy" decoding="async">
+				<img src="assets/images/bssl_poster.jpg" alt="BSSL registration poster" class="cta-banner__poster" loading="lazy" decoding="async">
 				<a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSdZ018C6eB8wG1q4Xb8Lv1wwdwGEOKUDNaxNQdOCob1gtKbtQ/viewform" target="_blank" rel="noopener">Submit Registration Form</a>
 			</div>
 		</section>
@@ -128,17 +128,17 @@
 			<p class="section__lead">Signature captures from Day One’s league surge and Day Two’s knockout celebrations—relive the roar, the colours, and the clutch finishes.</p>
 			<h3 class="section__subtitle">Day One · League Battles</h3>
 			<div class="gallery-grid">
-				<img src="bssl_day1_1.jpeg" alt="Opening ceremony with teams lined up under lights" loading="lazy" decoding="async">
-				<img src="bssl_day1_2.jpeg" alt="Powerplay boundary cheered by the crowd" loading="lazy" decoding="async">
-				<img src="bssl_day1_3.jpeg" alt="Bowlers celebrating a wicket during the afternoon fixture" loading="lazy" decoding="async">
-				<img src="bssl_day1_5.jpeg" alt="Fans in pink paraphernalia posing at the fan zone" loading="lazy" decoding="async">
+				<img src="assets/images/bssl_day1_1.jpeg" alt="Opening ceremony with teams lined up under lights" loading="lazy" decoding="async">
+				<img src="assets/images/bssl_day1_2.jpeg" alt="Powerplay boundary cheered by the crowd" loading="lazy" decoding="async">
+				<img src="assets/images/bssl_day1_3.jpeg" alt="Bowlers celebrating a wicket during the afternoon fixture" loading="lazy" decoding="async">
+				<img src="assets/images/bssl_day1_5.jpeg" alt="Fans in pink paraphernalia posing at the fan zone" loading="lazy" decoding="async">
 			</div>
 			<h3 class="section__subtitle">Day Two · Finals &amp; Trophy Tour</h3>
 			<div class="gallery-grid">
-				<img src="bssl_day2_1.jpeg" alt="Semi-final toss with broadcast crew" loading="lazy" decoding="async">
-				<img src="bssl_day2_2.jpeg" alt="Last-over six sending the crowd into a frenzy" loading="lazy" decoding="async">
-				<img src="bssl_day2_3.jpeg" alt="Champions lifting the BSSL trophy amid fireworks" loading="lazy" decoding="async">
-				<img src="bssl_day2_4.jpeg" alt="Post-match celebrations with title sponsors" loading="lazy" decoding="async">
+				<img src="assets/images/bssl_day2_1.jpeg" alt="Semi-final toss with broadcast crew" loading="lazy" decoding="async">
+				<img src="assets/images/bssl_day2_2.jpeg" alt="Last-over six sending the crowd into a frenzy" loading="lazy" decoding="async">
+				<img src="assets/images/bssl_day2_3.jpeg" alt="Champions lifting the BSSL trophy amid fireworks" loading="lazy" decoding="async">
+				<img src="assets/images/bssl_day2_4.jpeg" alt="Post-match celebrations with title sponsors" loading="lazy" decoding="async">
 			</div>
 		</section>
 
@@ -191,7 +191,7 @@
 		<div class="footer__shell">
 			<div class="footer__top">
 				<div class="footer__brand">
-					<img src="bssl_logo.jpg" alt="BSSL crest" class="footer__brand-logo" width="72" height="72" decoding="async">
+					<img src="assets/images/bssl_logo.jpg" alt="BSSL crest" class="footer__brand-logo" width="72" height="72" decoding="async">
 					<div>
 						<h3>Bengaluru Super Sports League</h3>
 						<p>Powered by SBSO Foundation</p>
@@ -217,21 +217,6 @@
 		</div>
 	</footer>
 
-	<script>
-		const nav = document.querySelector('.site-nav');
-		const toggle = document.querySelector('.site-nav__toggle');
-		if (nav && toggle) {
-			toggle.addEventListener('click', () => {
-				const open = nav.classList.toggle('is-open');
-				toggle.setAttribute('aria-expanded', String(open));
-			});
-			document.addEventListener('click', (event) => {
-				if (!nav.contains(event.target)) {
-					nav.classList.remove('is-open');
-					toggle.setAttribute('aria-expanded', 'false');
-				}
-			});
-		}
-	</script>
+	<script src="assets/js/venture-nav.js" defer></script>
 </body>
 </html>

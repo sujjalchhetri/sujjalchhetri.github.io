@@ -58,7 +58,7 @@ body::after{
 	position:fixed;
 	inset:0;
 	z-index:-2;
-	background:url('Background_Img.jpg') center/cover no-repeat fixed;
+	background:url('../images/Background_img.jpg') center/cover no-repeat fixed;
 	opacity:0.9;
 }
 

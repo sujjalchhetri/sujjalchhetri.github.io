@@ -1,21 +1,22 @@
-const CACHE_NAME = 'sbso-cache-v2';
+const CACHE_NAME = 'sbso-cache-v3';
 const ASSETS = [
 	'index.html',
 	'manifest.json',
-	'style.css',
-	'blog.css',
-	'venture.css',
 	'blog1.html',
-	'blog2.html',
-	'blog3.html',
 	'venture1.html',
 	'venture2.html',
 	'venture3.html',
 	'venture4.html',
 	'venture5.html',
-	'SBSO_FOUNDATION.jpg',
-	'wbssl_logo.jpg',
-	'Background_Img.jpg'
+	'assets/css/style.css',
+	'assets/css/blog.css',
+	'assets/css/venture.css',
+	'assets/js/main.js',
+	'assets/js/venture-nav.js',
+	'assets/images/SBSO_FOUNDATION.jpg',
+	'assets/images/wbssl_logo.jpg',
+	'assets/images/Background_img.jpg',
+	'assets/media/hero-video.mp4'
 ];
 
 self.addEventListener('install', event => {

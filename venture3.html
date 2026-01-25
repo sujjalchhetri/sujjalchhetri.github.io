@@ -4,14 +4,14 @@
 	<meta charset="UTF-8">
 	<title>Kolkata Sports Premier League</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="icon" type="image/jpeg" href="kspl_logo.jpg">
-	<link rel="stylesheet" href="venture.css">
+	<link rel="icon" type="image/jpeg" href="assets/images/kspl_logo.jpg">
+	<link rel="stylesheet" href="assets/css/venture.css">
 </head>
 <body id="top">
 	<header class="site-header">
 		<nav class="site-nav" aria-label="Primary">
 			<a class="site-nav__brand" href="#top">
-				<img src="kspl_logo.jpg" alt="KSPL crest" class="site-nav__logo" width="54" height="54" decoding="async">
+				<img src="assets/images/kspl_logo.jpg" alt="KSPL crest" class="site-nav__logo" width="54" height="54" decoding="async">
 				Kolkata Sports Premier League
 			</a>
 			<button class="site-nav__toggle" type="button" aria-expanded="false" aria-controls="nav-menu">☰</button>
@@ -43,8 +43,8 @@
 				</ul>
 			</div>
 			<div class="hero__media">
-				<img src="KSSL1.JPG" alt="KSPL opening ceremony celebrations" class="hero__poster" loading="lazy" decoding="async">
-				<img src="KSSL2.JPG" alt="Night match action during KSPL" class="hero__poster" loading="lazy" decoding="async">
+				<img src="assets/images/venue1.jpg" alt="KSPL venue highlight under lights" class="hero__poster" loading="lazy" decoding="async">
+				<img src="assets/images/venue2.jpg" alt="KSPL match action" class="hero__poster" loading="lazy" decoding="async">
 			</div>
 		</section>
 
@@ -74,8 +74,8 @@
 			<h2 class="section__title">Past Event Gallery</h2>
 			<p class="section__lead">Glimpses from recent KSPL chapters—thrilling finishes, packed stands, and the spirit of Kolkata cricket.</p>
 			<div class="gallery-grid">
-				<img src="KSSL1.JPG" alt="Opening ceremony of Kolkata Sports Premier League" loading="lazy" decoding="async">
-				<img src="KSSL2.JPG" alt="Under lights action during KSPL" loading="lazy" decoding="async">
+				<img src="assets/images/venue1.jpg" alt="Opening ceremony of Kolkata Sports Premier League" loading="lazy" decoding="async">
+				<img src="assets/images/venue2.jpg" alt="Under lights action during KSPL" loading="lazy" decoding="async">
 			</div>
 		</section>
 
@@ -101,7 +101,7 @@
 		<div class="footer__shell">
 			<div class="footer__top">
 				<div class="footer__brand">
-					<img src="kspl_logo.jpg" alt="KSPL logo" class="footer__brand-logo" width="72" height="72" decoding="async">
+					<img src="assets/images/kspl_logo.jpg" alt="KSPL logo" class="footer__brand-logo" width="72" height="72" decoding="async">
 					<div>
 						<h3>Kolkata Sports Premier League</h3>
 						<p>Powered by Kolkata Sports Collective • Play. Inspire. Unite.</p>
@@ -122,21 +122,6 @@
 		</div>
 	</footer>
 
-	<script>
-		const nav = document.querySelector('.site-nav');
-		const toggle = document.querySelector('.site-nav__toggle');
-		if (nav && toggle) {
-			toggle.addEventListener('click', () => {
-				const open = nav.classList.toggle('is-open');
-				toggle.setAttribute('aria-expanded', String(open));
-			});
-			document.addEventListener('click', (event) => {
-				if (!nav.contains(event.target)) {
-					nav.classList.remove('is-open');
-					toggle.setAttribute('aria-expanded', 'false');
-				}
-			});
-		}
-	</script>
+	<script src="assets/js/venture-nav.js" defer></script>
 </body>
 </html>

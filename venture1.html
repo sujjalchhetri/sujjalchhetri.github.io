@@ -4,14 +4,14 @@
 	<meta charset="UTF-8">
 	<title>Siliguri Boys Cricket League</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="icon" type="image/jpeg" href="sbcl_logo.jpg">
-	<link rel="stylesheet" href="venture.css">
+	<link rel="icon" type="image/jpeg" href="assets/images/sbcl_logo.jpg">
+	<link rel="stylesheet" href="assets/css/venture.css">
 </head>
 <body id="top">
 	<header class="site-header">
 		<nav class="site-nav" aria-label="Primary">
 			<a class="site-nav__brand" href="#top">
-				<img src="sbcl_logo.jpg" alt="SBCL crest" class="site-nav__logo" width="54" height="54" decoding="async">
+				<img src="assets/images/sbcl_logo.jpg" alt="SBCL crest" class="site-nav__logo" width="54" height="54" decoding="async">
 				Siliguri Boys Cricket League
 			</a>
 			<button class="site-nav__toggle" type="button" aria-expanded="false" aria-controls="nav-menu">☰</button>
@@ -45,8 +45,8 @@
 				</ul>
 			</div>
 			<div class="hero__media">
-				<img src="SBCL1.JPG" alt="SBCL captains huddle" class="hero__poster" loading="lazy" decoding="async">
-				<video class="hero__video" src="sbcl_highlights.mp4" autoplay loop muted playsinline poster="SBCL2.JPG" aria-label="SBCL highlight reel"></video>
+				<img src="assets/images/SBCL1.JPG" alt="SBCL captains huddle" class="hero__poster" loading="lazy" decoding="async">
+				<video class="hero__video" src="assets/media/sbcl_highlights.mp4" autoplay loop muted playsinline poster="assets/images/SBCL2.JPG" aria-label="SBCL highlight reel"></video>
 			</div>
 		</section>
 
@@ -93,11 +93,11 @@
 			<h2 class="section__title">Past Event Gallery</h2>
 			<p class="section__lead">Snapshots from recent SBCL editions capturing the energy, dedication, and community that power Siliguri cricket.</p>
 			<div class="gallery-grid">
-				<img src="SBCL1.JPG" alt="Captains huddle during SBCL opening ceremony" loading="lazy" decoding="async">
-				<img src="SBCL2.JPG" alt="Power-hitter finishing a chase under lights" loading="lazy" decoding="async">
-				<img src="SBCL3.JPG" alt="Team celebrations after a tight win" loading="lazy" decoding="async">
-				<img src="SBCL4.JPG" alt="Young bowlers strategising with coach" loading="lazy" decoding="async">
-				<img src="SBCL5.JPG" alt="Fans and families cheering from the stands" loading="lazy" decoding="async">
+				<img src="assets/images/SBCL1.JPG" alt="Captains huddle during SBCL opening ceremony" loading="lazy" decoding="async">
+				<img src="assets/images/SBCL2.JPG" alt="Power-hitter finishing a chase under lights" loading="lazy" decoding="async">
+				<img src="assets/images/SBCL3.JPG" alt="Team celebrations after a tight win" loading="lazy" decoding="async">
+				<img src="assets/images/SBCL4.JPG" alt="Young bowlers strategising with coach" loading="lazy" decoding="async">
+				<img src="assets/images/SBCL5.JPG" alt="Fans and families cheering from the stands" loading="lazy" decoding="async">
 			</div>
 		</section>
 
@@ -105,7 +105,7 @@
 			<h2 class="section__title">Register Your Squad</h2>
 			<p class="section__lead">Academies and community clubs can apply for Season 3 now. Submit roster details, academy profile, and consent letters within 48 hours of confirmation.</p>
 			<div class="cta-banner">
-				<img src="SBCL3.JPG" alt="Team celebrations at SBCL" class="cta-banner__poster" loading="lazy" decoding="async">
+				<img src="assets/images/SBCL3.JPG" alt="Team celebrations at SBCL" class="cta-banner__poster" loading="lazy" decoding="async">
 				<a class="btn" href="mailto:siliguribcl@gmail.com?subject=SBCL%20Squad%20Registration&body=Share%20your%20team%20name%2C%20coach%20details%2C%20and%20academy%20profile%20to%20begin%20the%20registration%20process.">Email Registration Desk</a>
 			</div>
 		</section>
@@ -133,7 +133,7 @@
 		<div class="footer__shell">
 			<div class="footer__top">
 				<div class="footer__brand">
-					<img src="sbcl_logo.jpg" alt="SBCL logo" class="footer__brand-logo" width="72" height="72" decoding="async">
+					<img src="assets/images/sbcl_logo.jpg" alt="SBCL logo" class="footer__brand-logo" width="72" height="72" decoding="async">
 					<div>
 						<h3>Siliguri Boys Cricket League</h3>
 						<p>Powered by Siliguri Boys Sports Organisation • Train. Believe. Rise.</p>
@@ -155,21 +155,6 @@
 		</div>
 	</footer>
 
-	<script>
-		const nav = document.querySelector('.site-nav');
-		const toggle = document.querySelector('.site-nav__toggle');
-		if (nav && toggle) {
-			toggle.addEventListener('click', () => {
-				const open = nav.classList.toggle('is-open');
-				toggle.setAttribute('aria-expanded', String(open));
-			});
-			document.addEventListener('click', (event) => {
-				if (!nav.contains(event.target)) {
-					nav.classList.remove('is-open');
-					toggle.setAttribute('aria-expanded', 'false');
-				}
-			});
-		}
-	</script>
+	<script src="assets/js/venture-nav.js" defer></script>
 </body>
 </html>
